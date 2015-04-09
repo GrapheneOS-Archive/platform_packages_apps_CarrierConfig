@@ -20,6 +20,8 @@ public class DefaultCarrierConfigService extends CarrierConfigService {
         Bundle config00101 = new Bundle();
         Bundle config001001 = new Bundle();
         Bundle config001010 = new Bundle();
+        Bundle config20801 = new Bundle();
+        Bundle config20802 = new Bundle();
         Bundle config246081 = new Bundle();
         Bundle config310004 = new Bundle();
         Bundle config310028 = new Bundle();
@@ -49,6 +51,16 @@ public class DefaultCarrierConfigService extends CarrierConfigService {
         config00101.putBoolean(CarrierConfigManager.BOOL_SHOW_APN_SETTING_CDMA, true);
         config001001.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config001010.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
+
+        config20801.putString(CarrierConfigManager.STRING_VVM_DESTINATION_NUMBER, "21124");
+        config20801.putShort(CarrierConfigManager.SHORT_VVM_PORT_NUMBER, (short) 20481);
+        config20801.putString(CarrierConfigManager.STRING_VVM_TYPE,
+                CarrierConfigManager.VVM_TYPE_OMTP);
+
+        config20802.putString(CarrierConfigManager.STRING_VVM_DESTINATION_NUMBER, "21124");
+        config20802.putShort(CarrierConfigManager.SHORT_VVM_PORT_NUMBER, (short) 20481);
+        config20802.putString(CarrierConfigManager.STRING_VVM_TYPE,
+                CarrierConfigManager.VVM_TYPE_OMTP);
 
         config246081.putBoolean(CarrierConfigManager.BOOL_SHOW_APN_SETTING_CDMA, true);
 
@@ -128,6 +140,8 @@ public class DefaultCarrierConfigService extends CarrierConfigService {
         sCarrierOverlays.put("00101", config00101);
         sCarrierOverlays.put("001001", config001001);
         sCarrierOverlays.put("001010", config001010);
+        sCarrierOverlays.put("20801", config20801);
+        sCarrierOverlays.put("20802", config20802);
         sCarrierOverlays.put("246081", config246081);
         sCarrierOverlays.put("310004", config310004);
         sCarrierOverlays.put("310028", config310028);
