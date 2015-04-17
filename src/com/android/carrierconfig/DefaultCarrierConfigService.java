@@ -53,12 +53,12 @@ public class DefaultCarrierConfigService extends CarrierConfigService {
         config001010.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
 
         config20801.putString(CarrierConfigManager.STRING_VVM_DESTINATION_NUMBER, "21124");
-        config20801.putShort(CarrierConfigManager.SHORT_VVM_PORT_NUMBER, (short) 20481);
+        config20801.putInt(CarrierConfigManager.INT_VVM_PORT_NUMBER, 20481);
         config20801.putString(CarrierConfigManager.STRING_VVM_TYPE,
                 CarrierConfigManager.VVM_TYPE_OMTP);
 
         config20802.putString(CarrierConfigManager.STRING_VVM_DESTINATION_NUMBER, "21124");
-        config20802.putShort(CarrierConfigManager.SHORT_VVM_PORT_NUMBER, (short) 20481);
+        config20802.putInt(CarrierConfigManager.INT_VVM_PORT_NUMBER, 20481);
         config20802.putString(CarrierConfigManager.STRING_VVM_TYPE,
                 CarrierConfigManager.VVM_TYPE_OMTP);
 
