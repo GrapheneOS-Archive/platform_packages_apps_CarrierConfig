@@ -17,16 +17,27 @@ public class DefaultCarrierConfigService extends CarrierConfigService {
     static {
         sCarrierOverlays = new HashMap<>();
 
-        Bundle config00101 = new Bundle();
         Bundle config001001 = new Bundle();
+        Bundle config00101 = new Bundle();
         Bundle config001010 = new Bundle();
+        Bundle config20404 = new Bundle();
         Bundle config20801 = new Bundle();
         Bundle config20802 = new Bundle();
+        Bundle config23402 = new Bundle();
+        Bundle config23410 = new Bundle();
+        Bundle config23411 = new Bundle();
         Bundle config246081 = new Bundle();
         Bundle config310004 = new Bundle();
+        Bundle config310005 = new Bundle();
+        Bundle config310012 = new Bundle();
         Bundle config310028 = new Bundle();
+        Bundle config310070 = new Bundle();
+        Bundle config310090 = new Bundle();
         Bundle config310120 = new Bundle();
+        Bundle config310150 = new Bundle();
         Bundle config310160 = new Bundle();
+        Bundle config310170 = new Bundle();
+        Bundle config310180 = new Bundle();
         Bundle config310200 = new Bundle();
         Bundle config310210 = new Bundle();
         Bundle config310220 = new Bundle();
@@ -36,117 +47,221 @@ public class DefaultCarrierConfigService extends CarrierConfigService {
         Bundle config310260 = new Bundle();
         Bundle config310270 = new Bundle();
         Bundle config310300 = new Bundle();
+        Bundle config310304 = new Bundle();
         Bundle config310310 = new Bundle();
+        Bundle config310380 = new Bundle();
         Bundle config310410 = new Bundle();
         Bundle config310490 = new Bundle();
         Bundle config310530 = new Bundle();
+        Bundle config310560 = new Bundle();
         Bundle config310580 = new Bundle();
         Bundle config310590 = new Bundle();
         Bundle config310640 = new Bundle();
         Bundle config310660 = new Bundle();
+        Bundle config310680 = new Bundle();
         Bundle config310800 = new Bundle();
+        Bundle config310980 = new Bundle();
+        Bundle config311220 = new Bundle();
+        Bundle config311221 = new Bundle();
+        Bundle config311222 = new Bundle();
+        Bundle config311223 = new Bundle();
+        Bundle config311224 = new Bundle();
+        Bundle config311225 = new Bundle();
+        Bundle config311226 = new Bundle();
+        Bundle config311227 = new Bundle();
+        Bundle config311228 = new Bundle();
+        Bundle config311229 = new Bundle();
         Bundle config311390 = new Bundle();
         Bundle config311480 = new Bundle();
+        Bundle config311481 = new Bundle();
+        Bundle config311482 = new Bundle();
+        Bundle config311483 = new Bundle();
+        Bundle config311484 = new Bundle();
+        Bundle config311485 = new Bundle();
+        Bundle config311486 = new Bundle();
+        Bundle config311487 = new Bundle();
+        Bundle config311488 = new Bundle();
+        Bundle config311489 = new Bundle();
+        Bundle config311490 = new Bundle();
+        Bundle config311580 = new Bundle();
+        Bundle config311581 = new Bundle();
+        Bundle config311582 = new Bundle();
+        Bundle config311583 = new Bundle();
+        Bundle config311584 = new Bundle();
+        Bundle config311585 = new Bundle();
+        Bundle config311586 = new Bundle();
+        Bundle config311587 = new Bundle();
+        Bundle config311588 = new Bundle();
+        Bundle config311589 = new Bundle();
 
-        config00101.putBoolean(CarrierConfigManager.BOOL_SHOW_APN_SETTING_CDMA, true);
         config001001.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
+        config00101.putBoolean(CarrierConfigManager.BOOL_SHOW_APN_SETTING_CDMA, true);
         config001010.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
-
-        config20801.putString(CarrierConfigManager.STRING_VVM_DESTINATION_NUMBER, "21124");
+        config001010.putBoolean(CarrierConfigManager.BOOL_SHOW_APN_SETTING_CDMA, true);
+        config20404.putBoolean(CarrierConfigManager.BOOL_DISABLE_CDMA_ACTIVATION_CODE, true);
         config20801.putInt(CarrierConfigManager.INT_VVM_PORT_NUMBER, 20481);
-        config20801.putString(CarrierConfigManager.STRING_VVM_TYPE,
-                CarrierConfigManager.VVM_TYPE_OMTP);
-
-        config20802.putString(CarrierConfigManager.STRING_VVM_DESTINATION_NUMBER, "21124");
+        config20801.putString(CarrierConfigManager.STRING_VVM_DESTINATION_NUMBER, "21124");
+        config20801.putString(CarrierConfigManager.STRING_VVM_TYPE, CarrierConfigManager.VVM_TYPE_OMTP);
         config20802.putInt(CarrierConfigManager.INT_VVM_PORT_NUMBER, 20481);
-        config20802.putString(CarrierConfigManager.STRING_VVM_TYPE,
-                CarrierConfigManager.VVM_TYPE_OMTP);
-
+        config20802.putString(CarrierConfigManager.STRING_VVM_DESTINATION_NUMBER, "21124");
+        config20802.putString(CarrierConfigManager.STRING_VVM_TYPE, CarrierConfigManager.VVM_TYPE_OMTP);
+        config23402.putBoolean(CarrierConfigManager.BOOL_PREFER_2G, false);
+        config23410.putBoolean(CarrierConfigManager.BOOL_PREFER_2G, false);
+        config23411.putBoolean(CarrierConfigManager.BOOL_PREFER_2G, false);
         config246081.putBoolean(CarrierConfigManager.BOOL_SHOW_APN_SETTING_CDMA, true);
-
+        config310004.putBoolean(CarrierConfigManager.BOOL_APN_EXPAND, false);
+        config310004.putBoolean(CarrierConfigManager.BOOL_OPERATOR_SELECTION_EXPAND, true);
+        config310004.putBoolean(CarrierConfigManager.BOOL_PREFER_2G, false);
+        config310004.putBoolean(CarrierConfigManager.BOOL_SUPPORT_SWAP_AFTER_MERGE, false);
+        config310004.putBoolean(CarrierConfigManager.BOOL_VOICEMAIL_NOTIFICATION_PERSISTENT, true);
         config310004.putInt(CarrierConfigManager.INT_VOLTE_REPLACEMENT_RAT, 6);
-
+        config310005.putBoolean(CarrierConfigManager.BOOL_APN_EXPAND, false);
+        config310005.putBoolean(CarrierConfigManager.BOOL_OPERATOR_SELECTION_EXPAND, true);
+        config310005.putBoolean(CarrierConfigManager.BOOL_PREFER_2G, false);
+        config310012.putBoolean(CarrierConfigManager.BOOL_APN_EXPAND, false);
+        config310012.putBoolean(CarrierConfigManager.BOOL_OPERATOR_SELECTION_EXPAND, true);
+        config310012.putBoolean(CarrierConfigManager.BOOL_PREFER_2G, false);
         config310028.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310028.putBoolean(CarrierConfigManager.BOOL_SHOW_APN_SETTING_CDMA, true);
         config310028.putInt(CarrierConfigManager.INT_VOLTE_REPLACEMENT_RAT, 6);
-
+        config310120.putBoolean(CarrierConfigManager.BOOL_APN_EXPAND, false);
+        config310120.putBoolean(CarrierConfigManager.BOOL_CARRIER_SETTINGS_ENABLE, true);
+        config310120.putBoolean(CarrierConfigManager.BOOL_DTMF_TYPE_ENABLED, true);
+        config310120.putBoolean(CarrierConfigManager.BOOL_SHOW_CDMA, true);
+        config310120.putBoolean(CarrierConfigManager.BOOL_SUPPORT_SWAP_AFTER_MERGE, false);
+        config310120.putBoolean(CarrierConfigManager.BOOL_USE_HFA_FOR_PROVISIONING, true);
+        config310120.putBoolean(CarrierConfigManager.BOOL_VOICEMAIL_NOTIFICATION_PERSISTENT, true);
         config310120.putInt(CarrierConfigManager.INT_VOLTE_REPLACEMENT_RAT, 6);
-
         config310160.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310160.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
-
         config310200.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310200.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
-
         config310210.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310210.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
-
         config310220.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310220.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
-
         config310230.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310230.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
-
         config310240.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310240.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
-
         config310250.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310250.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
-
         config310260.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310260.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
         config310260.putInt(CarrierConfigManager.INT_VOLTE_REPLACEMENT_RAT, 3);
-
         config310270.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310270.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
-
         config310300.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310300.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
-
+        config310304.putBoolean(CarrierConfigManager.BOOL_DISABLE_CDMA_ACTIVATION_CODE, true);
         config310310.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310310.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
-
+        config310410.putBoolean(CarrierConfigManager.BOOL_SUPPORT_PAUSE_IMS_VIDEO_CALLS, false);
         config310410.putInt(CarrierConfigManager.INT_VOLTE_REPLACEMENT_RAT, 3);
-
         config310490.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310490.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
-
         config310530.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310530.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
-
         config310580.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310580.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
-
         config310590.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310590.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
-
         config310640.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310640.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
-
         config310660.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310660.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
-
         config310800.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310800.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
-
+        config311220.putBoolean(CarrierConfigManager.BOOL_DTMF_TYPE_ENABLED, true);
+        config311220.putBoolean(CarrierConfigManager.BOOL_SHOW_CDMA, true);
+        config311220.putBoolean(CarrierConfigManager.BOOL_USE_OTASP_FOR_PROVISIONING, true);
+        config311221.putBoolean(CarrierConfigManager.BOOL_SHOW_CDMA, true);
+        config311222.putBoolean(CarrierConfigManager.BOOL_SHOW_CDMA, true);
+        config311223.putBoolean(CarrierConfigManager.BOOL_SHOW_CDMA, true);
+        config311224.putBoolean(CarrierConfigManager.BOOL_SHOW_CDMA, true);
+        config311225.putBoolean(CarrierConfigManager.BOOL_SHOW_CDMA, true);
+        config311226.putBoolean(CarrierConfigManager.BOOL_SHOW_CDMA, true);
+        config311227.putBoolean(CarrierConfigManager.BOOL_SHOW_CDMA, true);
+        config311228.putBoolean(CarrierConfigManager.BOOL_SHOW_CDMA, true);
+        config311229.putBoolean(CarrierConfigManager.BOOL_SHOW_CDMA, true);
         config311390.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
+        config311390.putBoolean(CarrierConfigManager.BOOL_DTMF_TYPE_ENABLED, true);
         config311390.putBoolean(CarrierConfigManager.BOOL_SHOW_APN_SETTING_CDMA, true);
         config311390.putInt(CarrierConfigManager.INT_VOLTE_REPLACEMENT_RAT, 6);
-
+        config311480.putBoolean(CarrierConfigManager.BOOL_APN_EXPAND, false);
         config311480.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config311480.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_PROVISIONED, true);
+        config311480.putBoolean(CarrierConfigManager.BOOL_DISABLE_CDMA_ACTIVATION_CODE, true);
+        config311480.putBoolean(CarrierConfigManager.BOOL_DTMF_TYPE_ENABLED, true);
+        config311480.putBoolean(CarrierConfigManager.BOOL_OPERATOR_SELECTION_EXPAND, true);
+        config311480.putBoolean(CarrierConfigManager.BOOL_PREFER_2G, false);
+        config311480.putBoolean(CarrierConfigManager.BOOL_SUPPORT_PAUSE_IMS_VIDEO_CALLS, true);
+        config311480.putBoolean(CarrierConfigManager.BOOL_SUPPORT_SWAP_AFTER_MERGE, false);
+        config311480.putBoolean(CarrierConfigManager.BOOL_VOICEMAIL_NOTIFICATION_PERSISTENT, true);
         config311480.putInt(CarrierConfigManager.INT_VOLTE_REPLACEMENT_RAT, 6);
+        config311481.putBoolean(CarrierConfigManager.BOOL_APN_EXPAND, false);
+        config311481.putBoolean(CarrierConfigManager.BOOL_OPERATOR_SELECTION_EXPAND, true);
+        config311481.putBoolean(CarrierConfigManager.BOOL_PREFER_2G, false);
+        config311482.putBoolean(CarrierConfigManager.BOOL_APN_EXPAND, false);
+        config311482.putBoolean(CarrierConfigManager.BOOL_OPERATOR_SELECTION_EXPAND, true);
+        config311482.putBoolean(CarrierConfigManager.BOOL_PREFER_2G, false);
+        config311483.putBoolean(CarrierConfigManager.BOOL_APN_EXPAND, false);
+        config311483.putBoolean(CarrierConfigManager.BOOL_OPERATOR_SELECTION_EXPAND, true);
+        config311483.putBoolean(CarrierConfigManager.BOOL_PREFER_2G, false);
+        config311484.putBoolean(CarrierConfigManager.BOOL_APN_EXPAND, false);
+        config311484.putBoolean(CarrierConfigManager.BOOL_OPERATOR_SELECTION_EXPAND, true);
+        config311484.putBoolean(CarrierConfigManager.BOOL_PREFER_2G, false);
+        config311485.putBoolean(CarrierConfigManager.BOOL_APN_EXPAND, false);
+        config311485.putBoolean(CarrierConfigManager.BOOL_OPERATOR_SELECTION_EXPAND, true);
+        config311485.putBoolean(CarrierConfigManager.BOOL_PREFER_2G, false);
+        config311486.putBoolean(CarrierConfigManager.BOOL_APN_EXPAND, false);
+        config311486.putBoolean(CarrierConfigManager.BOOL_OPERATOR_SELECTION_EXPAND, true);
+        config311486.putBoolean(CarrierConfigManager.BOOL_PREFER_2G, false);
+        config311487.putBoolean(CarrierConfigManager.BOOL_APN_EXPAND, false);
+        config311487.putBoolean(CarrierConfigManager.BOOL_OPERATOR_SELECTION_EXPAND, true);
+        config311487.putBoolean(CarrierConfigManager.BOOL_PREFER_2G, false);
+        config311488.putBoolean(CarrierConfigManager.BOOL_APN_EXPAND, false);
+        config311488.putBoolean(CarrierConfigManager.BOOL_OPERATOR_SELECTION_EXPAND, true);
+        config311488.putBoolean(CarrierConfigManager.BOOL_PREFER_2G, false);
+        config311489.putBoolean(CarrierConfigManager.BOOL_APN_EXPAND, false);
+        config311489.putBoolean(CarrierConfigManager.BOOL_OPERATOR_SELECTION_EXPAND, true);
+        config311489.putBoolean(CarrierConfigManager.BOOL_PREFER_2G, false);
+        config311490.putBoolean(CarrierConfigManager.BOOL_DTMF_TYPE_ENABLED, true);
+        config311490.putBoolean(CarrierConfigManager.BOOL_VOICEMAIL_NOTIFICATION_PERSISTENT, true);
+        config311580.putBoolean(CarrierConfigManager.BOOL_DTMF_TYPE_ENABLED, true);
+        config311580.putBoolean(CarrierConfigManager.BOOL_SHOW_CDMA, true);
+        config311580.putBoolean(CarrierConfigManager.BOOL_USE_OTASP_FOR_PROVISIONING, true);
+        config311581.putBoolean(CarrierConfigManager.BOOL_SHOW_CDMA, true);
+        config311582.putBoolean(CarrierConfigManager.BOOL_SHOW_CDMA, true);
+        config311583.putBoolean(CarrierConfigManager.BOOL_SHOW_CDMA, true);
+        config311584.putBoolean(CarrierConfigManager.BOOL_SHOW_CDMA, true);
+        config311585.putBoolean(CarrierConfigManager.BOOL_SHOW_CDMA, true);
+        config311586.putBoolean(CarrierConfigManager.BOOL_SHOW_CDMA, true);
+        config311587.putBoolean(CarrierConfigManager.BOOL_SHOW_CDMA, true);
+        config311588.putBoolean(CarrierConfigManager.BOOL_SHOW_CDMA, true);
+        config311589.putBoolean(CarrierConfigManager.BOOL_SHOW_CDMA, true);
 
-        sCarrierOverlays.put("00101", config00101);
         sCarrierOverlays.put("001001", config001001);
+        sCarrierOverlays.put("00101", config00101);
         sCarrierOverlays.put("001010", config001010);
+        sCarrierOverlays.put("20404", config20404);
         sCarrierOverlays.put("20801", config20801);
         sCarrierOverlays.put("20802", config20802);
+        sCarrierOverlays.put("23402", config23402);
+        sCarrierOverlays.put("23410", config23410);
+        sCarrierOverlays.put("23411", config23411);
         sCarrierOverlays.put("246081", config246081);
         sCarrierOverlays.put("310004", config310004);
+        sCarrierOverlays.put("310005", config310005);
+        sCarrierOverlays.put("310012", config310012);
         sCarrierOverlays.put("310028", config310028);
+        sCarrierOverlays.put("310070", config310070);
+        sCarrierOverlays.put("310090", config310090);
         sCarrierOverlays.put("310120", config310120);
+        sCarrierOverlays.put("310150", config310150);
         sCarrierOverlays.put("310160", config310160);
+        sCarrierOverlays.put("310170", config310170);
+        sCarrierOverlays.put("310180", config310180);
         sCarrierOverlays.put("310200", config310200);
         sCarrierOverlays.put("310210", config310210);
         sCarrierOverlays.put("310220", config310220);
@@ -156,17 +271,52 @@ public class DefaultCarrierConfigService extends CarrierConfigService {
         sCarrierOverlays.put("310260", config310260);
         sCarrierOverlays.put("310270", config310270);
         sCarrierOverlays.put("310300", config310300);
+        sCarrierOverlays.put("310304", config310304);
         sCarrierOverlays.put("310310", config310310);
+        sCarrierOverlays.put("310380", config310380);
         sCarrierOverlays.put("310410", config310410);
         sCarrierOverlays.put("310490", config310490);
         sCarrierOverlays.put("310530", config310530);
+        sCarrierOverlays.put("310560", config310560);
         sCarrierOverlays.put("310580", config310580);
         sCarrierOverlays.put("310590", config310590);
         sCarrierOverlays.put("310640", config310640);
         sCarrierOverlays.put("310660", config310660);
+        sCarrierOverlays.put("310680", config310680);
         sCarrierOverlays.put("310800", config310800);
+        sCarrierOverlays.put("310980", config310980);
+        sCarrierOverlays.put("311220", config311220);
+        sCarrierOverlays.put("311221", config311221);
+        sCarrierOverlays.put("311222", config311222);
+        sCarrierOverlays.put("311223", config311223);
+        sCarrierOverlays.put("311224", config311224);
+        sCarrierOverlays.put("311225", config311225);
+        sCarrierOverlays.put("311226", config311226);
+        sCarrierOverlays.put("311227", config311227);
+        sCarrierOverlays.put("311228", config311228);
+        sCarrierOverlays.put("311229", config311229);
         sCarrierOverlays.put("311390", config311390);
         sCarrierOverlays.put("311480", config311480);
+        sCarrierOverlays.put("311481", config311481);
+        sCarrierOverlays.put("311482", config311482);
+        sCarrierOverlays.put("311483", config311483);
+        sCarrierOverlays.put("311484", config311484);
+        sCarrierOverlays.put("311485", config311485);
+        sCarrierOverlays.put("311486", config311486);
+        sCarrierOverlays.put("311487", config311487);
+        sCarrierOverlays.put("311488", config311488);
+        sCarrierOverlays.put("311489", config311489);
+        sCarrierOverlays.put("311490", config311490);
+        sCarrierOverlays.put("311580", config311580);
+        sCarrierOverlays.put("311581", config311581);
+        sCarrierOverlays.put("311582", config311582);
+        sCarrierOverlays.put("311583", config311583);
+        sCarrierOverlays.put("311584", config311584);
+        sCarrierOverlays.put("311585", config311585);
+        sCarrierOverlays.put("311586", config311586);
+        sCarrierOverlays.put("311587", config311587);
+        sCarrierOverlays.put("311588", config311588);
+        sCarrierOverlays.put("311589", config311589);
     }
 
 
