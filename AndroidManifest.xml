@@ -6,7 +6,7 @@
 
     <application android:allowBackup="false">
         <service android:name=".DefaultCarrierConfigService"
-                 android:permission="android.permission.BIND_CARRIER_CONFIG_SERVICE">
+                 android:permission="android.permission.BIND_CARRIER_SERVICES">
             <intent-filter>
                 <action android:name="android.service.carrier.CarrierConfigService" />
             </intent-filter>
