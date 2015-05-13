@@ -26,6 +26,8 @@ public class DefaultCarrierConfigService extends CarrierConfigService {
         PersistableBundle config23402 = new PersistableBundle();
         PersistableBundle config23410 = new PersistableBundle();
         PersistableBundle config23411 = new PersistableBundle();
+        PersistableBundle config23433 = new PersistableBundle();
+        PersistableBundle config23434 = new PersistableBundle();
         PersistableBundle config246081 = new PersistableBundle();
         PersistableBundle config310004 = new PersistableBundle();
         PersistableBundle config310005 = new PersistableBundle();
@@ -101,13 +103,23 @@ public class DefaultCarrierConfigService extends CarrierConfigService {
         config20404.putBoolean(CarrierConfigManager.BOOL_DISABLE_CDMA_ACTIVATION_CODE, true);
         config20801.putInt(CarrierConfigManager.INT_VVM_PORT_NUMBER, 20481);
         config20801.putString(CarrierConfigManager.STRING_VVM_DESTINATION_NUMBER, "21124");
-        config20801.putString(CarrierConfigManager.STRING_VVM_TYPE, CarrierConfigManager.VVM_TYPE_OMTP);
+        config20801.putString(CarrierConfigManager.STRING_VVM_TYPE,
+                CarrierConfigManager.VVM_TYPE_OMTP);
         config20802.putInt(CarrierConfigManager.INT_VVM_PORT_NUMBER, 20481);
         config20802.putString(CarrierConfigManager.STRING_VVM_DESTINATION_NUMBER, "21124");
-        config20802.putString(CarrierConfigManager.STRING_VVM_TYPE, CarrierConfigManager.VVM_TYPE_OMTP);
+        config20802.putString(CarrierConfigManager.STRING_VVM_TYPE,
+                CarrierConfigManager.VVM_TYPE_OMTP);
         config23402.putBoolean(CarrierConfigManager.BOOL_PREFER_2G, false);
         config23410.putBoolean(CarrierConfigManager.BOOL_PREFER_2G, false);
         config23411.putBoolean(CarrierConfigManager.BOOL_PREFER_2G, false);
+        config23433.putInt(CarrierConfigManager.INT_VVM_PORT_NUMBER, 20481);
+        config23433.putString(CarrierConfigManager.STRING_VVM_DESTINATION_NUMBER, "887");
+        config23433.putString(CarrierConfigManager.STRING_VVM_TYPE,
+                CarrierConfigManager.VVM_TYPE_OMTP);
+        config23434.putInt(CarrierConfigManager.INT_VVM_PORT_NUMBER, 20481);
+        config23434.putString(CarrierConfigManager.STRING_VVM_DESTINATION_NUMBER, "887");
+        config23434.putString(CarrierConfigManager.STRING_VVM_TYPE,
+                CarrierConfigManager.VVM_TYPE_OMTP);
         config246081.putBoolean(CarrierConfigManager.BOOL_SHOW_APN_SETTING_CDMA, true);
         config310004.putBoolean(CarrierConfigManager.BOOL_APN_EXPAND, false);
         config310004.putBoolean(CarrierConfigManager.BOOL_OPERATOR_SELECTION_EXPAND, true);
@@ -250,6 +262,8 @@ public class DefaultCarrierConfigService extends CarrierConfigService {
         sCarrierOverlays.put("23402", config23402);
         sCarrierOverlays.put("23410", config23410);
         sCarrierOverlays.put("23411", config23411);
+        sCarrierOverlays.put("23433", config23433);
+        sCarrierOverlays.put("23434", config23434);
         sCarrierOverlays.put("246081", config246081);
         sCarrierOverlays.put("310004", config310004);
         sCarrierOverlays.put("310005", config310005);
