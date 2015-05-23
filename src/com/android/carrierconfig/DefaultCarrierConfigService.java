@@ -4,6 +4,7 @@ import android.os.PersistableBundle;
 import android.service.carrier.CarrierConfigService;
 import android.service.carrier.CarrierIdentifier;
 import android.telephony.CarrierConfigManager;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import java.util.HashMap;
@@ -104,22 +105,22 @@ public class DefaultCarrierConfigService extends CarrierConfigService {
         config20801.putInt(CarrierConfigManager.INT_VVM_PORT_NUMBER, 20481);
         config20801.putString(CarrierConfigManager.STRING_VVM_DESTINATION_NUMBER, "21124");
         config20801.putString(CarrierConfigManager.STRING_VVM_TYPE,
-                CarrierConfigManager.VVM_TYPE_OMTP);
+                TelephonyManager.VVM_TYPE_OMTP);
         config20802.putInt(CarrierConfigManager.INT_VVM_PORT_NUMBER, 20481);
         config20802.putString(CarrierConfigManager.STRING_VVM_DESTINATION_NUMBER, "21124");
         config20802.putString(CarrierConfigManager.STRING_VVM_TYPE,
-                CarrierConfigManager.VVM_TYPE_OMTP);
+                TelephonyManager.VVM_TYPE_OMTP);
         config23402.putBoolean(CarrierConfigManager.BOOL_PREFER_2G, false);
         config23410.putBoolean(CarrierConfigManager.BOOL_PREFER_2G, false);
         config23411.putBoolean(CarrierConfigManager.BOOL_PREFER_2G, false);
         config23433.putInt(CarrierConfigManager.INT_VVM_PORT_NUMBER, 20481);
         config23433.putString(CarrierConfigManager.STRING_VVM_DESTINATION_NUMBER, "887");
         config23433.putString(CarrierConfigManager.STRING_VVM_TYPE,
-                CarrierConfigManager.VVM_TYPE_OMTP);
+                TelephonyManager.VVM_TYPE_OMTP);
         config23434.putInt(CarrierConfigManager.INT_VVM_PORT_NUMBER, 20481);
         config23434.putString(CarrierConfigManager.STRING_VVM_DESTINATION_NUMBER, "887");
         config23434.putString(CarrierConfigManager.STRING_VVM_TYPE,
-                CarrierConfigManager.VVM_TYPE_OMTP);
+                TelephonyManager.VVM_TYPE_OMTP);
         config246081.putBoolean(CarrierConfigManager.BOOL_SHOW_APN_SETTING_CDMA, true);
         config310004.putBoolean(CarrierConfigManager.BOOL_APN_EXPAND, false);
         config310004.putBoolean(CarrierConfigManager.BOOL_OPERATOR_SELECTION_EXPAND, true);
@@ -146,6 +147,10 @@ public class DefaultCarrierConfigService extends CarrierConfigService {
         config310120.putInt(CarrierConfigManager.INT_VOLTE_REPLACEMENT_RAT, 6);
         config310160.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310160.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
+        config310160.putInt(CarrierConfigManager.INT_VVM_PORT_NUMBER, 1808);
+        config310160.putString(CarrierConfigManager.STRING_VVM_DESTINATION_NUMBER, "122");
+        config310160.putString(CarrierConfigManager.STRING_VVM_TYPE,
+                TelephonyManager.VVM_TYPE_CVVM);
         config310200.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310200.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
         config310210.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
@@ -161,6 +166,10 @@ public class DefaultCarrierConfigService extends CarrierConfigService {
         config310260.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310260.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
         config310260.putInt(CarrierConfigManager.INT_VOLTE_REPLACEMENT_RAT, 3);
+        config310260.putInt(CarrierConfigManager.INT_VVM_PORT_NUMBER, 1808);
+        config310260.putString(CarrierConfigManager.STRING_VVM_DESTINATION_NUMBER, "122");
+        config310260.putString(CarrierConfigManager.STRING_VVM_TYPE,
+                TelephonyManager.VVM_TYPE_CVVM);
         config310270.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310270.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
         config310300.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
@@ -172,6 +181,10 @@ public class DefaultCarrierConfigService extends CarrierConfigService {
         config310410.putInt(CarrierConfigManager.INT_VOLTE_REPLACEMENT_RAT, 3);
         config310490.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310490.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
+        config310490.putInt(CarrierConfigManager.INT_VVM_PORT_NUMBER, 1808);
+        config310490.putString(CarrierConfigManager.STRING_VVM_DESTINATION_NUMBER, "122");
+        config310490.putString(CarrierConfigManager.STRING_VVM_TYPE,
+                TelephonyManager.VVM_TYPE_CVVM);
         config310530.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310530.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
         config310580.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
