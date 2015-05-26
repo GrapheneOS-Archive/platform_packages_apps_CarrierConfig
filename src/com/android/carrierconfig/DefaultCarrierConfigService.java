@@ -1,7 +1,7 @@
 package com.android.carrierconfig;
 
 import android.os.PersistableBundle;
-import android.service.carrier.CarrierConfigService;
+import android.service.carrier.CarrierService;
 import android.service.carrier.CarrierIdentifier;
 import android.telephony.CarrierConfigManager;
 import android.telephony.TelephonyManager;
@@ -9,7 +9,7 @@ import android.util.Log;
 
 import java.util.HashMap;
 
-public class DefaultCarrierConfigService extends CarrierConfigService {
+public class DefaultCarrierConfigService extends CarrierService {
 
     private static final String TAG = "DefaultCarrierConfigService";
 
