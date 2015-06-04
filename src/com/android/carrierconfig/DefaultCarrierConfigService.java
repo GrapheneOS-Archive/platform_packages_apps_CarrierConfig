@@ -103,11 +103,11 @@ public class DefaultCarrierConfigService extends CarrierService {
         config001010.putBoolean(CarrierConfigManager.BOOL_SHOW_APN_SETTING_CDMA, true);
         config20404.putBoolean(CarrierConfigManager.BOOL_DISABLE_CDMA_ACTIVATION_CODE, true);
         config20801.putInt(CarrierConfigManager.INT_VVM_PORT_NUMBER, 20481);
-        config20801.putString(CarrierConfigManager.STRING_VVM_DESTINATION_NUMBER, "21124");
+        config20801.putString(CarrierConfigManager.STRING_VVM_DESTINATION_NUMBER, "21101");
         config20801.putString(CarrierConfigManager.STRING_VVM_TYPE,
                 TelephonyManager.VVM_TYPE_OMTP);
         config20802.putInt(CarrierConfigManager.INT_VVM_PORT_NUMBER, 20481);
-        config20802.putString(CarrierConfigManager.STRING_VVM_DESTINATION_NUMBER, "21124");
+        config20802.putString(CarrierConfigManager.STRING_VVM_DESTINATION_NUMBER, "21101");
         config20802.putString(CarrierConfigManager.STRING_VVM_TYPE,
                 TelephonyManager.VVM_TYPE_OMTP);
         config23402.putBoolean(CarrierConfigManager.BOOL_PREFER_2G, false);
@@ -151,6 +151,8 @@ public class DefaultCarrierConfigService extends CarrierService {
         config310160.putString(CarrierConfigManager.STRING_VVM_DESTINATION_NUMBER, "122");
         config310160.putString(CarrierConfigManager.STRING_VVM_TYPE,
                 TelephonyManager.VVM_TYPE_CVVM);
+        config310160.putString(CarrierConfigManager.STRING_CARRIER_VVM_PACKAGE_NAME,
+                "com.tmobile.vvm.application");
         config310200.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310200.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
         config310210.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
@@ -170,6 +172,8 @@ public class DefaultCarrierConfigService extends CarrierService {
         config310260.putString(CarrierConfigManager.STRING_VVM_DESTINATION_NUMBER, "122");
         config310260.putString(CarrierConfigManager.STRING_VVM_TYPE,
                 TelephonyManager.VVM_TYPE_CVVM);
+        config310260.putString(CarrierConfigManager.STRING_CARRIER_VVM_PACKAGE_NAME,
+                "com.tmobile.vvm.application");
         config310270.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310270.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
         config310300.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
@@ -185,6 +189,8 @@ public class DefaultCarrierConfigService extends CarrierService {
         config310490.putString(CarrierConfigManager.STRING_VVM_DESTINATION_NUMBER, "122");
         config310490.putString(CarrierConfigManager.STRING_VVM_TYPE,
                 TelephonyManager.VVM_TYPE_CVVM);
+        config310490.putString(CarrierConfigManager.STRING_CARRIER_VVM_PACKAGE_NAME,
+                "com.tmobile.vvm.application");
         config310530.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
         config310530.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_TTY_SUPPORTED, false);
         config310580.putBoolean(CarrierConfigManager.BOOL_CARRIER_VOLTE_AVAILABLE, true);
