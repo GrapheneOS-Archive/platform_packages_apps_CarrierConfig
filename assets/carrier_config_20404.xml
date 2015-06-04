@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<carrier_config_list>
+<carrier_config>
+<boolean name="disable_cdma_activation_code_bool" value="true" />
+<boolean name="ci_action_on_sys_update_bool" value="true" />
+<string name="ci_action_on_sys_update_extra_string">ServerID</string>
+<string name="ci_action_on_sys_update_intent_string">com.android.omadm.service.CONFIGURATION_UPDATE</string>
+<int name="maxImageHeight" value="1944" />
+<string name="ci_action_on_sys_update_extra_val_string">com.vzwdmserver</string>
+<int name="maxMessageSize" value="1048576" />
+<int name="maxImageWidth" value="2592" />
+</carrier_config>
+</carrier_config_list>

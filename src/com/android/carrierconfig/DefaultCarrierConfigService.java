@@ -1,1512 +1,188 @@
 package com.android.carrierconfig;
 
+import android.content.Context;
+import android.os.Build;
 import android.os.PersistableBundle;
-import android.service.carrier.CarrierService;
 import android.service.carrier.CarrierIdentifier;
+import android.service.carrier.CarrierService;
 import android.telephony.CarrierConfigManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlPullParserFactory;
+
+
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 
+import com.android.internal.util.FastXmlSerializer;
+
+/**
+ * Provides network overrides for carrier configuration.
+ *
+ * The configuration available through CarrierConfigManager is a combination of default values,
+ * default network overrides, and carrier overrides. The default network overrides are provided by
+ * this service. For a given network, we look for a matching XML file in our assets folder, and
+ * return the PersistableBundle from that file. Assets are preferred over Resources because resource
+ * overlays only support using MCC+MNC and that doesn't work with MVNOs. The only resource file used
+ * is vendor.xml, to provide vendor-specific overrides.
+ */
 public class DefaultCarrierConfigService extends CarrierService {
 
     private static final String TAG = "DefaultCarrierConfigService";
-
-    private static final HashMap<String, PersistableBundle> sCarrierOverlays;
-
-    static {
-        sCarrierOverlays = new HashMap<>();
-
-        PersistableBundle config001001 = new PersistableBundle();
-        PersistableBundle config00101 = new PersistableBundle();
-        PersistableBundle config001010 = new PersistableBundle();
-        PersistableBundle config20404 = new PersistableBundle();
-        PersistableBundle config20801 = new PersistableBundle();
-        PersistableBundle config20802 = new PersistableBundle();
-        PersistableBundle config20810 = new PersistableBundle();
-        PersistableBundle config20815 = new PersistableBundle();
-        PersistableBundle config20820 = new PersistableBundle();
-        PersistableBundle config20826 = new PersistableBundle();
-        PersistableBundle config21401 = new PersistableBundle();
-        PersistableBundle config21403 = new PersistableBundle();
-        PersistableBundle config21407 = new PersistableBundle();
-        PersistableBundle config21805 = new PersistableBundle();
-        PersistableBundle config22201 = new PersistableBundle();
-        PersistableBundle config22208 = new PersistableBundle();
-        PersistableBundle config23402 = new PersistableBundle();
-        PersistableBundle config23410 = new PersistableBundle();
-        PersistableBundle config23411 = new PersistableBundle();
-        PersistableBundle config23415 = new PersistableBundle();
-        PersistableBundle config23433 = new PersistableBundle();
-        PersistableBundle config23434 = new PersistableBundle();
-        PersistableBundle config23802 = new PersistableBundle();
-        PersistableBundle config24001 = new PersistableBundle();
-        PersistableBundle config24004 = new PersistableBundle();
-        PersistableBundle config24008 = new PersistableBundle();
-        PersistableBundle config24024 = new PersistableBundle();
-        PersistableBundle config24201 = new PersistableBundle();
-        PersistableBundle config24202 = new PersistableBundle();
-        PersistableBundle config246081 = new PersistableBundle();
-        PersistableBundle config26207 = new PersistableBundle();
-        PersistableBundle config27402 = new PersistableBundle();
-        PersistableBundle config27403 = new PersistableBundle();
-        PersistableBundle config28601 = new PersistableBundle();
-        PersistableBundle config28603 = new PersistableBundle();
-        PersistableBundle config29401 = new PersistableBundle();
-        PersistableBundle config29402 = new PersistableBundle();
-        PersistableBundle config29403 = new PersistableBundle();
-        PersistableBundle config302220 = new PersistableBundle();
-        PersistableBundle config302221 = new PersistableBundle();
-        PersistableBundle config302270 = new PersistableBundle();
-        PersistableBundle config302290 = new PersistableBundle();
-        PersistableBundle config302320 = new PersistableBundle();
-        PersistableBundle config302370 = new PersistableBundle();
-        PersistableBundle config302490 = new PersistableBundle();
-        PersistableBundle config302500 = new PersistableBundle();
-        PersistableBundle config302510 = new PersistableBundle();
-        PersistableBundle config302520 = new PersistableBundle();
-        PersistableBundle config302610 = new PersistableBundle();
-        PersistableBundle config302660 = new PersistableBundle();
-        PersistableBundle config302720 = new PersistableBundle();
-        PersistableBundle config302780 = new PersistableBundle();
-        PersistableBundle config310004 = new PersistableBundle();
-        PersistableBundle config310005 = new PersistableBundle();
-        PersistableBundle config310010 = new PersistableBundle();
-        PersistableBundle config310012 = new PersistableBundle();
-        PersistableBundle config310026 = new PersistableBundle();
-        PersistableBundle config310028 = new PersistableBundle();
-        PersistableBundle config310040 = new PersistableBundle();
-        PersistableBundle config310070 = new PersistableBundle();
-        PersistableBundle config310090 = new PersistableBundle();
-        PersistableBundle config310120 = new PersistableBundle();
-        PersistableBundle config310130 = new PersistableBundle();
-        PersistableBundle config310150 = new PersistableBundle();
-        PersistableBundle config310160 = new PersistableBundle();
-        PersistableBundle config310170 = new PersistableBundle();
-        PersistableBundle config310180 = new PersistableBundle();
-        PersistableBundle config310200 = new PersistableBundle();
-        PersistableBundle config310210 = new PersistableBundle();
-        PersistableBundle config310220 = new PersistableBundle();
-        PersistableBundle config310230 = new PersistableBundle();
-        PersistableBundle config310240 = new PersistableBundle();
-        PersistableBundle config310250 = new PersistableBundle();
-        PersistableBundle config310260 = new PersistableBundle();
-        PersistableBundle config310270 = new PersistableBundle();
-        PersistableBundle config310300 = new PersistableBundle();
-        PersistableBundle config310304 = new PersistableBundle();
-        PersistableBundle config310310 = new PersistableBundle();
-        PersistableBundle config310360 = new PersistableBundle();
-        PersistableBundle config310380 = new PersistableBundle();
-        PersistableBundle config310410 = new PersistableBundle();
-        PersistableBundle config310420 = new PersistableBundle();
-        PersistableBundle config310450 = new PersistableBundle();
-        PersistableBundle config310490 = new PersistableBundle();
-        PersistableBundle config310530 = new PersistableBundle();
-        PersistableBundle config310560 = new PersistableBundle();
-        PersistableBundle config310580 = new PersistableBundle();
-        PersistableBundle config310590 = new PersistableBundle();
-        PersistableBundle config310600 = new PersistableBundle();
-        PersistableBundle config310640 = new PersistableBundle();
-        PersistableBundle config310660 = new PersistableBundle();
-        PersistableBundle config310680 = new PersistableBundle();
-        PersistableBundle config310750 = new PersistableBundle();
-        PersistableBundle config310770 = new PersistableBundle();
-        PersistableBundle config310800 = new PersistableBundle();
-        PersistableBundle config310920 = new PersistableBundle();
-        PersistableBundle config310980 = new PersistableBundle();
-        PersistableBundle config311012 = new PersistableBundle();
-        PersistableBundle config311070 = new PersistableBundle();
-        PersistableBundle config311100 = new PersistableBundle();
-        PersistableBundle config311180 = new PersistableBundle();
-        PersistableBundle config311220 = new PersistableBundle();
-        PersistableBundle config311221 = new PersistableBundle();
-        PersistableBundle config311222 = new PersistableBundle();
-        PersistableBundle config311223 = new PersistableBundle();
-        PersistableBundle config311224 = new PersistableBundle();
-        PersistableBundle config311225 = new PersistableBundle();
-        PersistableBundle config311226 = new PersistableBundle();
-        PersistableBundle config311227 = new PersistableBundle();
-        PersistableBundle config311228 = new PersistableBundle();
-        PersistableBundle config311229 = new PersistableBundle();
-        PersistableBundle config311230 = new PersistableBundle();
-        PersistableBundle config311340 = new PersistableBundle();
-        PersistableBundle config311370 = new PersistableBundle();
-        PersistableBundle config311390 = new PersistableBundle();
-        PersistableBundle config311410 = new PersistableBundle();
-        PersistableBundle config311430 = new PersistableBundle();
-        PersistableBundle config311440 = new PersistableBundle();
-        PersistableBundle config311480 = new PersistableBundle();
-        PersistableBundle config311481 = new PersistableBundle();
-        PersistableBundle config311482 = new PersistableBundle();
-        PersistableBundle config311483 = new PersistableBundle();
-        PersistableBundle config311484 = new PersistableBundle();
-        PersistableBundle config311485 = new PersistableBundle();
-        PersistableBundle config311486 = new PersistableBundle();
-        PersistableBundle config311487 = new PersistableBundle();
-        PersistableBundle config311488 = new PersistableBundle();
-        PersistableBundle config311489 = new PersistableBundle();
-        PersistableBundle config311490 = new PersistableBundle();
-        PersistableBundle config311580 = new PersistableBundle();
-        PersistableBundle config311581 = new PersistableBundle();
-        PersistableBundle config311582 = new PersistableBundle();
-        PersistableBundle config311583 = new PersistableBundle();
-        PersistableBundle config311584 = new PersistableBundle();
-        PersistableBundle config311585 = new PersistableBundle();
-        PersistableBundle config311586 = new PersistableBundle();
-        PersistableBundle config311587 = new PersistableBundle();
-        PersistableBundle config311588 = new PersistableBundle();
-        PersistableBundle config311589 = new PersistableBundle();
-        PersistableBundle config311590 = new PersistableBundle();
-        PersistableBundle config311870 = new PersistableBundle();
-        PersistableBundle config312160 = new PersistableBundle();
-        PersistableBundle config312530 = new PersistableBundle();
-        PersistableBundle config334020 = new PersistableBundle();
-        PersistableBundle config41805 = new PersistableBundle();
-        PersistableBundle config41820 = new PersistableBundle();
-        PersistableBundle config41830 = new PersistableBundle();
-        PersistableBundle config42004 = new PersistableBundle();
-        PersistableBundle config44010 = new PersistableBundle();
-        PersistableBundle config44020 = new PersistableBundle();
-        PersistableBundle config45000 = new PersistableBundle();
-        PersistableBundle config45002 = new PersistableBundle();
-        PersistableBundle config45005 = new PersistableBundle();
-        PersistableBundle config45006 = new PersistableBundle();
-        PersistableBundle config45008 = new PersistableBundle();
-        PersistableBundle config50501 = new PersistableBundle();
-        PersistableBundle config53005 = new PersistableBundle();
-        PersistableBundle config60400 = new PersistableBundle();
-        PersistableBundle config60402 = new PersistableBundle();
-        PersistableBundle config64710 = new PersistableBundle();
-
-        config001001.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_AVAILABLE_BOOL, true);
-        config00101.putBoolean(CarrierConfigManager.KEY_SHOW_APN_SETTING_CDMA_BOOL, true);
-        config001010.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_AVAILABLE_BOOL, true);
-        config001010.putBoolean(CarrierConfigManager.KEY_SHOW_APN_SETTING_CDMA_BOOL, true);
-        config20404.putBoolean(CarrierConfigManager.KEY_DISABLE_CDMA_ACTIVATION_CODE_BOOL, true);
-        // Following 4 configs should go in vendor.xml & they are for a specific gid (BAE0000000000000)
-        config20404.putBoolean(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_BOOL, true);
-        config20404.putString(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_INTENT_STRING,
-                "com.android.omadm.service.CONFIGURATION_UPDATE");
-        config20404.putString(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_EXTRA_STRING,
-                "ServerID");
-        config20404.putString(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_EXTRA_VAL_STRING,
-                "com.vzwdmserver");
-        config20801.putInt(CarrierConfigManager.KEY_VVM_PORT_NUMBER_INT, 20481);
-        config20801.putString(CarrierConfigManager.KEY_CARRIER_VVM_PACKAGE_NAME_STRING,
-                "com.orange.vvm");
-        config20801.putString(CarrierConfigManager.KEY_VVM_DESTINATION_NUMBER_STRING, "21101");
-        config20801.putString(CarrierConfigManager.KEY_VVM_DESTINATION_NUMBER_STRING, "21124");
-        config20801.putString(CarrierConfigManager.KEY_VVM_TYPE_STRING,
-                TelephonyManager.VVM_TYPE_OMTP);
-        config20802.putInt(CarrierConfigManager.KEY_VVM_PORT_NUMBER_INT, 20481);
-        config20802.putString(CarrierConfigManager.KEY_CARRIER_VVM_PACKAGE_NAME_STRING,
-                "com.orange.vvm");
-        config20802.putString(CarrierConfigManager.KEY_VVM_DESTINATION_NUMBER_STRING, "21101");
-        config20802.putString(CarrierConfigManager.KEY_VVM_DESTINATION_NUMBER_STRING, "21124");
-        config20802.putString(CarrierConfigManager.KEY_VVM_TYPE_STRING,
-                TelephonyManager.VVM_TYPE_OMTP);
-        config23402.putBoolean(CarrierConfigManager.KEY_PREFER_2G_BOOL, false);
-        config23410.putBoolean(CarrierConfigManager.KEY_PREFER_2G_BOOL, false);
-        config23411.putBoolean(CarrierConfigManager.KEY_PREFER_2G_BOOL, false);
-        config23433.putInt(CarrierConfigManager.KEY_VVM_PORT_NUMBER_INT, 20481);
-        config23433.putString(CarrierConfigManager.KEY_VVM_DESTINATION_NUMBER_STRING, "887");
-        config23433.putString(CarrierConfigManager.KEY_VVM_TYPE_STRING,
-                TelephonyManager.VVM_TYPE_OMTP);
-        config23434.putInt(CarrierConfigManager.KEY_VVM_PORT_NUMBER_INT, 20481);
-        config23434.putString(CarrierConfigManager.KEY_VVM_DESTINATION_NUMBER_STRING, "887");
-        config23434.putString(CarrierConfigManager.KEY_VVM_TYPE_STRING,
-                TelephonyManager.VVM_TYPE_OMTP);
-        config246081.putBoolean(CarrierConfigManager.KEY_SHOW_APN_SETTING_CDMA_BOOL, true);
-        config310004.putBoolean(CarrierConfigManager.KEY_APN_EXPAND_BOOL, false);
-        config310004.putBoolean(CarrierConfigManager.KEY_OPERATOR_SELECTION_EXPAND_BOOL, true);
-        config310004.putBoolean(CarrierConfigManager.KEY_PREFER_2G_BOOL, false);
-        config310004.putBoolean(CarrierConfigManager.KEY_SUPPORT_SWAP_AFTER_MERGE_BOOL, false);
-        config310004.putBoolean(CarrierConfigManager.KEY_VOICEMAIL_NOTIFICATION_PERSISTENT_BOOL,
-                true);
-        config310004.putInt(CarrierConfigManager.KEY_VOLTE_REPLACEMENT_RAT_INT, 6);
-        // Following 4 configs should go in vendor.xml
-        config310004.putBoolean(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_BOOL, true);
-        config310004.putString(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_INTENT_STRING,
-                "com.android.omadm.service.CONFIGURATION_UPDATE");
-        config310004.putString(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_EXTRA_STRING,
-                "ServerID");
-        config310004.putString(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_EXTRA_VAL_STRING,
-                "com.vzwdmserver");
-        config310005.putBoolean(CarrierConfigManager.KEY_APN_EXPAND_BOOL, false);
-        config310005.putBoolean(CarrierConfigManager.KEY_OPERATOR_SELECTION_EXPAND_BOOL, true);
-        config310005.putBoolean(CarrierConfigManager.KEY_PREFER_2G_BOOL, false);
-        config310012.putBoolean(CarrierConfigManager.KEY_APN_EXPAND_BOOL, false);
-        config310012.putBoolean(CarrierConfigManager.KEY_OPERATOR_SELECTION_EXPAND_BOOL, true);
-        config310012.putBoolean(CarrierConfigManager.KEY_PREFER_2G_BOOL, false);
-        config310028.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_AVAILABLE_BOOL, true);
-        config310028.putBoolean(CarrierConfigManager.KEY_SHOW_APN_SETTING_CDMA_BOOL, true);
-        config310028.putInt(CarrierConfigManager.KEY_VOLTE_REPLACEMENT_RAT_INT, 6);
-        config310120.putBoolean(CarrierConfigManager.KEY_APN_EXPAND_BOOL, false);
-        config310120.putBoolean(CarrierConfigManager.KEY_CARRIER_SETTINGS_ENABLE_BOOL, true);
-        config310120.putBoolean(CarrierConfigManager.KEY_DTMF_TYPE_ENABLED_BOOL, true);
-        config310120.putBoolean(CarrierConfigManager.KEY_SHOW_CDMA_CHOICES_BOOL, true);
-        config310120.putBoolean(CarrierConfigManager.KEY_SUPPORT_SWAP_AFTER_MERGE_BOOL, false);
-        config310120.putBoolean(CarrierConfigManager.KEY_USE_HFA_FOR_PROVISIONING_BOOL, true);
-        config310120.putBoolean(CarrierConfigManager.KEY_VOICEMAIL_NOTIFICATION_PERSISTENT_BOOL,
-                true);
-        config310120.putInt(CarrierConfigManager.KEY_VOLTE_REPLACEMENT_RAT_INT, 6);
-        config310160.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_AVAILABLE_BOOL, true);
-        config310160.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_TTY_SUPPORTED_BOOL, false);
-        config310160.putInt(CarrierConfigManager.KEY_VVM_PORT_NUMBER_INT, 1808);
-        config310160.putString(CarrierConfigManager.KEY_CARRIER_VVM_PACKAGE_NAME_STRING,
-                "com.tmobile.vvm.application");
-        config310160.putString(CarrierConfigManager.KEY_VVM_DESTINATION_NUMBER_STRING, "122");
-        config310160.putString(CarrierConfigManager.KEY_VVM_TYPE_STRING,
-                TelephonyManager.VVM_TYPE_CVVM);
-        config246081.putBoolean(CarrierConfigManager.KEY_SHOW_APN_SETTING_CDMA_BOOL, true);
-        config310200.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_AVAILABLE_BOOL, true);
-        config310200.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_TTY_SUPPORTED_BOOL, false);
-        config310210.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_AVAILABLE_BOOL, true);
-        config310210.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_TTY_SUPPORTED_BOOL, false);
-        config310220.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_AVAILABLE_BOOL, true);
-        config310220.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_TTY_SUPPORTED_BOOL, false);
-        config310230.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_AVAILABLE_BOOL, true);
-        config310230.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_TTY_SUPPORTED_BOOL, false);
-        config310240.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_AVAILABLE_BOOL, true);
-        config310240.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_TTY_SUPPORTED_BOOL, false);
-        config310250.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_AVAILABLE_BOOL, true);
-        config310250.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_TTY_SUPPORTED_BOOL, false);
-        config310260.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_AVAILABLE_BOOL, true);
-        config310260.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_TTY_SUPPORTED_BOOL, false);
-        config310260.putInt(CarrierConfigManager.KEY_VOLTE_REPLACEMENT_RAT_INT, 3);
-        config310260.putInt(CarrierConfigManager.KEY_VVM_PORT_NUMBER_INT, 1808);
-        config310260.putString(CarrierConfigManager.KEY_VVM_DESTINATION_NUMBER_STRING, "122");
-        config310260.putString(CarrierConfigManager.KEY_VVM_TYPE_STRING,
-                TelephonyManager.VVM_TYPE_CVVM);
-        config310270.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_AVAILABLE_BOOL, true);
-        config310270.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_TTY_SUPPORTED_BOOL, false);
-        config310300.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_AVAILABLE_BOOL, true);
-        config310300.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_TTY_SUPPORTED_BOOL, false);
-        config310304.putBoolean(CarrierConfigManager.KEY_DISABLE_CDMA_ACTIVATION_CODE_BOOL, true);
-        config310310.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_AVAILABLE_BOOL, true);
-        config310310.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_TTY_SUPPORTED_BOOL, false);
-        config310410.putBoolean(CarrierConfigManager.KEY_SUPPORT_PAUSE_IMS_VIDEO_CALLS_BOOL, false);
-        config310410.putInt(CarrierConfigManager.KEY_VOLTE_REPLACEMENT_RAT_INT, 3);
-        config310490.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_AVAILABLE_BOOL, true);
-        config310490.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_TTY_SUPPORTED_BOOL, false);
-        config310490.putInt(CarrierConfigManager.KEY_VVM_PORT_NUMBER_INT, 1808);
-        config310490.putString(CarrierConfigManager.KEY_CARRIER_VVM_PACKAGE_NAME_STRING,
-                "com.tmobile.vvm.application");
-        config310490.putString(CarrierConfigManager.KEY_VVM_DESTINATION_NUMBER_STRING, "122");
-        config310490.putString(CarrierConfigManager.KEY_VVM_TYPE_STRING,
-                TelephonyManager.VVM_TYPE_CVVM);
-        config310260.putString(CarrierConfigManager.KEY_CARRIER_VVM_PACKAGE_NAME_STRING,
-                "com.tmobile.vvm.application");
-        config310530.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_AVAILABLE_BOOL, true);
-        config310530.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_TTY_SUPPORTED_BOOL, false);
-        config310580.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_AVAILABLE_BOOL, true);
-        config310580.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_TTY_SUPPORTED_BOOL, false);
-        config310590.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_AVAILABLE_BOOL, true);
-        config310590.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_TTY_SUPPORTED_BOOL, false);
-        config310640.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_AVAILABLE_BOOL, true);
-        config310640.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_TTY_SUPPORTED_BOOL, false);
-        config310660.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_AVAILABLE_BOOL, true);
-        config310660.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_TTY_SUPPORTED_BOOL, false);
-        config310800.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_AVAILABLE_BOOL, true);
-        config310800.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_TTY_SUPPORTED_BOOL, false);
-        config311220.putBoolean(CarrierConfigManager.KEY_DTMF_TYPE_ENABLED_BOOL, true);
-        config311220.putBoolean(CarrierConfigManager.KEY_SHOW_CDMA_CHOICES_BOOL, true);
-        config311220.putBoolean(CarrierConfigManager.KEY_USE_OTASP_FOR_PROVISIONING_BOOL, true);
-        config311221.putBoolean(CarrierConfigManager.KEY_SHOW_CDMA_CHOICES_BOOL, true);
-        config311222.putBoolean(CarrierConfigManager.KEY_SHOW_CDMA_CHOICES_BOOL, true);
-        config311223.putBoolean(CarrierConfigManager.KEY_SHOW_CDMA_CHOICES_BOOL, true);
-        config311224.putBoolean(CarrierConfigManager.KEY_SHOW_CDMA_CHOICES_BOOL, true);
-        config311225.putBoolean(CarrierConfigManager.KEY_SHOW_CDMA_CHOICES_BOOL, true);
-        config311226.putBoolean(CarrierConfigManager.KEY_SHOW_CDMA_CHOICES_BOOL, true);
-        config311227.putBoolean(CarrierConfigManager.KEY_SHOW_CDMA_CHOICES_BOOL, true);
-        config311228.putBoolean(CarrierConfigManager.KEY_SHOW_CDMA_CHOICES_BOOL, true);
-        config311229.putBoolean(CarrierConfigManager.KEY_SHOW_CDMA_CHOICES_BOOL, true);
-        config311390.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_AVAILABLE_BOOL, true);
-        config311390.putBoolean(CarrierConfigManager.KEY_DTMF_TYPE_ENABLED_BOOL, true);
-        config311390.putBoolean(CarrierConfigManager.KEY_SHOW_APN_SETTING_CDMA_BOOL, true);
-        config311390.putInt(CarrierConfigManager.KEY_VOLTE_REPLACEMENT_RAT_INT, 6);
-        config311480.putBoolean(CarrierConfigManager.KEY_APN_EXPAND_BOOL, false);
-        config311480.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_AVAILABLE_BOOL, true);
-        config311480.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_PROVISIONED_BOOL, true);
-        config311480.putBoolean(CarrierConfigManager.KEY_DISABLE_CDMA_ACTIVATION_CODE_BOOL, true);
-        config311480.putBoolean(CarrierConfigManager.KEY_DTMF_TYPE_ENABLED_BOOL, true);
-        config311480.putBoolean(CarrierConfigManager.KEY_OPERATOR_SELECTION_EXPAND_BOOL, true);
-        config311480.putBoolean(CarrierConfigManager.KEY_PREFER_2G_BOOL, false);
-        config311480.putBoolean(CarrierConfigManager.KEY_SUPPORT_PAUSE_IMS_VIDEO_CALLS_BOOL, true);
-        config311480.putBoolean(CarrierConfigManager.KEY_SUPPORT_SWAP_AFTER_MERGE_BOOL, false);
-        config311480.putBoolean(CarrierConfigManager.KEY_VOICEMAIL_NOTIFICATION_PERSISTENT_BOOL,
-                true);
-        config311480.putInt(CarrierConfigManager.KEY_VOLTE_REPLACEMENT_RAT_INT, 6);
-        // Following 4 configs should go in vendor.xml
-        config311480.putBoolean(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_BOOL, true);
-        config311480.putString(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_INTENT_STRING,
-                "com.android.omadm.service.CONFIGURATION_UPDATE");
-        config311480.putString(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_EXTRA_STRING,
-                "ServerID");
-        config311480.putString(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_EXTRA_VAL_STRING,
-                "com.vzwdmserver");
-        config311481.putBoolean(CarrierConfigManager.KEY_APN_EXPAND_BOOL, false);
-        config311481.putBoolean(CarrierConfigManager.KEY_OPERATOR_SELECTION_EXPAND_BOOL, true);
-        config311481.putBoolean(CarrierConfigManager.KEY_PREFER_2G_BOOL, false);
-        config311482.putBoolean(CarrierConfigManager.KEY_APN_EXPAND_BOOL, false);
-        config311482.putBoolean(CarrierConfigManager.KEY_OPERATOR_SELECTION_EXPAND_BOOL, true);
-        config311482.putBoolean(CarrierConfigManager.KEY_PREFER_2G_BOOL, false);
-        config311483.putBoolean(CarrierConfigManager.KEY_APN_EXPAND_BOOL, false);
-        config311483.putBoolean(CarrierConfigManager.KEY_OPERATOR_SELECTION_EXPAND_BOOL, true);
-        config311483.putBoolean(CarrierConfigManager.KEY_PREFER_2G_BOOL, false);
-        config311484.putBoolean(CarrierConfigManager.KEY_APN_EXPAND_BOOL, false);
-        config311484.putBoolean(CarrierConfigManager.KEY_OPERATOR_SELECTION_EXPAND_BOOL, true);
-        config311484.putBoolean(CarrierConfigManager.KEY_PREFER_2G_BOOL, false);
-        config311485.putBoolean(CarrierConfigManager.KEY_APN_EXPAND_BOOL, false);
-        config311485.putBoolean(CarrierConfigManager.KEY_OPERATOR_SELECTION_EXPAND_BOOL, true);
-        config311485.putBoolean(CarrierConfigManager.KEY_PREFER_2G_BOOL, false);
-        config311486.putBoolean(CarrierConfigManager.KEY_APN_EXPAND_BOOL, false);
-        config311486.putBoolean(CarrierConfigManager.KEY_OPERATOR_SELECTION_EXPAND_BOOL, true);
-        config311486.putBoolean(CarrierConfigManager.KEY_PREFER_2G_BOOL, false);
-        config311487.putBoolean(CarrierConfigManager.KEY_APN_EXPAND_BOOL, false);
-        config311487.putBoolean(CarrierConfigManager.KEY_OPERATOR_SELECTION_EXPAND_BOOL, true);
-        config311487.putBoolean(CarrierConfigManager.KEY_PREFER_2G_BOOL, false);
-        config311488.putBoolean(CarrierConfigManager.KEY_APN_EXPAND_BOOL, false);
-        config311488.putBoolean(CarrierConfigManager.KEY_OPERATOR_SELECTION_EXPAND_BOOL, true);
-        config311488.putBoolean(CarrierConfigManager.KEY_PREFER_2G_BOOL, false);
-        config311489.putBoolean(CarrierConfigManager.KEY_APN_EXPAND_BOOL, false);
-        config311489.putBoolean(CarrierConfigManager.KEY_OPERATOR_SELECTION_EXPAND_BOOL, true);
-        config311489.putBoolean(CarrierConfigManager.KEY_PREFER_2G_BOOL, false);
-        config311490.putBoolean(CarrierConfigManager.KEY_DTMF_TYPE_ENABLED_BOOL, true);
-        config311490.putBoolean(CarrierConfigManager.KEY_VOICEMAIL_NOTIFICATION_PERSISTENT_BOOL,
-                true);
-        config311580.putBoolean(CarrierConfigManager.KEY_DTMF_TYPE_ENABLED_BOOL, true);
-        config311580.putBoolean(CarrierConfigManager.KEY_SHOW_CDMA_CHOICES_BOOL, true);
-        config311580.putBoolean(CarrierConfigManager.KEY_USE_OTASP_FOR_PROVISIONING_BOOL, true);
-        config311581.putBoolean(CarrierConfigManager.KEY_SHOW_CDMA_CHOICES_BOOL, true);
-        config311582.putBoolean(CarrierConfigManager.KEY_SHOW_CDMA_CHOICES_BOOL, true);
-        config311583.putBoolean(CarrierConfigManager.KEY_SHOW_CDMA_CHOICES_BOOL, true);
-        config311584.putBoolean(CarrierConfigManager.KEY_SHOW_CDMA_CHOICES_BOOL, true);
-        config311585.putBoolean(CarrierConfigManager.KEY_SHOW_CDMA_CHOICES_BOOL, true);
-        config311586.putBoolean(CarrierConfigManager.KEY_SHOW_CDMA_CHOICES_BOOL, true);
-        config311587.putBoolean(CarrierConfigManager.KEY_SHOW_CDMA_CHOICES_BOOL, true);
-        config311588.putBoolean(CarrierConfigManager.KEY_SHOW_CDMA_CHOICES_BOOL, true);
-        config311589.putBoolean(CarrierConfigManager.KEY_SHOW_CDMA_CHOICES_BOOL, true);
-
-        // MMS defaults
-        config20404.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config20404.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config20404.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config20801.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config20801.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config20801.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 614400);
-        config20810.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config20810.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config20810.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 614400);
-        config20815.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config20815.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config20815.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 614400);
-        config20820.putBoolean(CarrierConfigManager.KEY_MMS_SUPPORT_HTTP_CHARSET_HEADER_BOOL,
-                false);
-        config20820.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config20820.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config20820.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 614400);
-        config20826.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config20826.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config20826.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 614400);
-        config21401.putBoolean(CarrierConfigManager.KEY_MMS_GROUP_MMS_ENABLED_BOOL, false);
-        config21403.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config21403.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config21403.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config21407.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config21407.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config21407.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 512000);
-        config21805.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config21805.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config21805.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config22201.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config22201.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config22201.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config22208.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config22208.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config22208.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config23410.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 10);
-        config23415.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 10);
-        config23802.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config23802.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config23802.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 2097152);
-        config24001.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config24001.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config24001.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 614400);
-        config24004.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config24004.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config24004.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 614400);
-        config24008.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config24008.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config24008.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 614400);
-        config24024.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config24024.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config24024.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 614400);
-        config24201.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config24201.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config24201.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 2097152);
-        config24202.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config24202.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config24202.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 614400);
-        config26207.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config26207.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config26207.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 614400);
-        config27402.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config27402.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config27402.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config27403.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config27403.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config27403.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config28601.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config28601.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config28601.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 512000);
-        config28603.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config28603.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config28603.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 512000);
-        config29401.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config29401.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config29401.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 102400);
-        config29402.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config29402.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config29402.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 131072);
-        config29403.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config29403.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config29403.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 256000);
-        config302220.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config302220.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config302220.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config302220.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 10);
-        config302220.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 5);
-        config302220.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config302221.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config302221.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config302221.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config302221.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 10);
-        config302221.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 5);
-        config302221.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config302270.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config302270.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config302270.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config302270.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config302270.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 6);
-        config302270.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config302290.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config302290.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config302290.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config302320.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config302320.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config302320.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 614400);
-        config302320.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config302320.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 6);
-        config302320.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config302370.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config302370.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config302370.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config302370.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config302370.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 6);
-        config302370.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config302490.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config302490.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config302490.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config302490.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config302490.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 6);
-        config302490.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config302500.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config302500.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config302500.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 3072000);
-        config302500.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config302500.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 6);
-        config302500.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config302510.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config302510.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config302510.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 3072000);
-        config302510.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config302510.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 6);
-        config302510.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config302520.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config302520.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config302520.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 3072000);
-        config302520.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config302520.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 6);
-        config302520.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config302610.putBoolean(CarrierConfigManager.KEY_MMS_GROUP_MMS_ENABLED_BOOL, false);
-        config302610.putBoolean(CarrierConfigManager.KEY_MMS_SHOW_CELL_BROADCAST_APP_LINKS_BOOL,
-                false);
-        config302610.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config302610.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config302610.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 614400);
-        config302610.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config302610.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 8);
-        config302610.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config302610.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config302660.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config302660.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config302660.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config302660.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config302660.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 6);
-        config302660.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config302720.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config302720.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config302720.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config302720.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config302720.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 6);
-        config302720.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config302780.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config302780.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config302780.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 614400);
-        config310004.putBoolean(CarrierConfigManager.KEY_MMS_ALIAS_ENABLED_BOOL, true);
-        config310004.putBoolean(CarrierConfigManager.KEY_MMS_ALLOW_ATTACH_AUDIO_BOOL, false);
-        config310004.putBoolean(CarrierConfigManager.KEY_MMS_APPEND_TRANSACTION_ID_BOOL, true);
-        config310004.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config310004.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, true);
-        config310004.putBoolean(CarrierConfigManager.KEY_MMS_NOTIFY_WAP_MMSC_ENABLED_BOOL, true);
-        config310004.putInt(CarrierConfigManager.KEY_MMS_ALIAS_MAX_CHARS_INT, 48);
-        config310004.putInt(CarrierConfigManager.KEY_MMS_ALIAS_MIN_CHARS_INT, 2);
-        config310004.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config310004.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config310004.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1258291);
-        config310004.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config310004.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 7);
-        config310004.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config310004.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config310004.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "x-up-calling-line-id: 1##LINE1NOCOUNTRYCODE##|X-VzW-MDN: 1##LINE1NOCOUNTRYCODE##");
-        config310004.putString(CarrierConfigManager.KEY_MMS_UA_PROF_TAG_NAME_STRING, "Profile");
-        config310005.putBoolean(CarrierConfigManager.KEY_MMS_ALIAS_ENABLED_BOOL, true);
-        config310005.putBoolean(CarrierConfigManager.KEY_MMS_ALLOW_ATTACH_AUDIO_BOOL, false);
-        config310005.putBoolean(CarrierConfigManager.KEY_MMS_APPEND_TRANSACTION_ID_BOOL, true);
-        config310005.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config310005.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, true);
-        config310005.putBoolean(CarrierConfigManager.KEY_MMS_NOTIFY_WAP_MMSC_ENABLED_BOOL, true);
-        config310005.putInt(CarrierConfigManager.KEY_MMS_ALIAS_MAX_CHARS_INT, 48);
-        config310005.putInt(CarrierConfigManager.KEY_MMS_ALIAS_MIN_CHARS_INT, 2);
-        config310005.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config310005.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config310005.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1258291);
-        config310005.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config310005.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 7);
-        config310005.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config310005.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config310005.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "x-up-calling-line-id: 1##LINE1NOCOUNTRYCODE##|X-VzW-MDN: 1##LINE1NOCOUNTRYCODE##");
-        config310005.putString(CarrierConfigManager.KEY_MMS_UA_PROF_TAG_NAME_STRING, "Profile");
-        config310010.putBoolean(CarrierConfigManager.KEY_MMS_MMS_DELIVERY_REPORT_ENABLED_BOOL,
-                false);
-        config310010.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config310010.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, false);
-        config310010.putBoolean(
-                CarrierConfigManager.KEY_MMS_SEND_MULTIPART_SMS_AS_SEPARATE_MESSAGES_BOOL, true);
-        config310010.putBoolean(CarrierConfigManager.KEY_MMS_SMS_DELIVERY_REPORT_ENABLED_BOOL,
-                false);
-        config310010.putBoolean(CarrierConfigManager.KEY_MMS_SUPPORT_MMS_CONTENT_DISPOSITION_BOOL,
-                false);
-        config310010.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config310010.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config310010.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config310010.putInt(CarrierConfigManager.KEY_MMS_MESSAGE_TEXT_MAX_SIZE_INT, -1);
-        config310026.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config310026.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config310026.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config310040.putBoolean(CarrierConfigManager.KEY_MMS_MMS_ENABLED_BOOL, true);
-        config310040.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, true);
-        config310040.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 2432);
-        config310040.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 4320);
-        config310040.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config310040.putInt(CarrierConfigManager.KEY_MMS_MESSAGE_TEXT_MAX_SIZE_INT, -1);
-        config310040.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config310040.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 1);
-        config310040.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config310040.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING, "X-MDN: ##LINE1##");
-        config310070.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config310070.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config310070.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config310070.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 10);
-        config310090.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config310090.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config310090.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 614400);
-        config310120.putBoolean(CarrierConfigManager.KEY_MMS_MMS_DELIVERY_REPORT_ENABLED_BOOL,
-                false);
-        config310120.putBoolean(CarrierConfigManager.KEY_MMS_MMS_ENABLED_BOOL, true);
-        config310120.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config310120.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, true);
-        config310120.putBoolean(CarrierConfigManager.KEY_MMS_SMS_DELIVERY_REPORT_ENABLED_BOOL,
-                false);
-        config310120.putBoolean(CarrierConfigManager.KEY_MMS_SUPPORT_MMS_CONTENT_DISPOSITION_BOOL,
-                false);
-        config310120.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config310120.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config310120.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config310120.putInt(CarrierConfigManager.KEY_MMS_MESSAGE_TEXT_MAX_SIZE_INT, -1);
-        config310120.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 40);
-        config310120.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 6);
-        config310120.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config310120.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config310120.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "X-MDN: ##LINE1##|Proxy-Authorization: Basic ##NAI##");
-        config310120.putString(CarrierConfigManager.KEY_MMS_NAI_SUFFIX_STRING, ":pcs");
-        config310130.putBoolean(CarrierConfigManager.KEY_MMS_MMS_ENABLED_BOOL, true);
-        config310130.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, true);
-        config310130.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 2432);
-        config310130.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 4320);
-        config310130.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config310130.putInt(CarrierConfigManager.KEY_MMS_MESSAGE_TEXT_MAX_SIZE_INT, -1);
-        config310130.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config310130.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 1);
-        config310130.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config310130.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING, "X-MDN: ##LINE1##");
-        config310150.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config310150.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config310150.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config310170.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config310170.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config310170.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 10);
-        config310260.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config310260.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config310260.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config310360.putBoolean(CarrierConfigManager.KEY_MMS_MMS_ENABLED_BOOL, true);
-        config310360.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, true);
-        config310360.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 2432);
-        config310360.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 4320);
-        config310360.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1228800);
-        config310360.putInt(CarrierConfigManager.KEY_MMS_MESSAGE_TEXT_MAX_SIZE_INT, -1);
-        config310360.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config310360.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 1);
-        config310360.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config310360.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING, "X-MDN: ##LINE1##");
-        config310380.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config310380.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config310380.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config310380.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 10);
-        config310410.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config310410.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config310410.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config310410.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 10);
-        config310420.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config310420.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config310420.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config310450.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config310450.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config310450.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config310490.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config310490.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config310490.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config310560.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config310560.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config310560.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config310560.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 10);
-        config310580.putBoolean(CarrierConfigManager.KEY_MMS_MMS_ENABLED_BOOL, true);
-        config310580.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, true);
-        config310580.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 2432);
-        config310580.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 4320);
-        config310580.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1228800);
-        config310580.putInt(CarrierConfigManager.KEY_MMS_MESSAGE_TEXT_MAX_SIZE_INT, -1);
-        config310580.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config310580.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 1);
-        config310580.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config310580.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING, "X-MDN: ##LINE1##");
-        config310600.putBoolean(CarrierConfigManager.KEY_MMS_MMS_DELIVERY_REPORT_ENABLED_BOOL,
-                false);
-        config310600.putBoolean(CarrierConfigManager.KEY_MMS_MMS_ENABLED_BOOL, true);
-        config310600.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config310600.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, true);
-        config310600.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 2432);
-        config310600.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 4320);
-        config310600.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 8388608);
-        config310600.putInt(CarrierConfigManager.KEY_MMS_MESSAGE_TEXT_MAX_SIZE_INT, -1);
-        config310600.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config310600.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 1);
-        config310600.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config310600.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING, "X-MDN: ##LINE1##");
-        config310680.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config310680.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config310680.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config310680.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 10);
-        config310750.putBoolean(CarrierConfigManager.KEY_MMS_MMS_ENABLED_BOOL, true);
-        config310750.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, true);
-        config310750.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 2432);
-        config310750.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 4320);
-        config310750.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1228800);
-        config310750.putInt(CarrierConfigManager.KEY_MMS_MESSAGE_TEXT_MAX_SIZE_INT, -1);
-        config310750.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config310750.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 1);
-        config310750.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config310750.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING, "X-MDN: ##LINE1##");
-        config310770.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config310770.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config310770.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config310920.putBoolean(CarrierConfigManager.KEY_MMS_MMS_ENABLED_BOOL, true);
-        config310920.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, true);
-        config310920.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 2432);
-        config310920.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 4320);
-        config310920.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1258291);
-        config310920.putInt(CarrierConfigManager.KEY_MMS_MESSAGE_TEXT_MAX_SIZE_INT, -1);
-        config310920.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config310920.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 1);
-        config310920.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config310920.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING, "X-MDN: ##LINE1##");
-        config310980.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config310980.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config310980.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311012.putBoolean(CarrierConfigManager.KEY_MMS_ALIAS_ENABLED_BOOL, true);
-        config311012.putBoolean(CarrierConfigManager.KEY_MMS_ALLOW_ATTACH_AUDIO_BOOL, false);
-        config311012.putBoolean(CarrierConfigManager.KEY_MMS_APPEND_TRANSACTION_ID_BOOL, true);
-        config311012.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311012.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, true);
-        config311012.putBoolean(CarrierConfigManager.KEY_MMS_NOTIFY_WAP_MMSC_ENABLED_BOOL, true);
-        config311012.putInt(CarrierConfigManager.KEY_MMS_ALIAS_MAX_CHARS_INT, 48);
-        config311012.putInt(CarrierConfigManager.KEY_MMS_ALIAS_MIN_CHARS_INT, 2);
-        config311012.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config311012.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config311012.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1258291);
-        config311012.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311012.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 7);
-        config311012.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311012.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config311012.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "x-up-calling-line-id: 1##LINE1NOCOUNTRYCODE##|X-VzW-MDN: 1##LINE1NOCOUNTRYCODE##");
-        config311012.putString(CarrierConfigManager.KEY_MMS_UA_PROF_TAG_NAME_STRING, "Profile");
-        config311070.putBoolean(CarrierConfigManager.KEY_MMS_MMS_ENABLED_BOOL, true);
-        config311070.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, true);
-        config311070.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 2432);
-        config311070.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 4320);
-        config311070.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311070.putInt(CarrierConfigManager.KEY_MMS_MESSAGE_TEXT_MAX_SIZE_INT, -1);
-        config311070.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311070.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 1);
-        config311070.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311070.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING, "X-MDN: ##LINE1##");
-        config311100.putBoolean(CarrierConfigManager.KEY_MMS_MMS_DELIVERY_REPORT_ENABLED_BOOL,
-                false);
-        config311100.putBoolean(CarrierConfigManager.KEY_MMS_MMS_ENABLED_BOOL, true);
-        config311100.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311100.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, false);
-        config311100.putBoolean(CarrierConfigManager.KEY_MMS_SMS_DELIVERY_REPORT_ENABLED_BOOL,
-                false);
-        config311100.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 2432);
-        config311100.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 4320);
-        config311100.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311100.putInt(CarrierConfigManager.KEY_MMS_MESSAGE_TEXT_MAX_SIZE_INT, -1);
-        config311100.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 10);
-        config311100.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, -1);
-        config311100.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311100.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config311100.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING, "X-MDN: ##LINE1##");
-        config311180.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config311180.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config311180.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311180.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 10);
-        config311220.putBoolean(CarrierConfigManager.KEY_MMS_ALLOW_ATTACH_AUDIO_BOOL, true);
-        config311220.putBoolean(CarrierConfigManager.KEY_MMS_APPEND_TRANSACTION_ID_BOOL, true);
-        config311220.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311220.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, false);
-        config311220.putBoolean(CarrierConfigManager.KEY_MMS_NOTIFY_WAP_MMSC_ENABLED_BOOL, true);
-        config311220.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config311220.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config311220.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311220.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311220.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311220.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config311220.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "x-vzw-mdn: 1##LINE1NOCOUNTRYCODE##");
-        config311220.putString(CarrierConfigManager.KEY_MMS_UA_PROF_TAG_NAME_STRING,
-                "x-wap-profile");
-        config311221.putBoolean(CarrierConfigManager.KEY_MMS_ALLOW_ATTACH_AUDIO_BOOL, true);
-        config311221.putBoolean(CarrierConfigManager.KEY_MMS_APPEND_TRANSACTION_ID_BOOL, true);
-        config311221.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311221.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, false);
-        config311221.putBoolean(CarrierConfigManager.KEY_MMS_NOTIFY_WAP_MMSC_ENABLED_BOOL, true);
-        config311221.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config311221.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config311221.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311221.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311221.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311221.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config311221.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "x-vzw-mdn: 1##LINE1NOCOUNTRYCODE##");
-        config311221.putString(CarrierConfigManager.KEY_MMS_UA_PROF_TAG_NAME_STRING,
-                "x-wap-profile");
-        config311222.putBoolean(CarrierConfigManager.KEY_MMS_ALLOW_ATTACH_AUDIO_BOOL, true);
-        config311222.putBoolean(CarrierConfigManager.KEY_MMS_APPEND_TRANSACTION_ID_BOOL, true);
-        config311222.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311222.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, false);
-        config311222.putBoolean(CarrierConfigManager.KEY_MMS_NOTIFY_WAP_MMSC_ENABLED_BOOL, true);
-        config311222.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config311222.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config311222.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311222.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311222.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311222.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config311222.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "x-vzw-mdn: 1##LINE1NOCOUNTRYCODE##");
-        config311222.putString(CarrierConfigManager.KEY_MMS_UA_PROF_TAG_NAME_STRING,
-                "x-wap-profile");
-        config311223.putBoolean(CarrierConfigManager.KEY_MMS_ALLOW_ATTACH_AUDIO_BOOL, true);
-        config311223.putBoolean(CarrierConfigManager.KEY_MMS_APPEND_TRANSACTION_ID_BOOL, true);
-        config311223.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311223.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, false);
-        config311223.putBoolean(CarrierConfigManager.KEY_MMS_NOTIFY_WAP_MMSC_ENABLED_BOOL, true);
-        config311223.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config311223.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config311223.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311223.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311223.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311223.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config311223.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "x-vzw-mdn: 1##LINE1NOCOUNTRYCODE##");
-        config311223.putString(CarrierConfigManager.KEY_MMS_UA_PROF_TAG_NAME_STRING,
-                "x-wap-profile");
-        config311224.putBoolean(CarrierConfigManager.KEY_MMS_ALLOW_ATTACH_AUDIO_BOOL, true);
-        config311224.putBoolean(CarrierConfigManager.KEY_MMS_APPEND_TRANSACTION_ID_BOOL, true);
-        config311224.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311224.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, false);
-        config311224.putBoolean(CarrierConfigManager.KEY_MMS_NOTIFY_WAP_MMSC_ENABLED_BOOL, true);
-        config311224.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config311224.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config311224.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311224.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311224.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311224.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config311224.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "x-vzw-mdn: 1##LINE1NOCOUNTRYCODE##");
-        config311224.putString(CarrierConfigManager.KEY_MMS_UA_PROF_TAG_NAME_STRING,
-                "x-wap-profile");
-        config311225.putBoolean(CarrierConfigManager.KEY_MMS_ALLOW_ATTACH_AUDIO_BOOL, true);
-        config311225.putBoolean(CarrierConfigManager.KEY_MMS_APPEND_TRANSACTION_ID_BOOL, true);
-        config311225.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311225.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, false);
-        config311225.putBoolean(CarrierConfigManager.KEY_MMS_NOTIFY_WAP_MMSC_ENABLED_BOOL, true);
-        config311225.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config311225.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config311225.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311225.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311225.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311225.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config311225.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "x-vzw-mdn: 1##LINE1NOCOUNTRYCODE##");
-        config311225.putString(CarrierConfigManager.KEY_MMS_UA_PROF_TAG_NAME_STRING,
-                "x-wap-profile");
-        config311226.putBoolean(CarrierConfigManager.KEY_MMS_ALLOW_ATTACH_AUDIO_BOOL, true);
-        config311226.putBoolean(CarrierConfigManager.KEY_MMS_APPEND_TRANSACTION_ID_BOOL, true);
-        config311226.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311226.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, false);
-        config311226.putBoolean(CarrierConfigManager.KEY_MMS_NOTIFY_WAP_MMSC_ENABLED_BOOL, true);
-        config311226.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config311226.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config311226.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311226.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311226.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311226.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config311226.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "x-vzw-mdn: 1##LINE1NOCOUNTRYCODE##");
-        config311226.putString(CarrierConfigManager.KEY_MMS_UA_PROF_TAG_NAME_STRING,
-                "x-wap-profile");
-        config311227.putBoolean(CarrierConfigManager.KEY_MMS_ALLOW_ATTACH_AUDIO_BOOL, true);
-        config311227.putBoolean(CarrierConfigManager.KEY_MMS_APPEND_TRANSACTION_ID_BOOL, true);
-        config311227.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311227.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, false);
-        config311227.putBoolean(CarrierConfigManager.KEY_MMS_NOTIFY_WAP_MMSC_ENABLED_BOOL, true);
-        config311227.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config311227.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config311227.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311227.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311227.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311227.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config311227.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "x-vzw-mdn: 1##LINE1NOCOUNTRYCODE##");
-        config311227.putString(CarrierConfigManager.KEY_MMS_UA_PROF_TAG_NAME_STRING,
-                "x-wap-profile");
-        config311228.putBoolean(CarrierConfigManager.KEY_MMS_ALLOW_ATTACH_AUDIO_BOOL, true);
-        config311228.putBoolean(CarrierConfigManager.KEY_MMS_APPEND_TRANSACTION_ID_BOOL, true);
-        config311228.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311228.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, false);
-        config311228.putBoolean(CarrierConfigManager.KEY_MMS_NOTIFY_WAP_MMSC_ENABLED_BOOL, true);
-        config311228.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config311228.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config311228.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311228.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311228.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311228.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config311228.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "x-vzw-mdn: 1##LINE1NOCOUNTRYCODE##");
-        config311228.putString(CarrierConfigManager.KEY_MMS_UA_PROF_TAG_NAME_STRING,
-                "x-wap-profile");
-        config311229.putBoolean(CarrierConfigManager.KEY_MMS_ALLOW_ATTACH_AUDIO_BOOL, true);
-        config311229.putBoolean(CarrierConfigManager.KEY_MMS_APPEND_TRANSACTION_ID_BOOL, true);
-        config311229.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311229.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, false);
-        config311229.putBoolean(CarrierConfigManager.KEY_MMS_NOTIFY_WAP_MMSC_ENABLED_BOOL, true);
-        config311229.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config311229.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config311229.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311229.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311229.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311229.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config311229.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "x-vzw-mdn: 1##LINE1NOCOUNTRYCODE##");
-        config311229.putString(CarrierConfigManager.KEY_MMS_UA_PROF_TAG_NAME_STRING,
-                "x-wap-profile");
-        config311230.putBoolean(CarrierConfigManager.KEY_MMS_MMS_DELIVERY_REPORT_ENABLED_BOOL,
-                false);
-        config311230.putBoolean(CarrierConfigManager.KEY_MMS_MMS_ENABLED_BOOL, true);
-        config311230.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311230.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, false);
-        config311230.putBoolean(CarrierConfigManager.KEY_MMS_SMS_DELIVERY_REPORT_ENABLED_BOOL,
-                false);
-        config311230.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 2432);
-        config311230.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 4320);
-        config311230.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311230.putInt(CarrierConfigManager.KEY_MMS_MESSAGE_TEXT_MAX_SIZE_INT, -1);
-        config311230.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311230.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, -1);
-        config311230.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311230.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config311230.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "X-CS3G-MDN: 1##LINE1NOCOUNTRYCODE##");
-        config311340.putBoolean(CarrierConfigManager.KEY_MMS_MMS_ENABLED_BOOL, true);
-        config311340.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, true);
-        config311340.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 2432);
-        config311340.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 4320);
-        config311340.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1228800);
-        config311340.putInt(CarrierConfigManager.KEY_MMS_MESSAGE_TEXT_MAX_SIZE_INT, -1);
-        config311340.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311340.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 1);
-        config311340.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311340.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING, "X-MDN: ##LINE1##");
-        config311370.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config311370.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config311370.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311410.putBoolean(CarrierConfigManager.KEY_MMS_MMS_ENABLED_BOOL, true);
-        config311410.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, true);
-        config311410.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 2432);
-        config311410.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 4320);
-        config311410.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311410.putInt(CarrierConfigManager.KEY_MMS_MESSAGE_TEXT_MAX_SIZE_INT, -1);
-        config311410.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311410.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 1);
-        config311410.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311410.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING, "X-MDN: ##LINE1##");
-        config311430.putBoolean(CarrierConfigManager.KEY_MMS_MMS_ENABLED_BOOL, true);
-        config311430.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, true);
-        config311430.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 2432);
-        config311430.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 4320);
-        config311430.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311430.putInt(CarrierConfigManager.KEY_MMS_MESSAGE_TEXT_MAX_SIZE_INT, -1);
-        config311430.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311430.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 1);
-        config311430.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311430.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING, "X-MDN: ##LINE1##");
-        config311440.putBoolean(CarrierConfigManager.KEY_MMS_MMS_DELIVERY_REPORT_ENABLED_BOOL,
-                false);
-        config311440.putBoolean(CarrierConfigManager.KEY_MMS_MMS_ENABLED_BOOL, true);
-        config311440.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311440.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, true);
-        config311440.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 2432);
-        config311440.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 4320);
-        config311440.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1228800);
-        config311440.putInt(CarrierConfigManager.KEY_MMS_MESSAGE_TEXT_MAX_SIZE_INT, -1);
-        config311440.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311440.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 1);
-        config311440.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311440.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING, "X-MDN: ##LINE1##");
-        config311480.putBoolean(CarrierConfigManager.KEY_MMS_ALIAS_ENABLED_BOOL, true);
-        config311480.putBoolean(CarrierConfigManager.KEY_MMS_ALLOW_ATTACH_AUDIO_BOOL, false);
-        config311480.putBoolean(CarrierConfigManager.KEY_MMS_APPEND_TRANSACTION_ID_BOOL, true);
-        config311480.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311480.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, true);
-        config311480.putBoolean(CarrierConfigManager.KEY_MMS_NOTIFY_WAP_MMSC_ENABLED_BOOL, true);
-        config311480.putInt(CarrierConfigManager.KEY_MMS_ALIAS_MAX_CHARS_INT, 48);
-        config311480.putInt(CarrierConfigManager.KEY_MMS_ALIAS_MIN_CHARS_INT, 2);
-        config311480.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config311480.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config311480.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1258291);
-        config311480.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311480.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 7);
-        config311480.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311480.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config311480.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "x-up-calling-line-id: 1##LINE1NOCOUNTRYCODE##|X-VzW-MDN: 1##LINE1NOCOUNTRYCODE##");
-        config311480.putString(CarrierConfigManager.KEY_MMS_UA_PROF_TAG_NAME_STRING, "Profile");
-        config311490.putBoolean(CarrierConfigManager.KEY_MMS_MMS_DELIVERY_REPORT_ENABLED_BOOL,
-                false);
-        config311490.putBoolean(CarrierConfigManager.KEY_MMS_MMS_ENABLED_BOOL, true);
-        config311490.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311490.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, true);
-        config311490.putBoolean(CarrierConfigManager.KEY_MMS_SMS_DELIVERY_REPORT_ENABLED_BOOL,
-                false);
-        config311490.putBoolean(CarrierConfigManager.KEY_MMS_SUPPORT_MMS_CONTENT_DISPOSITION_BOOL,
-                false);
-        config311490.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config311490.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config311490.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311490.putInt(CarrierConfigManager.KEY_MMS_MESSAGE_TEXT_MAX_SIZE_INT, -1);
-        config311490.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 40);
-        config311490.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 6);
-        config311490.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311490.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config311490.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "X-MDN: ##LINE1##|Proxy-Authorization: Basic ##NAI##");
-        config311490.putString(CarrierConfigManager.KEY_MMS_NAI_SUFFIX_STRING, ":pcs");
-        config311580.putBoolean(CarrierConfigManager.KEY_MMS_ALLOW_ATTACH_AUDIO_BOOL, true);
-        config311580.putBoolean(CarrierConfigManager.KEY_MMS_APPEND_TRANSACTION_ID_BOOL, true);
-        config311580.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311580.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, false);
-        config311580.putBoolean(CarrierConfigManager.KEY_MMS_NOTIFY_WAP_MMSC_ENABLED_BOOL, true);
-        config311580.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config311580.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config311580.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311580.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311580.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311580.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config311580.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "x-vzw-mdn: 1##LINE1NOCOUNTRYCODE##");
-        config311580.putString(CarrierConfigManager.KEY_MMS_UA_PROF_TAG_NAME_STRING,
-                "x-wap-profile");
-        config311581.putBoolean(CarrierConfigManager.KEY_MMS_ALLOW_ATTACH_AUDIO_BOOL, true);
-        config311581.putBoolean(CarrierConfigManager.KEY_MMS_APPEND_TRANSACTION_ID_BOOL, true);
-        config311581.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311581.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, false);
-        config311581.putBoolean(CarrierConfigManager.KEY_MMS_NOTIFY_WAP_MMSC_ENABLED_BOOL, true);
-        config311581.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config311581.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config311581.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311581.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311581.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311581.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config311581.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "x-vzw-mdn: 1##LINE1NOCOUNTRYCODE##");
-        config311581.putString(CarrierConfigManager.KEY_MMS_UA_PROF_TAG_NAME_STRING,
-                "x-wap-profile");
-        config311582.putBoolean(CarrierConfigManager.KEY_MMS_ALLOW_ATTACH_AUDIO_BOOL, true);
-        config311582.putBoolean(CarrierConfigManager.KEY_MMS_APPEND_TRANSACTION_ID_BOOL, true);
-        config311582.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311582.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, false);
-        config311582.putBoolean(CarrierConfigManager.KEY_MMS_NOTIFY_WAP_MMSC_ENABLED_BOOL, true);
-        config311582.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config311582.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config311582.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311582.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311582.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311582.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config311582.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "x-vzw-mdn: 1##LINE1NOCOUNTRYCODE##");
-        config311582.putString(CarrierConfigManager.KEY_MMS_UA_PROF_TAG_NAME_STRING,
-                "x-wap-profile");
-        config311583.putBoolean(CarrierConfigManager.KEY_MMS_ALLOW_ATTACH_AUDIO_BOOL, true);
-        config311583.putBoolean(CarrierConfigManager.KEY_MMS_APPEND_TRANSACTION_ID_BOOL, true);
-        config311583.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311583.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, false);
-        config311583.putBoolean(CarrierConfigManager.KEY_MMS_NOTIFY_WAP_MMSC_ENABLED_BOOL, true);
-        config311583.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config311583.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config311583.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311583.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311583.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311583.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config311583.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "x-vzw-mdn: 1##LINE1NOCOUNTRYCODE##");
-        config311583.putString(CarrierConfigManager.KEY_MMS_UA_PROF_TAG_NAME_STRING,
-                "x-wap-profile");
-        config311584.putBoolean(CarrierConfigManager.KEY_MMS_ALLOW_ATTACH_AUDIO_BOOL, true);
-        config311584.putBoolean(CarrierConfigManager.KEY_MMS_APPEND_TRANSACTION_ID_BOOL, true);
-        config311584.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311584.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, false);
-        config311584.putBoolean(CarrierConfigManager.KEY_MMS_NOTIFY_WAP_MMSC_ENABLED_BOOL, true);
-        config311584.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config311584.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config311584.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311584.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311584.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311584.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config311584.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "x-vzw-mdn: 1##LINE1NOCOUNTRYCODE##");
-        config311584.putString(CarrierConfigManager.KEY_MMS_UA_PROF_TAG_NAME_STRING,
-                "x-wap-profile");
-        config311585.putBoolean(CarrierConfigManager.KEY_MMS_ALLOW_ATTACH_AUDIO_BOOL, true);
-        config311585.putBoolean(CarrierConfigManager.KEY_MMS_APPEND_TRANSACTION_ID_BOOL, true);
-        config311585.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311585.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, false);
-        config311585.putBoolean(CarrierConfigManager.KEY_MMS_NOTIFY_WAP_MMSC_ENABLED_BOOL, true);
-        config311585.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config311585.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config311585.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311585.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311585.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311585.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config311585.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "x-vzw-mdn: 1##LINE1NOCOUNTRYCODE##");
-        config311585.putString(CarrierConfigManager.KEY_MMS_UA_PROF_TAG_NAME_STRING,
-                "x-wap-profile");
-        config311586.putBoolean(CarrierConfigManager.KEY_MMS_ALLOW_ATTACH_AUDIO_BOOL, true);
-        config311586.putBoolean(CarrierConfigManager.KEY_MMS_APPEND_TRANSACTION_ID_BOOL, true);
-        config311586.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311586.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, false);
-        config311586.putBoolean(CarrierConfigManager.KEY_MMS_NOTIFY_WAP_MMSC_ENABLED_BOOL, true);
-        config311586.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config311586.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config311586.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311586.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311586.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311586.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config311586.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "x-vzw-mdn: 1##LINE1NOCOUNTRYCODE##");
-        config311586.putString(CarrierConfigManager.KEY_MMS_UA_PROF_TAG_NAME_STRING,
-                "x-wap-profile");
-        config311587.putBoolean(CarrierConfigManager.KEY_MMS_ALLOW_ATTACH_AUDIO_BOOL, true);
-        config311587.putBoolean(CarrierConfigManager.KEY_MMS_APPEND_TRANSACTION_ID_BOOL, true);
-        config311587.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311587.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, false);
-        config311587.putBoolean(CarrierConfigManager.KEY_MMS_NOTIFY_WAP_MMSC_ENABLED_BOOL, true);
-        config311587.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config311587.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config311587.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311587.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311587.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311587.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config311587.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "x-vzw-mdn: 1##LINE1NOCOUNTRYCODE##");
-        config311587.putString(CarrierConfigManager.KEY_MMS_UA_PROF_TAG_NAME_STRING,
-                "x-wap-profile");
-        config311588.putBoolean(CarrierConfigManager.KEY_MMS_ALLOW_ATTACH_AUDIO_BOOL, true);
-        config311588.putBoolean(CarrierConfigManager.KEY_MMS_APPEND_TRANSACTION_ID_BOOL, true);
-        config311588.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311588.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, false);
-        config311588.putBoolean(CarrierConfigManager.KEY_MMS_NOTIFY_WAP_MMSC_ENABLED_BOOL, true);
-        config311588.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config311588.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config311588.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311588.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311588.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311588.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config311588.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "x-vzw-mdn: 1##LINE1NOCOUNTRYCODE##");
-        config311588.putString(CarrierConfigManager.KEY_MMS_UA_PROF_TAG_NAME_STRING,
-                "x-wap-profile");
-        config311589.putBoolean(CarrierConfigManager.KEY_MMS_ALLOW_ATTACH_AUDIO_BOOL, true);
-        config311589.putBoolean(CarrierConfigManager.KEY_MMS_APPEND_TRANSACTION_ID_BOOL, true);
-        config311589.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311589.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, false);
-        config311589.putBoolean(CarrierConfigManager.KEY_MMS_NOTIFY_WAP_MMSC_ENABLED_BOOL, true);
-        config311589.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config311589.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config311589.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311589.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311589.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311589.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config311589.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "x-vzw-mdn: 1##LINE1NOCOUNTRYCODE##");
-        config311589.putString(CarrierConfigManager.KEY_MMS_UA_PROF_TAG_NAME_STRING,
-                "x-wap-profile");
-        config311590.putBoolean(CarrierConfigManager.KEY_MMS_MMS_ENABLED_BOOL, true);
-        config311590.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, true);
-        config311590.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 2432);
-        config311590.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 4320);
-        config311590.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311590.putInt(CarrierConfigManager.KEY_MMS_MESSAGE_TEXT_MAX_SIZE_INT, -1);
-        config311590.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config311590.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 1);
-        config311590.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311590.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING, "X-MDN: ##LINE1##");
-        config311870.putBoolean(CarrierConfigManager.KEY_MMS_MMS_DELIVERY_REPORT_ENABLED_BOOL,
-                false);
-        config311870.putBoolean(CarrierConfigManager.KEY_MMS_MMS_ENABLED_BOOL, true);
-        config311870.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config311870.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, true);
-        config311870.putBoolean(CarrierConfigManager.KEY_MMS_SMS_DELIVERY_REPORT_ENABLED_BOOL,
-                false);
-        config311870.putBoolean(CarrierConfigManager.KEY_MMS_SUPPORT_MMS_CONTENT_DISPOSITION_BOOL,
-                false);
-        config311870.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config311870.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config311870.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config311870.putInt(CarrierConfigManager.KEY_MMS_MESSAGE_TEXT_MAX_SIZE_INT, -1);
-        config311870.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 40);
-        config311870.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 6);
-        config311870.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config311870.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config311870.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "X-MDN: ##LINE1##|Proxy-Authorization: Basic ##NAI##");
-        config311870.putString(CarrierConfigManager.KEY_MMS_NAI_SUFFIX_STRING, ":pcs");
-        config312160.putBoolean(CarrierConfigManager.KEY_MMS_MMS_ENABLED_BOOL, true);
-        config312160.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, true);
-        config312160.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 2432);
-        config312160.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 4320);
-        config312160.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config312160.putInt(CarrierConfigManager.KEY_MMS_MESSAGE_TEXT_MAX_SIZE_INT, -1);
-        config312160.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 20);
-        config312160.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 1);
-        config312160.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config312160.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING, "X-MDN: ##LINE1##");
-        config312530.putBoolean(CarrierConfigManager.KEY_MMS_MMS_DELIVERY_REPORT_ENABLED_BOOL,
-                false);
-        config312530.putBoolean(CarrierConfigManager.KEY_MMS_MMS_ENABLED_BOOL, true);
-        config312530.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config312530.putBoolean(CarrierConfigManager.KEY_MMS_MULTIPART_SMS_ENABLED_BOOL, true);
-        config312530.putBoolean(CarrierConfigManager.KEY_MMS_SMS_DELIVERY_REPORT_ENABLED_BOOL,
-                false);
-        config312530.putBoolean(CarrierConfigManager.KEY_MMS_SUPPORT_MMS_CONTENT_DISPOSITION_BOOL,
-                false);
-        config312530.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config312530.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config312530.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config312530.putInt(CarrierConfigManager.KEY_MMS_MESSAGE_TEXT_MAX_SIZE_INT, -1);
-        config312530.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, 40);
-        config312530.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_THRESHOLD_INT, 6);
-        config312530.putInt(CarrierConfigManager.KEY_MMS_SUBJECT_MAX_LENGTH_INT, 80);
-        config312530.putString(CarrierConfigManager.KEY_MMS_EMAIL_GATEWAY_NUMBER_STRING, "6245");
-        config312530.putString(CarrierConfigManager.KEY_MMS_HTTP_PARAMS_STRING,
-                "X-MDN: ##LINE1##|Proxy-Authorization: Basic ##NAI##");
-        config312530.putString(CarrierConfigManager.KEY_MMS_NAI_SUFFIX_STRING, ":pcs");
-        config334020.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config334020.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config334020.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config41805.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config41805.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config41805.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 102400);
-        config41820.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config41820.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config41820.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 153600);
-        config41830.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config41830.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config41830.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 153600);
-        config42004.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config42004.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config42004.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 409600);
-        config44010.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config44010.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config44010.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 614400);
-        config44020.putBoolean(CarrierConfigManager.KEY_MMS_MMS_ENABLED_BOOL, true);
-        config44020.putBoolean(CarrierConfigManager.KEY_MMS_SHOW_CELL_BROADCAST_APP_LINKS_BOOL,
-                false);
-        config44020.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config44020.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config44020.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 307200);
-        config44020.putInt(CarrierConfigManager.KEY_MMS_MESSAGE_TEXT_MAX_SIZE_INT, -1);
-        config44020.putInt(CarrierConfigManager.KEY_MMS_RECIPIENT_LIMIT_INT, -1);
-        config45000.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config45000.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config45000.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config45002.putBoolean(CarrierConfigManager.KEY_MMS_MMS_DELIVERY_REPORT_ENABLED_BOOL,
-                false);
-        config45002.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config45002.putBoolean(CarrierConfigManager.KEY_MMS_SMS_DELIVERY_REPORT_ENABLED_BOOL,
-                false);
-        config45002.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config45002.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config45002.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config45005.putBoolean(CarrierConfigManager.KEY_MMS_MMS_DELIVERY_REPORT_ENABLED_BOOL,
-                false);
-        config45005.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config45005.putBoolean(CarrierConfigManager.KEY_MMS_SMS_DELIVERY_REPORT_ENABLED_BOOL,
-                false);
-        config45005.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config45005.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config45005.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config45006.putBoolean(CarrierConfigManager.KEY_MMS_MMS_DELIVERY_REPORT_ENABLED_BOOL,
-                false);
-        config45006.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config45006.putBoolean(CarrierConfigManager.KEY_MMS_SMS_DELIVERY_REPORT_ENABLED_BOOL,
-                false);
-        config45006.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config45006.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config45006.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config45006.putInt(CarrierConfigManager.KEY_MMS_SMS_TO_MMS_TEXT_LENGTH_THRESHOLD_INT, 80);
-        config45008.putBoolean(CarrierConfigManager.KEY_MMS_MMS_DELIVERY_REPORT_ENABLED_BOOL,
-                false);
-        config45008.putBoolean(CarrierConfigManager.KEY_MMS_MMS_READ_REPORT_ENABLED_BOOL, false);
-        config45008.putBoolean(CarrierConfigManager.KEY_MMS_SMS_DELIVERY_REPORT_ENABLED_BOOL,
-                false);
-        config45008.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config45008.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config45008.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 1048576);
-        config50501.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config50501.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config50501.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 2097152);
-        config53005.putBoolean(CarrierConfigManager.KEY_MMS_SUPPORT_MMS_CONTENT_DISPOSITION_BOOL,
-                false);
-        config53005.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config53005.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config53005.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 614400);
-        config60400.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config60400.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config60400.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 102400);
-        config60402.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config60402.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config60402.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 102400);
-        config64710.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_HEIGHT_INT, 1944);
-        config64710.putInt(CarrierConfigManager.KEY_MMS_MAX_IMAGE_WIDTH_INT, 2592);
-        config64710.putInt(CarrierConfigManager.KEY_MMS_MAX_MESSAGE_SIZE_INT, 614400);
-
-        sCarrierOverlays.put("001001", config001001);
-        sCarrierOverlays.put("00101", config00101);
-        sCarrierOverlays.put("001010", config001010);
-        sCarrierOverlays.put("20404", config20404);
-        sCarrierOverlays.put("20801", config20801);
-        sCarrierOverlays.put("20802", config20802);
-        sCarrierOverlays.put("20810", config20810);
-        sCarrierOverlays.put("20815", config20815);
-        sCarrierOverlays.put("20820", config20820);
-        sCarrierOverlays.put("20826", config20826);
-        sCarrierOverlays.put("21401", config21401);
-        sCarrierOverlays.put("21403", config21403);
-        sCarrierOverlays.put("21407", config21407);
-        sCarrierOverlays.put("21805", config21805);
-        sCarrierOverlays.put("22201", config22201);
-        sCarrierOverlays.put("22208", config22208);
-        sCarrierOverlays.put("23402", config23402);
-        sCarrierOverlays.put("23410", config23410);
-        sCarrierOverlays.put("23411", config23411);
-        sCarrierOverlays.put("23415", config23415);
-        sCarrierOverlays.put("23433", config23433);
-        sCarrierOverlays.put("23434", config23434);
-        sCarrierOverlays.put("23802", config23802);
-        sCarrierOverlays.put("24001", config24001);
-        sCarrierOverlays.put("24004", config24004);
-        sCarrierOverlays.put("24008", config24008);
-        sCarrierOverlays.put("24024", config24024);
-        sCarrierOverlays.put("24201", config24201);
-        sCarrierOverlays.put("24202", config24202);
-        sCarrierOverlays.put("246081", config246081);
-        sCarrierOverlays.put("26207", config26207);
-        sCarrierOverlays.put("27402", config27402);
-        sCarrierOverlays.put("27403", config27403);
-        sCarrierOverlays.put("28601", config28601);
-        sCarrierOverlays.put("28603", config28603);
-        sCarrierOverlays.put("29401", config29401);
-        sCarrierOverlays.put("29402", config29402);
-        sCarrierOverlays.put("29403", config29403);
-        sCarrierOverlays.put("302220", config302220);
-        sCarrierOverlays.put("302221", config302221);
-        sCarrierOverlays.put("302270", config302270);
-        sCarrierOverlays.put("302290", config302290);
-        sCarrierOverlays.put("302320", config302320);
-        sCarrierOverlays.put("302370", config302370);
-        sCarrierOverlays.put("302490", config302490);
-        sCarrierOverlays.put("302500", config302500);
-        sCarrierOverlays.put("302510", config302510);
-        sCarrierOverlays.put("302520", config302520);
-        sCarrierOverlays.put("302610", config302610);
-        sCarrierOverlays.put("302660", config302660);
-        sCarrierOverlays.put("302720", config302720);
-        sCarrierOverlays.put("302780", config302780);
-        sCarrierOverlays.put("310004", config310004);
-        sCarrierOverlays.put("310005", config310005);
-        sCarrierOverlays.put("310010", config310010);
-        sCarrierOverlays.put("310012", config310012);
-        sCarrierOverlays.put("310026", config310026);
-        sCarrierOverlays.put("310028", config310028);
-        sCarrierOverlays.put("310040", config310040);
-        sCarrierOverlays.put("310070", config310070);
-        sCarrierOverlays.put("310090", config310090);
-        sCarrierOverlays.put("310120", config310120);
-        sCarrierOverlays.put("310130", config310130);
-        sCarrierOverlays.put("310150", config310150);
-        sCarrierOverlays.put("310160", config310160);
-        sCarrierOverlays.put("310170", config310170);
-        sCarrierOverlays.put("310180", config310180);
-        sCarrierOverlays.put("310200", config310200);
-        sCarrierOverlays.put("310210", config310210);
-        sCarrierOverlays.put("310220", config310220);
-        sCarrierOverlays.put("310230", config310230);
-        sCarrierOverlays.put("310240", config310240);
-        sCarrierOverlays.put("310250", config310250);
-        sCarrierOverlays.put("310260", config310260);
-        sCarrierOverlays.put("310270", config310270);
-        sCarrierOverlays.put("310300", config310300);
-        sCarrierOverlays.put("310304", config310304);
-        sCarrierOverlays.put("310310", config310310);
-        sCarrierOverlays.put("310360", config310360);
-        sCarrierOverlays.put("310380", config310380);
-        sCarrierOverlays.put("310410", config310410);
-        sCarrierOverlays.put("310420", config310420);
-        sCarrierOverlays.put("310450", config310450);
-        sCarrierOverlays.put("310490", config310490);
-        sCarrierOverlays.put("310530", config310530);
-        sCarrierOverlays.put("310560", config310560);
-        sCarrierOverlays.put("310580", config310580);
-        sCarrierOverlays.put("310590", config310590);
-        sCarrierOverlays.put("310600", config310600);
-        sCarrierOverlays.put("310640", config310640);
-        sCarrierOverlays.put("310660", config310660);
-        sCarrierOverlays.put("310680", config310680);
-        sCarrierOverlays.put("310750", config310750);
-        sCarrierOverlays.put("310770", config310770);
-        sCarrierOverlays.put("310800", config310800);
-        sCarrierOverlays.put("310920", config310920);
-        sCarrierOverlays.put("310980", config310980);
-        sCarrierOverlays.put("311012", config311012);
-        sCarrierOverlays.put("311070", config311070);
-        sCarrierOverlays.put("311100", config311100);
-        sCarrierOverlays.put("311180", config311180);
-        sCarrierOverlays.put("311220", config311220);
-        sCarrierOverlays.put("311221", config311221);
-        sCarrierOverlays.put("311222", config311222);
-        sCarrierOverlays.put("311223", config311223);
-        sCarrierOverlays.put("311224", config311224);
-        sCarrierOverlays.put("311225", config311225);
-        sCarrierOverlays.put("311226", config311226);
-        sCarrierOverlays.put("311227", config311227);
-        sCarrierOverlays.put("311228", config311228);
-        sCarrierOverlays.put("311229", config311229);
-        sCarrierOverlays.put("311230", config311230);
-        sCarrierOverlays.put("311340", config311340);
-        sCarrierOverlays.put("311370", config311370);
-        sCarrierOverlays.put("311390", config311390);
-        sCarrierOverlays.put("311410", config311410);
-        sCarrierOverlays.put("311430", config311430);
-        sCarrierOverlays.put("311440", config311440);
-        sCarrierOverlays.put("311480", config311480);
-        sCarrierOverlays.put("311481", config311481);
-        sCarrierOverlays.put("311482", config311482);
-        sCarrierOverlays.put("311483", config311483);
-        sCarrierOverlays.put("311484", config311484);
-        sCarrierOverlays.put("311485", config311485);
-        sCarrierOverlays.put("311486", config311486);
-        sCarrierOverlays.put("311487", config311487);
-        sCarrierOverlays.put("311488", config311488);
-        sCarrierOverlays.put("311489", config311489);
-        sCarrierOverlays.put("311490", config311490);
-        sCarrierOverlays.put("311580", config311580);
-        sCarrierOverlays.put("311581", config311581);
-        sCarrierOverlays.put("311582", config311582);
-        sCarrierOverlays.put("311583", config311583);
-        sCarrierOverlays.put("311584", config311584);
-        sCarrierOverlays.put("311585", config311585);
-        sCarrierOverlays.put("311586", config311586);
-        sCarrierOverlays.put("311587", config311587);
-        sCarrierOverlays.put("311588", config311588);
-        sCarrierOverlays.put("311589", config311589);
-        sCarrierOverlays.put("311590", config311590);
-        sCarrierOverlays.put("311870", config311870);
-        sCarrierOverlays.put("312160", config312160);
-        sCarrierOverlays.put("312530", config312530);
-        sCarrierOverlays.put("334020", config334020);
-        sCarrierOverlays.put("41805", config41805);
-        sCarrierOverlays.put("41820", config41820);
-        sCarrierOverlays.put("41830", config41830);
-        sCarrierOverlays.put("42004", config42004);
-        sCarrierOverlays.put("44010", config44010);
-        sCarrierOverlays.put("44020", config44020);
-        sCarrierOverlays.put("45000", config45000);
-        sCarrierOverlays.put("45002", config45002);
-        sCarrierOverlays.put("45005", config45005);
-        sCarrierOverlays.put("45006", config45006);
-        sCarrierOverlays.put("45008", config45008);
-        sCarrierOverlays.put("50501", config50501);
-        sCarrierOverlays.put("53005", config53005);
-        sCarrierOverlays.put("60400", config60400);
-        sCarrierOverlays.put("60402", config60402);
-        sCarrierOverlays.put("64710", config64710);
-    }
 
     public DefaultCarrierConfigService() {
         Log.d(TAG, "Service created");
     }
 
+    /**
+     * Returns per-network overrides for carrier configuration.
+     *
+     * This returns a carrier config bundle appropriate for the given network by reading data from
+     * files in our assets folder. First we look for a file named after the MCC+MNC of {@code id}
+     * and then we read res/xml/vendor.xml. Both files may contain multiple bundles with filters on
+     * them. All the matching bundles are flattened to return one carrier config bundle.
+     */
     @Override
     public PersistableBundle onLoadConfig(CarrierIdentifier id) {
         Log.d(TAG, "Config being fetched");
-        // Return null for unknown networks - they should use the defaults.
-        return sCarrierOverlays.get(id.getMcc() + id.getMnc());
+
+        if (id == null) {
+            return null;
+        }
+
+        String fileName = "carrier_config_" + id.getMcc() + id.getMnc() + ".xml";
+        try {
+            XmlPullParser input =
+                    getApplicationContext().getAssets().openXmlResourceParser(fileName);
+            PersistableBundle config = readConfigFromXml(input, id);
+            // Treat vendor.xml as if it were appended to the carrier config file we read.
+            XmlPullParser vendorInput = getApplicationContext().getResources().getXml(R.xml.vendor);
+            PersistableBundle vendorConfig = readConfigFromXml(vendorInput, id);
+            config.putAll(vendorConfig);
+            return config;
+        }
+        catch (IOException e) {
+            // Return null for unknown networks - they should use the defaults.
+            Log.e(TAG, e.toString());
+            return null;
+        }
+    }
+
+    /**
+     * Parses an XML document and returns a PersistableBundle.
+     *
+     * <p>This function iterates over each {@code <carrier_config>} node in the XML document and parses
+     * it into a bundle if its filters match {@code id}. The format of XML bundles is defined by
+     * {@link PersistableBundle#restoreFromXml}. All the matching bundles will be flattened and
+     * returned as a single bundle.</p>
+     *
+     * <p>Here is an example document. The second bundle will be applied to the first only if the
+     * GID1 is ABCD.
+     * <pre>{@code
+     * <carrier_config_list>
+     *     <carrier_config>
+     *         <boolean name="voicemail_notification_persistent_bool" value="true" />
+     *     </carrier_config>
+     *     <carrier_config gid1="ABCD">
+     *         <boolean name="voicemail_notification_persistent_bool" value="false" />
+     *     </carrier_config>
+     * </carrier_config_list>
+     * }</pre></p>
+     *
+     * @param parser an XmlPullParser pointing at the beginning of the document.
+     * @param id the details of the SIM operator used to filter parts of the document
+     * @return a possibly empty PersistableBundle containing the config values.
+     */
+    static PersistableBundle readConfigFromXml(XmlPullParser parser, CarrierIdentifier id) {
+        PersistableBundle config = new PersistableBundle();
+
+        if (parser == null) {
+          return config;
+        }
+
+        try {
+            // Iterate over each <carrier_config> node in the document and add it to the returned
+            // bundle if its filters match.
+            int event;
+            while (((event = parser.next()) != XmlPullParser.END_DOCUMENT)) {
+                if (event == XmlPullParser.START_TAG && "carrier_config".equals(parser.getName())) {
+                    // Skip this fragment if it has filters that don't match.
+                    if (!checkFilters(parser, id)) {
+                        continue;
+                    }
+                    PersistableBundle configFragment = PersistableBundle.restoreFromXml(parser);
+                    config.putAll(configFragment);
+                }
+            }
+        }
+        catch (XmlPullParserException e) {
+            Log.e(TAG, e.toString());
+        }
+        catch (IOException e) {
+            Log.e(TAG, e.toString());
+        }
+
+        return config;
+    }
+
+    /**
+     * Checks to see if an XML node matches carrier filters.
+     *
+     * <p>This iterates over the attributes of the current tag pointed to by {@code parser} and checks
+     * each one against {@code id} or {@link Build.DEVICE}. Attributes that are not specified in the
+     * node will not be checked, so a node with no attributes will always return true. The supported
+     * filter attributes are,
+     * <ul>
+     *   <li>mcc: {@link CarrierIdentifier#getMcc}</li>
+     *   <li>mnc: {@link CarrierIdentifier#getMnc}</li>
+     *   <li>gid1: {@link CarrierIdentifier#getGid1}</li>
+     *   <li>gid2: {@link CarrierIdentifier#getGid2}</li>
+     *   <li>spn: {@link CarrierIdentifier#getSpn}</li>
+     *   <li>device: {@link Build.DEVICE}</li>
+     * </ul>
+     * </p>
+     *
+     * @param parser an XmlPullParser pointing at a START_TAG with the attributes to check.
+     * @param id the carrier details to check against.
+     * @return false if any XML attribute does not match the corresponding value.
+     */
+    static boolean checkFilters(XmlPullParser parser, CarrierIdentifier id) {
+        boolean result = true;
+        for (int i = 0; i < parser.getAttributeCount(); ++i) {
+            String attribute = parser.getAttributeName(i);
+            String value = parser.getAttributeValue(i);
+            switch (attribute) {
+                case "mcc":
+                    result = result && value.equals(id.getMcc());
+                    break;
+                case "mnc":
+                    result = result && value.equals(id.getMnc());
+                    break;
+                case "gid1":
+                    result = result && value.equals(id.getGid1());
+                    break;
+                case "gid2":
+                    result = result && value.equals(id.getGid2());
+                    break;
+                case "spn":
+                    result = result && value.equals(id.getSpn());
+                    break;
+                case "device":
+                    result = result && value.equals(Build.DEVICE);
+                    break;
+                default:
+                    Log.e(TAG, "Unknown attribute " + attribute + "=" + value);
+                    result = false;
+                    break;
+            }
+        }
+        return result;
     }
 }
