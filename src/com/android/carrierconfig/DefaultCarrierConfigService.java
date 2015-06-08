@@ -106,10 +106,14 @@ public class DefaultCarrierConfigService extends CarrierService {
         config20801.putString(CarrierConfigManager.KEY_VVM_DESTINATION_NUMBER_STRING, "21101");
         config20801.putString(CarrierConfigManager.KEY_VVM_TYPE_STRING,
                 TelephonyManager.VVM_TYPE_OMTP);
+        config20801.putString(CarrierConfigManager.KEY_CARRIER_VVM_PACKAGE_NAME_STRING,
+                "com.orange.vvm");
         config20802.putInt(CarrierConfigManager.KEY_VVM_PORT_NUMBER_INT, 20481);
         config20802.putString(CarrierConfigManager.KEY_VVM_DESTINATION_NUMBER_STRING, "21101");
         config20802.putString(CarrierConfigManager.KEY_VVM_TYPE_STRING,
                 TelephonyManager.VVM_TYPE_OMTP);
+        config20802.putString(CarrierConfigManager.KEY_CARRIER_VVM_PACKAGE_NAME_STRING,
+                "com.orange.vvm");
         config23402.putBoolean(CarrierConfigManager.KEY_PREFER_2G_BOOL, false);
         config23410.putBoolean(CarrierConfigManager.KEY_PREFER_2G_BOOL, false);
         config23411.putBoolean(CarrierConfigManager.KEY_PREFER_2G_BOOL, false);
