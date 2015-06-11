@@ -184,6 +184,14 @@ public class DefaultCarrierConfigService extends CarrierService {
         config001010.putBoolean(CarrierConfigManager.KEY_CARRIER_VOLTE_AVAILABLE_BOOL, true);
         config001010.putBoolean(CarrierConfigManager.KEY_SHOW_APN_SETTING_CDMA_BOOL, true);
         config20404.putBoolean(CarrierConfigManager.KEY_DISABLE_CDMA_ACTIVATION_CODE_BOOL, true);
+        // Following 4 configs should go in vendor.xml & they are for a specific gid (BAE0000000000000)
+        config20404.putBoolean(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_BOOL, true);
+        config20404.putString(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_INTENT_STRING,
+                "com.android.omadm.service.CONFIGURATION_UPDATE");
+        config20404.putString(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_EXTRA_STRING,
+                "ServerID");
+        config20404.putString(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_EXTRA_VAL_STRING,
+                "com.vzwdmserver");
         config20801.putInt(CarrierConfigManager.KEY_VVM_PORT_NUMBER_INT, 20481);
         config20801.putString(CarrierConfigManager.KEY_CARRIER_VVM_PACKAGE_NAME_STRING,
                 "com.orange.vvm");
@@ -217,6 +225,14 @@ public class DefaultCarrierConfigService extends CarrierService {
         config310004.putBoolean(CarrierConfigManager.KEY_VOICEMAIL_NOTIFICATION_PERSISTENT_BOOL,
                 true);
         config310004.putInt(CarrierConfigManager.KEY_VOLTE_REPLACEMENT_RAT_INT, 6);
+        // Following 4 configs should go in vendor.xml
+        config310004.putBoolean(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_BOOL, true);
+        config310004.putString(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_INTENT_STRING,
+                "com.android.omadm.service.CONFIGURATION_UPDATE");
+        config310004.putString(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_EXTRA_STRING,
+                "ServerID");
+        config310004.putString(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_EXTRA_VAL_STRING,
+                "com.vzwdmserver");
         config310005.putBoolean(CarrierConfigManager.KEY_APN_EXPAND_BOOL, false);
         config310005.putBoolean(CarrierConfigManager.KEY_OPERATOR_SELECTION_EXPAND_BOOL, true);
         config310005.putBoolean(CarrierConfigManager.KEY_PREFER_2G_BOOL, false);
@@ -322,6 +338,14 @@ public class DefaultCarrierConfigService extends CarrierService {
         config311480.putBoolean(CarrierConfigManager.KEY_VOICEMAIL_NOTIFICATION_PERSISTENT_BOOL,
                 true);
         config311480.putInt(CarrierConfigManager.KEY_VOLTE_REPLACEMENT_RAT_INT, 6);
+        // Following 4 configs should go in vendor.xml
+        config311480.putBoolean(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_BOOL, true);
+        config311480.putString(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_INTENT_STRING,
+                "com.android.omadm.service.CONFIGURATION_UPDATE");
+        config311480.putString(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_EXTRA_STRING,
+                "ServerID");
+        config311480.putString(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_EXTRA_VAL_STRING,
+                "com.vzwdmserver");
         config311481.putBoolean(CarrierConfigManager.KEY_APN_EXPAND_BOOL, false);
         config311481.putBoolean(CarrierConfigManager.KEY_OPERATOR_SELECTION_EXPAND_BOOL, true);
         config311481.putBoolean(CarrierConfigManager.KEY_PREFER_2G_BOOL, false);
