@@ -2,5 +2,6 @@
 <carrier_config_list>
 <carrier_config>
 <boolean name="enableGroupMms" value="false" />
+<boolean name="csp_enabled_bool" value="true" />
 </carrier_config>
 </carrier_config_list>
