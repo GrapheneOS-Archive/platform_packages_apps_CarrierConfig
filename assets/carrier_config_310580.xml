@@ -13,5 +13,6 @@
 <int name="maxImageWidth" value="4320" />
 <boolean name="enabledMMS" value="true" />
 <boolean name="enableMultipartSMS" value="true" />
+<boolean name="carrier_wfc_ims_available_bool" value="true" />
 </carrier_config>
 </carrier_config_list>

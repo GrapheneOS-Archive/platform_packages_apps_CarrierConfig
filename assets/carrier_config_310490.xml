@@ -10,5 +10,6 @@
 <boolean name="carrier_volte_tty_supported_bool" value="false" />
 <int name="maxMessageSize" value="1048576" />
 <int name="maxImageWidth" value="2592" />
+<boolean name="carrier_wfc_ims_available_bool" value="true" />
 </carrier_config>
 </carrier_config_list>
