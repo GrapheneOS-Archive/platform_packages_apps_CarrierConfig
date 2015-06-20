@@ -8,7 +8,7 @@
         <service android:name=".DefaultCarrierConfigService"
                  android:permission="android.permission.BIND_CARRIER_SERVICES">
             <intent-filter>
-                <action android:name="android.service.carrier.ConfigService" />
+                <action android:name="android.service.carrier.CarrierService" />
             </intent-filter>
         </service>
     </application>
