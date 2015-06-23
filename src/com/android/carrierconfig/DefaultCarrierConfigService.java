@@ -11,6 +11,7 @@ import android.util.Log;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlPullParserFactory;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -34,8 +35,11 @@ public class DefaultCarrierConfigService extends CarrierService {
 
     private static final String TAG = "DefaultCarrierConfigService";
 
+    private XmlPullParserFactory mFactory;
+
     public DefaultCarrierConfigService() {
         Log.d(TAG, "Service created");
+        mFactory = null;
     }
 
     /**
@@ -56,16 +60,21 @@ public class DefaultCarrierConfigService extends CarrierService {
 
         String fileName = "carrier_config_" + id.getMcc() + id.getMnc() + ".xml";
         try {
-            XmlPullParser input =
-                    getApplicationContext().getAssets().openXmlResourceParser(fileName);
-            PersistableBundle config = readConfigFromXml(input, id);
+            synchronized (this) {
+                if (mFactory == null) {
+                    mFactory = XmlPullParserFactory.newInstance();
+                }
+            }
+            XmlPullParser parser = mFactory.newPullParser();
+            parser.setInput(getApplicationContext().getAssets().open(fileName), "utf-8");
+            PersistableBundle config = readConfigFromXml(parser, id);
             // Treat vendor.xml as if it were appended to the carrier config file we read.
             XmlPullParser vendorInput = getApplicationContext().getResources().getXml(R.xml.vendor);
             PersistableBundle vendorConfig = readConfigFromXml(vendorInput, id);
             config.putAll(vendorConfig);
             return config;
         }
-        catch (IOException e) {
+        catch (IOException | XmlPullParserException e) {
             // Return null for unknown networks - they should use the defaults.
             Log.e(TAG, e.toString());
             return null;
