@@ -2,13 +2,19 @@ package com.android.carrierconfig;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.content.res.Resources;
 import android.os.PersistableBundle;
 import android.service.carrier.CarrierIdentifier;
+import android.telephony.CarrierConfigManager;
 import android.test.InstrumentationTestCase;
 import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+import java.util.HashSet;
+import java.util.Set;
 
 import junit.framework.AssertionFailedError;
 
@@ -27,7 +33,6 @@ public class CarrierConfigTest extends InstrumentationTestCase {
                 PersistableBundle b = DefaultCarrierConfigService.readConfigFromXml(parser,
                         new CarrierIdentifier("001", "001", "Test", "", "", ""));
                 assertNotNull("got null bundle", b);
-                assertTrue("got empty bundle", b.size() > 0);
             }
         });
     }
@@ -41,7 +46,8 @@ public class CarrierConfigTest extends InstrumentationTestCase {
             public void check(XmlPullParser parser) throws XmlPullParserException, IOException {
                 int event;
                 while (((event = parser.next()) != XmlPullParser.END_DOCUMENT)) {
-                    if (event == XmlPullParser.START_TAG && "carrier_config".equals(parser.getName())) {
+                    if (event == XmlPullParser.START_TAG
+                            && "carrier_config".equals(parser.getName())) {
                         for (int i = 0; i < parser.getAttributeCount(); ++i) {
                             String attribute = parser.getAttributeName(i);
                             switch (attribute) {
@@ -53,9 +59,52 @@ public class CarrierConfigTest extends InstrumentationTestCase {
                                 case "device":
                                     break;
                                 default:
-                                    fail("Unknown attribute '" + attribute  + "'");
+                                    fail("Unknown attribute '" + attribute
+                                            + "' at " + parser.getPositionDescription());
                                     break;
                             }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    /**
+     * Tests that the variable names in each XML file match actual keys in CarrierConfigManager.
+     */
+    public void testVariableNames() {
+        final Set<String> varXmlNames = getCarrierConfigXmlNames();
+        // organize them into sets by type or unknown
+        forEachConfigXml(new ParserChecker() {
+            public void check(XmlPullParser parser) throws XmlPullParserException, IOException {
+                int event;
+                while (((event = parser.next()) != XmlPullParser.END_DOCUMENT)) {
+                    if (event == XmlPullParser.START_TAG) {
+                        switch (parser.getName()) {
+                            case "int":
+                            case "boolean":
+                            case "string":
+                            case "int-array":
+                            case "string-array":
+                                // NOTE: This doesn't check for other valid Bundle values, but it
+                                // is limited to the key types in CarrierConfigManager.
+                                final String varName = parser.getAttributeValue(null, "name");
+                                assertNotNull("No 'name' attribute: "
+                                        + parser.getPositionDescription(), varName);
+                                assertTrue("Unknown variable: '" + varName
+                                        + "' at " + parser.getPositionDescription(),
+                                        varXmlNames.contains(varName));
+                                // TODO: Check that the type is correct.
+                                break;
+                            case "carrier_config_list":
+                            case "carrier_config":
+                                // do nothing
+                                break;
+                            default:
+                                fail("unexpected tag: '" + parser.getName()
+                                        + "' at " + parser.getPositionDescription());
+                                break;
                         }
                     }
                 }
@@ -96,8 +145,39 @@ public class CarrierConfigTest extends InstrumentationTestCase {
                     throw new AssertionError("Problem in " + fileName + ": " + e.getMessage(), e);
                 }
             }
+            // Check vendor.xml too
+            try {
+                Resources res = getInstrumentation().getTargetContext().getResources();
+                checker.check(res.getXml(R.xml.vendor));
+            } catch (Throwable e) {
+                throw new AssertionError("Problem in vendor.xml: " + e.getMessage(), e);
+            }
         } catch (IOException e) {
             fail(e.toString());
         }
+    }
+
+    /**
+     * Get the set of config variable names, as used in XML files.
+     */
+    private Set<String> getCarrierConfigXmlNames() {
+        // get values of all KEY_ members of CarrierConfigManager
+        Field[] fields = CarrierConfigManager.class.getDeclaredFields();
+        HashSet<String> varXmlNames = new HashSet<>();
+        for (Field f : fields) {
+            if (!f.getName().startsWith("KEY_")) continue;
+            if ((f.getModifiers() & Modifier.STATIC) == 0) {
+                fail("non-static key in CarrierConfigManager: " + f.toString());
+            }
+            try {
+                String value = (String) f.get(null);
+                varXmlNames.add(value);
+            }
+            catch (IllegalAccessException e) {
+                throw new AssertionError("Failed to get config key: " + e.getMessage(), e);
+            }
+        }
+        assertTrue("Found zero keys", varXmlNames.size() > 0);
+        return varXmlNames;
     }
 }
