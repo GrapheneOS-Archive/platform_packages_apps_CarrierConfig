@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8' standalone='yes' ?>
 <carrier_config_list>
 <carrier_config>
-<boolean name="carrier_volte_provisioned_bool" value="true" />
+<boolean name="carrier_volte_provisioning_required_bool" value="true" />
 <boolean name="operator_selection_expand_bool" value="true" />
 <boolean name="disable_cdma_activation_code_bool" value="true" />
 <int name="aliasMinChars" value="2" />
