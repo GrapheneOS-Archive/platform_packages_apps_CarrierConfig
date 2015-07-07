@@ -58,35 +58,45 @@ public class DefaultCarrierConfigService extends CarrierService {
             return null;
         }
 
-        String fileName = "carrier_config_" + id.getMcc() + id.getMnc() + ".xml";
+
+        PersistableBundle config = null;
         try {
             synchronized (this) {
                 if (mFactory == null) {
                     mFactory = XmlPullParserFactory.newInstance();
                 }
             }
+
             XmlPullParser parser = mFactory.newPullParser();
+            String fileName = "carrier_config_" + id.getMcc() + id.getMnc() + ".xml";
             parser.setInput(getApplicationContext().getAssets().open(fileName), "utf-8");
-            PersistableBundle config = readConfigFromXml(parser, id);
-            // Treat vendor.xml as if it were appended to the carrier config file we read.
-            XmlPullParser vendorInput = getApplicationContext().getResources().getXml(R.xml.vendor);
-            PersistableBundle vendorConfig = readConfigFromXml(vendorInput, id);
-            config.putAll(vendorConfig);
-            return config;
+            config = readConfigFromXml(parser, id);
         }
         catch (IOException | XmlPullParserException e) {
-            // Return null for unknown networks - they should use the defaults.
-            Log.e(TAG, e.toString());
-            return null;
+            Log.d(TAG, e.toString());
+            // We can return an empty config for unknown networks.
+            config = new PersistableBundle();
         }
+
+        // Treat vendor.xml as if it were appended to the carrier config file we read.
+        XmlPullParser vendorInput = getApplicationContext().getResources().getXml(R.xml.vendor);
+        try {
+            PersistableBundle vendorConfig = readConfigFromXml(vendorInput, id);
+            config.putAll(vendorConfig);
+        }
+        catch (IOException | XmlPullParserException e) {
+            Log.e(TAG, e.toString());
+        }
+
+        return config;
     }
 
     /**
      * Parses an XML document and returns a PersistableBundle.
      *
-     * <p>This function iterates over each {@code <carrier_config>} node in the XML document and parses
-     * it into a bundle if its filters match {@code id}. The format of XML bundles is defined by
-     * {@link PersistableBundle#restoreFromXml}. All the matching bundles will be flattened and
+     * <p>This function iterates over each {@code <carrier_config>} node in the XML document and
+     * parses it into a bundle if its filters match {@code id}. The format of XML bundles is defined
+     * by {@link PersistableBundle#restoreFromXml}. All the matching bundles will be flattened and
      * returned as a single bundle.</p>
      *
      * <p>Here is an example document. The second bundle will be applied to the first only if the
@@ -106,33 +116,26 @@ public class DefaultCarrierConfigService extends CarrierService {
      * @param id the details of the SIM operator used to filter parts of the document
      * @return a possibly empty PersistableBundle containing the config values.
      */
-    static PersistableBundle readConfigFromXml(XmlPullParser parser, CarrierIdentifier id) {
+    static PersistableBundle readConfigFromXml(XmlPullParser parser, CarrierIdentifier id)
+            throws IOException, XmlPullParserException {
         PersistableBundle config = new PersistableBundle();
 
         if (parser == null) {
           return config;
         }
 
-        try {
-            // Iterate over each <carrier_config> node in the document and add it to the returned
-            // bundle if its filters match.
-            int event;
-            while (((event = parser.next()) != XmlPullParser.END_DOCUMENT)) {
-                if (event == XmlPullParser.START_TAG && "carrier_config".equals(parser.getName())) {
-                    // Skip this fragment if it has filters that don't match.
-                    if (!checkFilters(parser, id)) {
-                        continue;
-                    }
-                    PersistableBundle configFragment = PersistableBundle.restoreFromXml(parser);
-                    config.putAll(configFragment);
+        // Iterate over each <carrier_config> node in the document and add it to the returned
+        // bundle if its filters match.
+        int event;
+        while (((event = parser.next()) != XmlPullParser.END_DOCUMENT)) {
+            if (event == XmlPullParser.START_TAG && "carrier_config".equals(parser.getName())) {
+                // Skip this fragment if it has filters that don't match.
+                if (!checkFilters(parser, id)) {
+                    continue;
                 }
+                PersistableBundle configFragment = PersistableBundle.restoreFromXml(parser);
+                config.putAll(configFragment);
             }
-        }
-        catch (XmlPullParserException e) {
-            Log.e(TAG, e.toString());
-        }
-        catch (IOException e) {
-            Log.e(TAG, e.toString());
         }
 
         return config;
@@ -141,10 +144,10 @@ public class DefaultCarrierConfigService extends CarrierService {
     /**
      * Checks to see if an XML node matches carrier filters.
      *
-     * <p>This iterates over the attributes of the current tag pointed to by {@code parser} and checks
-     * each one against {@code id} or {@link Build.DEVICE}. Attributes that are not specified in the
-     * node will not be checked, so a node with no attributes will always return true. The supported
-     * filter attributes are,
+     * <p>This iterates over the attributes of the current tag pointed to by {@code parser} and
+     * checks each one against {@code id} or {@link Build.DEVICE}. Attributes that are not specified
+     * in the node will not be checked, so a node with no attributes will always return true. The
+     * supported filter attributes are,
      * <ul>
      *   <li>mcc: {@link CarrierIdentifier#getMcc}</li>
      *   <li>mnc: {@link CarrierIdentifier#getMnc}</li>
