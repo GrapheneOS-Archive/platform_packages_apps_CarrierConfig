@@ -8,5 +8,6 @@
 <int name="maxMessageSize" value="307200" />
 <int name="maxImageWidth" value="2592" />
 <boolean name="enabledMMS" value="true" />
+<boolean name="carrier_force_disable_etws_cmas_test_bool" value="true" />
 </carrier_config>
 </carrier_config_list>
