@@ -8,5 +8,6 @@
 <int name="maxMessageSize" value="1048576" />
 <boolean name="enableMMSReadReports" value="false" />
 <int name="maxImageWidth" value="2592" />
+<boolean name="carrier_volte_available_bool" value="true" />
 </carrier_config>
 </carrier_config_list>
