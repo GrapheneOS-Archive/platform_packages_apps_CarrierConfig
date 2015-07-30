@@ -19,7 +19,6 @@
         <int name="maxImageHeight" value="1944" />
         <boolean name="carrier_volte_available_bool" value="true" />
         <boolean name="support_pause_ims_video_calls_bool" value="true" />
-        <boolean name="apn_expand_bool" value="false" />
         <int name="maxSubjectLength" value="80" />
         <string name="httpParams">x-up-calling-line-id: 1##LINE1NOCOUNTRYCODE##|X-VzW-MDN: 1##LINE1NOCOUNTRYCODE##</string>
         <string name="emailGatewayNumber">6245</string>
