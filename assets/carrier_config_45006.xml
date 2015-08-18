@@ -10,5 +10,6 @@
 <int name="maxImageWidth" value="2592" />
 <boolean name="carrier_volte_available_bool" value="true" />
 <boolean name="carrier_instant_lettering_available_bool" value="true" />
+<boolean name="support_conference_call_bool" value="false" />
 </carrier_config>
 </carrier_config_list>
