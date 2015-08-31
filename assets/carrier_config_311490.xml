@@ -19,5 +19,6 @@
 <int name="maxImageWidth" value="2592" />
 <boolean name="enabledMMS" value="true" />
 <boolean name="enableMultipartSMS" value="true" />
+<boolean name="allowNonEmergencyCallsInEcm" value="false" />
 </carrier_config>
 </carrier_config_list>
