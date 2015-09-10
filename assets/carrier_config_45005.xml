@@ -11,6 +11,7 @@
 <boolean name="carrier_volte_available_bool" value="true" />
 <boolean name="carrier_instant_lettering_available_bool" value="true" />
 <string name="carrier_instant_lettering_invalid_chars_string">[\n]</string>
+<string name="carrier_instant_lettering_escaped_chars_string">"\</string>
 <boolean name="support_conference_call_bool" value="false" />
 </carrier_config>
 </carrier_config_list>
