@@ -15,5 +15,6 @@
 <boolean name="support_conference_call_bool" value="false" />
 <boolean name="editable_enhanced_4g_lte_bool" value="false" />
 <boolean name="hide_preferred_network_type_bool" value="true" />
+<boolean name="additional_call_setting_bool" value="false" />
 </carrier_config>
 </carrier_config_list>
