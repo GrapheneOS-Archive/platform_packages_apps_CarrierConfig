@@ -1,7 +1,6 @@
 <?xml version='1.0' encoding='utf-8' standalone='yes' ?>
 <carrier_config_list>
 <carrier_config>
-<boolean name="enableGroupMms" value="false" />
 <boolean name="enableSMSDeliveryReports" value="false" />
 <int name="maxImageHeight" value="1944" />
 <boolean name="enableMMSDeliveryReports" value="false" />
