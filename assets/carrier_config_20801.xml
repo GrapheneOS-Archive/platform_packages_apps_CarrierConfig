@@ -8,5 +8,6 @@
 <string name="vvm_type_string">vvm_type_omtp</string>
 <int name="maxMessageSize" value="614400" />
 <int name="maxImageWidth" value="2592" />
+<boolean name="vvm_cellular_data_required" value="true"/>
 </carrier_config>
 </carrier_config_list>
