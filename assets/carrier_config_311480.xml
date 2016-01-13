@@ -30,5 +30,6 @@
         <boolean name="enabledNotifyWapMMSC" value="true" />
         <boolean name="enableMultipartSMS" value="true" />
         <boolean name="allow_adding_apns_bool" value="false" />
+        <boolean name="broadcast_emergency_call_state_changes_bool" value="true" />
     </carrier_config>
 </carrier_config_list>
