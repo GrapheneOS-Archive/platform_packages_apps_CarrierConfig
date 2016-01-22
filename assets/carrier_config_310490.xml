@@ -12,5 +12,6 @@
 <int name="maxImageWidth" value="2592" />
 <boolean name="carrier_wfc_ims_available_bool" value="true" />
 <boolean name="carrier_ims_gba_required_bool" value="true" />
+<int name="volte_replacement_rat_int" value="3" />
 </carrier_config>
 </carrier_config_list>
