@@ -34,4 +34,8 @@
         <string name="carrier_eri_file_name_string">eri_311480.xml</string>
         <int name="carrier_default_wfc_ims_mode_int" value="1"/>
     </carrier_config>
+    <!-- Tracfone Vzw shows empty string as SPN -->
+    <carrier_config gid1="BA01270000000000">
+        <boolean name="carrier_name_override_bool" value="true" />
+    </carrier_config>
 </carrier_config_list>
