@@ -33,5 +33,7 @@
         <boolean name="broadcast_emergency_call_state_changes_bool" value="true" />
         <string name="carrier_eri_file_name_string">eri_311480.xml</string>
         <int name="carrier_default_wfc_ims_mode_int" value="1"/>
+        <boolean name="treat_downgraded_video_calls_as_video_calls_bool" value="true" />
+        <boolean name="drop_video_call_when_answering_audio_call_bool" value="true" />
     </carrier_config>
 </carrier_config_list>
