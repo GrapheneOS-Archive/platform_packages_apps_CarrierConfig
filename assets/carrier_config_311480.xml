@@ -35,5 +35,6 @@
         <int name="carrier_default_wfc_ims_mode_int" value="1"/>
         <boolean name="treat_downgraded_video_calls_as_video_calls_bool" value="true" />
         <boolean name="drop_video_call_when_answering_audio_call_bool" value="true" />
+        <boolean name="editable_wfc_mode_bool" value="false"/>
     </carrier_config>
 </carrier_config_list>
