@@ -37,5 +37,6 @@
         <boolean name="drop_video_call_when_answering_audio_call_bool" value="true" />
         <boolean name="editable_wfc_mode_bool" value="false"/>
         <boolean name="allow_merge_wifi_calls_when_vowifi_off_bool" value="false" />
+        <boolean name="allow_add_call_during_video_call" value="false" />
     </carrier_config>
 </carrier_config_list>
