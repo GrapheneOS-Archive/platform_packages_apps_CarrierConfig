@@ -28,5 +28,21 @@
         <boolean name="broadcast_emergency_call_state_changes_bool" value="true" />
         <string name="carrier_eri_file_name_string">eri_311480.xml</string>
         <int name="carrier_default_wfc_ims_mode_int" value="1"/>
+        <string-array name="carrier_data_call_permanent_failure_strings" num="14">
+            <item value="OPERATOR_BARRED" />
+            <item value="MISSING_UNKNOWN_APN" />
+            <item value="UNKNOWN_PDP_ADDRESS_TYPE" />
+            <item value="USER_AUTHENTICATION" />
+            <item value="SERVICE_OPTION_NOT_SUPPORTED" />
+            <item value="SERVICE_OPTION_NOT_SUBSCRIBED" />
+            <item value="NSAPI_IN_USE" />
+            <item value="ONLY_IPV4_ALLOWED" />
+            <item value="ONLY_IPV6_ALLOWED" />
+            <item value="RADIO_POWER_OFF" />
+            <item value="TETHERED_CALL_ACTIVE" />
+            <item value="RADIO_NOT_AVAILABLE" />
+            <item value="UNACCEPTABLE_NETWORK_PARAMETER" />
+            <item value="SIGNAL_LOST" />
+        </string-array>
     </carrier_config>
 </carrier_config_list>
