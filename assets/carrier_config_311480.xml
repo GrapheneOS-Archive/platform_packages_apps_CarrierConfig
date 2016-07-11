@@ -56,6 +56,7 @@
             <item value="UNACCEPTABLE_NETWORK_PARAMETER" />
             <item value="SIGNAL_LOST" />
         </string-array>
+        <boolean name="carrier_promote_wfc_on_call_fail_bool" value="true" />
     </carrier_config>
     <!-- Tracfone Vzw shows empty string as SPN -->
     <carrier_config gid1="BA01270000000000">
