@@ -38,5 +38,6 @@
         <boolean name="editable_wfc_mode_bool" value="false"/>
         <boolean name="allow_merge_wifi_calls_when_vowifi_off_bool" value="false" />
         <boolean name="allow_add_call_during_video_call" value="false" />
+        <boolean name="carrier_promote_wfc_on_call_fail_bool" value="true" />
     </carrier_config>
 </carrier_config_list>
