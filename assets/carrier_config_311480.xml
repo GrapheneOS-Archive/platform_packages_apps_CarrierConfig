@@ -57,7 +57,7 @@
             <item value="SIGNAL_LOST" />
         </string-array>
         <boolean name="carrier_promote_wfc_on_call_fail_bool" value="true" />
-        <string-array name="ims_reasoninfo_mapping_string_array" num="4">
+        <string-array name="ims_reasoninfo_mapping_string_array" num="5">
             <item value="332|simultaneous call limit has already been reached|1403" />
             <item value="501|call completion elsewhere|1014" />
             <item value="501|call has been pulled by another device|1016" />
