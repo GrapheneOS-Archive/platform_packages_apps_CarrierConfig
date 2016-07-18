@@ -30,5 +30,6 @@
         <int name="carrier_default_wfc_ims_mode_int" value="1"/>
         <boolean name="editable_wfc_mode_bool" value="false"/>
         <boolean name="disable_severe_when_extreme_disabled_bool" value="false" />
+        <boolean name="mmsCloseConnection" value="true"/>
     </carrier_config>
 </carrier_config_list>

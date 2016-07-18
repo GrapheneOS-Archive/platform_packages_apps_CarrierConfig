@@ -49,5 +49,6 @@
             <item value="1014|call has been pulled by another device|1016" />
         </string-array>
         <boolean name="disable_severe_when_extreme_disabled_bool" value="false" />
+        <boolean name="mmsCloseConnection" value="true"/>
     </carrier_config>
 </carrier_config_list>
