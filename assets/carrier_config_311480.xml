@@ -39,6 +39,8 @@
         <boolean name="drop_video_call_when_answering_audio_call_bool" value="true" />
         <boolean name="editable_wfc_mode_bool" value="false"/>
         <boolean name="allow_merge_wifi_calls_when_vowifi_off_bool" value="false" />
+        <boolean name="wifi_calls_can_be_hd_audio" value="false" />
+        <boolean name="video_calls_can_be_hd_audio" value="false" />
         <boolean name="allow_add_call_during_video_call" value="false" />
         <string-array name="carrier_data_call_permanent_failure_strings" num="14">
             <item value="OPERATOR_BARRED" />
