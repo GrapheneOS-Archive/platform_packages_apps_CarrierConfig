@@ -46,5 +46,6 @@
             <item value="501|another device sent all devices busy response|1404" />
             <item value="1014|call has been pulled by another device|1016" />
         </string-array>
+        <boolean name="disable_severe_when_extreme_disabled_bool" value="false" />
     </carrier_config>
 </carrier_config_list>
