@@ -26,5 +26,7 @@
             <item value="UNACCEPTABLE_NETWORK_PARAMETER" />
             <item value="SIGNAL_LOST" />
         </string-array>
+        <boolean name="editable_wfc_mode_bool" value="false"/>
+        <boolean name="disable_severe_when_extreme_disabled_bool" value="false" />
     </carrier_config>
 </carrier_config_list>
