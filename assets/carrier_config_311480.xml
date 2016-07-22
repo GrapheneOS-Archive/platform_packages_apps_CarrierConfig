@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='utf-8' standalone='yes' ?>
 <carrier_config_list>
     <carrier_config>
+        <boolean name="allow_hold_in_ims_call" value="false" />
         <boolean name="carrier_vt_available_bool" value="true" />
         <boolean name="carrier_allow_turnoff_ims_bool" value="false" />
         <boolean name="carrier_volte_provisioning_required_bool" value="true" />
