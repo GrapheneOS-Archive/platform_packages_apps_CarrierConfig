@@ -72,6 +72,7 @@
         <boolean name="disable_severe_when_extreme_disabled_bool" value="false" />
         <boolean name="mmsCloseConnection" value="true"/>
         <boolean name="notify_vt_handover_to_wifi_failure_bool" value="true" />
+        <int name="wfc_spn_format_idx_int" value="1" />
     </carrier_config>
     <!-- Tracfone Vzw shows empty string as SPN -->
     <carrier_config gid1="BA01270000000000">
