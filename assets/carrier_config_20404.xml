@@ -9,5 +9,9 @@
         <boolean name="allow_adding_apns_bool" value="false" />
         <boolean name="broadcast_emergency_call_state_changes_bool" value="true" />
         <string name="carrier_eri_file_name_string">eri_311480.xml</string>
+        <string-array name="dial_string_replace_string_array">
+            <item value="*611:+19085594899" />
+            <item value="*86:+1MDN" />
+        </string-array>
     </carrier_config>
 </carrier_config_list>
