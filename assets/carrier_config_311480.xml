@@ -45,6 +45,7 @@
         <boolean name="wifi_calls_can_be_hd_audio" value="false" />
         <boolean name="video_calls_can_be_hd_audio" value="false" />
         <boolean name="allow_add_call_during_video_call" value="false" />
+        <string name="default_vm_number_string">*86</string>
         <string-array name="carrier_data_call_permanent_failure_strings" num="14">
             <item value="OPERATOR_BARRED" />
             <item value="MISSING_UNKNOWN_APN" />
