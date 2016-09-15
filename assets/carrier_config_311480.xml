@@ -46,6 +46,10 @@
         <boolean name="video_calls_can_be_hd_audio" value="false" />
         <boolean name="allow_add_call_during_video_call" value="false" />
         <string name="default_vm_number_string">*86</string>
+        <string-array name="dial_string_replace_string_array">
+            <item value="*611:+19085594899" />
+            <item value="*86:+1MDN" />
+        </string-array>
         <string-array name="carrier_data_call_permanent_failure_strings" num="14">
             <item value="OPERATOR_BARRED" />
             <item value="MISSING_UNKNOWN_APN" />
