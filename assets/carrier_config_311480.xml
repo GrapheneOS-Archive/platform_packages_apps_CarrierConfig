@@ -62,5 +62,13 @@
             <item value="WIRELESS CALLER" />
             <item value="UNKNOWN NAME" />
         </string-array>
+        <string-array name="read_only_apn_fields_string_array" num="6">
+            <item value="type" />
+            <item value="protocol" />
+            <item value="roaming_protocol" />
+            <item value="bearer" />
+            <item value="bearer_bitmask" />
+            <item value="carrier_enabled" />
+        </string-array>
     </carrier_config>
 </carrier_config_list>
