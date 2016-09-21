@@ -49,5 +49,13 @@
         <boolean name="disable_severe_when_extreme_disabled_bool" value="false" />
         <boolean name="mmsCloseConnection" value="true"/>
         <int name="wfc_spn_format_idx_int" value="1" />
+        <string-array name="read_only_apn_fields_string_array" num="6">
+            <item value="type" />
+            <item value="protocol" />
+            <item value="roaming_protocol" />
+            <item value="bearer" />
+            <item value="bearer_bitmask" />
+            <item value="carrier_enabled" />
+        </string-array>
     </carrier_config>
 </carrier_config_list>
