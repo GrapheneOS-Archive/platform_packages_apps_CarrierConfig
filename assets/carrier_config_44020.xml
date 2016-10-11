@@ -17,5 +17,6 @@
     <item value="0xAFEE:type=tsunami, emergency=true" />
     <item value="0xAC00-0xAFED:type=other, emergency=true" />
 </string-array>
+<long name="message_expiration_time_long" value="3600000" />
 </carrier_config>
 </carrier_config_list>
