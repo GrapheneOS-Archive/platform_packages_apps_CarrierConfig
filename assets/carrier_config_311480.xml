@@ -3,7 +3,7 @@
     <carrier_config>
         <boolean name="carrier_volte_provisioned_bool" value="true" />
         <boolean name="allow_hold_in_ims_call" value="false" />
-        <boolean name="sms_convert_destination_number_support_bool" value="true" />
+        <boolean name="sms_requires_destination_number_conversion_bool" value="true" />
         <boolean name="carrier_vt_available_bool" value="true" />
         <boolean name="support_downgrade_vt_to_audio_bool" value="false" />
         <boolean name="notify_handover_video_from_wifi_to_lte_bool" value="true" />
