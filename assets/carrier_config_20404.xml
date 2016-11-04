@@ -13,7 +13,7 @@
         <string name="carrier_eri_file_name_string">eri_311480.xml</string>
         <int name="carrier_default_wfc_ims_mode_int" value="1"/>
         <string name="default_vm_number_string">*86</string>
-        <string-array name="dial_string_replace_string_array">
+        <string-array name="dial_string_replace_string_array" num="2">
             <item value="*611:+19085594899" />
             <item value="*86:+1MDN" />
         </string-array>

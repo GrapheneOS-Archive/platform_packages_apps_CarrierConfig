@@ -49,7 +49,7 @@
         <boolean name="allow_add_call_during_video_call" value="false" />
         <boolean name="persist_lpp_mode_bool" value="true" />
         <string name="default_vm_number_string">*86</string>
-        <string-array name="dial_string_replace_string_array">
+        <string-array name="dial_string_replace_string_array" num="2">
             <item value="*611:+19085594899" />
             <item value="*86:+1MDN" />
         </string-array>
