@@ -18,5 +18,6 @@
             <item value="0xAC00-0xAFED:type=other, emergency=true" />
         </string-array>
         <string name="default_vm_number_string">1416</string>
+        <long name="message_expiration_time_long" value="3600000" />
     </carrier_config>
 </carrier_config_list>
