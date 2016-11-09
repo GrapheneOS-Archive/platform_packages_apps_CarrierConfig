@@ -6,6 +6,7 @@
         <int name="maxImageWidth" value="2592" />
     </carrier_config>
     <carrier_config gid1="BAE0000000000000">
+        <boolean name="mdn_is_additional_voicemail_number_bool" value="true" />
         <boolean name="allow_adding_apns_bool" value="false" />
         <boolean name="broadcast_emergency_call_state_changes_bool" value="true" />
         <string name="carrier_eri_file_name_string">eri_311480.xml</string>

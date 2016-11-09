@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='utf-8' standalone='yes' ?>
 <carrier_config_list>
     <carrier_config>
+        <boolean name="mdn_is_additional_voicemail_number_bool" value="true" />
         <boolean name="operator_selection_expand_bool" value="true" />
         <int name="aliasMinChars" value="2" />
         <int name="smsToMmsTextThreshold" value="7" />
