@@ -84,6 +84,7 @@ public class CarrierConfigTest extends InstrumentationTestCase {
                     if (event == XmlPullParser.START_TAG) {
                         switch (parser.getName()) {
                             case "int":
+                            case "long":
                             case "boolean":
                             case "string":
                             case "int-array":
