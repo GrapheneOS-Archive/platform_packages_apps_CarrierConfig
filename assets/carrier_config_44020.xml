@@ -18,6 +18,5 @@
     <item value="0xAC00-0xAFED:type=other, emergency=true" />
 </string-array>
 <long name="message_expiration_time_long" value="3600000" />
-<boolean name="ignore_data_enabled_changed_for_video_calls" value="true" />
 </carrier_config>
 </carrier_config_list>
