@@ -8,5 +8,6 @@
 <boolean name="hide_ims_apn_bool" value="true" />
 <boolean name="always_show_emergency_alert_onoff_bool" value="true" />
 <long name="message_expiration_time_long" value="3600000" />
+<boolean name="ignore_data_enabled_changed_for_video_calls" value="true" />
 </carrier_config>
 </carrier_config_list>
