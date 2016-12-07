@@ -187,10 +187,10 @@ public class DefaultCarrierConfigService extends CarrierService {
                     result = result && value.equals(id.getMnc());
                     break;
                 case "gid1":
-                    result = result && value.equals(id.getGid1());
+                    result = result && value.equalsIgnoreCase(id.getGid1());
                     break;
                 case "gid2":
-                    result = result && value.equals(id.getGid2());
+                    result = result && value.equalsIgnoreCase(id.getGid2());
                     break;
                 case "spn":
                     result = result && matchOnSP(value, id);
@@ -199,7 +199,7 @@ public class DefaultCarrierConfigService extends CarrierService {
                     result = result && matchOnImsi(value, id);
                     break;
                 case "device":
-                    result = result && value.equals(Build.DEVICE);
+                    result = result && value.equalsIgnoreCase(Build.DEVICE);
                     break;
                 default:
                     Log.e(TAG, "Unknown attribute " + attribute + "=" + value);
@@ -225,7 +225,7 @@ public class DefaultCarrierConfigService extends CarrierService {
         String currentImsi = id.getImsi();
         // If we were able to retrieve current IMSI, see if it matches.
         if (currentImsi != null) {
-            Pattern imsiPattern = Pattern.compile(xmlImsi);
+            Pattern imsiPattern = Pattern.compile(xmlImsi, Pattern.CASE_INSENSITIVE);
             Matcher matcher = imsiPattern.matcher(currentImsi);
             matchFound = matcher.matches();
         }
@@ -249,7 +249,7 @@ public class DefaultCarrierConfigService extends CarrierService {
                 matchFound = true;
             }
         } else if (currentSP != null) {
-            Pattern spPattern = Pattern.compile(xmlSP);
+            Pattern spPattern = Pattern.compile(xmlSP, Pattern.CASE_INSENSITIVE);
             Matcher matcher = spPattern.matcher(currentSP);
             matchFound = matcher.matches();
         }
