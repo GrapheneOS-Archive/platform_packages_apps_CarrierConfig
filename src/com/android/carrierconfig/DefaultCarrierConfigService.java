@@ -175,16 +175,16 @@ public class DefaultCarrierConfigService extends CarrierService {
                     result = result && value.equals(id.getMnc());
                     break;
                 case "gid1":
-                    result = result && value.equals(id.getGid1());
+                    result = result && value.equalsIgnoreCase(id.getGid1());
                     break;
                 case "gid2":
-                    result = result && value.equals(id.getGid2());
+                    result = result && value.equalsIgnoreCase(id.getGid2());
                     break;
                 case "spn":
-                    result = result && value.equals(id.getSpn());
+                    result = result && value.equalsIgnoreCase(id.getSpn());
                     break;
                 case "device":
-                    result = result && value.equals(Build.DEVICE);
+                    result = result && value.equalsIgnoreCase(Build.DEVICE);
                     break;
                 default:
                     Log.e(TAG, "Unknown attribute " + attribute + "=" + value);
