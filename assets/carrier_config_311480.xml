@@ -81,5 +81,6 @@
             <item value="dun" />
             <item value="supl" />
         </string-array>
+        <boolean name="support_3gpp_call_forwarding_while_roaming_bool" value="false" />
     </carrier_config>
 </carrier_config_list>
