@@ -82,5 +82,9 @@
             <item value="supl" />
         </string-array>
         <boolean name="support_3gpp_call_forwarding_while_roaming_bool" value="false" />
+        <string-array name="call_forwarding_blocks_while_roaming_string_array" num="2">
+            <item value="*71" />
+            <item value="*72" />
+        </string-array>
     </carrier_config>
 </carrier_config_list>
