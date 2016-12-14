@@ -83,12 +83,16 @@ public class CarrierConfigTest extends InstrumentationTestCase {
                 while (((event = parser.next()) != XmlPullParser.END_DOCUMENT)) {
                     if (event == XmlPullParser.START_TAG) {
                         switch (parser.getName()) {
+                            case "int-array":
+                            case "string-array":
+                                // string-array and int-array require the 'num' attribute
+                                final String varNum = parser.getAttributeValue(null, "num");
+                                assertNotNull("No 'num' attribute in array: "
+                                        + parser.getPositionDescription(), varNum);
                             case "int":
                             case "long":
                             case "boolean":
                             case "string":
-                            case "int-array":
-                            case "string-array":
                                 // NOTE: This doesn't check for other valid Bundle values, but it
                                 // is limited to the key types in CarrierConfigManager.
                                 final String varName = parser.getAttributeValue(null, "name");
