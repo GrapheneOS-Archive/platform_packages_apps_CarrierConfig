@@ -2,6 +2,6 @@
 <carrier_config_list>
     <carrier_config>
         <string name="default_vm_number_string">3311</string>
-        <boolean name="disable_hd_audio_icon" value="true" />
+        <boolean name="display_hd_audio_property_bool" value="false" />
     </carrier_config>
 </carrier_config_list>
