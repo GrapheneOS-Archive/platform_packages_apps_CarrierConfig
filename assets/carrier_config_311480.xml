@@ -109,6 +109,7 @@
         </string-array>
         <boolean name="is_ims_conference_size_enforced_bool" value="true"/>
         <int name="ims_conference_size_limit_int" value="5" />
+        <boolean name="support_3gpp_call_forwarding_while_roaming_bool" value="false" />
     </carrier_config>
     <!-- Tracfone Vzw shows empty string as SPN -->
     <carrier_config gid1="BA01270000000000">
