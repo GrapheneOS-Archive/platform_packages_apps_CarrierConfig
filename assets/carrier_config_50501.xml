@@ -6,5 +6,6 @@
         <int name="maxImageWidth" value="2592" />
         <string name="default_vm_number_string">+61101</string>
         <int name="carrier_default_wfc_ims_mode_int" value="1" />
+        <boolean name="editable_tether_apn_bool" value="true" />
     </carrier_config>
 </carrier_config_list>
