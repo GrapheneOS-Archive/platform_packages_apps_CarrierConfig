@@ -71,12 +71,13 @@
             <item value="SIGNAL_LOST" />
         </string-array>
         <boolean name="carrier_promote_wfc_on_call_fail_bool" value="true" />
-        <string-array name="ims_reasoninfo_mapping_string_array" num="8">
+        <string-array name="ims_reasoninfo_mapping_string_array" num="9">
             <item value="332|simultaneous call limit has already been reached|1403" />
             <item value="332|Forbidden: Simultaneous Call Limit Has Already Been Reached|1403" />
             <item value="338|another device sent all devices busy response|1404" />
             <item value="501|call completion elsewhere|1014" />
             <item value="501|call has been pulled by another device|1016" />
+            <item value="510|call has been pulled by another device|1016" />
             <item value="501|another device sent all devices busy response|1404" />
             <item value="510|another device sent all devices busy response|1404" />
             <item value="1014|call has been pulled by another device|1016" />
