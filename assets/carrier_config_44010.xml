@@ -7,5 +7,8 @@
 <int name="volte_replacement_rat_int" value="3" />
 <boolean name="hide_ims_apn_bool" value="true" />
 <boolean name="always_show_emergency_alert_onoff_bool" value="true" />
+<string-array name="carrier_additional_cbs_channels_strings" num="1">
+    <item value="0xA000-0xA002,0xA004-0xA3FF:type=etws_default, emergency=true" />
+</string-array>
 </carrier_config>
 </carrier_config_list>
