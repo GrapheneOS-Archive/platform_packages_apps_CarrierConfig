@@ -71,7 +71,7 @@
             <item value="SIGNAL_LOST" />
         </string-array>
         <boolean name="carrier_promote_wfc_on_call_fail_bool" value="true" />
-        <string-array name="ims_reasoninfo_mapping_string_array" num="9">
+        <string-array name="ims_reasoninfo_mapping_string_array" num="10">
             <item value="332|simultaneous call limit has already been reached|1403" />
             <item value="332|Forbidden: Simultaneous Call Limit Has Already Been Reached|1403" />
             <item value="338|another device sent all devices busy response|1404" />
@@ -81,6 +81,7 @@
             <item value="501|another device sent all devices busy response|1404" />
             <item value="510|another device sent all devices busy response|1404" />
             <item value="1014|call has been pulled by another device|1016" />
+            <item value="*|Call is dropped due to Wi-Fi signal is degraded|1407" />
         </string-array>
         <boolean name="disable_severe_when_extreme_disabled_bool" value="false" />
         <boolean name="mmsCloseConnection" value="true"/>
