@@ -38,13 +38,27 @@
         <boolean name="disable_severe_when_extreme_disabled_bool" value="false" />
         <boolean name="persist_lpp_mode_bool" value="true" />
         <int name="wfc_spn_format_idx_int" value="1" />
-        <string-array name="read_only_apn_fields_string_array" num="6">
+        <string-array name="read_only_apn_fields_string_array" num="20">
+            <item value="name" />
+            <item value="proxy" />
+            <item value="port" />
+            <item value="user" />
+            <item value="password" />
+            <item value="server" />
+            <item value="mmsc" />
+            <item value="mmsproxy" />
+            <item value="mmsport" />
+            <item value="mcc" />
+            <item value="mnc" />
+            <item value="authtype" />
             <item value="type" />
             <item value="protocol" />
             <item value="roaming_protocol" />
             <item value="bearer" />
             <item value="bearer_bitmask" />
             <item value="carrier_enabled" />
+            <item value="mvno_type" />
+            <item value="mvno_match_data" />
         </string-array>
         <string-array name="carrier_metered_apn_types_strings" num="3">
             <item value="default" />
