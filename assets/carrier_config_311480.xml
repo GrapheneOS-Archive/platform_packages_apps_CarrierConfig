@@ -87,5 +87,6 @@
             <item value="*86:+1MDN" />
         </string-array>
         <string name="default_vm_number_string">*86</string>
+        <boolean name="support_3gpp_call_forwarding_while_roaming_bool" value="false" />
     </carrier_config>
 </carrier_config_list>
