@@ -25,6 +25,11 @@
         <string name="uaProfTagName">Profile</string>
         <int name="aliasMaxChars" value="48" />
         <int name="maxImageHeight" value="1944" />
+        <int name="lte_earfcns_rsrp_boost_int" value="6" />
+        <string-array name="boosted_lte_earfcns_string_array" num="2">
+            <item value="600-1199" />
+            <item value="1950-2399" />
+        </string-array>
         <boolean name="carrier_volte_available_bool" value="true" />
         <boolean name="support_pause_ims_video_calls_bool" value="true" />
         <int name="maxSubjectLength" value="80" />
