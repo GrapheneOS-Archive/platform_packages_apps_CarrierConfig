@@ -19,5 +19,6 @@
             <item value="0xA802,0xA804:type=etws_default, emergency=true" />
         </string-array>
         <string name="default_vm_number_string">1416</string>
+        <boolean name="ignore_data_enabled_changed_for_video_calls" value="true" />
     </carrier_config>
 </carrier_config_list>
