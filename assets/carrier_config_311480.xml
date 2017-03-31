@@ -112,5 +112,6 @@
             <item value="*71" />
             <item value="*72" />
         </string-array>
+        <boolean name="disable_voice_barring_notification_bool" value="true" />
     </carrier_config>
 </carrier_config_list>
