@@ -66,5 +66,6 @@
             <item value="supl" />
         </string-array>
         <string name="default_vm_number_string">*86</string>
+        <boolean name="disable_voice_barring_notification_bool" value="true" />
     </carrier_config>
 </carrier_config_list>
