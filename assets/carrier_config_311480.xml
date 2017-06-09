@@ -131,6 +131,14 @@
         <boolean name="is_ims_conference_size_enforced_bool" value="true"/>
         <int name="ims_conference_size_limit_int" value="5" />
         <boolean name="support_3gpp_call_forwarding_while_roaming_bool" value="false" />
+        <string-array name="call_forwarding_blocks_while_roaming_string_array" num="2">
+            <item value="*71" />
+            <item value="*72" />
+        </string-array>
         <boolean name="disable_voice_barring_notification_bool" value="true" />
+    </carrier_config>
+    <!-- Tracfone Vzw shows empty string as SPN -->
+    <carrier_config gid1="BA01270000000000">
+        <boolean name="carrier_name_override_bool" value="true" />
     </carrier_config>
 </carrier_config_list>
