@@ -12,6 +12,7 @@
             <item value="23434" />
             <item value="23486" />
         </string-array>
+        <boolean name="display_voicemail_number_as_default_call_forwarding_number" value="true" />
     </carrier_config>
     <carrier_config gid1="28000000">
         <boolean name="carrier_name_override_bool" value="true" />
