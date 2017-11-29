@@ -86,5 +86,7 @@
             <item value="supl" />
         </string-array>
         <boolean name="disable_voice_barring_notification_bool" value="true" />
+        <boolean name="carrier_name_override_bool" value="true" />
+        <string name="carrier_name_string">Verizon</string>
     </carrier_config>
 </carrier_config_list>
