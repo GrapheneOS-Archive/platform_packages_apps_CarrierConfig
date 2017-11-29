@@ -14,5 +14,7 @@
         <int name="maxImageWidth" value="2592"/>
         <int name="maxImageHeight" value="1944"/>
         <boolean name="mmsCloseConnection" value="true"/>
+        <boolean name="carrier_name_override_bool" value="true" />
+        <string name="carrier_name_string">T-Mobile</string>
     </carrier_config>
 </carrier_config_list>
