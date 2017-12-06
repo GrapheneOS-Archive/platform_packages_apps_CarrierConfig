@@ -7,6 +7,7 @@
         <int name="maxSubjectLength" value="80"/>
         <int name="maxMessageSize" value="1048576"/>
         <int name="maxImageWidth" value="2592"/>
+        <boolean name="call_forwarding_map_non_number_to_voicemail_bool" value="true" />
         <string-array name="read_only_apn_types_string_array" num="1">
             <item value="*"/>
         </string-array>
