@@ -5,6 +5,14 @@
         <int name="maxMessageSize" value="1048576" />
         <int name="maxImageWidth" value="2592" />
         <string name="default_vm_number_string">+31654501233</string>
+        <int-array name="lte_rsrp_thresholds_int_array" num="6">
+            <item value="-140" />  <!-- SIGNAL_STRENGTH_NONE_OR_UNKNOWN -->
+            <item value="-115" />  <!-- SIGNAL_STRENGTH_POOR -->
+            <item value="-105" />  <!-- SIGNAL_STRENGTH_MODERATE -->
+            <item value="-95" />  <!-- SIGNAL_STRENGTH_GOOD -->
+            <item value="-85" />  <!-- SIGNAL_STRENGTH_GREAT -->
+            <item value="-44" />
+        </int-array>
     </carrier_config>
     <carrier_config gid1="BAE0000000000000">
         <boolean name="sms_requires_destination_number_conversion_bool" value="true" />
