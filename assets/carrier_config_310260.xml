@@ -19,4 +19,8 @@
         <boolean name="carrier_name_override_bool" value="true" />
         <string name="carrier_name_string">T-Mobile</string>
     </carrier_config>
+    <carrier_config imsi="^31026097.*">
+        <boolean name="carrier_name_override_bool" value="true" />
+        <string name="carrier_name_string">Fi Network</string>
+    </carrier_config>
 </carrier_config_list>
