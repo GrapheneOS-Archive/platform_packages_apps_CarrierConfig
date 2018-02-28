@@ -139,13 +139,11 @@
         <boolean name="disable_voice_barring_notification_bool" value="true" />
         <boolean name="carrier_name_override_bool" value="true" />
         <string name="carrier_name_string">Verizon</string>
-        <int-array name="lte_rsrp_thresholds_int_array" num="6">
-            <item value="-140" />  <!-- SIGNAL_STRENGTH_NONE_OR_UNKNOWN -->
+        <int-array name="lte_rsrp_thresholds_int_array" num="4">
             <item value="-115" />  <!-- SIGNAL_STRENGTH_POOR -->
             <item value="-105" />  <!-- SIGNAL_STRENGTH_MODERATE -->
             <item value="-95" />  <!-- SIGNAL_STRENGTH_GOOD -->
             <item value="-85" />  <!-- SIGNAL_STRENGTH_GREAT -->
-            <item value="-44" />
         </int-array>
     </carrier_config>
     <!-- Tracfone Vzw shows empty string as SPN -->
