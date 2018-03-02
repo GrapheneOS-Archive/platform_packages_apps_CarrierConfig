@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='utf-8' standalone='yes' ?>
 <carrier_config_list>
     <carrier_config>
+        <boolean name="rtt_supported_bool" value="true" />
         <int name="vvm_port_number_int" value="1808" />
         <string name="vvm_destination_number_string">122</string>
         <int name="maxImageHeight" value="1944" />
