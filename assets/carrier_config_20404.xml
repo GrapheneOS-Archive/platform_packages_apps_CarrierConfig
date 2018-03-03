@@ -13,6 +13,7 @@
         </int-array>
     </carrier_config>
     <carrier_config gid1="BAE0000000000000">
+        <boolean name="rtt_supported_bool" value="true" />
         <boolean name="sms_requires_destination_number_conversion_bool" value="true" />
         <boolean name="mdn_is_additional_voicemail_number_bool" value="true" />
         <boolean name="allow_adding_apns_bool" value="false" />
