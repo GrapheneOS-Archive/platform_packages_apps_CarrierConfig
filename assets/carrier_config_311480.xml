@@ -52,6 +52,7 @@
         <boolean name="treat_downgraded_video_calls_as_video_calls_bool" value="true" />
         <boolean name="drop_video_call_when_answering_audio_call_bool" value="true" />
         <boolean name="editable_wfc_mode_bool" value="false"/>
+        <boolean name="editable_wfc_roaming_mode_bool" value="true"/>
         <boolean name="allow_merge_wifi_calls_when_vowifi_off_bool" value="false" />
         <boolean name="wifi_calls_can_be_hd_audio" value="false" />
         <boolean name="video_calls_can_be_hd_audio" value="false" />
