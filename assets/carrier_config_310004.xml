@@ -30,6 +30,7 @@
         <boolean name="allow_adding_apns_bool" value="false" />
         <boolean name="broadcast_emergency_call_state_changes_bool" value="true" />
         <string name="carrier_eri_file_name_string">eri_311480.xml</string>
+        <boolean name="carrier_wfc_ims_available_bool" value="true" />
         <int name="carrier_default_wfc_ims_mode_int" value="1"/>
         <string name="default_vm_number_string">*86</string>
         <string-array name="carrier_data_call_permanent_failure_strings" num="14">
@@ -49,6 +50,7 @@
             <item value="SIGNAL_LOST" />
         </string-array>
         <boolean name="editable_wfc_mode_bool" value="false"/>
+        <boolean name="editable_wfc_roaming_mode_bool" value="true"/>
         <boolean name="disable_severe_when_extreme_disabled_bool" value="false" />
         <boolean name="persist_lpp_mode_bool" value="true" />
         <boolean name="mmsCloseConnection" value="true"/>
