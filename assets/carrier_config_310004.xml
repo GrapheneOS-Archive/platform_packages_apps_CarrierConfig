@@ -91,5 +91,6 @@
         <boolean name="disable_voice_barring_notification_bool" value="true" />
         <boolean name="carrier_name_override_bool" value="true" />
         <string name="carrier_name_string">Verizon</string>
+        <boolean name="show_apn_setting_cdma_bool" value="true" />
     </carrier_config>
 </carrier_config_list>

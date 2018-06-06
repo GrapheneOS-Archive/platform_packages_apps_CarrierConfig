@@ -149,6 +149,7 @@
             <item value="-95" />  <!-- SIGNAL_STRENGTH_GOOD -->
             <item value="-85" />  <!-- SIGNAL_STRENGTH_GREAT -->
         </int-array>
+        <boolean name="show_apn_setting_cdma_bool" value="true" />
     </carrier_config>
     <!-- Tracfone Vzw shows empty string as SPN -->
     <carrier_config gid1="BA01270000000000">
