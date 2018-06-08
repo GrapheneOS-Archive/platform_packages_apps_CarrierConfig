@@ -9,6 +9,7 @@
         <boolean name="carrier_vt_available_bool" value="true" />
         <boolean name="support_downgrade_vt_to_audio_bool" value="false" />
         <boolean name="notify_handover_video_from_wifi_to_lte_bool" value="true" />
+        <boolean name="notify_handover_video_from_lte_to_wifi_bool" value="true" />
         <boolean name="carrier_allow_turnoff_ims_bool" value="false" />
         <boolean name="carrier_volte_provisioning_required_bool" value="true" />
         <boolean name="treat_downgraded_video_calls_as_video_calls_bool" value="true" />
