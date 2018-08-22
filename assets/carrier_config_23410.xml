@@ -14,6 +14,9 @@
             <item value="23434" />
             <item value="23486" />
         </string-array>
+        <int-array name="radio_restart_failure_causes_int_array" num="1">
+            <item value="55" />  <!-- MULTI_CONN_TO_SAME_PDN_NOT_ALLOWED -->
+        </int-array>
     </carrier_config>
     <carrier_config gid1="0A">
         <string name="default_vm_number_string">905</string>
