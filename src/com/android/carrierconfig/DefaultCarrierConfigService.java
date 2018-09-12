@@ -92,18 +92,19 @@ public class DefaultCarrierConfigService extends CarrierService {
 
     PersistableBundle loadConfig(XmlPullParser parser, @Nullable CarrierIdentifier id) {
         PersistableBundle config = new PersistableBundle();
+        String sku = getApplicationContext().getResources().getString(R.string.sku_filter);
 
         if (id == null) {
             try {
                 // Load no SIM config if carrier id is not set.
                 parser.setInput(getApplicationContext().getAssets().open(
                         NO_SIM_CONFIG_FILE_NAME), "utf-8");
-                config = readConfigFromXml(parser, null);
+                config = readConfigFromXml(parser, null, sku);
 
                 // Treat vendor_no_sim.xml as if it were appended to the no sim config file.
                 XmlPullParser vendorInput =
                         getApplicationContext().getResources().getXml(R.xml.vendor_no_sim);
-                PersistableBundle vendorConfig = readConfigFromXml(vendorInput, null);
+                PersistableBundle vendorConfig = readConfigFromXml(vendorInput, null, sku);
                 config.putAll(vendorConfig);
             }
             catch (IOException|XmlPullParserException e) {
@@ -125,14 +126,14 @@ public class DefaultCarrierConfigService extends CarrierService {
                 for (String file : getApplicationContext().getAssets().list("")) {
                     if (file.startsWith(CARRIER_ID_PREFIX + id.getSpecificCarrierId() + "_")) {
                         parser.setInput(getApplicationContext().getAssets().open(file), "utf-8");
-                        configBySpecificCarrierId = readConfigFromXml(parser, null);
+                        configBySpecificCarrierId = readConfigFromXml(parser, null, sku);
                         break;
                     } else if (file.startsWith(CARRIER_ID_PREFIX + id.getCarrierId() + "_")) {
                         parser.setInput(getApplicationContext().getAssets().open(file), "utf-8");
-                        configByCarrierId = readConfigFromXml(parser, null);
+                        configByCarrierId = readConfigFromXml(parser, null, sku);
                     } else if (file.startsWith(CARRIER_ID_PREFIX + mccmncCarrierId + "_")) {
                         parser.setInput(getApplicationContext().getAssets().open(file), "utf-8");
-                        configByMccMncFallBackCarrierId = readConfigFromXml(parser, null);
+                        configByMccMncFallBackCarrierId = readConfigFromXml(parser, null, sku);
                     }
                 }
 
@@ -149,7 +150,7 @@ public class DefaultCarrierConfigService extends CarrierService {
                 // fallback to use mccmnc.xml when there is no carrier id named config found.
                 parser.setInput(getApplicationContext().getAssets().open(
                         MCCMNC_PREFIX + id.getMcc() + id.getMnc() + ".xml"), "utf-8");
-                config = readConfigFromXml(parser, id);
+                config = readConfigFromXml(parser, id, sku);
             }
         }
         catch (IOException | XmlPullParserException e) {
@@ -161,7 +162,7 @@ public class DefaultCarrierConfigService extends CarrierService {
         // Treat vendor.xml as if it were appended to the carrier config file we read.
         XmlPullParser vendorInput = getApplicationContext().getResources().getXml(R.xml.vendor);
         try {
-            PersistableBundle vendorConfig = readConfigFromXml(vendorInput, id);
+            PersistableBundle vendorConfig = readConfigFromXml(vendorInput, id, sku);
             config.putAll(vendorConfig);
         }
         catch (IOException | XmlPullParserException e) {
@@ -210,10 +211,11 @@ public class DefaultCarrierConfigService extends CarrierService {
      * @param id the details of the SIM operator used to filter parts of the document. If read from
      *           files named after carrier id, this will be set to {@null code} as no filter match
      *           needed.
+     * @param sku a filter to be customizable.
      * @return a possibly empty PersistableBundle containing the config values.
      */
-    static PersistableBundle readConfigFromXml(XmlPullParser parser, @Nullable CarrierIdentifier id)
-            throws IOException, XmlPullParserException {
+    static PersistableBundle readConfigFromXml(XmlPullParser parser, @Nullable CarrierIdentifier id,
+            String sku) throws IOException, XmlPullParserException {
         PersistableBundle config = new PersistableBundle();
 
         if (parser == null) {
@@ -226,7 +228,7 @@ public class DefaultCarrierConfigService extends CarrierService {
         while (((event = parser.next()) != XmlPullParser.END_DOCUMENT)) {
             if (event == XmlPullParser.START_TAG && "carrier_config".equals(parser.getName())) {
                 // Skip this fragment if it has filters that don't match.
-                if (id != null && !checkFilters(parser, id)) {
+                if (!checkFilters(parser, id, sku)) {
                     continue;
                 }
                 PersistableBundle configFragment = PersistableBundle.restoreFromXml(parser);
@@ -241,9 +243,9 @@ public class DefaultCarrierConfigService extends CarrierService {
      * Checks to see if an XML node matches carrier filters.
      *
      * <p>This iterates over the attributes of the current tag pointed to by {@code parser} and
-     * checks each one against {@code id} or {@link Build.DEVICE}. Attributes that are not specified
-     * in the node will not be checked, so a node with no attributes will always return true. The
-     * supported filter attributes are,
+     * checks each one against {@code id} or {@link Build.DEVICE} or {@link R.string#sku_filter}.
+     * Attributes that are not specified in the node will not be checked, so a node with no
+     * attributes will always return true. The supported filter attributes are,
      * <ul>
      *   <li>mcc: {@link CarrierIdentifier#getMcc}</li>
      *   <li>mnc: {@link CarrierIdentifier#getMnc}</li>
@@ -254,6 +256,7 @@ public class DefaultCarrierConfigService extends CarrierService {
      *   <li>device: {@link Build.DEVICE}</li>
      *   <li>cid: {@link CarrierIdentifier#getCarrierId()}
      *   or {@link CarrierIdentifier#getSpecificCarrierId()}</li>
+     *   <li>sku: {@link R.string#sku_filter} "sku_filter" that OEM customizable filter</li>
      * </ul>
      * </p>
      *
@@ -265,41 +268,45 @@ public class DefaultCarrierConfigService extends CarrierService {
      *
      * @param parser an XmlPullParser pointing at a START_TAG with the attributes to check.
      * @param id the carrier details to check against.
+     * @param sku a filter to be customizable.
      * @return false if any XML attribute does not match the corresponding value.
      */
-    static boolean checkFilters(XmlPullParser parser, CarrierIdentifier id) {
+    static boolean checkFilters(XmlPullParser parser, @Nullable CarrierIdentifier id, String sku) {
         boolean result = true;
         for (int i = 0; i < parser.getAttributeCount(); ++i) {
             String attribute = parser.getAttributeName(i);
             String value = parser.getAttributeValue(i);
             switch (attribute) {
                 case "mcc":
-                    result = result && value.equals(id.getMcc());
+                    result = result && (id == null || value.equals(id.getMcc()));
                     break;
                 case "mnc":
-                    result = result && value.equals(id.getMnc());
+                    result = result && (id == null || value.equals(id.getMnc()));
                     break;
                 case "gid1":
-                    result = result && value.equalsIgnoreCase(id.getGid1());
+                    result = result && (id == null || value.equalsIgnoreCase(id.getGid1()));
                     break;
                 case "gid2":
-                    result = result && value.equalsIgnoreCase(id.getGid2());
+                    result = result && (id == null || value.equalsIgnoreCase(id.getGid2()));
                     break;
                 case "spn":
-                    result = result && matchOnSP(value, id);
+                    result = result && (id == null || matchOnSP(value, id));
                     break;
                 case "imsi":
-                    result = result && matchOnImsi(value, id);
+                    result = result && (id == null || matchOnImsi(value, id));
                     break;
                 case "device":
                     result = result && value.equalsIgnoreCase(Build.DEVICE);
                     break;
                 case "cid":
-                    result = result && ((Integer.parseInt(value) == id.getCarrierId())
+                    result = result && (id == null || (Integer.parseInt(value) == id.getCarrierId())
                             || (Integer.parseInt(value) == id.getSpecificCarrierId()));
                     break;
                 case "name":
                     // name is used together with cid for readability. ignore for filter.
+                    break;
+                case "sku":
+                    result = result && value.equalsIgnoreCase(sku);
                     break;
                 default:
                     Log.e(TAG, "Unknown attribute " + attribute + "=" + value);
