@@ -15,5 +15,7 @@
         <string name="default_vm_number_string">1416</string>
         <long name="message_expiration_time_long" value="3600000" />
         <boolean name="ignore_data_enabled_changed_for_video_calls" value="true" />
+        <boolean name="call_barring_supports_password_change_bool" value="false" />
+        <boolean name="call_barring_supports_deactivate_all_bool" value="false" />
     </carrier_config>
 </carrier_config_list>
