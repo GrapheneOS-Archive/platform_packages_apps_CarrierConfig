@@ -7,5 +7,6 @@
 <int name="maxImageWidth" value="2592" />
 <boolean name="enableSMSDeliveryReports" value="false" />
 <boolean name="csp_enabled_bool" value="true" />
+<boolean name="display_hd_audio_property_bool" value="false" />
 </carrier_config>
 </carrier_config_list>
