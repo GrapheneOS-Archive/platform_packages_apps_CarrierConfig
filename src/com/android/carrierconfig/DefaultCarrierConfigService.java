@@ -22,8 +22,6 @@ import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.android.internal.util.FastXmlSerializer;
-
 /**
  * Provides network overrides for carrier configuration.
  *
