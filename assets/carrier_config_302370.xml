@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <carrier_config_list>
     <carrier_config>
+        <boolean name="hide_lte_plus_data_icon_bool" value="false" />
         <int name="smsToMmsTextThreshold" value="6"/>
         <int name="recipientLimit" value="20"/>
         <int name="maxImageHeight" value="1944"/>
