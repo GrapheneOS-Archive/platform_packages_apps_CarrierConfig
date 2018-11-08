@@ -8,6 +8,7 @@
         <string name="default_vm_number_string">+31654501233</string>
     </carrier_config>
     <carrier_config gid1="BAE0000000000000">
+        <boolean name="world_mode_enabled_bool" value="true" />
         <boolean name="rtt_supported_bool" value="true" />
         <boolean name="sms_requires_destination_number_conversion_bool" value="true" />
         <boolean name="mdn_is_additional_voicemail_number_bool" value="true" />

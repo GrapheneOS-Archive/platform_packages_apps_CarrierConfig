@@ -4,6 +4,7 @@
         <boolean name="rtt_supported_bool" value="true" />
         <boolean name="carrier_volte_provisioned_bool" value="true" />
         <boolean name="allow_hold_in_ims_call" value="false" />
+        <boolean name="world_mode_enabled_bool" value="true" />
         <boolean name="sms_requires_destination_number_conversion_bool" value="true" />
         <boolean name="mdn_is_additional_voicemail_number_bool" value="true" />
         <boolean name="carrier_vt_available_bool" value="true" />
