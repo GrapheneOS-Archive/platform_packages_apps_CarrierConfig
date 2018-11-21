@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config>
+    <int name="maxImageHeight" value="1944"/>
+    <int name="maxImageWidth" value="2592"/>
+    <int name="maxMessageSize" value="3072000"/>
+    <int name="maxSubjectLength" value="80"/>
+    <string-array name="non_roaming_operator_string_array" num="1">
+        <item value="302"/>
+    </string-array>
+    <int name="recipientLimit" value="20"/>
+    <int name="smsToMmsTextThreshold" value="6"/>
+</carrier_config>
