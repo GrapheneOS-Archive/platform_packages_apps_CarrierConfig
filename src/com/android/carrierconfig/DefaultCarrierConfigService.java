@@ -1,11 +1,10 @@
 package com.android.carrierconfig;
 
-import android.content.Context;
+import android.annotation.Nullable;
 import android.os.Build;
 import android.os.PersistableBundle;
 import android.service.carrier.CarrierIdentifier;
 import android.service.carrier.CarrierService;
-import android.telephony.CarrierConfigManager;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
@@ -14,11 +13,7 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -48,10 +43,18 @@ public class DefaultCarrierConfigService extends CarrierService {
     /**
      * Returns per-network overrides for carrier configuration.
      *
-     * This returns a carrier config bundle appropriate for the given network by reading data from
-     * files in our assets folder. First we look for a file named after the MCC+MNC of {@code id}
-     * and then we read res/xml/vendor.xml. Both files may contain multiple bundles with filters on
-     * them. All the matching bundles are flattened to return one carrier config bundle.
+     * This returns a carrier config bundle appropriate for the given carrier by reading data from
+     * files in our assets folder. First we look for file named after
+     * carrier_config_<carrierid>_<carriername>.xml if carrier id is not
+     * {@link TelephonyManager#UNKNOWN_CARRIER_ID}. Note <carriername> is to improve the
+     * readability which should not be used to search asset files. If there is no configuration,
+     * then we look for a file named after the MCC+MNC of {@code id} as a fallback. Last, we read
+     * res/xml/vendor.xml.
+     *
+     * carrierid.xml doesn't support multiple bundles with filters as each carrier including MVNOs
+     * has its own config file named after its carrier id.
+     * Both vendor.xml and MCC+MNC.xml files may contain multiple bundles with filters on them.
+     * All the matching bundles are flattened to return one carrier config bundle.
      */
     @Override
     public PersistableBundle onLoadConfig(CarrierIdentifier id) {
@@ -61,8 +64,7 @@ public class DefaultCarrierConfigService extends CarrierService {
             return null;
         }
 
-
-        PersistableBundle config = null;
+        PersistableBundle config = new PersistableBundle();
         try {
             synchronized (this) {
                 if (mFactory == null) {
@@ -71,9 +73,42 @@ public class DefaultCarrierConfigService extends CarrierService {
             }
 
             XmlPullParser parser = mFactory.newPullParser();
-            String fileName = "carrier_config_" + id.getMcc() + id.getMnc() + ".xml";
-            parser.setInput(getApplicationContext().getAssets().open(fileName), "utf-8");
-            config = readConfigFromXml(parser, id);
+            if (id.getCarrierId() != TelephonyManager.UNKNOWN_CARRIER_ID) {
+                PersistableBundle configByCarrierId = new PersistableBundle();
+                PersistableBundle configByPreciseCarrierId = new PersistableBundle();
+                PersistableBundle configByMccMncFallBackCarrierId = new PersistableBundle();
+                int mccmncCarrierId = TelephonyManager.from(getApplicationContext())
+                        .getCarrierIdFromMccMnc(id.getMcc() + id.getMnc());
+                for (String file : getApplicationContext().getAssets().list("")) {
+                    if (file.startsWith("carrier_config_" + id.getPreciseCarrierId() + "_")) {
+                        parser.setInput(getApplicationContext().getAssets().open(file), "utf-8");
+                        configByPreciseCarrierId = readConfigFromXml(parser, null);
+                        break;
+                    } else if (file.startsWith("carrier_config_" + id.getCarrierId() + "_")) {
+                        parser.setInput(getApplicationContext().getAssets().open(file), "utf-8");
+                        configByCarrierId = readConfigFromXml(parser, null);
+                    } else if (file.startsWith("carrier_config_" + mccmncCarrierId + "_")) {
+                        parser.setInput(getApplicationContext().getAssets().open(file), "utf-8");
+                        configByMccMncFallBackCarrierId = readConfigFromXml(parser, null);
+                    }
+                }
+
+                // priority: precise carrier id > carrier id > mccmnc fallback carrier id
+                if (!configByPreciseCarrierId.isEmpty()) {
+                    config = configByPreciseCarrierId;
+                } else if (!configByCarrierId.isEmpty()) {
+                    config = configByCarrierId;
+                } else if (!configByMccMncFallBackCarrierId.isEmpty()) {
+                    config = configByMccMncFallBackCarrierId;
+                }
+            }
+            if (config.isEmpty()) {
+                // fallback to use mccmnc.xml when there is no carrier id named configuration found.
+                parser.setInput(getApplicationContext().getAssets().open(
+                        "carrier_config_" + id.getMcc() + id.getMnc() + ".xml"), "utf-8");
+                config = readConfigFromXml(parser, id);
+            }
+
         }
         catch (IOException | XmlPullParserException e) {
             Log.d(TAG, e.toString());
@@ -98,7 +133,9 @@ public class DefaultCarrierConfigService extends CarrierService {
      * Parses an XML document and returns a PersistableBundle.
      *
      * <p>This function iterates over each {@code <carrier_config>} node in the XML document and
-     * parses it into a bundle if its filters match {@code id}. The format of XML bundles is defined
+     * parses it into a bundle if its filters match {@code id}. XML documents named after carrier id
+     * doesn't support filter match as each carrier including MVNOs will have its own config file.
+     * The format of XML bundles is defined
      * by {@link PersistableBundle#restoreFromXml}. All the matching bundles will be flattened and
      * returned as a single bundle.</p>
      *
@@ -115,11 +152,25 @@ public class DefaultCarrierConfigService extends CarrierService {
      * </carrier_config_list>
      * }</pre></p>
      *
+     * <p>Here is another example document in vendor.xml.
+     * <pre>{@code
+     * <carrier_config_list>
+     *     <carrier_config cid="1938" name="verizon">
+     *         <boolean name="voicemail_notification_persistent_bool" value="true" />
+     *     </carrier_config>
+     *     <carrier_config cid="1788" name="sprint">
+     *         <boolean name="voicemail_notification_persistent_bool" value="false" />
+     *     </carrier_config>
+     * </carrier_config_list>
+     * }</pre></p>
+     *
      * @param parser an XmlPullParser pointing at the beginning of the document.
-     * @param id the details of the SIM operator used to filter parts of the document
+     * @param id the details of the SIM operator used to filter parts of the document. If read from
+     *           file named after carrier id, this will be set to {@null code} as no filter match
+     *           needed.
      * @return a possibly empty PersistableBundle containing the config values.
      */
-    static PersistableBundle readConfigFromXml(XmlPullParser parser, CarrierIdentifier id)
+    static PersistableBundle readConfigFromXml(XmlPullParser parser, @Nullable CarrierIdentifier id)
             throws IOException, XmlPullParserException {
         PersistableBundle config = new PersistableBundle();
 
@@ -133,7 +184,7 @@ public class DefaultCarrierConfigService extends CarrierService {
         while (((event = parser.next()) != XmlPullParser.END_DOCUMENT)) {
             if (event == XmlPullParser.START_TAG && "carrier_config".equals(parser.getName())) {
                 // Skip this fragment if it has filters that don't match.
-                if (!checkFilters(parser, id)) {
+                if (id != null && !checkFilters(parser, id)) {
                     continue;
                 }
                 PersistableBundle configFragment = PersistableBundle.restoreFromXml(parser);
@@ -159,6 +210,8 @@ public class DefaultCarrierConfigService extends CarrierService {
      *   <li>spn: {@link CarrierIdentifier#getSpn}</li>
      *   <li>imsi: {@link CarrierIdentifier#getImsi}</li>
      *   <li>device: {@link Build.DEVICE}</li>
+     *   <li>cid: {@link CarrierIdentifier#getCarrierId()}
+     *   or {@link CarrierIdentifier#getPreciseCarrierId()}</li>
      * </ul>
      * </p>
      *
@@ -198,6 +251,13 @@ public class DefaultCarrierConfigService extends CarrierService {
                     break;
                 case "device":
                     result = result && value.equalsIgnoreCase(Build.DEVICE);
+                    break;
+                case "cid":
+                    result = result && (value.equals(id.getCarrierId())
+                            || value.equals(id.getPreciseCarrierId()));
+                    break;
+                case "name":
+                    // name is used together with cid for readability. ignore for filter.
                     break;
                 default:
                     Log.e(TAG, "Unknown attribute " + attribute + "=" + value);
