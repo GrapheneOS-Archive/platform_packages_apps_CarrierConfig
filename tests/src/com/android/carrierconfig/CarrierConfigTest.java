@@ -58,6 +58,8 @@ public class CarrierConfigTest extends InstrumentationTestCase {
                                 case "spn":
                                 case "imsi":
                                 case "device":
+                                case "cid":
+                                case "name":
                                     break;
                                 default:
                                     fail("Unknown attribute '" + attribute

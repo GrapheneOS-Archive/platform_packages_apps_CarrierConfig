@@ -31,6 +31,10 @@ public class DefaultCarrierConfigService extends CarrierService {
 
     private static final String SPN_EMPTY_MATCH = "null";
 
+    private static final String CARRIER_ID_PREFIX = "carrier_config_carrierid_";
+
+    private static final String MCCMNC_PREFIX = "carrier_config_mccmnc_";
+
     private static final String TAG = "DefaultCarrierConfigService";
 
     private XmlPullParserFactory mFactory;
@@ -45,7 +49,7 @@ public class DefaultCarrierConfigService extends CarrierService {
      *
      * This returns a carrier config bundle appropriate for the given carrier by reading data from
      * files in our assets folder. First we look for file named after
-     * carrier_config_<carrierid>_<carriername>.xml if carrier id is not
+     * carrier_config_carrierid_<carrierid>_<carriername>.xml if carrier id is not
      * {@link TelephonyManager#UNKNOWN_CARRIER_ID}. Note <carriername> is to improve the
      * readability which should not be used to search asset files. If there is no configuration,
      * then we look for a file named after the MCC+MNC of {@code id} as a fallback. Last, we read
@@ -80,14 +84,14 @@ public class DefaultCarrierConfigService extends CarrierService {
                 int mccmncCarrierId = TelephonyManager.from(getApplicationContext())
                         .getCarrierIdFromMccMnc(id.getMcc() + id.getMnc());
                 for (String file : getApplicationContext().getAssets().list("")) {
-                    if (file.startsWith("carrier_config_" + id.getPreciseCarrierId() + "_")) {
+                    if (file.startsWith(CARRIER_ID_PREFIX + id.getPreciseCarrierId() + "_")) {
                         parser.setInput(getApplicationContext().getAssets().open(file), "utf-8");
                         configByPreciseCarrierId = readConfigFromXml(parser, null);
                         break;
-                    } else if (file.startsWith("carrier_config_" + id.getCarrierId() + "_")) {
+                    } else if (file.startsWith(CARRIER_ID_PREFIX + id.getCarrierId() + "_")) {
                         parser.setInput(getApplicationContext().getAssets().open(file), "utf-8");
                         configByCarrierId = readConfigFromXml(parser, null);
-                    } else if (file.startsWith("carrier_config_" + mccmncCarrierId + "_")) {
+                    } else if (file.startsWith(CARRIER_ID_PREFIX + mccmncCarrierId + "_")) {
                         parser.setInput(getApplicationContext().getAssets().open(file), "utf-8");
                         configByMccMncFallBackCarrierId = readConfigFromXml(parser, null);
                     }
@@ -105,7 +109,7 @@ public class DefaultCarrierConfigService extends CarrierService {
             if (config.isEmpty()) {
                 // fallback to use mccmnc.xml when there is no carrier id named configuration found.
                 parser.setInput(getApplicationContext().getAssets().open(
-                        "carrier_config_" + id.getMcc() + id.getMnc() + ".xml"), "utf-8");
+                        MCCMNC_PREFIX + id.getMcc() + id.getMnc() + ".xml"), "utf-8");
                 config = readConfigFromXml(parser, id);
             }
 
