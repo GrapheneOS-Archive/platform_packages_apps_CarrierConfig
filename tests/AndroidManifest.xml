@@ -16,7 +16,7 @@
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.android.carrierconfig.tests">
-
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
     <application>
         <uses-library android:name="android.test.runner" />
     </application>
