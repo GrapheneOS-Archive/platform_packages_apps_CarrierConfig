@@ -135,6 +135,7 @@
     <int name="recipientLimit" value="20"/>
     <boolean name="rtt_supported_bool" value="true"/>
     <boolean name="show_apn_setting_cdma_bool" value="true"/>
+    <boolean name="use_rcs_presence_bool" value="true" />
     <int name="smsToMmsTextThreshold" value="7"/>
     <boolean name="sms_requires_destination_number_conversion_bool" value="true"/>
     <boolean name="support_3gpp_call_forwarding_while_roaming_bool" value="false"/>
