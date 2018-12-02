@@ -6,4 +6,5 @@
     <string-array name="non_roaming_operator_string_array" num="1">
         <item value="302"/>
     </string-array>
+    <string name="sim_country_iso_override_string" value="ca"/>
 </carrier_config>
