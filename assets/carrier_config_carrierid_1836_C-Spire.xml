@@ -14,4 +14,5 @@
     <int name="maxImageWidth" value="4320"/>
     <string name="httpParams" value="X-CS3G-MDN: 1##LINE1NOCOUNTRYCODE##"/>
     <string name="emailGatewayNumber" value="6245"/>
+    <string name="sim_country_iso_override_string" value="us"/>
 </carrier_config>

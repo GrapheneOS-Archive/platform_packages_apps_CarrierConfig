@@ -2,4 +2,5 @@
 <carrier_config>
     <boolean name="carrier_name_override_bool" value="true"/>
     <string name="carrier_name_string" value="Google Fi"/>
+    <string name="sim_country_iso_override_string" value="us"/>
 </carrier_config>
