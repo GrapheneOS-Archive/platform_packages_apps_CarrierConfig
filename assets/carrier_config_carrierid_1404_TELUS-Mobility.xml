@@ -13,4 +13,6 @@
     <boolean name="show_4g_for_lte_data_icon_bool" value="true"/>
     <int name="smsToMmsTextThreshold" value="5"/>
     <boolean name="voicemail_notification_persistent_bool" value="true"/>
+    <!-- Values for GPS configuration (Telus) -->
+    <string name="gps.lpp_profile">3</string>
 </carrier_config>
