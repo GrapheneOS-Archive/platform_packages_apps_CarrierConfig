@@ -150,4 +150,5 @@
     <int name="wfc_spn_format_idx_int" value="1"/>
     <boolean name="wifi_calls_can_be_hd_audio" value="false"/>
     <boolean name="world_mode_enabled_bool" value="true"/>
+    <string name="sim_country_iso_override_string" value="us"/>
 </carrier_config>
