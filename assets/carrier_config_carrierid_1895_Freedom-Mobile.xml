@@ -6,4 +6,5 @@
     <int name="maxSubjectLength" value="80"/>
     <int name="maxMessageSize" value="1048576"/>
     <int name="maxImageWidth" value="2592"/>
+    <string name="sim_country_iso_override_string" value="ca"/>
 </carrier_config>
