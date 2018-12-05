@@ -2,4 +2,5 @@
 <carrier_config>
     <boolean name="allow_emergency_numbers_in_call_log_bool" value="true"/>
     <boolean name="show_apn_setting_cdma_bool" value="true"/>
+    <string name="sim_country_iso_override_string" value="cn"/>
 </carrier_config>
