@@ -10,5 +10,8 @@
 <long name="message_expiration_time_long" value="3600000" />
 <boolean name="ignore_data_enabled_changed_for_video_calls" value="true" />
 <boolean name="allow_emergency_numbers_in_call_log_bool" value="true" />
+<string-array name="ims_reasoninfo_mapping_string_array" num="1">
+  <item value="332||510" />
+</string-array>
 </carrier_config>
 </carrier_config_list>
