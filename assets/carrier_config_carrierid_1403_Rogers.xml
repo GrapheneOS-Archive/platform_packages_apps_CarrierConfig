@@ -22,4 +22,5 @@
         <item value="302660"/>
         <item value="302780"/>
     </string-array>
+    <string name="gps.lpp_profile">2</string>
 </carrier_config>
