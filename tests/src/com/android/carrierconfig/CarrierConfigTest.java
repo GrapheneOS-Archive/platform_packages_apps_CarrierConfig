@@ -251,13 +251,26 @@ public class CarrierConfigTest extends InstrumentationTestCase {
      * Get the set of config variable names, as used in XML files.
      */
     private Set<String> getCarrierConfigXmlNames() {
-        // get values of all KEY_ members of CarrierConfigManager
-        Field[] fields = CarrierConfigManager.class.getDeclaredFields();
+        Set<String> names = new HashSet<>();
+        // get values of all KEY_ members of CarrierConfigManager as well as its nested classes.
+        names.addAll(getCarrierConfigXmlNames(CarrierConfigManager.class));
+        for (Class nested : CarrierConfigManager.class.getDeclaredClasses()) {
+            Log.i("CarrierConfigTest", nested.toString());
+            if (Modifier.isStatic(nested.getModifiers())) {
+                names.addAll(getCarrierConfigXmlNames(nested));
+            }
+        }
+        return names;
+    }
+
+    private Set<String> getCarrierConfigXmlNames(Class clazz) {
+        // get values of all KEY_ members of clazz
+        Field[] fields = clazz.getDeclaredFields();
         HashSet<String> varXmlNames = new HashSet<>();
         for (Field f : fields) {
             if (!f.getName().startsWith("KEY_")) continue;
-            if ((f.getModifiers() & Modifier.STATIC) == 0) {
-                fail("non-static key in CarrierConfigManager: " + f.toString());
+            if (!Modifier.isStatic(f.getModifiers())) {
+                fail("non-static key in " + clazz.getName() + ":" + f.toString());
             }
             try {
                 String value = (String) f.get(null);

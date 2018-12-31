@@ -110,7 +110,7 @@
     <boolean name="notify_handover_video_from_wifi_to_lte_bool" value="true"/>
     <boolean name="notify_vt_handover_to_wifi_failure_bool" value="true"/>
     <boolean name="operator_selection_expand_bool" value="true"/>
-    <boolean name="persist_lpp_mode_bool" value="true"/>
+    <boolean name="gps.persist_lpp_mode_bool" value="true"/>
     <boolean name="prefer_2g_bool" value="false"/>
     <string-array name="read_only_apn_fields_string_array" num="20">
         <item value="name"/>
