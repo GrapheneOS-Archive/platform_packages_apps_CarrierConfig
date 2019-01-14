@@ -2,8 +2,8 @@
 <carrier_config>
     <boolean name="carrier_name_override_bool" value="true"/>
     <string name="carrier_name_string" value="HOT mobile"/>
+    <string name="sim_country_iso_override_string" value="il"/>
     <string-array name="non_roaming_operator_string_array" num="1">
         <item value="42503"/>
     </string-array>
-    <string name="sim_country_iso_override_string" value="il"/>
 </carrier_config>

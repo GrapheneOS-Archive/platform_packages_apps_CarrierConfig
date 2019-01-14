@@ -10,6 +10,7 @@
     <int name="maxMessageSize" value="1048576"/>
     <int name="maxImageWidth" value="2592"/>
     <string name="carrier_name_string" value="Fido"/>
+    <string name="gps.lpp_profile" value="2"/>
     <string-array name="read_only_apn_types_string_array" num="1">
         <item value="*"/>
     </string-array>
@@ -20,5 +21,4 @@
         <item value="302720"/>
         <item value="302780"/>
     </string-array>
-    <string name="gps.lpp_profile">2</string>
 </carrier_config>
