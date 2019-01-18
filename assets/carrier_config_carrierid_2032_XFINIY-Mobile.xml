@@ -78,6 +78,7 @@
         <item value="WIRELESS CALLER"/>
         <item value="UNKNOWN NAME"/>
     </string-array>
+    <boolean name="gps.persist_lpp_mode_bool" value="true"/>
     <string name="httpParams" value="x-up-calling-line-id: 1##LINE1NOCOUNTRYCODE##|X-VzW-MDN: 1##LINE1NOCOUNTRYCODE##"/>
     <int name="ims_conference_size_limit_int" value="5"/>
     <string-array name="ims_reasoninfo_mapping_string_array" num="10">
@@ -110,7 +111,6 @@
     <boolean name="notify_handover_video_from_wifi_to_lte_bool" value="true"/>
     <boolean name="notify_vt_handover_to_wifi_failure_bool" value="true"/>
     <boolean name="operator_selection_expand_bool" value="true"/>
-    <boolean name="gps.persist_lpp_mode_bool" value="true"/>
     <boolean name="prefer_2g_bool" value="false"/>
     <string-array name="read_only_apn_fields_string_array" num="20">
         <item value="name"/>
@@ -137,6 +137,7 @@
     <int name="recipientLimit" value="20"/>
     <boolean name="rtt_supported_bool" value="true"/>
     <boolean name="show_apn_setting_cdma_bool" value="true"/>
+    <string name="sim_country_iso_override_string" value="us"/>
     <int name="smsToMmsTextThreshold" value="7"/>
     <boolean name="sms_requires_destination_number_conversion_bool" value="true"/>
     <boolean name="support_3gpp_call_forwarding_while_roaming_bool" value="false"/>
@@ -145,6 +146,7 @@
     <boolean name="support_swap_after_merge_bool" value="false"/>
     <boolean name="treat_downgraded_video_calls_as_video_calls_bool" value="true"/>
     <string name="uaProfTagName" value="Profile"/>
+    <boolean name="use_rcs_presence_bool" value="true"/>
     <boolean name="video_calls_can_be_hd_audio" value="false"/>
     <boolean name="voicemail_notification_persistent_bool" value="true"/>
     <int name="volte_replacement_rat_int" value="6"/>
