@@ -151,4 +151,17 @@
     <boolean name="wifi_calls_can_be_hd_audio" value="false"/>
     <boolean name="world_mode_enabled_bool" value="true"/>
     <string name="sim_country_iso_override_string" value="us"/>
+    <int-array name="cdma_enhanced_roaming_indicator_for_home_network_int_array" num="11">
+        <item value="64"/>
+        <item value="65"/>
+        <item value="66"/>
+        <item value="76"/>
+        <item value="77"/>
+        <item value="78"/>
+        <item value="79"/>
+        <item value="80"/>
+        <item value="81"/>
+        <item value="82"/>
+        <item value="83"/>
+    </int-array>
 </carrier_config>
