@@ -79,14 +79,14 @@ public class DefaultCarrierConfigService extends CarrierService {
             XmlPullParser parser = mFactory.newPullParser();
             if (id.getCarrierId() != TelephonyManager.UNKNOWN_CARRIER_ID) {
                 PersistableBundle configByCarrierId = new PersistableBundle();
-                PersistableBundle configByPreciseCarrierId = new PersistableBundle();
+                PersistableBundle configBySpecificCarrierId = new PersistableBundle();
                 PersistableBundle configByMccMncFallBackCarrierId = new PersistableBundle();
                 int mccmncCarrierId = TelephonyManager.from(getApplicationContext())
                         .getCarrierIdFromMccMnc(id.getMcc() + id.getMnc());
                 for (String file : getApplicationContext().getAssets().list("")) {
-                    if (file.startsWith(CARRIER_ID_PREFIX + id.getPreciseCarrierId() + "_")) {
+                    if (file.startsWith(CARRIER_ID_PREFIX + id.getSpecificCarrierId() + "_")) {
                         parser.setInput(getApplicationContext().getAssets().open(file), "utf-8");
-                        configByPreciseCarrierId = readConfigFromXml(parser, null);
+                        configBySpecificCarrierId = readConfigFromXml(parser, null);
                         break;
                     } else if (file.startsWith(CARRIER_ID_PREFIX + id.getCarrierId() + "_")) {
                         parser.setInput(getApplicationContext().getAssets().open(file), "utf-8");
@@ -97,9 +97,9 @@ public class DefaultCarrierConfigService extends CarrierService {
                     }
                 }
 
-                // priority: precise carrier id > carrier id > mccmnc fallback carrier id
-                if (!configByPreciseCarrierId.isEmpty()) {
-                    config = configByPreciseCarrierId;
+                // priority: specific carrier id > carrier id > mccmnc fallback carrier id
+                if (!configBySpecificCarrierId.isEmpty()) {
+                    config = configBySpecificCarrierId;
                 } else if (!configByCarrierId.isEmpty()) {
                     config = configByCarrierId;
                 } else if (!configByMccMncFallBackCarrierId.isEmpty()) {
@@ -215,7 +215,7 @@ public class DefaultCarrierConfigService extends CarrierService {
      *   <li>imsi: {@link CarrierIdentifier#getImsi}</li>
      *   <li>device: {@link Build.DEVICE}</li>
      *   <li>cid: {@link CarrierIdentifier#getCarrierId()}
-     *   or {@link CarrierIdentifier#getPreciseCarrierId()}</li>
+     *   or {@link CarrierIdentifier#getSpecificCarrierId()}</li>
      * </ul>
      * </p>
      *
@@ -258,7 +258,7 @@ public class DefaultCarrierConfigService extends CarrierService {
                     break;
                 case "cid":
                     result = result && (value.equals(id.getCarrierId())
-                            || value.equals(id.getPreciseCarrierId()));
+                            || value.equals(id.getSpecificCarrierId()));
                     break;
                 case "name":
                     // name is used together with cid for readability. ignore for filter.
