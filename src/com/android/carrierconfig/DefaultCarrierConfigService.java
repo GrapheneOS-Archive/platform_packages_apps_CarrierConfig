@@ -48,7 +48,13 @@ public class DefaultCarrierConfigService extends CarrierService {
      * Returns per-network overrides for carrier configuration.
      *
      * This returns a carrier config bundle appropriate for the given carrier by reading data from
-     * files in our assets folder. First we look for file named after
+     * files in our assets folder. Config files in assets folder are carrier-id-indexed
+     * {@link TelephonyManager#getSimCarrierId()}. NOTE: config files named after mccmnc
+     * are for those without a matching carrier id and should be renamed to carrier id once the
+     * missing IDs are added to
+     * <a href="https://android.googlesource.com/platform/packages/providers/TelephonyProvider/+/master/assets/carrier_list.textpb">carrier id list</a>
+     *
+     * First, look for file named after
      * carrier_config_carrierid_<carrierid>_<carriername>.xml if carrier id is not
      * {@link TelephonyManager#UNKNOWN_CARRIER_ID}. Note <carriername> is to improve the
      * readability which should not be used to search asset files. If there is no configuration,
@@ -143,6 +149,18 @@ public class DefaultCarrierConfigService extends CarrierService {
      * by {@link PersistableBundle#restoreFromXml}. All the matching bundles will be flattened and
      * returned as a single bundle.</p>
      *
+     * <p>Here is an example document in vendor.xml.
+     * <pre>{@code
+     * <carrier_config_list>
+     *     <carrier_config cid="1938" name="verizon">
+     *         <boolean name="voicemail_notification_persistent_bool" value="true" />
+     *     </carrier_config>
+     *     <carrier_config cid="1788" name="sprint">
+     *         <boolean name="voicemail_notification_persistent_bool" value="false" />
+     *     </carrier_config>
+     * </carrier_config_list>
+     * }</pre></p>
+     *
      * <p>Here is an example document. The second bundle will be applied to the first only if the
      * GID1 is ABCD.
      * <pre>{@code
@@ -156,21 +174,9 @@ public class DefaultCarrierConfigService extends CarrierService {
      * </carrier_config_list>
      * }</pre></p>
      *
-     * <p>Here is another example document in vendor.xml.
-     * <pre>{@code
-     * <carrier_config_list>
-     *     <carrier_config cid="1938" name="verizon">
-     *         <boolean name="voicemail_notification_persistent_bool" value="true" />
-     *     </carrier_config>
-     *     <carrier_config cid="1788" name="sprint">
-     *         <boolean name="voicemail_notification_persistent_bool" value="false" />
-     *     </carrier_config>
-     * </carrier_config_list>
-     * }</pre></p>
-     *
      * @param parser an XmlPullParser pointing at the beginning of the document.
      * @param id the details of the SIM operator used to filter parts of the document. If read from
-     *           file named after carrier id, this will be set to {@null code} as no filter match
+     *           files named after carrier id, this will be set to {@null code} as no filter match
      *           needed.
      * @return a possibly empty PersistableBundle containing the config values.
      */
