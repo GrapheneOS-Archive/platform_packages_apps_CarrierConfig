@@ -9,5 +9,5 @@
     <int name="maxSubjectLength" value="80"/>
     <int name="maxMessageSize" value="1258291"/>
     <int name="maxImageWidth" value="4320"/>
-    <string name="httpParams" value="X-MDN: ##LINE1##"/>
+    <string name="httpParams">X-MDN: ##LINE1##</string>
 </carrier_config>

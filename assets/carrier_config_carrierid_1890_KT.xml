@@ -11,6 +11,6 @@
     <int name="maxImageHeight" value="1944"/>
     <int name="maxImageWidth" value="2592"/>
     <int name="maxMessageSize" value="1048576"/>
-    <string name="carrier_instant_lettering_encoding_string" value="EUC-KR"/>
-    <string name="carrier_instant_lettering_invalid_chars_string" value="[&quot;&lt;&gt;\\\n]"/>
+    <string name="carrier_instant_lettering_encoding_string">EUC-KR</string>
+    <string name="carrier_instant_lettering_invalid_chars_string">["&lt;&gt;\\\n]</string>
 </carrier_config>
