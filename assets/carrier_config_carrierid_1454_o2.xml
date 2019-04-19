@@ -5,5 +5,5 @@
     <int name="maxImageHeight" value="1944"/>
     <int name="maxImageWidth" value="2592"/>
     <int name="maxMessageSize" value="614400"/>
-    <string name="default_vm_number_string" value="+491793000333"/>
+    <string name="default_vm_number_string">+491793000333</string>
 </carrier_config>

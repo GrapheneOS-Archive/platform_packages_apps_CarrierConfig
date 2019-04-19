@@ -5,5 +5,5 @@
     <boolean name="carrier_volte_available_bool" value="true"/>
     <boolean name="play_call_recording_tone_bool" value="true"/>
     <int name="volte_replacement_rat_int" value="3"/>
-    <string name="default_vm_number_string" value="5500"/>
+    <string name="default_vm_number_string">5500</string>
 </carrier_config>

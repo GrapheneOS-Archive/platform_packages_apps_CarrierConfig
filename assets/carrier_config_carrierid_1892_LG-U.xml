@@ -16,7 +16,7 @@
     <int name="maxMessageSize" value="1048576"/>
     <int name="maxImageWidth" value="2592"/>
     <int name="carrier_instant_lettering_length_limit_int" value="64"/>
-    <string name="carrier_instant_lettering_invalid_chars_string" value="[&quot;&lt;&gt;\\\n]"/>
-    <string name="carrier_instant_lettering_encoding_string" value="EUC-KR"/>
-    <string name="carrier_name_string" value="LG U+"/>
+    <string name="carrier_instant_lettering_invalid_chars_string">["&lt;&gt;\\\n]</string>
+    <string name="carrier_instant_lettering_encoding_string">EUC-KR</string>
+    <string name="carrier_name_string">LG U+</string>
 </carrier_config>

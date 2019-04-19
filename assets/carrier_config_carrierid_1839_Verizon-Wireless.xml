@@ -61,13 +61,13 @@
     <int name="smsToMmsTextThreshold" value="7"/>
     <int name="volte_replacement_rat_int" value="6"/>
     <int name="wfc_spn_format_idx_int" value="1"/>
-    <string name="carrier_eri_file_name_string" value="eri_311480.xml"/>
-    <string name="carrier_name_string" value="Verizon"/>
-    <string name="default_vm_number_string" value="*86"/>
-    <string name="emailGatewayNumber" value="6245"/>
-    <string name="httpParams" value="x-up-calling-line-id: 1##LINE1NOCOUNTRYCODE##|X-VzW-MDN: 1##LINE1NOCOUNTRYCODE##"/>
-    <string name="uaProfTagName" value="Profile"/>
-    <string name="sim_country_iso_override_string" value="us"/>
+    <string name="carrier_eri_file_name_string">eri_311480.xml</string>
+    <string name="carrier_name_string">Verizon</string>
+    <string name="default_vm_number_string">*86</string>
+    <string name="emailGatewayNumber">6245</string>
+    <string name="httpParams">x-up-calling-line-id: 1##LINE1NOCOUNTRYCODE##|X-VzW-MDN: 1##LINE1NOCOUNTRYCODE##</string>
+    <string name="uaProfTagName">Profile</string>
+    <string name="sim_country_iso_override_string">us</string>
     <string-array name="boosted_lte_earfcns_string_array" num="2">
         <item value="600-1199"/>
         <item value="1950-2399"/>
