@@ -12,7 +12,7 @@
     <int name="maxSubjectLength" value="80"/>
     <int name="maxMessageSize" value="1048576"/>
     <int name="maxImageWidth" value="4320"/>
-    <string name="httpParams" value="X-CS3G-MDN: 1##LINE1NOCOUNTRYCODE##"/>
-    <string name="emailGatewayNumber" value="6245"/>
-    <string name="sim_country_iso_override_string" value="us"/>
+    <string name="httpParams">X-CS3G-MDN: 1##LINE1NOCOUNTRYCODE##</string>
+    <string name="emailGatewayNumber">6245</string>
+    <string name="sim_country_iso_override_string">us</string>
 </carrier_config>
