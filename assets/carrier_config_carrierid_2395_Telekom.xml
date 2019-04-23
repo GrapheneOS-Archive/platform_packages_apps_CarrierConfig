@@ -5,6 +5,6 @@
     <boolean name="display_hd_audio_property_bool" value="false"/>
     <boolean name="carrier_name_override_bool" value="true"/>
     <boolean name="auto_retry_failed_wifi_emergency_call" value="true"/>
-    <string name="default_vm_number_string" value="3311"/>
-    <string name="carrier_name_string" value="Telekom"/>
+    <string name="default_vm_number_string">3311</string>
+    <string name="carrier_name_string">Telekom</string>
 </carrier_config>

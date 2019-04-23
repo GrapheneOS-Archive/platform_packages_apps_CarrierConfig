@@ -12,6 +12,6 @@
     <int name="maxSubjectLength" value="80"/>
     <int name="maxMessageSize" value="1048576"/>
     <int name="maxImageWidth" value="4320"/>
-    <string name="httpParams" value="X-MDN: ##LINE1##"/>
-    <string name="emailGatewayNumber" value="6245"/>
+    <string name="httpParams">X-MDN: ##LINE1##</string>
+    <string name="emailGatewayNumber">6245</string>
 </carrier_config>

@@ -18,8 +18,8 @@
     <int name="maxMessageSize" value="1048576"/>
     <int name="cdma_3waycall_flash_delay_int" value="300"/>
     <int name="maxImageWidth" value="2592"/>
-    <string name="httpParams" value="X-MDN: ##LINE1##|Proxy-Authorization: Basic ##NAI##"/>
-    <string name="emailGatewayNumber" value="6245"/>
-    <string name="naiSuffix" value=":pcs"/>
-    <string name="carrier_eri_file_name_string" value="eri_311490.xml"/>
+    <string name="httpParams">X-MDN: ##LINE1##|Proxy-Authorization: Basic ##NAI##</string>
+    <string name="emailGatewayNumber">6245</string>
+    <string name="naiSuffix">:pcs</string>
+    <string name="carrier_eri_file_name_string">eri_311490.xml</string>
 </carrier_config>

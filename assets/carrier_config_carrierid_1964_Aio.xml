@@ -6,7 +6,7 @@
     <int name="maxImageHeight" value="1944"/>
     <int name="maxMessageSize" value="1048576"/>
     <int name="maxImageWidth" value="2592"/>
-    <string name="carrier_name_string" value="AT&amp;T"/>
+    <string name="carrier_name_string">AT&amp;T</string>
     <string-array name="roaming_operator_string_array" num="5">
         <item value="310110"/>
         <item value="310140"/>

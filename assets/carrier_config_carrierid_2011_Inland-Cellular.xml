@@ -14,6 +14,6 @@
     <int name="maxSubjectLength" value="80"/>
     <int name="maxMessageSize" value="1228800"/>
     <int name="maxImageWidth" value="4320"/>
-    <string name="httpParams" value="X-MDN: ##LINE1##"/>
-    <string name="carrier_name_string" value="T-Mobile"/>
+    <string name="httpParams">X-MDN: ##LINE1##</string>
+    <string name="carrier_name_string">T-Mobile</string>
 </carrier_config>

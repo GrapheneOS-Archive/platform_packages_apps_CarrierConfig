@@ -5,8 +5,8 @@
     <boolean name="prefer_2g_bool" value="false"/>
     <boolean name="show_4g_for_lte_data_icon_bool" value="true"/>
     <int name="wfc_spn_format_idx_int" value="1"/>
-    <string name="carrier_name_string" value="Virgin"/>
-    <string name="sim_country_iso_override_string" value="gb"/>
+    <string name="carrier_name_string">Virgin</string>
+    <string name="sim_country_iso_override_string">gb</string>
     <string-array name="non_roaming_operator_string_array" num="6">
         <item value="23430"/>
         <item value="23431"/>
