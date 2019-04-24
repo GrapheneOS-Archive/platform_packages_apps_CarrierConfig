@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <carrier_config>
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
     <boolean name="allow_non_emergency_calls_in_ecm_bool" value="false"/>
     <boolean name="apn_expand_bool" value="false"/>
     <boolean name="carrier_name_override_bool" value="true"/>
