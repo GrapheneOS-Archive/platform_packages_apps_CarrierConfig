@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <carrier_config>
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
     <boolean name="carrier_name_override_bool" value="true"/>
     <boolean name="carrier_volte_available_bool" value="true"/>
     <boolean name="hide_ims_apn_bool" value="true"/>

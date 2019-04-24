@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <carrier_config>
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
     <int name="smsToMmsTextThreshold" value="6"/>
     <int name="recipientLimit" value="20"/>
     <int name="maxImageHeight" value="1944"/>
