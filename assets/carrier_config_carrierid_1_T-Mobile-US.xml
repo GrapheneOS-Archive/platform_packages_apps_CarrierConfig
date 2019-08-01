@@ -11,6 +11,7 @@
     <boolean name="carrier_wfc_supports_wifi_only_bool" value="true"/>
     <boolean name="mmsCloseConnection" value="true"/>
     <boolean name="rtt_supported_bool" value="true"/>
+    <boolean name="hide_tty_hco_vco_with_rtt" value="true"/>
     <int name="maxImageHeight" value="1944"/>
     <int name="maxImageWidth" value="2592"/>
     <int name="maxMessageSize" value="1048576"/>
