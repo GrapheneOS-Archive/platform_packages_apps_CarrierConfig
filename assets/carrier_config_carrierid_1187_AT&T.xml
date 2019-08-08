@@ -39,4 +39,7 @@
     <int-array name="radio_restart_failure_causes_int_array" num="1">
         <item value="36"/>
     </int-array>
+    <string-array name="carrier_wlan_disallowed_apn_types_string_array" num="1">
+        <item value="default"/>
+    </string-array>
 </carrier_config>
