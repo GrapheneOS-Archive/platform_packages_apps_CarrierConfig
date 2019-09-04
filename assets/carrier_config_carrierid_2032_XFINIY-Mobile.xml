@@ -27,6 +27,7 @@
     <boolean name="enableMultipartSMS" value="true"/>
     <boolean name="enabledNotifyWapMMSC" value="true"/>
     <boolean name="enabledTransID" value="true"/>
+    <boolean name="gps.persist_lpp_mode_bool" value="true"/>
     <boolean name="is_ims_conference_size_enforced_bool" value="true"/>
     <boolean name="mdn_is_additional_voicemail_number_bool" value="true"/>
     <boolean name="mmsCloseConnection" value="true"/>

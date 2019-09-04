@@ -12,6 +12,7 @@
     <int name="recipientLimit" value="20"/>
     <int name="smsToMmsTextThreshold" value="8"/>
     <string name="emailGatewayNumber">6245</string>
+    <string name="gps.lpp_profile">2</string>
     <string-array name="non_roaming_operator_string_array" num="1">
         <item value="302"/>
     </string-array>
