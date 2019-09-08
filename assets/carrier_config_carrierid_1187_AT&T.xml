@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <carrier_config>
+    <boolean name="allow_merging_rtt_calls_bool" value="true"/>
     <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
     <boolean name="carrier_supports_ss_over_ut_bool" value="true"/>
     <boolean name="carrier_name_override_bool" value="true"/>
@@ -7,6 +8,7 @@
     <boolean name="display_hd_audio_property_bool" value="false"/>
     <boolean name="enableSMSDeliveryReports" value="false"/>
     <boolean name="rtt_supported_bool" value="true"/>
+    <boolean name="show_4g_for_3g_data_icon_bool" value="true"/>
     <boolean name="support_pause_ims_video_calls_bool" value="false"/>
     <int name="maxImageHeight" value="1944"/>
     <int name="maxImageWidth" value="2592"/>
@@ -41,5 +43,9 @@
     </int-array>
     <string-array name="carrier_wlan_disallowed_apn_types_string_array" num="1">
         <item value="default"/>
+    </string-array>
+    <string-array name="ims_reasoninfo_mapping_string_array" num="2">
+        <item value="352|emergency calls over wifi not allowed in this location|1622"/>
+        <item value="332|service not allowed in this location|1623"/>
     </string-array>
 </carrier_config>
