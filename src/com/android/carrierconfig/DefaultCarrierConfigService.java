@@ -263,8 +263,8 @@ public class DefaultCarrierConfigService extends CarrierService {
                     result = result && value.equalsIgnoreCase(Build.DEVICE);
                     break;
                 case "cid":
-                    result = result && (value.equals(id.getCarrierId())
-                            || value.equals(id.getSpecificCarrierId()));
+                    result = result && ((Integer.parseInt(value) == id.getCarrierId())
+                            || (Integer.parseInt(value) == id.getSpecificCarrierId()));
                     break;
                 case "name":
                     // name is used together with cid for readability. ignore for filter.
