@@ -2,7 +2,6 @@
 <carrier_config>
     <boolean name="allow_emergency_numbers_in_call_log_bool" value="true"/>
     <boolean name="always_show_emergency_alert_onoff_bool" value="true"/>
-    <boolean name="carrier_force_disable_etws_cmas_test_bool" value="false"/>
     <boolean name="carrier_volte_available_bool" value="true"/>
     <boolean name="enabledMMS" value="false"/>
     <boolean name="hide_ims_apn_bool" value="true"/>
