@@ -17,7 +17,6 @@
     <boolean name="carrier_vt_available_bool" value="true"/>
     <boolean name="carrier_wfc_ims_available_bool" value="true"/>
     <boolean name="cdma_home_registered_plmn_name_override_bool" value="true"/>
-    <boolean name="disable_severe_when_extreme_disabled_bool" value="false"/>
     <boolean name="disable_voice_barring_notification_bool" value="true"/>
     <boolean name="drop_video_call_when_answering_audio_call_bool" value="true"/>
     <boolean name="dtmf_type_enabled_bool" value="true"/>
