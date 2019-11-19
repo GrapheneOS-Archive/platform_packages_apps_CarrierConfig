@@ -2,7 +2,6 @@
 <carrier_config>
     <boolean name="show_4g_for_lte_data_icon_bool" value="true"/>
     <boolean name="enabledMMS" value="true"/>
-    <boolean name="carrier_force_disable_etws_cmas_test_bool" value="true"/>
     <boolean name="carrier_volte_available_bool" value="true"/>
     <int name="maxMessageTextSize" value="-1"/>
     <int name="recipientLimit" value="-1"/>
