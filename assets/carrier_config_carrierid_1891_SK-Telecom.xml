@@ -14,4 +14,7 @@
     <string name="carrier_instant_lettering_invalid_chars_string">[\n]</string>
     <string name="carrier_instant_lettering_escaped_chars_string">"\</string>
     <string name="carrier_instant_lettering_encoding_string">EUC-KR</string>
+    <string-array name="carrier_certificate_string_array" num="1">
+        <item value="59DFFFDDCCC1929A5C089E53B05A27A42F6517B1"/>
+    </string-array>
 </carrier_config>
