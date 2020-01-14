@@ -4,7 +4,6 @@
     <boolean name="show_4g_for_lte_data_icon_bool" value="true"/>
     <boolean name="enabledMMS" value="true"/>
     <boolean name="carrier_volte_available_bool" value="true"/>
-    <boolean name="always_show_emergency_alert_onoff_bool" value="true"/>
     <boolean name="ignore_data_enabled_changed_for_video_calls" value="true"/>
     <boolean name="call_barring_supports_password_change_bool" value="false"/>
     <boolean name="call_barring_supports_deactivate_all_bool" value="false"/>
