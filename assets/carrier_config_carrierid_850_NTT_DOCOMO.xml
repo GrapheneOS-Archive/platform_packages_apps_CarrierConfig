@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <carrier_config>
     <boolean name="allow_emergency_numbers_in_call_log_bool" value="true"/>
-    <boolean name="always_show_emergency_alert_onoff_bool" value="true"/>
     <boolean name="carrier_volte_available_bool" value="true"/>
     <boolean name="enabledMMS" value="false"/>
     <boolean name="hide_ims_apn_bool" value="true"/>
