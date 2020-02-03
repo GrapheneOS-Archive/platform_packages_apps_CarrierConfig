@@ -19,4 +19,16 @@
     <string name="carrier_instant_lettering_invalid_chars_string">["&lt;&gt;\\\n]</string>
     <string name="carrier_instant_lettering_encoding_string">EUC-KR</string>
     <string name="carrier_name_string">LG U+</string>
+    <string-array name="carrier_certificate_string_array" num="10">
+        <item value="2e8478b7b90411ad9075a182725b9a37857440a170fefa8853ee945d0a88170c"/>
+        <item value="6a26b25d1fa974aed6f81ed30a55a72d51e20f6905decbf01e84ecce5fb96454"/>
+        <item value="0f18fddfc990b285798f3bee5710cc5cde9ffd913fd6942f296c4656c7065d8c"/>
+        <item value="0c3eff3693ba9a469fc836c046ebc726ac50c54b36370af8d26cb774b8e88b9f"/>
+        <item value="4986b8386ce4dc1cfd01f5b0541d88caca2695fe24c4d909c8fec2d6a26a2beb"/>
+        <item value="1a8791e1f56e2195b31df30217a2ffe0ef5be2cc6d0058796d2d7f5ce9738cf4"/>
+        <item value="ac3a4e7afeddde9550922ed6e3af343a3fe99a0e5f5a80902354052341ceaef4"/>
+        <item value="606c79a42e1fcb54b1f0abed3602d4aa7b6823ba9909e0df17edce0bcba7b35f"/>
+        <item value="4b0170b8c2924f85c9cebc6230e7eca39d4d8f86cfc443f2f25b93558aabf4df"/>
+        <item value="370259a6a2d8f6cbc838d7375dd2dc6bf05b7a8a5c8d27def9539431b34f43af"/>
+    </string-array>
 </carrier_config>
