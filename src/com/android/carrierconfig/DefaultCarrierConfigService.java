@@ -87,7 +87,9 @@ public class DefaultCarrierConfigService extends CarrierService {
                 PersistableBundle configByCarrierId = new PersistableBundle();
                 PersistableBundle configBySpecificCarrierId = new PersistableBundle();
                 PersistableBundle configByMccMncFallBackCarrierId = new PersistableBundle();
-                int mccmncCarrierId = TelephonyManager.from(getApplicationContext())
+                TelephonyManager telephonyManager = getApplicationContext()
+                        .getSystemService(TelephonyManager.class);
+                int mccmncCarrierId = telephonyManager
                         .getCarrierIdFromMccMnc(id.getMcc() + id.getMnc());
                 for (String file : getApplicationContext().getAssets().list("")) {
                     if (file.startsWith(CARRIER_ID_PREFIX + id.getSpecificCarrierId() + "_")) {
