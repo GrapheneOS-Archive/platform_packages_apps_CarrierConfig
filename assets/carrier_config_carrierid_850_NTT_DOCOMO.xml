@@ -11,4 +11,20 @@
     <string-array name="ims_reasoninfo_mapping_string_array" num="1">
         <item value="332||510"/>
     </string-array>
+    <string-array name="missed_incoming_call_sms_originator_string_array" num="2">
+        <item value="DoCoMo SMS"/>
+        <item value="DoCoMo"/>
+    </string-array>
+    <string-array name="missed_incoming_call_sms_pattern_string_array" num="5">
+        <!-- Incoming phone call history with caller id -->
+        <item value="^(?&lt;month&gt;0[1-9]|1[012])\/(?&lt;day&gt;0[1-9]|1[0-9]|2[0-9]|3[0-1]) (?&lt;hour&gt;[0-1][0-9]|2[0-3]):(?&lt;minute&gt;[0-5][0-9])\s*(?&lt;callerId&gt;[0-9]+)\s*$"/>
+        <!-- Incoming phone call history without caller id -->
+        <item value="^(?&lt;month&gt;0[1-9]|1[012])\/(?&lt;day&gt;0[1-9]|1[0-9]|2[0-9]|3[0-1]) (?&lt;hour&gt;[0-1][0-9]|2[0-3]):(?&lt;minute&gt;[0-5][0-9])\s*[非通知設定|公衆電話|通知不可能]\s*$"/>
+        <!-- Incoming video phone call history with caller id -->
+        <item value="^(?&lt;month&gt;0[1-9]|1[012])\/(?&lt;day&gt;0[1-9]|1[0-9]|2[0-9]|3[0-1]) (?&lt;hour&gt;[0-1][0-9]|2[0-3]):(?&lt;minute&gt;[0-5][0-9]) ﾃﾚﾋﾞ電話\s*(?&lt;callerId&gt;[0-9]+)\s*$"/>
+        <!-- Incoming video phone call history without caller id -->
+        <item value="^(?&lt;month&gt;0[1-9]|1[012])\/(?&lt;day&gt;0[1-9]|1[0-9]|2[0-9]|3[0-1]) (?&lt;hour&gt;[0-1][0-9]|2[0-3]):(?&lt;minute&gt;[0-5][0-9]) ﾃﾚﾋﾞ電話\s*[非通知設定|公衆電話|通知不可能]\s*$"/>
+        <!-- Incoming phone call while roaming history with caller id -->
+        <item value="^海外 着信通知（日本時間）\s*(?&lt;month&gt;0[1-9]|1[012])\/(?&lt;day&gt;0[1-9]|1[0-9]|2[0-9]|3[0-1]) (?&lt;hour&gt;[0-1][0-9]|2[0-3]):(?&lt;minute&gt;[0-5][0-9])\s*(?&lt;callerId&gt;[0-9]+)\s*$"/>
+    </string-array>
 </carrier_config>
