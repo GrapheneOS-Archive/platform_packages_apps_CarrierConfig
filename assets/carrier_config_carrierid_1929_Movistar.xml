@@ -2,6 +2,5 @@
 <carrier_config>
     <boolean name="enabledMMS" value="false"/>
     <boolean name="enableGroupMms" value="false"/>
-    <boolean name="groupChatDefaultsToMMS" value="false"/>
     <boolean name="enableMultipartSMS" value="true"/>
 </carrier_config>
