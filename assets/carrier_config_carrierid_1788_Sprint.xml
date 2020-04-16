@@ -18,6 +18,7 @@
     <boolean name="support_swap_after_merge_bool" value="false"/>
     <boolean name="use_hfa_for_provisioning_bool" value="true"/>
     <boolean name="voicemail_notification_persistent_bool" value="true"/>
+    <boolean name="volte_5g_limited_alert_dialog_bool" value="true"/>
     <int name="cdma_3waycall_flash_delay_int" value="300"/>
     <int name="maxImageHeight" value="1944"/>
     <int name="maxImageWidth" value="2592"/>
