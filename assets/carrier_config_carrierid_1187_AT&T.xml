@@ -73,5 +73,5 @@
         <item value="#8"/>
         <item value="#9"/>
     </string-array>
-
+    <string name="5g_icon_display_grace_period_string" value="connected_mmwave,any,30"/>
 </carrier_config>
