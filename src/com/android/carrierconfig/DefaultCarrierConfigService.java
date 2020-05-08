@@ -3,6 +3,7 @@ package com.android.carrierconfig;
 import android.annotation.Nullable;
 import android.os.Build;
 import android.os.PersistableBundle;
+import android.os.SystemProperties;
 import android.service.carrier.CarrierIdentifier;
 import android.service.carrier.CarrierService;
 import android.telephony.TelephonyManager;
@@ -222,6 +223,8 @@ public class DefaultCarrierConfigService extends CarrierService {
      *   <li>spn: {@link CarrierIdentifier#getSpn}</li>
      *   <li>imsi: {@link CarrierIdentifier#getImsi}</li>
      *   <li>device: {@link Build.DEVICE}</li>
+     *   <li>vendorSku: {@link SystemConfig.VENDOR_SKU_PROPERTY}</li>
+     *   <li>hardwareSku: {@link SystemConfig.SKU_PROPERTY}</li>
      *   <li>cid: {@link CarrierIdentifier#getCarrierId()}
      *   or {@link CarrierIdentifier#getSpecificCarrierId()}</li>
      * </ul>
@@ -239,6 +242,10 @@ public class DefaultCarrierConfigService extends CarrierService {
      */
     static boolean checkFilters(XmlPullParser parser, CarrierIdentifier id) {
         boolean result = true;
+        String vendorSkuProperty = SystemProperties.get(
+            "ro.boot.product.vendor.sku", "");
+        String hardwareSkuProperty = SystemProperties.get(
+            "ro.boot.product.hardware.sku", "");
         for (int i = 0; i < parser.getAttributeCount(); ++i) {
             String attribute = parser.getAttributeName(i);
             String value = parser.getAttributeValue(i);
@@ -263,6 +270,14 @@ public class DefaultCarrierConfigService extends CarrierService {
                     break;
                 case "device":
                     result = result && value.equalsIgnoreCase(Build.DEVICE);
+                    break;
+                case "vendorSku":
+                    result = result &&
+                            value.equalsIgnoreCase(vendorSkuProperty);
+                    break;
+                case "hardwareSku":
+                    result = result &&
+                            value.equalsIgnoreCase(hardwareSkuProperty);
                     break;
                 case "cid":
                     result = result && ((Integer.parseInt(value) == id.getCarrierId())
