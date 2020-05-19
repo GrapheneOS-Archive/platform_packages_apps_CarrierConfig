@@ -53,7 +53,7 @@ public class DefaultCarrierConfigService extends CarrierService {
      * {@link TelephonyManager#getSimCarrierId()}. NOTE: config files named after mccmnc
      * are for those without a matching carrier id and should be renamed to carrier id once the
      * missing IDs are added to
-     * <a href="https://android.googlesource.com/platform/packages/providers/TelephonyProvider/+/master/assets/carrier_list.textpb">carrier id list</a>
+     * <a href="https://android.googlesource.com/platform/packages/providers/TelephonyProvider/+/master/assets/latest_carrier_id/carrier_list.textpb">carrier id list</a>
      *
      * First, look for file named after
      * carrier_config_carrierid_<carrierid>_<carriername>.xml if carrier id is not
