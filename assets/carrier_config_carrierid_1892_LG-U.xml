@@ -40,7 +40,7 @@
         <item value="NR_NSA_MMWAVE:563200,614400"/>
         <item value="NR_SA:563200,61440"/>
     </string-array>
-    <string-array name="carrier_certificate_string_array" num="10">
+    <string-array name="carrier_certificate_string_array" num="15">
         <item value="2e8478b7b90411ad9075a182725b9a37857440a170fefa8853ee945d0a88170c"/>
         <item value="6a26b25d1fa974aed6f81ed30a55a72d51e20f6905decbf01e84ecce5fb96454"/>
         <item value="0f18fddfc990b285798f3bee5710cc5cde9ffd913fd6942f296c4656c7065d8c"/>
@@ -51,5 +51,10 @@
         <item value="606c79a42e1fcb54b1f0abed3602d4aa7b6823ba9909e0df17edce0bcba7b35f"/>
         <item value="4b0170b8c2924f85c9cebc6230e7eca39d4d8f86cfc443f2f25b93558aabf4df"/>
         <item value="370259a6a2d8f6cbc838d7375dd2dc6bf05b7a8a5c8d27def9539431b34f43af"/>
+        <item value="4f444ba61644f72a47c99187eab4ebb9f7127ea38eeaacfa0a305511bf55233f"/>
+        <item value="cefc3c7e03e7156bb9fc9e4d31edec96fd461782e7f37cb6e79850bfc1f9c7fb"/>
+        <item value="8f452024920b1e8e0380e293e40426dffe0adfb5e675f4cc6f9266e1c08afa21"/>
+        <item value="212beda6fbf1a07b3557a02c3cf0646263eed855a632f0d45f0bceb311c064c6"/>
+        <item value="34bfb7ae9228d1117d6f594c6812f969ca7aaeb3dbd44be713d1ec2f122d8d01"/>
     </string-array>
 </carrier_config>
