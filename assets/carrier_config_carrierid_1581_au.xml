@@ -7,4 +7,5 @@
         value="connected_mmwave,legacy,31;connected,legacy,31;
         connected_mmwave,not_restricted_rrc_con,31;connected,not_restricted_rrc_con,31;
         not_restricted_rrc_idle,legacy,15;not_restricted_rrc_idle,not_restricted_rrc_con,15"/>
+    <boolean name="disable_dun_apn_while_roaming" value="true"/>
 </carrier_config>
