@@ -8,4 +8,7 @@
         <item value="404"/>
         <item value="405"/>
     </string-array>
+    <string-array name="carrier_certificate_string_array" num="1">
+        <item value="7170F9C35AC5966C1687372089AF55713DACC17635BAD248370DA67DDF8472B6"/>
+    </string-array>
 </carrier_config>
