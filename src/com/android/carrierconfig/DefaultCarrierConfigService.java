@@ -36,6 +36,8 @@ public class DefaultCarrierConfigService extends CarrierService {
 
     private static final String MCCMNC_PREFIX = "carrier_config_mccmnc_";
 
+    private static final String NO_SIM_CONFIG_FILE_NAME = "carrier_config_no_sim.xml";
+
     private static final String TAG = "DefaultCarrierConfigService";
 
     private XmlPullParserFactory mFactory;
@@ -71,10 +73,6 @@ public class DefaultCarrierConfigService extends CarrierService {
     public PersistableBundle onLoadConfig(CarrierIdentifier id) {
         Log.d(TAG, "Config being fetched");
 
-        if (id == null) {
-            return null;
-        }
-
         PersistableBundle config = new PersistableBundle();
         try {
             synchronized (this) {
@@ -84,7 +82,13 @@ public class DefaultCarrierConfigService extends CarrierService {
             }
 
             XmlPullParser parser = mFactory.newPullParser();
-            if (id.getCarrierId() != TelephonyManager.UNKNOWN_CARRIER_ID) {
+
+            if (id == null) {
+                // Load no SIM config if carrier id is not set
+                parser.setInput(getApplicationContext().getAssets().open(
+                        NO_SIM_CONFIG_FILE_NAME), "utf-8");
+                config = readConfigFromXml(parser, null);
+            } else if (id.getCarrierId() != TelephonyManager.UNKNOWN_CARRIER_ID) {
                 PersistableBundle configByCarrierId = new PersistableBundle();
                 PersistableBundle configBySpecificCarrierId = new PersistableBundle();
                 PersistableBundle configByMccMncFallBackCarrierId = new PersistableBundle();
@@ -114,14 +118,14 @@ public class DefaultCarrierConfigService extends CarrierService {
                 } else if (!configByMccMncFallBackCarrierId.isEmpty()) {
                     config = configByMccMncFallBackCarrierId;
                 }
-            }
-            if (config.isEmpty()) {
-                // fallback to use mccmnc.xml when there is no carrier id named configuration found.
-                parser.setInput(getApplicationContext().getAssets().open(
-                        MCCMNC_PREFIX + id.getMcc() + id.getMnc() + ".xml"), "utf-8");
-                config = readConfigFromXml(parser, id);
-            }
 
+                if (config.isEmpty()) {
+                    // fallback to use mccmnc.xml when there is no carrier id named config found.
+                    parser.setInput(getApplicationContext().getAssets().open(
+                            MCCMNC_PREFIX + id.getMcc() + id.getMnc() + ".xml"), "utf-8");
+                    config = readConfigFromXml(parser, id);
+                }
+            }
         }
         catch (IOException | XmlPullParserException e) {
             Log.d(TAG, e.toString());
