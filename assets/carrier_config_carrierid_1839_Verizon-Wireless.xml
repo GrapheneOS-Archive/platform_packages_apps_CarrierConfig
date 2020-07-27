@@ -168,4 +168,6 @@
         value="connected_mmwave,any,3;not_restricted_rrc_idle,not_restricted_rrc_con,2"/>
     <string name="5g_icon_display_secondary_grace_period_string"
         value="connected_mmwave,not_restricted_rrc_idle,60"/>
+    <boolean name="unmetered_nr_nsa_mmwave_bool" value="true" />
+    <boolean name="unmetered_nr_sa_mmwave_bool" value="true" />
 </carrier_config>
