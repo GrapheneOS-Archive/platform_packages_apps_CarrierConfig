@@ -70,10 +70,9 @@ public class DefaultCarrierConfigService extends CarrierService {
      * All the matching bundles are flattened to return one carrier config bundle.
      */
     @Override
-    public PersistableBundle onLoadConfig(CarrierIdentifier id) {
+    public PersistableBundle onLoadConfig(@Nullable CarrierIdentifier id) {
         Log.d(TAG, "Config being fetched");
 
-        PersistableBundle config = new PersistableBundle();
         try {
             synchronized (this) {
                 if (mFactory == null) {
@@ -83,12 +82,39 @@ public class DefaultCarrierConfigService extends CarrierService {
 
             XmlPullParser parser = mFactory.newPullParser();
 
-            if (id == null) {
-                // Load no SIM config if carrier id is not set
+            return loadConfig(parser, id);
+        }
+        catch (XmlPullParserException e) {
+            Log.e(TAG, "Failed to load config", e);
+            return new PersistableBundle();
+        }
+    }
+
+    PersistableBundle loadConfig(XmlPullParser parser, @Nullable CarrierIdentifier id) {
+        PersistableBundle config = new PersistableBundle();
+
+        if (id == null) {
+            try {
+                // Load no SIM config if carrier id is not set.
                 parser.setInput(getApplicationContext().getAssets().open(
                         NO_SIM_CONFIG_FILE_NAME), "utf-8");
                 config = readConfigFromXml(parser, null);
-            } else if (id.getCarrierId() != TelephonyManager.UNKNOWN_CARRIER_ID) {
+
+                // Treat vendor_no_sim.xml as if it were appended to the no sim config file.
+                XmlPullParser vendorInput =
+                        getApplicationContext().getResources().getXml(R.xml.vendor_no_sim);
+                PersistableBundle vendorConfig = readConfigFromXml(vendorInput, null);
+                config.putAll(vendorConfig);
+            }
+            catch (IOException|XmlPullParserException e) {
+                Log.e(TAG, "Failed to load config for no SIM", e);
+            }
+
+            return config;
+        }
+
+        try {
+            if (id.getCarrierId() != TelephonyManager.UNKNOWN_CARRIER_ID) {
                 PersistableBundle configByCarrierId = new PersistableBundle();
                 PersistableBundle configBySpecificCarrierId = new PersistableBundle();
                 PersistableBundle configByMccMncFallBackCarrierId = new PersistableBundle();
@@ -118,13 +144,12 @@ public class DefaultCarrierConfigService extends CarrierService {
                 } else if (!configByMccMncFallBackCarrierId.isEmpty()) {
                     config = configByMccMncFallBackCarrierId;
                 }
-
-                if (config.isEmpty()) {
-                    // fallback to use mccmnc.xml when there is no carrier id named config found.
-                    parser.setInput(getApplicationContext().getAssets().open(
-                            MCCMNC_PREFIX + id.getMcc() + id.getMnc() + ".xml"), "utf-8");
-                    config = readConfigFromXml(parser, id);
-                }
+            }
+            if (config.isEmpty()) {
+                // fallback to use mccmnc.xml when there is no carrier id named config found.
+                parser.setInput(getApplicationContext().getAssets().open(
+                        MCCMNC_PREFIX + id.getMcc() + id.getMnc() + ".xml"), "utf-8");
+                config = readConfigFromXml(parser, id);
             }
         }
         catch (IOException | XmlPullParserException e) {
