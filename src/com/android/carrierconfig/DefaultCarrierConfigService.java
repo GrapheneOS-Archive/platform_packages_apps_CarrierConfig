@@ -109,6 +109,7 @@ public class DefaultCarrierConfigService extends CarrierService {
 
     PersistableBundle loadConfig(XmlPullParser parser, @Nullable CarrierIdentifier id) {
         PersistableBundle config = new PersistableBundle();
+        // OEM customizable filter for carrier requirements not related to hardware/vendor SKU.
         String sku = getApplicationContext().getResources().getString(R.string.sku_filter);
 
         if (id == null) {
