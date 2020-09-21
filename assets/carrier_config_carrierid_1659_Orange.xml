@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true"/>
+    <!-- 0 is SERVICE_CLASS_NONE -->
+    <int name="call_barring_default_service_class_int" value="0"/>
+</carrier_config>
