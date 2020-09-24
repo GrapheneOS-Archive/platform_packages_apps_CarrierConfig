@@ -292,61 +292,63 @@ public class DefaultCarrierConfigService extends CarrierService {
      * @return false if any XML attribute does not match the corresponding value.
      */
     static boolean checkFilters(XmlPullParser parser, @Nullable CarrierIdentifier id, String sku) {
-        boolean result = true;
         String vendorSkuProperty = SystemProperties.get(
             "ro.boot.product.vendor.sku", "");
         String hardwareSkuProperty = SystemProperties.get(
             "ro.boot.product.hardware.sku", "");
         for (int i = 0; i < parser.getAttributeCount(); ++i) {
+            boolean result = true;
             String attribute = parser.getAttributeName(i);
             String value = parser.getAttributeValue(i);
             switch (attribute) {
                 case "mcc":
-                    result = result && (id == null || value.equals(id.getMcc()));
+                    result = (id == null) || value.equals(id.getMcc());
                     break;
                 case "mnc":
-                    result = result && (id == null || value.equals(id.getMnc()));
+                    result = (id == null) || value.equals(id.getMnc());
                     break;
                 case "gid1":
-                    result = result && (id == null || value.equalsIgnoreCase(id.getGid1()));
+                    result = (id == null) || value.equalsIgnoreCase(id.getGid1());
                     break;
                 case "gid2":
-                    result = result && (id == null || value.equalsIgnoreCase(id.getGid2()));
+                    result = (id == null) || value.equalsIgnoreCase(id.getGid2());
                     break;
                 case "spn":
-                    result = result && (id == null || matchOnSP(value, id));
+                    result = (id == null) || matchOnSP(value, id);
                     break;
                 case "imsi":
-                    result = result && (id == null || matchOnImsi(value, id));
+                    result = (id == null) || matchOnImsi(value, id);
                     break;
                 case "device":
-                    result = result && value.equalsIgnoreCase(Build.DEVICE);
+                    result = value.equalsIgnoreCase(Build.DEVICE);
                     break;
                 case "vendorSku":
-                    result = result &&
-                            value.equalsIgnoreCase(vendorSkuProperty);
+                    result = value.equalsIgnoreCase(vendorSkuProperty);
                     break;
                 case "hardwareSku":
-                    result = result &&
-                            value.equalsIgnoreCase(hardwareSkuProperty);
+                    result = value.equalsIgnoreCase(hardwareSkuProperty);
                     break;
                 case "cid":
-                    result = result && (id == null || (Integer.parseInt(value) == id.getCarrierId())
-                            || (Integer.parseInt(value) == id.getSpecificCarrierId()));
+                    result = (id == null) || (Integer.parseInt(value) == id.getCarrierId())
+                                || (Integer.parseInt(value) == id.getSpecificCarrierId());
                     break;
                 case "name":
                     // name is used together with cid for readability. ignore for filter.
                     break;
                 case "sku":
-                    result = result && value.equalsIgnoreCase(sku);
+                    result = value.equalsIgnoreCase(sku);
                     break;
                 default:
                     Log.e(TAG, "Unknown attribute " + attribute + "=" + value);
                     result = false;
                     break;
             }
+
+            if (!result) {
+                return false;
+            }
         }
-        return result;
+        return true;
     }
 
     /**
