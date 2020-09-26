@@ -73,6 +73,7 @@
         <item value="#8"/>
         <item value="#9"/>
     </string-array>
+    <boolean name="use_lower_mtu_value_if_both_received" value="true" />
     <string name="5g_icon_display_grace_period_string" value="connected_mmwave,any,30"/>
     <boolean name="inflate_signal_strength_bool" value="true" />
     <string name="5g_icon_configuration_string"
