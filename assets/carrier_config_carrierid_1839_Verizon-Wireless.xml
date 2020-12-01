@@ -37,7 +37,7 @@
     <boolean name="prefer_2g_bool" value="false"/>
     <boolean name="rtt_supported_bool" value="true"/>
     <boolean name="show_apn_setting_cdma_bool" value="true"/>
-    <boolean name="use_rcs_presence_bool" value="true"/>
+    <boolean name="ims.enable_presence_publish_bool" value="true"/>
     <boolean name="sms_requires_destination_number_conversion_bool" value="true"/>
     <boolean name="support_3gpp_call_forwarding_while_roaming_bool" value="false"/>
     <boolean name="support_downgrade_vt_to_audio_bool" value="false"/>
