@@ -8,4 +8,7 @@
         not_restricted_rrc_idle,not_restricted_rrc_con,15"/>
     <boolean name="enabledMMS" value="false"/>
     <boolean name="nr_timers_reset_if_non_endc_and_rrc_idle_bool" value="true"/>
+    <string-array name="carrier_certificate_string_array" num="1">
+        <item value="99F04B13AA9672BD6292921D88365D9C1953BD6078E4BFAD344D02CDCFACF17E"/>
+    </string-array>
 </carrier_config>
