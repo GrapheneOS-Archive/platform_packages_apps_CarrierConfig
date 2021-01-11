@@ -145,6 +145,10 @@
         <item value="mvno_type"/>
         <item value="mvno_match_data"/>
     </string-array>
+    <string-array name="carrier_certificate_string_array" num="2">
+        <item value="FF82050BF6BED1F152AC1A12DC83CACBAD401775161882872C6665FC5E15C8F2"/>
+        <item value="AE23A03436DF07B0CD70FE881CDA2EC1D21215D7B7B0CC68E67B67F5DF89526A"/>
+    </string-array>
     <int-array name="lte_rsrp_thresholds_int_array" num="4">
         <item value="-115"/>
         <item value="-105"/>
