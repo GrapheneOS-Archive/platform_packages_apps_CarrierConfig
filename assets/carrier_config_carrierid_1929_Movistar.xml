@@ -3,4 +3,7 @@
     <boolean name="enabledMMS" value="false"/>
     <boolean name="enableGroupMms" value="false"/>
     <boolean name="enableMultipartSMS" value="true"/>
+  <string-array name="carrier_certificate_string_array" num="1">
+    <item value="0C67DA8F94751BF74B9D98484134D5DABCD182AEB122BEE3C82D38922801F72E"/>
+  </string-array>
 </carrier_config>
