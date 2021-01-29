@@ -11,6 +11,7 @@
     <boolean name="rtt_supported_bool" value="true"/>
     <boolean name="show_4g_for_3g_data_icon_bool" value="true"/>
     <boolean name="support_pause_ims_video_calls_bool" value="false"/>
+    <boolean name="rtt_supported_while_roaming_bool" value="true"/>
     <int name="maxImageHeight" value="1944"/>
     <int name="maxImageWidth" value="2592"/>
     <int name="maxMessageSize" value="1048576"/>
