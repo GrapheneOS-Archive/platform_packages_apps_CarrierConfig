@@ -36,6 +36,8 @@
     <boolean name="gps.persist_lpp_mode_bool" value="true"/>
     <boolean name="prefer_2g_bool" value="false"/>
     <boolean name="rtt_supported_bool" value="true"/>
+    <boolean name="rtt_upgrade_supported_for_downgraded_vt_call" value="false"/>
+    <boolean name="vt_upgrade_supported_for_downgraded_rtt_call" value="false"/>
     <boolean name="show_apn_setting_cdma_bool" value="true"/>
     <boolean name="ims.enable_presence_publish_bool" value="true"/>
     <boolean name="sms_requires_destination_number_conversion_bool" value="true"/>
