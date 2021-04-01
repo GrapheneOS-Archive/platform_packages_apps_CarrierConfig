@@ -3,8 +3,7 @@
     <boolean name="allow_hold_call_during_emergency_bool" value="false"/>
     <boolean name="csp_enabled_bool" value="true"/>
     <boolean name="show_4g_for_3g_data_icon_bool" value="true"/>
-    <string name="5g_icon_configuration_string"
-        value="connected_mmwave:5G_Plus,connected:5G,not_restricted_rrc_idle:5G,not_restricted_rrc_con:5G"/>
+    <string name="5g_icon_configuration_string">connected_mmwave:5G_Plus,connected:5G,not_restricted_rrc_idle:5G,not_restricted_rrc_con:5G</string>
     <int name="maxImageHeight" value="1944"/>
     <int name="maxMessageSize" value="614400"/>
     <int name="maxImageWidth" value="2592"/>
