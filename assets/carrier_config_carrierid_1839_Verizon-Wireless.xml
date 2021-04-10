@@ -173,6 +173,7 @@
     <string name="5g_icon_configuration_string">connected_mmwave:5G_Plus,connected:5G,not_restricted_rrc_idle:5G,not_restricted_rrc_con:5G</string>
     <string name="5g_icon_display_grace_period_string">connected_mmwave,any,3;not_restricted_rrc_idle,not_restricted_rrc_con,2</string>
     <string name="5g_icon_display_secondary_grace_period_string">connected_mmwave,not_restricted_rrc_idle,60</string>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true"/>
     <boolean name="unmetered_nr_nsa_mmwave_bool" value="true" />
     <boolean name="unmetered_nr_sa_mmwave_bool" value="true" />
     <boolean name="inflate_signal_strength_bool" value="true" />
