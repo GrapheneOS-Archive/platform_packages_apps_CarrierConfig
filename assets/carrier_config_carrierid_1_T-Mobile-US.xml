@@ -32,7 +32,5 @@
         <item value="6892793FC413019D2DF609DFED7AF622D0F2D8FCF96EFA7E3FB87EEA34E10B93"/>
         <item value="7B68FD9D4E7610C9CB35FC0C6CC06EA04C6906E3DFA9F48F9A05460AF36BFFFC"/>
     </string-array>
-    <string name="5g_icon_display_grace_period_string"
-        value="connected_mmwave,legacy,30;connected,legacy,30;not_restricted_rrc_idle,legacy,30;
-        not_restricted_rrc_con,legacy,30"/>
+    <string name="5g_icon_display_grace_period_string">connected_mmwave,legacy,30;connected,legacy,30;not_restricted_rrc_idle,legacy,30;not_restricted_rrc_con,legacy,30</string>
 </carrier_config>
