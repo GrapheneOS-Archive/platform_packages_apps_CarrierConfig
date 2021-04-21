@@ -6,4 +6,7 @@
     <int name="maxImageHeight" value="1944"/>
     <int name="maxMessageSize" value="614400"/>
     <int name="maxImageWidth" value="2592"/>
+    <string-array name="carrier_certificate_string_array" num="1">
+        <item value="3d892880ef22d3b561b49e7f9c636f0dad29149dcfee0de067d1e0947bd27f1c:com.sfr.otp,com.sfr.mobileconnect"/>
+    </string-array>
 </carrier_config>
