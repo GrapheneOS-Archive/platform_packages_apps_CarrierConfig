@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <carrier_config>
-    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true"/>
-    <boolean name="carrier_supports_ss_over_ut_bool" value="true"/>
-    <string name="5g_icon_display_grace_period_string">connected_mmwave,legacy,10;connected,legacy,10;not_restricted_rrc_idle,legacy,10;not_restricted_rrc_con,legacy,10</string>
     <string-array name="carrier_certificate_string_array" num="6">
         <item value="191A9C9711282CCD1133C9F9EFA7D1077BCAAFB99E379A438207EE0D86218917:de.telekom.tsc"/>
         <item value="EE403A97B076CDEA7A8E8E9BC8011C0A45CEC08905F400EBECE62C946614977D:de.telekom.appstarter"/>
@@ -12,4 +9,3 @@
         <item value="710512630D24A345CC8E0E687BDFFB19F07882A2C9E91685895C9DD65CE61BED:de.congstar.ja,de.congstar.penny"/>
     </string-array>
 </carrier_config>
-
