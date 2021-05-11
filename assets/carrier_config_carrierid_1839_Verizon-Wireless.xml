@@ -176,4 +176,10 @@
     <boolean name="unmetered_nr_nsa_mmwave_bool" value="true" />
     <boolean name="unmetered_nr_sa_mmwave_bool" value="true" />
     <boolean name="inflate_signal_strength_bool" value="true" />
+    <int-array name="additional_nr_advanced_bands_int_array" num="1">
+        <item value="77"/>
+    </int-array>
+
+    <!--The value is 0xFF03 -->
+    <int name="nr_advanced_capable_pco_id_int" value="65283"/>
 </carrier_config>
