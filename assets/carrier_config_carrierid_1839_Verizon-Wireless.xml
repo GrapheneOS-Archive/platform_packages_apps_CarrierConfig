@@ -176,4 +176,12 @@
     <boolean name="unmetered_nr_nsa_mmwave_bool" value="true" />
     <boolean name="unmetered_nr_sa_mmwave_bool" value="true" />
     <boolean name="inflate_signal_strength_bool" value="true" />
+
+    <int-array name="nrarfcns_rsrp_boost_int_array" num="1">
+        <item value="6"/>
+    </int-array>
+    <string-array name="boosted_nrarfcns_string_array" num="1">
+        <item value="200000-866666"/>
+    </string-array>
+
 </carrier_config>
