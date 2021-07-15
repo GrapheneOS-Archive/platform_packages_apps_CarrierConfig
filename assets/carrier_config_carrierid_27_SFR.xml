@@ -7,6 +7,6 @@
     <int name="maxMessageSize" value="614400"/>
     <int name="maxImageWidth" value="2592"/>
     <string-array name="carrier_certificate_string_array" num="1">
-        <item value="3d892880ef22d3b561b49e7f9c636f0dad29149dcfee0de067d1e0947bd27f1c:com.sfr.otp,com.sfr.mobileconnect"/>
+        <item value="5f00d30d66af74dd43e98a00695362719d8e7c9e7de367b962769cdfe12bd9da:com.sfr.otp,com.sfr.mobileconnect,com.sfr.android.moncompte,com.sfr.android.redmoncompte"/>
     </string-array>
 </carrier_config>
