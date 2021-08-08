@@ -8,5 +8,5 @@
     <boolean name="disable_dun_apn_while_roaming_with_preset_apn_bool" value="true"/>
     <boolean name="nr_timers_reset_if_non_endc_and_rrc_idle_bool" value="true"/>
     <boolean name="carrier_name_override_bool" value="true"/>
-    <string name="carrier_name_string">au</string>
+    <string name="carrier_name_string">UQ mobile</string>
 </carrier_config>
