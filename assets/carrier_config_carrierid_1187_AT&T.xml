@@ -19,6 +19,7 @@
     <int name="recipientLimit" value="10"/>
     <int name="volte_replacement_rat_int" value="3"/>
     <int name="ims_dtmf_tone_delay_int" value="120"/>
+    <int name="default_mtu_int" value="1430"/>
     <string name="carrier_name_string">AT&amp;T</string>
     <string-array name="carrier_data_call_retry_config_strings" num="3">
         <item value="default:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000"/>
@@ -74,6 +75,19 @@
         <item value="#7"/>
         <item value="#8"/>
         <item value="#9"/>
+    </string-array>
+    <string-array name="tcp_buffers_string_array" num="11">
+        <item value="UMTS:131072,262144,1452032,4096,16384,399360"/>
+        <item value="HSPA:131072,262144,1452032,4096,16384,399360"/>
+        <item value="HSDPA:131072,262144,1452032,4096,16384,399360"/>
+        <item value="HSUPA:131072,262144,1452032,4096,16384,399360"/>
+        <item value="HSPA+:131072,262144,1452032,4096,16384,399360"/>
+        <item value="EDGE:4093,26280,35040,4096,16384,35040"/>
+        <item value="GPRA:4092,8760,11680,4096,8760,11680"/>
+        <item value="EvDo_0:4094,87380,262144,4096,16384,262144"/>
+        <item value="EvDo_A:4094,87380,262144,4096,16384,262144"/>
+        <item value="EvDo_B:4094,87380,262144,4096,16384,262144"/>
+        <item value="LTE:524288,1048576,8388608,262144,524288,4194304"/>
     </string-array>
     <string name="5g_icon_display_grace_period_string">connected_mmwave,any,30</string>
     <boolean name="inflate_signal_strength_bool" value="true" />
