@@ -11,6 +11,7 @@
     <int name="maxImageHeight" value="1944"/>
     <int name="maxImageWidth" value="2592"/>
     <int name="maxMessageSize" value="1048576"/>
+    <int name="default_mtu_int" value="1450"/>
     <string name="carrier_instant_lettering_encoding_string">EUC-KR</string>
     <string name="carrier_instant_lettering_invalid_chars_string">["&lt;&gt;\\\n]</string>
     <string-array name="bandwidth_string_array" num="19">
