@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="730" mnc="07">
+    <string name="carrier_config_version_string">73007-0.48</string>
+    <boolean name="enableGroupMms" value="false" />
+    <boolean name="enabledMMS" value="false" />
+    <boolean name="groupChatDefaultsToMMS" value="false" />
+    <string-array name="non_roaming_operator_string_array" num="1">
+        <item value="73002" />
+    </string-array>
+</carrier_config>
+</carrier_config_list>

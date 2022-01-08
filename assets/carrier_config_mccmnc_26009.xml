@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="260" mnc="09" spn="Lycamobile">
+    <string name="carrier_config_version_string">lycamobile_pl-0.48</string>
+</carrier_config>
+</carrier_config_list>

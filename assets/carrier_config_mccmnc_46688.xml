@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="466" mnc="88">
+    <string name="carrier_config_version_string">46688-0.48</string>
+    <boolean name="hide_lte_plus_data_icon_bool" value="false" />
+</carrier_config>
+</carrier_config_list>

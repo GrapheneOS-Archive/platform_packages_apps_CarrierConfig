@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="405" mnc="858">
+    <string name="carrier_config_version_string">rjio_in-32000000032.48</string>
+    <string-array name="allowed_initial_attach_apn_types_string_array" num="2">
+        <item value="ia" />
+        <item value="default" />
+    </string-array>
+    <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
+    <int-array name="carrier_nr_availabilities_int_array" num="0" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <boolean name="editable_enhanced_4g_lte_bool" value="false" />
+    <boolean name="editable_wfc_mode_bool" value="false" />
+    <int name="ims_conference_size_limit_int" value="6" />
+    <boolean name="is_ims_conference_size_enforced_bool" value="true" />
+    <int name="iwlan.child_sa_rekey_hard_timer_sec_int" value="86500" />
+    <int name="iwlan.child_sa_rekey_soft_timer_sec_int" value="86400" />
+    <string name="iwlan.epdg_static_address_roaming_string">InternationalVoWiFi.jio.com</string>
+    <string name="iwlan.epdg_static_address_string">vowifi.jio.com</string>
+    <int name="iwlan.ike_rekey_hard_timer_in_sec" value="86500" />
+    <int name="iwlan.ike_rekey_soft_timer_sec_int" value="86400" />
+    <int name="iwlan.ike_remote_id_type_int" value="11" />
+    <string-array name="iwlan.mcc_mncs_string_array" num="22">
+        <item value="405-840" />
+        <item value="405-854" />
+        <item value="405-855" />
+        <item value="405-856" />
+        <item value="405-857" />
+        <item value="405-858" />
+        <item value="405-859" />
+        <item value="405-860" />
+        <item value="405-861" />
+        <item value="405-862" />
+        <item value="405-863" />
+        <item value="405-864" />
+        <item value="405-865" />
+        <item value="405-866" />
+        <item value="405-867" />
+        <item value="405-868" />
+        <item value="405-869" />
+        <item value="405-870" />
+        <item value="405-871" />
+        <item value="405-872" />
+        <item value="405-873" />
+        <item value="405-874" />
+    </string-array>
+    <string-array name="roaming_operator_string_array" num="2">
+        <item value="404" />
+        <item value="405" />
+    </string-array>
+    <int name="volte_replacement_rat_int" value="3" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+</carrier_config>
+</carrier_config_list>

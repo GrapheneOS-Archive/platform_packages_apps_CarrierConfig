@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="234" mnc="50">
+    <string name="carrier_config_version_string">23450-0.48</string>
+</carrier_config>
+<carrier_config mcc="234" mnc="50" gid1="3597bfd533">
+    <string name="carrier_config_version_string">dent_zz-0.48</string>
+    <boolean name="carrier_default_data_roaming_enabled_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="234" mnc="50" imsi="234500008">
+    <string name="carrier_config_version_string">truphone_zz-0.48</string>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="234" mnc="50" imsi="2345070960212">
+    <string name="carrier_config_version_string">cellcomroaming_gb-0.48</string>
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+</carrier_config>
+<carrier_config mcc="234" mnc="50" imsi="2345070960213">
+    <string name="carrier_config_version_string">cellcomroaming_gb-0.48</string>
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+</carrier_config>
+<carrier_config mcc="234" mnc="50" imsi="2345070960214">
+    <string name="carrier_config_version_string">cellcomroaming_gb-0.48</string>
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+</carrier_config>
+<carrier_config mcc="234" mnc="50" imsi="2345070960215">
+    <string name="carrier_config_version_string">cellcomroaming_gb-0.48</string>
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+</carrier_config>
+<carrier_config mcc="234" mnc="50" imsi="2345070960216">
+    <string name="carrier_config_version_string">cellcomroaming_gb-0.48</string>
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+</carrier_config>
+<carrier_config mcc="234" mnc="50" imsi="2345070960217">
+    <string name="carrier_config_version_string">cellcomroaming_gb-0.48</string>
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+</carrier_config>
+<carrier_config mcc="234" mnc="50" imsi="2345070960218">
+    <string name="carrier_config_version_string">cellcomroaming_gb-0.48</string>
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+</carrier_config>
+<carrier_config mcc="234" mnc="50" imsi="2345070960219">
+    <string name="carrier_config_version_string">cellcomroaming_gb-0.48</string>
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+</carrier_config>
+<carrier_config mcc="234" mnc="50" imsi="234507096022">
+    <string name="carrier_config_version_string">cellcomroaming_gb-0.48</string>
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+</carrier_config>
+<carrier_config mcc="234" mnc="50" imsi="234507096023">
+    <string name="carrier_config_version_string">cellcomroaming_gb-0.48</string>
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+</carrier_config>
+<carrier_config mcc="234" mnc="50" imsi="234507096024">
+    <string name="carrier_config_version_string">cellcomroaming_gb-0.48</string>
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+</carrier_config>
+<carrier_config mcc="234" mnc="50" imsi="234507096025">
+    <string name="carrier_config_version_string">cellcomroaming_gb-0.48</string>
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+</carrier_config>
+<carrier_config mcc="234" mnc="50" imsi="234507096026">
+    <string name="carrier_config_version_string">cellcomroaming_gb-0.48</string>
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+</carrier_config>
+<carrier_config mcc="234" mnc="50" imsi="234507096027">
+    <string name="carrier_config_version_string">cellcomroaming_gb-0.48</string>
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+</carrier_config>
+<carrier_config mcc="234" mnc="50" imsi="234507096028">
+    <string name="carrier_config_version_string">cellcomroaming_gb-0.48</string>
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+</carrier_config>
+<carrier_config mcc="234" mnc="50" imsi="234507096029">
+    <string name="carrier_config_version_string">cellcomroaming_gb-0.48</string>
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+</carrier_config>
+<carrier_config mcc="234" mnc="50" imsi="234507096030">
+    <string name="carrier_config_version_string">cellcomroaming_gb-0.48</string>
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+</carrier_config>
+<carrier_config mcc="234" mnc="50" imsi="234507096031">
+    <string name="carrier_config_version_string">cellcomroaming_gb-0.48</string>
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+</carrier_config>
+<carrier_config mcc="234" mnc="50" imsi="234507096032">
+    <string name="carrier_config_version_string">cellcomroaming_gb-0.48</string>
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+</carrier_config>
+<carrier_config mcc="234" mnc="50" imsi="234507096033">
+    <string name="carrier_config_version_string">cellcomroaming_gb-0.48</string>
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+</carrier_config>
+<carrier_config mcc="234" mnc="50" imsi="234507096034">
+    <string name="carrier_config_version_string">cellcomroaming_gb-0.48</string>
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+</carrier_config>
+<carrier_config mcc="234" mnc="50" imsi="234507096035">
+    <string name="carrier_config_version_string">cellcomroaming_gb-0.48</string>
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+</carrier_config>
+<carrier_config mcc="234" mnc="50" imsi="2345070960361">
+    <string name="carrier_config_version_string">cellcomroaming_gb-0.48</string>
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+</carrier_config>
+<carrier_config mcc="234" mnc="50" imsi="234507096036200">
+    <string name="carrier_config_version_string">cellcomroaming_gb-0.48</string>
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+</carrier_config>
+</carrier_config_list>

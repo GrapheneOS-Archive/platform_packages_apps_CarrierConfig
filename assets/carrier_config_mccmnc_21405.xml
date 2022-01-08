@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="214" mnc="05">
+    <string name="carrier_config_version_string">movistar_es-32000000518.48</string>
+    <string-array name="carrier_certificate_string_array" num="1">
+        <item value="8C960CA3CBF4A9DA851774F2DE072E57B1289A9CF7D6BDA4A6B386A42BC4FFB3" />
+    </string-array>
+    <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <string name="default_vm_number_string">22123</string>
+    <int name="ims_conference_size_limit_int" value="4" />
+    <boolean name="is_ims_conference_size_enforced_bool" value="true" />
+    <boolean name="iwlan.add_ke_to_child_session_rekey_bool" value="true" />
+    <int name="iwlan.child_sa_rekey_hard_timer_sec_int" value="64900" />
+    <int name="iwlan.child_sa_rekey_soft_timer_sec_int" value="64800" />
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="2">
+        <item value="16" />
+        <item value="14" />
+    </int-array>
+    <int name="iwlan.dpd_timer_sec_int" value="30" />
+    <string name="iwlan.epdg_static_address_string">epdg.epc.mnc007.mcc214.pub.3gppnetwork.org</string>
+    <int name="iwlan.ike_rekey_hard_timer_in_sec" value="64900" />
+    <int name="iwlan.ike_rekey_soft_timer_sec_int" value="64800" />
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="512000" />
+    <string-array name="non_roaming_operator_string_array" num="20">
+        <item value="21401" />
+        <item value="21402" />
+        <item value="21403" />
+        <item value="21404" />
+        <item value="21406" />
+        <item value="21407" />
+        <item value="21408" />
+        <item value="21409" />
+        <item value="214010" />
+        <item value="214011" />
+        <item value="214012" />
+        <item value="214013" />
+        <item value="214014" />
+        <item value="214015" />
+        <item value="214016" />
+        <item value="214017" />
+        <item value="214018" />
+        <item value="214019" />
+        <item value="214020" />
+        <item value="214021" />
+    </string-array>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+    <string-array name="unloggable_numbers_string_array" num="1">
+        <item value="900018018" />
+    </string-array>
+    <boolean name="use_wfc_home_network_mode_in_roaming_network_bool" value="true" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+</carrier_config>
+<carrier_config mcc="214" mnc="05" imsi="214050104">
+    <string name="carrier_config_version_string">inet_es-0.48</string>
+    <string-array name="unloggable_numbers_string_array" num="1">
+        <item value="900018018" />
+    </string-array>
+</carrier_config>
+<carrier_config mcc="214" mnc="05" imsi="214050111">
+    <string name="carrier_config_version_string">telecable_es-0.48</string>
+    <string-array name="non_roaming_operator_string_array" num="20">
+        <item value="21401" />
+        <item value="21402" />
+        <item value="21403" />
+        <item value="21404" />
+        <item value="21406" />
+        <item value="21407" />
+        <item value="21408" />
+        <item value="21409" />
+        <item value="214010" />
+        <item value="214011" />
+        <item value="214012" />
+        <item value="214013" />
+        <item value="214014" />
+        <item value="214015" />
+        <item value="214016" />
+        <item value="214017" />
+        <item value="214018" />
+        <item value="214019" />
+        <item value="214020" />
+        <item value="214021" />
+    </string-array>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+    <string-array name="unloggable_numbers_string_array" num="1">
+        <item value="900018018" />
+    </string-array>
+</carrier_config>
+</carrier_config_list>

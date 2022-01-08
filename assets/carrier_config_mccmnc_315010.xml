@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="315" mnc="010">
+    <string name="carrier_config_version_string">google_us-0.48</string>
+    <int-array name="lte_rsrp_thresholds_int_array" num="4">
+        <item value="-115" />
+        <item value="-105" />
+        <item value="-95" />
+        <item value="-85" />
+    </int-array>
+    <long name="opportunistic_network_data_switch_exit_hysteresis_time_long" value="2000" />
+    <long name="opportunistic_network_data_switch_hysteresis_time_long" value="2000" />
+    <int name="opportunistic_network_entry_threshold_rsrp_int" value="-111" />
+    <int name="opportunistic_network_entry_threshold_rssnr_int" value="10" />
+    <int name="opportunistic_network_exit_threshold_rsrp_int" value="-120" />
+    <int name="opportunistic_network_exit_threshold_rssnr_int" value="9" />
+</carrier_config>
+</carrier_config_list>

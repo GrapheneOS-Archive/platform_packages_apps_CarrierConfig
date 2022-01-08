@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="260" mnc="03">
+    <string name="carrier_config_version_string">26003-0.48</string>
+    <int name="call_barring_default_service_class_int" value="0" />
+    <string-array name="carrier_certificate_string_array" num="2">
+        <item value="B67AFFCDA89E3193B1595036D7C6CDBE22BE5CA24C9F6CF93FC6B48F91D7310D:com.orange.phone,pl.orange.mojeorange,com.orange.update" />
+        <item value="B71C30C980EE10E1C53FE17F21323D4A518F1BFFCC2917DF26A9098364AA9B26:com.orange.rn.dop" />
+    </string-array>
+    <string name="config_plans_package_override_string">pl.orange.mojeorange</string>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="260" mnc="03" gid1="3597bfd533">
+    <string name="carrier_config_version_string">dent_zz-0.48</string>
+    <boolean name="carrier_default_data_roaming_enabled_bool" value="true" />
+</carrier_config>
+</carrier_config_list>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="510" mnc="21">
+    <string name="carrier_config_version_string">51021-0.48</string>
+    <string-array name="non_roaming_operator_string_array" num="1">
+        <item value="51001" />
+    </string-array>
+</carrier_config>
+</carrier_config_list>

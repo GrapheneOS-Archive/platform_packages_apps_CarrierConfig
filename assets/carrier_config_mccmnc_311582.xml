@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="311" mnc="582">
+    <string name="carrier_config_version_string">uscc_us-32000000064.48</string>
+    <boolean name="additional_settings_caller_id_visibility_bool" value="false" />
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
+    <int name="carrier_default_wfc_ims_roaming_mode_int" value="1" />
+    <string name="carrier_eri_file_name_string">eri.xml</string>
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+    <string-array name="cdma_nonroaming_networks_string_array" num="0" />
+    <boolean name="config_telephony_use_own_number_for_voicemail_bool" value="true" />
+    <boolean name="disable_cdma_activation_code_bool" value="false" />
+    <boolean name="dtmf_type_enabled_bool" value="true" />
+    <string name="emailGatewayNumber">6245</string>
+    <string-array name="emergency_number_prefix_string_array" num="3">
+        <item value="#" />
+        <item value="*" />
+        <item value="*272" />
+    </string-array>
+    <boolean name="enableMultipartSMS" value="false" />
+    <boolean name="enabledNotifyWapMMSC" value="true" />
+    <boolean name="enabledTransID" value="true" />
+    <string-array name="gsm_nonroaming_networks_string_array" num="5">
+        <item value="310120" />
+        <item value="310260" />
+        <item value="310410" />
+        <item value="311480" />
+        <item value="312530" />
+    </string-array>
+    <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+    <boolean name="hide_sim_lock_settings_bool" value="true" />
+    <string name="httpParams">x-vzw-mdn: 1##LINE1NOCOUNTRYCODE##</string>
+    <string name="imsserviceentitlement.entitlement_server_url_string">https://aes.mnc580.mcc311.pub.3gppnetwork.org/rcs-entitlement</string>
+    <string name="imsserviceentitlement.fcm_sender_id_string">1074633755707</string>
+    <boolean name="imsserviceentitlement.show_vowifi_webview_bool" value="true" />
+    <boolean name="is_ims_conference_size_enforced_bool" value="true" />
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="80" />
+    <string-array name="non_roaming_operator_string_array" num="7">
+        <item value="310" />
+        <item value="311" />
+        <item value="312" />
+        <item value="313" />
+        <item value="314" />
+        <item value="315" />
+        <item value="316" />
+    </string-array>
+    <int name="recipientLimit" value="20" />
+    <boolean name="rtt_downgrade_supported_bool" value="true" />
+    <boolean name="rtt_supported_bool" value="true" />
+    <boolean name="show_cdma_choices_bool" value="false" />
+    <string name="sim_country_iso_override_string">us</string>
+    <boolean name="support_ims_conference_event_package_bool" value="false" />
+    <boolean name="support_ss_over_cdma_bool" value="true" />
+    <boolean name="support_swap_after_merge_bool" value="true" />
+    <string name="uaProfTagName">x-wap-profile</string>
+    <boolean name="use_otasp_for_provisioning_bool" value="false" />
+    <boolean name="use_wfc_home_network_mode_in_roaming_network_bool" value="true" />
+    <boolean name="volte_5g_limited_alert_dialog_bool" value="true" />
+    <int name="volte_replacement_rat_int" value="6" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+    <boolean name="world_mode_enabled_bool" value="false" />
+</carrier_config>
+</carrier_config_list>

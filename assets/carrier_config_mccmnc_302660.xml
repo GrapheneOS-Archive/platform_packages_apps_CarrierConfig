@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="302" mnc="660">
+    <string name="carrier_config_version_string">302660-0.48</string>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="80" />
+    <string-array name="non_roaming_operator_string_array" num="5">
+        <item value="302220" />
+        <item value="302370" />
+        <item value="302610" />
+        <item value="302720" />
+        <item value="302780" />
+    </string-array>
+    <int name="recipientLimit" value="20" />
+    <int name="smsToMmsTextThreshold" value="6" />
+</carrier_config>
+</carrier_config_list>

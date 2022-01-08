@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="732" mnc="123">
+    <string name="carrier_config_version_string">732123-0.48</string>
+</carrier_config>
+<carrier_config mcc="732" mnc="123" imsi="7321232010">
+    <string name="carrier_config_version_string">travelfy_zz-0.48</string>
+</carrier_config>
+<carrier_config mcc="732" mnc="123" spn="VIRGIN MOBILE">
+    <string name="carrier_config_version_string">732123SPN=VIRGIN MOBILE-0.48</string>
+</carrier_config>
+</carrier_config_list>

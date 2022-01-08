@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="655" mnc="07">
+    <string name="carrier_config_version_string">65507-0.48</string>
+</carrier_config>
+<carrier_config mcc="655" mnc="07" imsi="6550710">
+    <string name="carrier_config_version_string">65507IMSI=6550710-0.48</string>
+</carrier_config>
+<carrier_config mcc="655" mnc="07" imsi="6550713">
+    <string name="carrier_config_version_string">65507IMSI=6550713-0.48</string>
+</carrier_config>
+</carrier_config_list>

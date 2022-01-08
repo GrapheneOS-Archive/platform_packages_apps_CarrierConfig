@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="272" mnc="13">
+    <string name="carrier_config_version_string">lycamobile_ie-0.48</string>
+</carrier_config>
+</carrier_config_list>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="244" mnc="05">
+    <string name="carrier_config_version_string">elisa2_fi-0.48</string>
+</carrier_config>
+<carrier_config mcc="244" mnc="05" imsi="2440541">
+    <string name="carrier_config_version_string">elisa1_fi-0.48</string>
+</carrier_config>
+</carrier_config_list>

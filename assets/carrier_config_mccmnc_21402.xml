@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="214" mnc="02">
+    <string name="carrier_config_version_string">altecom_es-0.48</string>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+    <string-array name="unloggable_numbers_string_array" num="1">
+        <item value="900018018" />
+    </string-array>
+</carrier_config>
+<carrier_config mcc="214" mnc="02" spn="FIBRACAT">
+    <string name="carrier_config_version_string">fibracat_es-0.48</string>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+    <string-array name="unloggable_numbers_string_array" num="1">
+        <item value="900018018" />
+    </string-array>
+</carrier_config>
+</carrier_config_list>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="238" mnc="06">
+    <string name="carrier_config_version_string">three_dk-32000000010.48</string>
+    <boolean name="auto_retry_failed_wifi_emergency_call" value="true" />
+    <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <boolean name="editable_voicemail_number_bool" value="true" />
+    <boolean name="editable_wfc_mode_bool" value="false" />
+    <string-array name="ims_reasoninfo_mapping_string_array" num="2">
+        <item value="510|Call completed elsewhere|1014" />
+        <item value="*|Call is dropped due to Wi-Fi signal is degraded|1407" />
+    </string-array>
+    <boolean name="is_ims_conference_size_enforced_bool" value="true" />
+    <boolean name="prefer_2g_bool" value="false" />
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+</carrier_config>
+</carrier_config_list>

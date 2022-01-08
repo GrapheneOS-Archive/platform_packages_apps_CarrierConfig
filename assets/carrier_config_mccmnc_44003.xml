@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="440" mnc="03">
+    <string name="carrier_config_version_string">iijmio_jp-0.48</string>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+    <boolean name="show_blocking_pay_phone_option_bool" value="true" />
+    <string name="sim_country_iso_override_string">jp</string>
+</carrier_config>
+</carrier_config_list>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="311" mnc="100">
+    <string name="carrier_config_version_string">311100-0.48</string>
+    <string name="emailGatewayNumber">6245</string>
+    <boolean name="enableMultipartSMS" value="false" />
+    <boolean name="enableSMSDeliveryReports" value="false" />
+    <string name="httpParams">X-MDN: ##LINE1##</string>
+    <int name="maxImageHeight" value="2432" />
+    <int name="maxImageWidth" value="4320" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="80" />
+    <int name="recipientLimit" value="10" />
+</carrier_config>
+</carrier_config_list>

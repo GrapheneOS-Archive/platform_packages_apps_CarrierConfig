@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="234" mnc="91">
+    <string name="carrier_config_version_string">vodafone_gb-32000000326.48</string>
+    <boolean name="call_barring_visibility_bool" value="true" />
+    <boolean name="carrier_cross_sim_ims_available_bool" value="false" />
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <int name="carrier_default_wfc_ims_roaming_mode_int" value="1" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_volte_provisioning_required_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <string name="default_vm_number_string">121</string>
+    <boolean name="editable_wfc_mode_bool" value="false" />
+    <string-array name="feature_access_codes_string_array" num="3">
+        <item value="153" />
+        <item value="132" />
+        <item value="45" />
+    </string-array>
+    <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="1">
+        <item value="2" />
+    </int-array>
+    <int name="iwlan.ike_remote_id_type_int" value="11" />
+    <string name="iwlan.key_error_policy_config_string">[{"ApnName": "*","ErrorTypes": [{"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["9002"],"RetryArray": ["1800", "-1"],"UnthrottlingEvents": ["APM_ENABLE_EVENT", "WIFI_DISABLE_EVENT", "WIFI_AP_CHANGED_EVENT", "WIFI_CALLING_DISABLE_EVENT"]}]}]</string>
+    <string-array name="iwlan.mcc_mncs_string_array" num="1">
+        <item value="235-015" />
+    </string-array>
+    <int name="iwlan.natt_keep_alive_timer_sec_int" value="30" />
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+    <int name="smsToMmsTextThreshold" value="10" />
+    <boolean name="voicemail_notification_persistent_bool" value="true" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+</carrier_config>
+</carrier_config_list>

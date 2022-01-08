@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="204" mnc="08">
+    <string name="carrier_config_version_string">kpn_nl-32000000620.48</string>
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="1" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <string name="default_vm_number_string">1233</string>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="204" mnc="08" gid1="547275554B3030656E">
+    <string name="carrier_config_version_string">truphone_zz-0.48</string>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="204" mnc="08" gid1="54727555533030656E">
+    <string name="carrier_config_version_string">truphone_zz-0.48</string>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="204" mnc="08" imsi="204080950">
+    <string name="carrier_config_version_string">20408IMSI=204080950-0.48</string>
+</carrier_config>
+<carrier_config mcc="204" mnc="08" spn="RABO MOBIEL">
+    <string name="carrier_config_version_string">20408SPN=RABO MOBIEL-0.48</string>
+</carrier_config>
+</carrier_config_list>

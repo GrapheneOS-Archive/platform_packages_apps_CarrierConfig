@@ -1,0 +1,1915 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="310" mnc="410">
+    <string name="carrier_config_version_string">att_us-32000000119.48</string>
+    <string name="5g_icon_configuration_string">connected_mmwave:5G_Plus,connected:5G,not_restricted_rrc_idle:5G,not_restricted_rrc_con:5G</string>
+    <string name="5g_icon_display_grace_period_string">connected_mmwave,any,30</string>
+    <int-array name="5g_nr_ssrsrp_thresholds_int_array" num="4">
+        <item value="-120" />
+        <item value="-110" />
+        <item value="-100" />
+        <item value="-90" />
+    </int-array>
+    <int-array name="additional_nr_advanced_bands_int_array" num="1">
+        <item value="77" />
+    </int-array>
+    <boolean name="allow_hold_call_during_emergency_bool" value="false" />
+    <boolean name="allow_merging_rtt_calls_bool" value="true" />
+    <string name="apn.settings_default_protocol_string">IPV4V6</string>
+    <string name="apn.settings_default_roaming_protocol_string">IPV4V6</string>
+    <string-array name="apn_settings_default_apn_types_string_array" num="1">
+        <item value="default" />
+    </string-array>
+    <boolean name="carrier_auto_cancel_cs_notification" value="false" />
+    <boolean name="carrier_cross_sim_ims_available_bool" value="false" />
+    <string-array name="carrier_data_call_retry_config_strings" num="4">
+        <item value="default:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000" />
+        <item value="mms:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000" />
+        <item value="ims:max_retries=10,5000,5000,5000" />
+        <item value="others:max_retries=3,5000,5000,5000" />
+    </string-array>
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
+    <string-array name="carrier_metered_apn_types_strings" num="3">
+        <item value="default" />
+        <item value="dun" />
+        <item value="supl" />
+    </string-array>
+    <string-array name="carrier_metered_roaming_apn_types_strings" num="3">
+        <item value="default" />
+        <item value="dun" />
+        <item value="supl" />
+    </string-array>
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="1" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <string-array name="carrier_wlan_disallowed_apn_types_string_array" num="1">
+        <item value="default" />
+    </string-array>
+    <boolean name="csp_enabled_bool" value="true" />
+    <string-array name="emergency_number_prefix_string_array" num="3">
+        <item value="*67" />
+        <item value="*82" />
+        <item value="*272" />
+    </string-array>
+    <boolean name="enableSMSDeliveryReports" value="false" />
+    <int-array name="gsm_rssi_thresholds_int_array" num="4">
+        <item value="-108" />
+        <item value="-104" />
+        <item value="-98" />
+        <item value="-90" />
+    </int-array>
+    <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+    <boolean name="hide_preferred_network_type_bool" value="true" />
+    <boolean name="ignore_rtt_mode_setting_bool" value="true" />
+    <int name="ims_dtmf_tone_delay_int" value="120" />
+    <string-array name="ims_reasoninfo_mapping_string_array" num="4">
+        <item value="332|service not allowed in this location|1623" />
+        <item value="352|emergency calls over wifi not allowed in this location|1622" />
+        <item value="510|Call completed elsewhere|1014" />
+        <item value="*|Call is dropped due to Wi-Fi signal is degraded|1407" />
+    </string-array>
+    <boolean name="inflate_signal_strength_bool" value="true" />
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="1">
+        <item value="14" />
+    </int-array>
+    <int-array name="iwlan.epdg_address_priority_int_array" num="1">
+        <item value="0" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.att.net</string>
+    <string name="iwlan.key_error_policy_config_string">[{"ApnName": "*","ErrorTypes": [{"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["9000", "9001", "11011", "9003", "11001", "9006", "8192"],"RetryArray": [],"UnthrottlingEvents": []}, {"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["*"],"RetryArray": ["10", "60", "120", "240", "-1"],"UnthrottlingEvents": ["APM_ENABLE_EVENT", "WIFI_DISABLE_EVENT", "WIFI_CALLING_DISABLE_EVENT"]}]}]</string>
+    <int-array name="lte_rsrp_thresholds_int_array" num="4">
+        <item value="-120" />
+        <item value="-110" />
+        <item value="-100" />
+        <item value="-90" />
+    </int-array>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="0" />
+    <string-array name="mmi_two_digit_number_pattern_string_array" num="22">
+        <item value="0" />
+        <item value="00" />
+        <item value="*0" />
+        <item value="*1" />
+        <item value="*2" />
+        <item value="*3" />
+        <item value="*4" />
+        <item value="*5" />
+        <item value="*6" />
+        <item value="*7" />
+        <item value="*8" />
+        <item value="*9" />
+        <item value="#0" />
+        <item value="#1" />
+        <item value="#2" />
+        <item value="#3" />
+        <item value="#4" />
+        <item value="#5" />
+        <item value="#6" />
+        <item value="#7" />
+        <item value="#8" />
+        <item value="#9" />
+    </string-array>
+    <string-array name="non_roaming_operator_string_array" num="7">
+        <item value="310" />
+        <item value="311" />
+        <item value="312" />
+        <item value="313" />
+        <item value="314" />
+        <item value="315" />
+        <item value="316" />
+    </string-array>
+    <string name="operator_name_filter_pattern_string">(.*)\.{3}[12]$</string>
+    <boolean name="prefer_2g_bool" value="false" />
+    <boolean name="rcs_request_forbidden_by_sip_489_bool" value="true" />
+    <int name="recipientLimit" value="20" />
+    <string-array name="roaming_operator_string_array" num="5">
+        <item value="310110" />
+        <item value="310140" />
+        <item value="310400" />
+        <item value="310470" />
+        <item value="311170" />
+    </string-array>
+    <boolean name="rtt_downgrade_supported_bool" value="true" />
+    <boolean name="rtt_supported_bool" value="true" />
+    <boolean name="rtt_supported_while_roaming_bool" value="true" />
+    <boolean name="show_4g_for_3g_data_icon_bool" value="true" />
+    <string name="show_carrier_data_icon_pattern_string">.*\.{3}[12]$</string>
+    <boolean name="skip_cf_fail_to_disable_dialog_bool" value="true" />
+    <boolean name="support_pause_ims_video_calls_bool" value="false" />
+    <boolean name="use_lower_mtu_value_if_both_received" value="true" />
+    <int name="volte_replacement_rat_int" value="3" />
+    <string name="wcdma_default_signal_strength_measurement_string">rscp</string>
+    <int-array name="wcdma_rscp_thresholds_int_array" num="4">
+        <item value="-105" />
+        <item value="-99" />
+        <item value="-89" />
+        <item value="-79" />
+    </int-array>
+    <int name="wfc_spn_format_idx_int" value="1" />
+    <int name="wifi.carrier_profiles_version_int" value="1" />
+    <string-array name="wifi.passpoint_profiles_string_array" num="1">
+        <item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;PasspointProfile&gt;&lt;PPSMO&gt;&lt;![CDATA[&lt;MgmtTree xmlns=&quot;syncml:dmddf1.2&quot;&gt;&lt;VerDTD&gt;1.2&lt;/VerDTD&gt;&lt;Node&gt;&lt;NodeName&gt;PerProviderSubscription&lt;/NodeName&gt;&lt;RTProperties&gt;&lt;Type&gt;&lt;DDFName&gt;urn:wfa:mo:hotspot2dot0-perprovidersubscription:1.0&lt;/DDFName&gt;&lt;/Type&gt;&lt;/RTProperties&gt;&lt;Node&gt;&lt;NodeName&gt;i001&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;HomeSP&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;FriendlyName&lt;/NodeName&gt;&lt;Value&gt;AT&amp;amp;T Passpoint&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;FQDN&lt;/NodeName&gt;&lt;Value&gt;attwifi.com&lt;/Value&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;Credential&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;Realm&lt;/NodeName&gt;&lt;Value&gt;wlan.mnc410.mcc310.3gppnetwork.org&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;SIM&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;IMSI&lt;/NodeName&gt;&lt;Value&gt;310410*&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;EAPType&lt;/NodeName&gt;&lt;Value&gt;23&lt;/Value&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/MgmtTree&gt;]]&gt;&lt;/PPSMO&gt;&lt;/PasspointProfile&gt;" />
+    </string-array>
+</carrier_config>
+<carrier_config mcc="310" mnc="410" gid1="2AC9">
+    <string name="carrier_config_version_string">consumercellularatt_us-0.48</string>
+    <string name="5g_icon_configuration_string">connected_mmwave:5G_Plus,connected:5G,not_restricted_rrc_idle:5G,not_restricted_rrc_con:5G</string>
+    <string name="5g_icon_display_grace_period_string">connected_mmwave,any,30</string>
+    <int-array name="5g_nr_ssrsrp_thresholds_int_array" num="4">
+        <item value="-120" />
+        <item value="-110" />
+        <item value="-100" />
+        <item value="-90" />
+    </int-array>
+    <int-array name="additional_nr_advanced_bands_int_array" num="0" />
+    <boolean name="allow_hold_call_during_emergency_bool" value="false" />
+    <boolean name="allow_merging_rtt_calls_bool" value="true" />
+    <string name="apn.settings_default_protocol_string">IPV4V6</string>
+    <string name="apn.settings_default_roaming_protocol_string">IPV4V6</string>
+    <string-array name="apn_settings_default_apn_types_string_array" num="1">
+        <item value="default" />
+    </string-array>
+    <boolean name="carrier_auto_cancel_cs_notification" value="false" />
+    <string-array name="carrier_data_call_retry_config_strings" num="4">
+        <item value="default:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000" />
+        <item value="mms:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000" />
+        <item value="ims:max_retries=10,5000,5000,5000" />
+        <item value="others:max_retries=3,5000,5000,5000" />
+    </string-array>
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
+    <string-array name="carrier_metered_apn_types_strings" num="3">
+        <item value="default" />
+        <item value="dun" />
+        <item value="supl" />
+    </string-array>
+    <string-array name="carrier_metered_roaming_apn_types_strings" num="3">
+        <item value="default" />
+        <item value="dun" />
+        <item value="supl" />
+    </string-array>
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="1" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <string-array name="carrier_wlan_disallowed_apn_types_string_array" num="1">
+        <item value="default" />
+    </string-array>
+    <boolean name="csp_enabled_bool" value="true" />
+    <string-array name="emergency_number_prefix_string_array" num="3">
+        <item value="*67" />
+        <item value="*82" />
+        <item value="*272" />
+    </string-array>
+    <boolean name="enableSMSDeliveryReports" value="false" />
+    <int-array name="gsm_rssi_thresholds_int_array" num="4">
+        <item value="-108" />
+        <item value="-104" />
+        <item value="-98" />
+        <item value="-90" />
+    </int-array>
+    <boolean name="hide_enhanced_4g_lte_bool" value="false" />
+    <boolean name="hide_preferred_network_type_bool" value="false" />
+    <boolean name="ignore_rtt_mode_setting_bool" value="true" />
+    <int name="ims_dtmf_tone_delay_int" value="120" />
+    <string-array name="ims_reasoninfo_mapping_string_array" num="4">
+        <item value="332|service not allowed in this location|1623" />
+        <item value="352|emergency calls over wifi not allowed in this location|1622" />
+        <item value="510|Call completed elsewhere|1014" />
+        <item value="*|Call is dropped due to Wi-Fi signal is degraded|1407" />
+    </string-array>
+    <boolean name="inflate_signal_strength_bool" value="true" />
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="1">
+        <item value="14" />
+    </int-array>
+    <int-array name="iwlan.epdg_address_priority_int_array" num="1">
+        <item value="0" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.att.net</string>
+    <string name="iwlan.key_error_policy_config_string">[{"ApnName": "*","ErrorTypes": [{"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["9000", "9001", "11011", "9003", "11001", "9006", "8192"],"RetryArray": [],"UnthrottlingEvents": []}, {"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["*"],"RetryArray": ["10", "60", "120", "240", "-1"],"UnthrottlingEvents": ["APM_ENABLE_EVENT", "WIFI_DISABLE_EVENT", "WIFI_CALLING_DISABLE_EVENT"]}]}]</string>
+    <int-array name="lte_rsrp_thresholds_int_array" num="4">
+        <item value="-120" />
+        <item value="-110" />
+        <item value="-100" />
+        <item value="-90" />
+    </int-array>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="0" />
+    <string-array name="mmi_two_digit_number_pattern_string_array" num="22">
+        <item value="0" />
+        <item value="00" />
+        <item value="*0" />
+        <item value="*1" />
+        <item value="*2" />
+        <item value="*3" />
+        <item value="*4" />
+        <item value="*5" />
+        <item value="*6" />
+        <item value="*7" />
+        <item value="*8" />
+        <item value="*9" />
+        <item value="#0" />
+        <item value="#1" />
+        <item value="#2" />
+        <item value="#3" />
+        <item value="#4" />
+        <item value="#5" />
+        <item value="#6" />
+        <item value="#7" />
+        <item value="#8" />
+        <item value="#9" />
+    </string-array>
+    <string-array name="non_roaming_operator_string_array" num="7">
+        <item value="310" />
+        <item value="311" />
+        <item value="312" />
+        <item value="313" />
+        <item value="314" />
+        <item value="315" />
+        <item value="316" />
+    </string-array>
+    <string name="operator_name_filter_pattern_string">(.*)\.{3}[12]$</string>
+    <boolean name="prefer_2g_bool" value="false" />
+    <boolean name="rcs_request_forbidden_by_sip_489_bool" value="true" />
+    <int name="recipientLimit" value="20" />
+    <string-array name="roaming_operator_string_array" num="5">
+        <item value="310110" />
+        <item value="310140" />
+        <item value="310400" />
+        <item value="310470" />
+        <item value="311170" />
+    </string-array>
+    <boolean name="rtt_downgrade_supported_bool" value="true" />
+    <boolean name="rtt_supported_bool" value="true" />
+    <boolean name="rtt_supported_while_roaming_bool" value="true" />
+    <boolean name="show_4g_for_3g_data_icon_bool" value="true" />
+    <string name="show_carrier_data_icon_pattern_string" />
+    <boolean name="skip_cf_fail_to_disable_dialog_bool" value="true" />
+    <boolean name="support_pause_ims_video_calls_bool" value="false" />
+    <boolean name="use_lower_mtu_value_if_both_received" value="true" />
+    <int name="volte_replacement_rat_int" value="3" />
+    <string name="wcdma_default_signal_strength_measurement_string">rscp</string>
+    <int-array name="wcdma_rscp_thresholds_int_array" num="4">
+        <item value="-105" />
+        <item value="-99" />
+        <item value="-89" />
+        <item value="-79" />
+    </int-array>
+    <int name="wfc_spn_format_idx_int" value="1" />
+    <int name="wifi.carrier_profiles_version_int" value="1" />
+    <string-array name="wifi.passpoint_profiles_string_array" num="1">
+        <item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;PasspointProfile&gt;&lt;PPSMO&gt;&lt;![CDATA[&lt;MgmtTree xmlns=&quot;syncml:dmddf1.2&quot;&gt;&lt;VerDTD&gt;1.2&lt;/VerDTD&gt;&lt;Node&gt;&lt;NodeName&gt;PerProviderSubscription&lt;/NodeName&gt;&lt;RTProperties&gt;&lt;Type&gt;&lt;DDFName&gt;urn:wfa:mo:hotspot2dot0-perprovidersubscription:1.0&lt;/DDFName&gt;&lt;/Type&gt;&lt;/RTProperties&gt;&lt;Node&gt;&lt;NodeName&gt;i001&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;HomeSP&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;FriendlyName&lt;/NodeName&gt;&lt;Value&gt;AT&amp;amp;T Passpoint&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;FQDN&lt;/NodeName&gt;&lt;Value&gt;attwifi.com&lt;/Value&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;Credential&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;Realm&lt;/NodeName&gt;&lt;Value&gt;wlan.mnc410.mcc310.3gppnetwork.org&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;SIM&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;IMSI&lt;/NodeName&gt;&lt;Value&gt;310410*&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;EAPType&lt;/NodeName&gt;&lt;Value&gt;23&lt;/Value&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/MgmtTree&gt;]]&gt;&lt;/PPSMO&gt;&lt;/PasspointProfile&gt;" />
+    </string-array>
+</carrier_config>
+<carrier_config mcc="310" mnc="410" gid1="4102">
+    <string name="carrier_config_version_string">attmvnos_us-0.48</string>
+    <string name="5g_icon_configuration_string">connected_mmwave:5G_Plus,connected:5G,not_restricted_rrc_idle:5G,not_restricted_rrc_con:5G</string>
+    <string name="5g_icon_display_grace_period_string">connected_mmwave,any,30</string>
+    <int-array name="5g_nr_ssrsrp_thresholds_int_array" num="4">
+        <item value="-120" />
+        <item value="-110" />
+        <item value="-100" />
+        <item value="-90" />
+    </int-array>
+    <int-array name="additional_nr_advanced_bands_int_array" num="0" />
+    <boolean name="allow_hold_call_during_emergency_bool" value="false" />
+    <boolean name="allow_merging_rtt_calls_bool" value="true" />
+    <string name="apn.settings_default_protocol_string">IPV4V6</string>
+    <string name="apn.settings_default_roaming_protocol_string">IPV4V6</string>
+    <string-array name="apn_settings_default_apn_types_string_array" num="1">
+        <item value="default" />
+    </string-array>
+    <boolean name="carrier_auto_cancel_cs_notification" value="false" />
+    <string-array name="carrier_data_call_retry_config_strings" num="4">
+        <item value="default:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000" />
+        <item value="mms:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000" />
+        <item value="ims:max_retries=10,5000,5000,5000" />
+        <item value="others:max_retries=3,5000,5000,5000" />
+    </string-array>
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
+    <string-array name="carrier_metered_apn_types_strings" num="3">
+        <item value="default" />
+        <item value="dun" />
+        <item value="supl" />
+    </string-array>
+    <string-array name="carrier_metered_roaming_apn_types_strings" num="3">
+        <item value="default" />
+        <item value="dun" />
+        <item value="supl" />
+    </string-array>
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="1" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="false" />
+    <string-array name="carrier_wlan_disallowed_apn_types_string_array" num="1">
+        <item value="default" />
+    </string-array>
+    <boolean name="csp_enabled_bool" value="true" />
+    <string-array name="emergency_number_prefix_string_array" num="3">
+        <item value="*67" />
+        <item value="*82" />
+        <item value="*272" />
+    </string-array>
+    <boolean name="enableSMSDeliveryReports" value="false" />
+    <int-array name="gsm_rssi_thresholds_int_array" num="4">
+        <item value="-108" />
+        <item value="-104" />
+        <item value="-98" />
+        <item value="-90" />
+    </int-array>
+    <boolean name="hide_enhanced_4g_lte_bool" value="false" />
+    <boolean name="hide_preferred_network_type_bool" value="false" />
+    <boolean name="ignore_rtt_mode_setting_bool" value="true" />
+    <int name="ims_dtmf_tone_delay_int" value="120" />
+    <string-array name="ims_reasoninfo_mapping_string_array" num="4">
+        <item value="332|service not allowed in this location|1623" />
+        <item value="352|emergency calls over wifi not allowed in this location|1622" />
+        <item value="510|Call completed elsewhere|1014" />
+        <item value="*|Call is dropped due to Wi-Fi signal is degraded|1407" />
+    </string-array>
+    <boolean name="inflate_signal_strength_bool" value="true" />
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="1">
+        <item value="14" />
+    </int-array>
+    <int-array name="iwlan.epdg_address_priority_int_array" num="1">
+        <item value="0" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.att.net</string>
+    <string name="iwlan.key_error_policy_config_string">[{"ApnName": "*","ErrorTypes": [{"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["9000", "9001", "11011", "9003", "11001", "9006", "8192"],"RetryArray": [],"UnthrottlingEvents": []}, {"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["*"],"RetryArray": ["10", "60", "120", "240", "-1"],"UnthrottlingEvents": ["APM_ENABLE_EVENT", "WIFI_DISABLE_EVENT", "WIFI_CALLING_DISABLE_EVENT"]}]}]</string>
+    <int-array name="lte_rsrp_thresholds_int_array" num="4">
+        <item value="-120" />
+        <item value="-110" />
+        <item value="-100" />
+        <item value="-90" />
+    </int-array>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="0" />
+    <string-array name="mmi_two_digit_number_pattern_string_array" num="22">
+        <item value="0" />
+        <item value="00" />
+        <item value="*0" />
+        <item value="*1" />
+        <item value="*2" />
+        <item value="*3" />
+        <item value="*4" />
+        <item value="*5" />
+        <item value="*6" />
+        <item value="*7" />
+        <item value="*8" />
+        <item value="*9" />
+        <item value="#0" />
+        <item value="#1" />
+        <item value="#2" />
+        <item value="#3" />
+        <item value="#4" />
+        <item value="#5" />
+        <item value="#6" />
+        <item value="#7" />
+        <item value="#8" />
+        <item value="#9" />
+    </string-array>
+    <string-array name="non_roaming_operator_string_array" num="7">
+        <item value="310" />
+        <item value="311" />
+        <item value="312" />
+        <item value="313" />
+        <item value="314" />
+        <item value="315" />
+        <item value="316" />
+    </string-array>
+    <string name="operator_name_filter_pattern_string">(.*)\.{3}[12]$</string>
+    <boolean name="prefer_2g_bool" value="false" />
+    <boolean name="rcs_request_forbidden_by_sip_489_bool" value="true" />
+    <int name="recipientLimit" value="20" />
+    <string-array name="roaming_operator_string_array" num="5">
+        <item value="310110" />
+        <item value="310140" />
+        <item value="310400" />
+        <item value="310470" />
+        <item value="311170" />
+    </string-array>
+    <boolean name="rtt_downgrade_supported_bool" value="true" />
+    <boolean name="rtt_supported_bool" value="true" />
+    <boolean name="rtt_supported_while_roaming_bool" value="true" />
+    <boolean name="show_4g_for_3g_data_icon_bool" value="true" />
+    <string name="show_carrier_data_icon_pattern_string" />
+    <boolean name="skip_cf_fail_to_disable_dialog_bool" value="true" />
+    <boolean name="support_pause_ims_video_calls_bool" value="false" />
+    <boolean name="use_lower_mtu_value_if_both_received" value="true" />
+    <int name="volte_replacement_rat_int" value="3" />
+    <string name="wcdma_default_signal_strength_measurement_string">rscp</string>
+    <int-array name="wcdma_rscp_thresholds_int_array" num="4">
+        <item value="-105" />
+        <item value="-99" />
+        <item value="-89" />
+        <item value="-79" />
+    </int-array>
+    <int name="wfc_spn_format_idx_int" value="1" />
+    <int name="wifi.carrier_profiles_version_int" value="1" />
+    <string-array name="wifi.passpoint_profiles_string_array" num="1">
+        <item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;PasspointProfile&gt;&lt;PPSMO&gt;&lt;![CDATA[&lt;MgmtTree xmlns=&quot;syncml:dmddf1.2&quot;&gt;&lt;VerDTD&gt;1.2&lt;/VerDTD&gt;&lt;Node&gt;&lt;NodeName&gt;PerProviderSubscription&lt;/NodeName&gt;&lt;RTProperties&gt;&lt;Type&gt;&lt;DDFName&gt;urn:wfa:mo:hotspot2dot0-perprovidersubscription:1.0&lt;/DDFName&gt;&lt;/Type&gt;&lt;/RTProperties&gt;&lt;Node&gt;&lt;NodeName&gt;i001&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;HomeSP&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;FriendlyName&lt;/NodeName&gt;&lt;Value&gt;AT&amp;amp;T Passpoint&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;FQDN&lt;/NodeName&gt;&lt;Value&gt;attwifi.com&lt;/Value&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;Credential&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;Realm&lt;/NodeName&gt;&lt;Value&gt;wlan.mnc410.mcc310.3gppnetwork.org&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;SIM&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;IMSI&lt;/NodeName&gt;&lt;Value&gt;310410*&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;EAPType&lt;/NodeName&gt;&lt;Value&gt;23&lt;/Value&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/MgmtTree&gt;]]&gt;&lt;/PPSMO&gt;&lt;/PasspointProfile&gt;" />
+    </string-array>
+</carrier_config>
+<carrier_config mcc="310" mnc="410" gid1="4201">
+    <string name="carrier_config_version_string">redpocketatt_us-0.48</string>
+    <string name="5g_icon_configuration_string">connected_mmwave:5G_Plus,connected:5G,not_restricted_rrc_idle:5G,not_restricted_rrc_con:5G</string>
+    <string name="5g_icon_display_grace_period_string">connected_mmwave,any,30</string>
+    <int-array name="5g_nr_ssrsrp_thresholds_int_array" num="4">
+        <item value="-120" />
+        <item value="-110" />
+        <item value="-100" />
+        <item value="-90" />
+    </int-array>
+    <int-array name="additional_nr_advanced_bands_int_array" num="0" />
+    <boolean name="allow_hold_call_during_emergency_bool" value="false" />
+    <boolean name="allow_merging_rtt_calls_bool" value="true" />
+    <string name="apn.settings_default_protocol_string">IPV4V6</string>
+    <string name="apn.settings_default_roaming_protocol_string">IPV4V6</string>
+    <string-array name="apn_settings_default_apn_types_string_array" num="1">
+        <item value="default" />
+    </string-array>
+    <boolean name="carrier_auto_cancel_cs_notification" value="false" />
+    <string-array name="carrier_data_call_retry_config_strings" num="4">
+        <item value="default:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000" />
+        <item value="mms:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000" />
+        <item value="ims:max_retries=10,5000,5000,5000" />
+        <item value="others:max_retries=3,5000,5000,5000" />
+    </string-array>
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
+    <string-array name="carrier_metered_apn_types_strings" num="3">
+        <item value="default" />
+        <item value="dun" />
+        <item value="supl" />
+    </string-array>
+    <string-array name="carrier_metered_roaming_apn_types_strings" num="3">
+        <item value="default" />
+        <item value="dun" />
+        <item value="supl" />
+    </string-array>
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="1" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <string-array name="carrier_wlan_disallowed_apn_types_string_array" num="1">
+        <item value="default" />
+    </string-array>
+    <boolean name="csp_enabled_bool" value="true" />
+    <string-array name="emergency_number_prefix_string_array" num="3">
+        <item value="*67" />
+        <item value="*82" />
+        <item value="*272" />
+    </string-array>
+    <boolean name="enableSMSDeliveryReports" value="false" />
+    <int-array name="gsm_rssi_thresholds_int_array" num="4">
+        <item value="-108" />
+        <item value="-104" />
+        <item value="-98" />
+        <item value="-90" />
+    </int-array>
+    <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+    <boolean name="hide_preferred_network_type_bool" value="true" />
+    <boolean name="ignore_rtt_mode_setting_bool" value="true" />
+    <int name="ims_dtmf_tone_delay_int" value="120" />
+    <string-array name="ims_reasoninfo_mapping_string_array" num="4">
+        <item value="332|service not allowed in this location|1623" />
+        <item value="352|emergency calls over wifi not allowed in this location|1622" />
+        <item value="510|Call completed elsewhere|1014" />
+        <item value="*|Call is dropped due to Wi-Fi signal is degraded|1407" />
+    </string-array>
+    <boolean name="inflate_signal_strength_bool" value="true" />
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="1">
+        <item value="14" />
+    </int-array>
+    <int-array name="iwlan.epdg_address_priority_int_array" num="1">
+        <item value="0" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.att.net</string>
+    <string name="iwlan.key_error_policy_config_string">[{"ApnName": "*","ErrorTypes": [{"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["9000", "9001", "11011", "9003", "11001", "9006", "8192"],"RetryArray": [],"UnthrottlingEvents": []}, {"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["*"],"RetryArray": ["10", "60", "120", "240", "-1"],"UnthrottlingEvents": ["APM_ENABLE_EVENT", "WIFI_DISABLE_EVENT", "WIFI_CALLING_DISABLE_EVENT"]}]}]</string>
+    <int-array name="lte_rsrp_thresholds_int_array" num="4">
+        <item value="-120" />
+        <item value="-110" />
+        <item value="-100" />
+        <item value="-90" />
+    </int-array>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="0" />
+    <string-array name="mmi_two_digit_number_pattern_string_array" num="22">
+        <item value="0" />
+        <item value="00" />
+        <item value="*0" />
+        <item value="*1" />
+        <item value="*2" />
+        <item value="*3" />
+        <item value="*4" />
+        <item value="*5" />
+        <item value="*6" />
+        <item value="*7" />
+        <item value="*8" />
+        <item value="*9" />
+        <item value="#0" />
+        <item value="#1" />
+        <item value="#2" />
+        <item value="#3" />
+        <item value="#4" />
+        <item value="#5" />
+        <item value="#6" />
+        <item value="#7" />
+        <item value="#8" />
+        <item value="#9" />
+    </string-array>
+    <string-array name="non_roaming_operator_string_array" num="7">
+        <item value="310" />
+        <item value="311" />
+        <item value="312" />
+        <item value="313" />
+        <item value="314" />
+        <item value="315" />
+        <item value="316" />
+    </string-array>
+    <string name="operator_name_filter_pattern_string">(.*)\.{3}[12]$</string>
+    <boolean name="prefer_2g_bool" value="false" />
+    <boolean name="rcs_request_forbidden_by_sip_489_bool" value="true" />
+    <int name="recipientLimit" value="10" />
+    <string-array name="roaming_operator_string_array" num="5">
+        <item value="310110" />
+        <item value="310140" />
+        <item value="310400" />
+        <item value="310470" />
+        <item value="311170" />
+    </string-array>
+    <boolean name="rtt_downgrade_supported_bool" value="true" />
+    <boolean name="rtt_supported_bool" value="true" />
+    <boolean name="rtt_supported_while_roaming_bool" value="true" />
+    <boolean name="show_4g_for_3g_data_icon_bool" value="true" />
+    <string name="show_carrier_data_icon_pattern_string" />
+    <boolean name="skip_cf_fail_to_disable_dialog_bool" value="true" />
+    <boolean name="support_pause_ims_video_calls_bool" value="false" />
+    <boolean name="use_lower_mtu_value_if_both_received" value="true" />
+    <int name="volte_replacement_rat_int" value="3" />
+    <string name="wcdma_default_signal_strength_measurement_string">rscp</string>
+    <int-array name="wcdma_rscp_thresholds_int_array" num="4">
+        <item value="-105" />
+        <item value="-99" />
+        <item value="-89" />
+        <item value="-79" />
+    </int-array>
+    <int name="wfc_spn_format_idx_int" value="1" />
+    <int name="wifi.carrier_profiles_version_int" value="1" />
+    <string-array name="wifi.passpoint_profiles_string_array" num="1">
+        <item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;PasspointProfile&gt;&lt;PPSMO&gt;&lt;![CDATA[&lt;MgmtTree xmlns=&quot;syncml:dmddf1.2&quot;&gt;&lt;VerDTD&gt;1.2&lt;/VerDTD&gt;&lt;Node&gt;&lt;NodeName&gt;PerProviderSubscription&lt;/NodeName&gt;&lt;RTProperties&gt;&lt;Type&gt;&lt;DDFName&gt;urn:wfa:mo:hotspot2dot0-perprovidersubscription:1.0&lt;/DDFName&gt;&lt;/Type&gt;&lt;/RTProperties&gt;&lt;Node&gt;&lt;NodeName&gt;i001&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;HomeSP&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;FriendlyName&lt;/NodeName&gt;&lt;Value&gt;AT&amp;amp;T Passpoint&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;FQDN&lt;/NodeName&gt;&lt;Value&gt;attwifi.com&lt;/Value&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;Credential&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;Realm&lt;/NodeName&gt;&lt;Value&gt;wlan.mnc410.mcc310.3gppnetwork.org&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;SIM&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;IMSI&lt;/NodeName&gt;&lt;Value&gt;310410*&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;EAPType&lt;/NodeName&gt;&lt;Value&gt;23&lt;/Value&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/MgmtTree&gt;]]&gt;&lt;/PPSMO&gt;&lt;/PasspointProfile&gt;" />
+    </string-array>
+</carrier_config>
+<carrier_config mcc="310" mnc="410" gid1="44FF">
+    <string name="carrier_config_version_string">attmvnos_us-0.48</string>
+    <string name="5g_icon_configuration_string">connected_mmwave:5G_Plus,connected:5G,not_restricted_rrc_idle:5G,not_restricted_rrc_con:5G</string>
+    <string name="5g_icon_display_grace_period_string">connected_mmwave,any,30</string>
+    <int-array name="5g_nr_ssrsrp_thresholds_int_array" num="4">
+        <item value="-120" />
+        <item value="-110" />
+        <item value="-100" />
+        <item value="-90" />
+    </int-array>
+    <int-array name="additional_nr_advanced_bands_int_array" num="0" />
+    <boolean name="allow_hold_call_during_emergency_bool" value="false" />
+    <boolean name="allow_merging_rtt_calls_bool" value="true" />
+    <string name="apn.settings_default_protocol_string">IPV4V6</string>
+    <string name="apn.settings_default_roaming_protocol_string">IPV4V6</string>
+    <string-array name="apn_settings_default_apn_types_string_array" num="1">
+        <item value="default" />
+    </string-array>
+    <boolean name="carrier_auto_cancel_cs_notification" value="false" />
+    <string-array name="carrier_data_call_retry_config_strings" num="4">
+        <item value="default:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000" />
+        <item value="mms:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000" />
+        <item value="ims:max_retries=10,5000,5000,5000" />
+        <item value="others:max_retries=3,5000,5000,5000" />
+    </string-array>
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
+    <string-array name="carrier_metered_apn_types_strings" num="3">
+        <item value="default" />
+        <item value="dun" />
+        <item value="supl" />
+    </string-array>
+    <string-array name="carrier_metered_roaming_apn_types_strings" num="3">
+        <item value="default" />
+        <item value="dun" />
+        <item value="supl" />
+    </string-array>
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="1" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="false" />
+    <string-array name="carrier_wlan_disallowed_apn_types_string_array" num="1">
+        <item value="default" />
+    </string-array>
+    <boolean name="csp_enabled_bool" value="true" />
+    <string-array name="emergency_number_prefix_string_array" num="3">
+        <item value="*67" />
+        <item value="*82" />
+        <item value="*272" />
+    </string-array>
+    <boolean name="enableSMSDeliveryReports" value="false" />
+    <int-array name="gsm_rssi_thresholds_int_array" num="4">
+        <item value="-108" />
+        <item value="-104" />
+        <item value="-98" />
+        <item value="-90" />
+    </int-array>
+    <boolean name="hide_enhanced_4g_lte_bool" value="false" />
+    <boolean name="hide_preferred_network_type_bool" value="false" />
+    <boolean name="ignore_rtt_mode_setting_bool" value="true" />
+    <int name="ims_dtmf_tone_delay_int" value="120" />
+    <string-array name="ims_reasoninfo_mapping_string_array" num="4">
+        <item value="332|service not allowed in this location|1623" />
+        <item value="352|emergency calls over wifi not allowed in this location|1622" />
+        <item value="510|Call completed elsewhere|1014" />
+        <item value="*|Call is dropped due to Wi-Fi signal is degraded|1407" />
+    </string-array>
+    <boolean name="inflate_signal_strength_bool" value="true" />
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="1">
+        <item value="14" />
+    </int-array>
+    <int-array name="iwlan.epdg_address_priority_int_array" num="1">
+        <item value="0" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.att.net</string>
+    <string name="iwlan.key_error_policy_config_string">[{"ApnName": "*","ErrorTypes": [{"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["9000", "9001", "11011", "9003", "11001", "9006", "8192"],"RetryArray": [],"UnthrottlingEvents": []}, {"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["*"],"RetryArray": ["10", "60", "120", "240", "-1"],"UnthrottlingEvents": ["APM_ENABLE_EVENT", "WIFI_DISABLE_EVENT", "WIFI_CALLING_DISABLE_EVENT"]}]}]</string>
+    <int-array name="lte_rsrp_thresholds_int_array" num="4">
+        <item value="-120" />
+        <item value="-110" />
+        <item value="-100" />
+        <item value="-90" />
+    </int-array>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="0" />
+    <string-array name="mmi_two_digit_number_pattern_string_array" num="22">
+        <item value="0" />
+        <item value="00" />
+        <item value="*0" />
+        <item value="*1" />
+        <item value="*2" />
+        <item value="*3" />
+        <item value="*4" />
+        <item value="*5" />
+        <item value="*6" />
+        <item value="*7" />
+        <item value="*8" />
+        <item value="*9" />
+        <item value="#0" />
+        <item value="#1" />
+        <item value="#2" />
+        <item value="#3" />
+        <item value="#4" />
+        <item value="#5" />
+        <item value="#6" />
+        <item value="#7" />
+        <item value="#8" />
+        <item value="#9" />
+    </string-array>
+    <string-array name="non_roaming_operator_string_array" num="7">
+        <item value="310" />
+        <item value="311" />
+        <item value="312" />
+        <item value="313" />
+        <item value="314" />
+        <item value="315" />
+        <item value="316" />
+    </string-array>
+    <string name="operator_name_filter_pattern_string">(.*)\.{3}[12]$</string>
+    <boolean name="prefer_2g_bool" value="false" />
+    <boolean name="rcs_request_forbidden_by_sip_489_bool" value="true" />
+    <int name="recipientLimit" value="20" />
+    <string-array name="roaming_operator_string_array" num="5">
+        <item value="310110" />
+        <item value="310140" />
+        <item value="310400" />
+        <item value="310470" />
+        <item value="311170" />
+    </string-array>
+    <boolean name="rtt_downgrade_supported_bool" value="true" />
+    <boolean name="rtt_supported_bool" value="true" />
+    <boolean name="rtt_supported_while_roaming_bool" value="true" />
+    <boolean name="show_4g_for_3g_data_icon_bool" value="true" />
+    <string name="show_carrier_data_icon_pattern_string" />
+    <boolean name="skip_cf_fail_to_disable_dialog_bool" value="true" />
+    <boolean name="support_pause_ims_video_calls_bool" value="false" />
+    <boolean name="use_lower_mtu_value_if_both_received" value="true" />
+    <int name="volte_replacement_rat_int" value="3" />
+    <string name="wcdma_default_signal_strength_measurement_string">rscp</string>
+    <int-array name="wcdma_rscp_thresholds_int_array" num="4">
+        <item value="-105" />
+        <item value="-99" />
+        <item value="-89" />
+        <item value="-79" />
+    </int-array>
+    <int name="wfc_spn_format_idx_int" value="1" />
+    <int name="wifi.carrier_profiles_version_int" value="1" />
+    <string-array name="wifi.passpoint_profiles_string_array" num="1">
+        <item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;PasspointProfile&gt;&lt;PPSMO&gt;&lt;![CDATA[&lt;MgmtTree xmlns=&quot;syncml:dmddf1.2&quot;&gt;&lt;VerDTD&gt;1.2&lt;/VerDTD&gt;&lt;Node&gt;&lt;NodeName&gt;PerProviderSubscription&lt;/NodeName&gt;&lt;RTProperties&gt;&lt;Type&gt;&lt;DDFName&gt;urn:wfa:mo:hotspot2dot0-perprovidersubscription:1.0&lt;/DDFName&gt;&lt;/Type&gt;&lt;/RTProperties&gt;&lt;Node&gt;&lt;NodeName&gt;i001&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;HomeSP&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;FriendlyName&lt;/NodeName&gt;&lt;Value&gt;AT&amp;amp;T Passpoint&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;FQDN&lt;/NodeName&gt;&lt;Value&gt;attwifi.com&lt;/Value&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;Credential&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;Realm&lt;/NodeName&gt;&lt;Value&gt;wlan.mnc410.mcc310.3gppnetwork.org&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;SIM&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;IMSI&lt;/NodeName&gt;&lt;Value&gt;310410*&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;EAPType&lt;/NodeName&gt;&lt;Value&gt;23&lt;/Value&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/MgmtTree&gt;]]&gt;&lt;/PPSMO&gt;&lt;/PasspointProfile&gt;" />
+    </string-array>
+</carrier_config>
+<carrier_config mcc="310" mnc="410" gid1="49FF">
+    <string name="carrier_config_version_string">attmvnos_us-0.48</string>
+    <string name="5g_icon_configuration_string">connected_mmwave:5G_Plus,connected:5G,not_restricted_rrc_idle:5G,not_restricted_rrc_con:5G</string>
+    <string name="5g_icon_display_grace_period_string">connected_mmwave,any,30</string>
+    <int-array name="5g_nr_ssrsrp_thresholds_int_array" num="4">
+        <item value="-120" />
+        <item value="-110" />
+        <item value="-100" />
+        <item value="-90" />
+    </int-array>
+    <int-array name="additional_nr_advanced_bands_int_array" num="0" />
+    <boolean name="allow_hold_call_during_emergency_bool" value="false" />
+    <boolean name="allow_merging_rtt_calls_bool" value="true" />
+    <string name="apn.settings_default_protocol_string">IPV4V6</string>
+    <string name="apn.settings_default_roaming_protocol_string">IPV4V6</string>
+    <string-array name="apn_settings_default_apn_types_string_array" num="1">
+        <item value="default" />
+    </string-array>
+    <boolean name="carrier_auto_cancel_cs_notification" value="false" />
+    <string-array name="carrier_data_call_retry_config_strings" num="4">
+        <item value="default:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000" />
+        <item value="mms:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000" />
+        <item value="ims:max_retries=10,5000,5000,5000" />
+        <item value="others:max_retries=3,5000,5000,5000" />
+    </string-array>
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
+    <string-array name="carrier_metered_apn_types_strings" num="3">
+        <item value="default" />
+        <item value="dun" />
+        <item value="supl" />
+    </string-array>
+    <string-array name="carrier_metered_roaming_apn_types_strings" num="3">
+        <item value="default" />
+        <item value="dun" />
+        <item value="supl" />
+    </string-array>
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="1" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="false" />
+    <string-array name="carrier_wlan_disallowed_apn_types_string_array" num="1">
+        <item value="default" />
+    </string-array>
+    <boolean name="csp_enabled_bool" value="true" />
+    <string-array name="emergency_number_prefix_string_array" num="3">
+        <item value="*67" />
+        <item value="*82" />
+        <item value="*272" />
+    </string-array>
+    <boolean name="enableSMSDeliveryReports" value="false" />
+    <int-array name="gsm_rssi_thresholds_int_array" num="4">
+        <item value="-108" />
+        <item value="-104" />
+        <item value="-98" />
+        <item value="-90" />
+    </int-array>
+    <boolean name="hide_enhanced_4g_lte_bool" value="false" />
+    <boolean name="hide_preferred_network_type_bool" value="false" />
+    <boolean name="ignore_rtt_mode_setting_bool" value="true" />
+    <int name="ims_dtmf_tone_delay_int" value="120" />
+    <string-array name="ims_reasoninfo_mapping_string_array" num="4">
+        <item value="332|service not allowed in this location|1623" />
+        <item value="352|emergency calls over wifi not allowed in this location|1622" />
+        <item value="510|Call completed elsewhere|1014" />
+        <item value="*|Call is dropped due to Wi-Fi signal is degraded|1407" />
+    </string-array>
+    <boolean name="inflate_signal_strength_bool" value="true" />
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="1">
+        <item value="14" />
+    </int-array>
+    <int-array name="iwlan.epdg_address_priority_int_array" num="1">
+        <item value="0" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.att.net</string>
+    <string name="iwlan.key_error_policy_config_string">[{"ApnName": "*","ErrorTypes": [{"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["9000", "9001", "11011", "9003", "11001", "9006", "8192"],"RetryArray": [],"UnthrottlingEvents": []}, {"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["*"],"RetryArray": ["10", "60", "120", "240", "-1"],"UnthrottlingEvents": ["APM_ENABLE_EVENT", "WIFI_DISABLE_EVENT", "WIFI_CALLING_DISABLE_EVENT"]}]}]</string>
+    <int-array name="lte_rsrp_thresholds_int_array" num="4">
+        <item value="-120" />
+        <item value="-110" />
+        <item value="-100" />
+        <item value="-90" />
+    </int-array>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="0" />
+    <string-array name="mmi_two_digit_number_pattern_string_array" num="22">
+        <item value="0" />
+        <item value="00" />
+        <item value="*0" />
+        <item value="*1" />
+        <item value="*2" />
+        <item value="*3" />
+        <item value="*4" />
+        <item value="*5" />
+        <item value="*6" />
+        <item value="*7" />
+        <item value="*8" />
+        <item value="*9" />
+        <item value="#0" />
+        <item value="#1" />
+        <item value="#2" />
+        <item value="#3" />
+        <item value="#4" />
+        <item value="#5" />
+        <item value="#6" />
+        <item value="#7" />
+        <item value="#8" />
+        <item value="#9" />
+    </string-array>
+    <string-array name="non_roaming_operator_string_array" num="7">
+        <item value="310" />
+        <item value="311" />
+        <item value="312" />
+        <item value="313" />
+        <item value="314" />
+        <item value="315" />
+        <item value="316" />
+    </string-array>
+    <string name="operator_name_filter_pattern_string">(.*)\.{3}[12]$</string>
+    <boolean name="prefer_2g_bool" value="false" />
+    <boolean name="rcs_request_forbidden_by_sip_489_bool" value="true" />
+    <int name="recipientLimit" value="20" />
+    <string-array name="roaming_operator_string_array" num="5">
+        <item value="310110" />
+        <item value="310140" />
+        <item value="310400" />
+        <item value="310470" />
+        <item value="311170" />
+    </string-array>
+    <boolean name="rtt_downgrade_supported_bool" value="true" />
+    <boolean name="rtt_supported_bool" value="true" />
+    <boolean name="rtt_supported_while_roaming_bool" value="true" />
+    <boolean name="show_4g_for_3g_data_icon_bool" value="true" />
+    <string name="show_carrier_data_icon_pattern_string" />
+    <boolean name="skip_cf_fail_to_disable_dialog_bool" value="true" />
+    <boolean name="support_pause_ims_video_calls_bool" value="false" />
+    <boolean name="use_lower_mtu_value_if_both_received" value="true" />
+    <int name="volte_replacement_rat_int" value="3" />
+    <string name="wcdma_default_signal_strength_measurement_string">rscp</string>
+    <int-array name="wcdma_rscp_thresholds_int_array" num="4">
+        <item value="-105" />
+        <item value="-99" />
+        <item value="-89" />
+        <item value="-79" />
+    </int-array>
+    <int name="wfc_spn_format_idx_int" value="1" />
+    <int name="wifi.carrier_profiles_version_int" value="1" />
+    <string-array name="wifi.passpoint_profiles_string_array" num="1">
+        <item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;PasspointProfile&gt;&lt;PPSMO&gt;&lt;![CDATA[&lt;MgmtTree xmlns=&quot;syncml:dmddf1.2&quot;&gt;&lt;VerDTD&gt;1.2&lt;/VerDTD&gt;&lt;Node&gt;&lt;NodeName&gt;PerProviderSubscription&lt;/NodeName&gt;&lt;RTProperties&gt;&lt;Type&gt;&lt;DDFName&gt;urn:wfa:mo:hotspot2dot0-perprovidersubscription:1.0&lt;/DDFName&gt;&lt;/Type&gt;&lt;/RTProperties&gt;&lt;Node&gt;&lt;NodeName&gt;i001&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;HomeSP&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;FriendlyName&lt;/NodeName&gt;&lt;Value&gt;AT&amp;amp;T Passpoint&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;FQDN&lt;/NodeName&gt;&lt;Value&gt;attwifi.com&lt;/Value&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;Credential&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;Realm&lt;/NodeName&gt;&lt;Value&gt;wlan.mnc410.mcc310.3gppnetwork.org&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;SIM&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;IMSI&lt;/NodeName&gt;&lt;Value&gt;310410*&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;EAPType&lt;/NodeName&gt;&lt;Value&gt;23&lt;/Value&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/MgmtTree&gt;]]&gt;&lt;/PPSMO&gt;&lt;/PasspointProfile&gt;" />
+    </string-array>
+</carrier_config>
+<carrier_config mcc="310" mnc="410" gid1="52FF">
+    <string name="carrier_config_version_string">att5gsa_us-32000000096.48</string>
+    <string name="5g_icon_configuration_string">connected_mmwave:5G_Plus,connected:5G,not_restricted_rrc_idle:5G,not_restricted_rrc_con:5G</string>
+    <string name="5g_icon_display_grace_period_string">connected_mmwave,any,30</string>
+    <int-array name="5g_nr_ssrsrp_thresholds_int_array" num="4">
+        <item value="-120" />
+        <item value="-110" />
+        <item value="-100" />
+        <item value="-90" />
+    </int-array>
+    <int-array name="additional_nr_advanced_bands_int_array" num="1">
+        <item value="77" />
+    </int-array>
+    <boolean name="allow_hold_call_during_emergency_bool" value="false" />
+    <boolean name="allow_merging_rtt_calls_bool" value="true" />
+    <string name="apn.settings_default_protocol_string">IPV4V6</string>
+    <string name="apn.settings_default_roaming_protocol_string">IPV4V6</string>
+    <string-array name="apn_settings_default_apn_types_string_array" num="1">
+        <item value="default" />
+    </string-array>
+    <boolean name="carrier_auto_cancel_cs_notification" value="false" />
+    <boolean name="carrier_cross_sim_ims_available_bool" value="false" />
+    <string-array name="carrier_data_call_retry_config_strings" num="4">
+        <item value="default:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000" />
+        <item value="mms:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000" />
+        <item value="ims:max_retries=10,5000,5000,5000" />
+        <item value="others:max_retries=3,5000,5000,5000" />
+    </string-array>
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
+    <string-array name="carrier_metered_apn_types_strings" num="3">
+        <item value="default" />
+        <item value="dun" />
+        <item value="supl" />
+    </string-array>
+    <string-array name="carrier_metered_roaming_apn_types_strings" num="3">
+        <item value="default" />
+        <item value="dun" />
+        <item value="supl" />
+    </string-array>
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="1" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <string-array name="carrier_wlan_disallowed_apn_types_string_array" num="1">
+        <item value="default" />
+    </string-array>
+    <boolean name="csp_enabled_bool" value="true" />
+    <string-array name="emergency_number_prefix_string_array" num="3">
+        <item value="*67" />
+        <item value="*82" />
+        <item value="*272" />
+    </string-array>
+    <boolean name="enableSMSDeliveryReports" value="false" />
+    <int-array name="gsm_rssi_thresholds_int_array" num="4">
+        <item value="-108" />
+        <item value="-104" />
+        <item value="-98" />
+        <item value="-90" />
+    </int-array>
+    <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+    <boolean name="hide_preferred_network_type_bool" value="true" />
+    <boolean name="ignore_rtt_mode_setting_bool" value="true" />
+    <int name="ims_dtmf_tone_delay_int" value="120" />
+    <string-array name="ims_reasoninfo_mapping_string_array" num="4">
+        <item value="332|service not allowed in this location|1623" />
+        <item value="352|emergency calls over wifi not allowed in this location|1622" />
+        <item value="510|Call completed elsewhere|1014" />
+        <item value="*|Call is dropped due to Wi-Fi signal is degraded|1407" />
+    </string-array>
+    <boolean name="inflate_signal_strength_bool" value="true" />
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="1">
+        <item value="14" />
+    </int-array>
+    <int-array name="iwlan.epdg_address_priority_int_array" num="1">
+        <item value="0" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.att.net</string>
+    <string name="iwlan.key_error_policy_config_string">[{"ApnName": "*","ErrorTypes": [{"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["9000", "9001", "11011", "9003", "11001", "9006", "8192"],"RetryArray": [],"UnthrottlingEvents": []}, {"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["*"],"RetryArray": ["10", "60", "120", "240", "-1"],"UnthrottlingEvents": ["APM_ENABLE_EVENT", "WIFI_DISABLE_EVENT", "WIFI_CALLING_DISABLE_EVENT"]}]}]</string>
+    <int-array name="lte_rsrp_thresholds_int_array" num="4">
+        <item value="-120" />
+        <item value="-110" />
+        <item value="-100" />
+        <item value="-90" />
+    </int-array>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="0" />
+    <string-array name="mmi_two_digit_number_pattern_string_array" num="22">
+        <item value="0" />
+        <item value="00" />
+        <item value="*0" />
+        <item value="*1" />
+        <item value="*2" />
+        <item value="*3" />
+        <item value="*4" />
+        <item value="*5" />
+        <item value="*6" />
+        <item value="*7" />
+        <item value="*8" />
+        <item value="*9" />
+        <item value="#0" />
+        <item value="#1" />
+        <item value="#2" />
+        <item value="#3" />
+        <item value="#4" />
+        <item value="#5" />
+        <item value="#6" />
+        <item value="#7" />
+        <item value="#8" />
+        <item value="#9" />
+    </string-array>
+    <string-array name="non_roaming_operator_string_array" num="7">
+        <item value="310" />
+        <item value="311" />
+        <item value="312" />
+        <item value="313" />
+        <item value="314" />
+        <item value="315" />
+        <item value="316" />
+    </string-array>
+    <string name="operator_name_filter_pattern_string">(.*)\.{3}[12]$</string>
+    <boolean name="prefer_2g_bool" value="false" />
+    <boolean name="rcs_request_forbidden_by_sip_489_bool" value="true" />
+    <int name="recipientLimit" value="20" />
+    <string-array name="roaming_operator_string_array" num="5">
+        <item value="310110" />
+        <item value="310140" />
+        <item value="310400" />
+        <item value="310470" />
+        <item value="311170" />
+    </string-array>
+    <boolean name="rtt_downgrade_supported_bool" value="true" />
+    <boolean name="rtt_supported_bool" value="true" />
+    <boolean name="rtt_supported_while_roaming_bool" value="true" />
+    <boolean name="show_4g_for_3g_data_icon_bool" value="true" />
+    <string name="show_carrier_data_icon_pattern_string">.*\.{3}[12]$</string>
+    <boolean name="skip_cf_fail_to_disable_dialog_bool" value="true" />
+    <boolean name="support_pause_ims_video_calls_bool" value="false" />
+    <boolean name="use_lower_mtu_value_if_both_received" value="true" />
+    <int name="volte_replacement_rat_int" value="3" />
+    <string name="wcdma_default_signal_strength_measurement_string">rscp</string>
+    <int-array name="wcdma_rscp_thresholds_int_array" num="4">
+        <item value="-105" />
+        <item value="-99" />
+        <item value="-89" />
+        <item value="-79" />
+    </int-array>
+    <int name="wfc_spn_format_idx_int" value="1" />
+    <int name="wifi.carrier_profiles_version_int" value="1" />
+    <string-array name="wifi.passpoint_profiles_string_array" num="1">
+        <item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;PasspointProfile&gt;&lt;PPSMO&gt;&lt;![CDATA[&lt;MgmtTree xmlns=&quot;syncml:dmddf1.2&quot;&gt;&lt;VerDTD&gt;1.2&lt;/VerDTD&gt;&lt;Node&gt;&lt;NodeName&gt;PerProviderSubscription&lt;/NodeName&gt;&lt;RTProperties&gt;&lt;Type&gt;&lt;DDFName&gt;urn:wfa:mo:hotspot2dot0-perprovidersubscription:1.0&lt;/DDFName&gt;&lt;/Type&gt;&lt;/RTProperties&gt;&lt;Node&gt;&lt;NodeName&gt;i001&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;HomeSP&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;FriendlyName&lt;/NodeName&gt;&lt;Value&gt;AT&amp;amp;T Passpoint&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;FQDN&lt;/NodeName&gt;&lt;Value&gt;attwifi.com&lt;/Value&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;Credential&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;Realm&lt;/NodeName&gt;&lt;Value&gt;wlan.mnc410.mcc310.3gppnetwork.org&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;SIM&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;IMSI&lt;/NodeName&gt;&lt;Value&gt;310410*&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;EAPType&lt;/NodeName&gt;&lt;Value&gt;23&lt;/Value&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/MgmtTree&gt;]]&gt;&lt;/PPSMO&gt;&lt;/PasspointProfile&gt;" />
+    </string-array>
+</carrier_config>
+<carrier_config mcc="310" mnc="410" gid1="53FF">
+    <string name="carrier_config_version_string">att5g_us-32000000106.48</string>
+    <string name="5g_icon_configuration_string">connected_mmwave:5G_Plus,connected:5G,not_restricted_rrc_idle:5G,not_restricted_rrc_con:5G</string>
+    <string name="5g_icon_display_grace_period_string">connected_mmwave,any,30</string>
+    <int-array name="5g_nr_ssrsrp_thresholds_int_array" num="4">
+        <item value="-120" />
+        <item value="-110" />
+        <item value="-100" />
+        <item value="-90" />
+    </int-array>
+    <int-array name="additional_nr_advanced_bands_int_array" num="1">
+        <item value="77" />
+    </int-array>
+    <boolean name="allow_hold_call_during_emergency_bool" value="false" />
+    <boolean name="allow_merging_rtt_calls_bool" value="true" />
+    <string name="apn.settings_default_protocol_string">IPV4V6</string>
+    <string name="apn.settings_default_roaming_protocol_string">IPV4V6</string>
+    <string-array name="apn_settings_default_apn_types_string_array" num="1">
+        <item value="default" />
+    </string-array>
+    <boolean name="carrier_auto_cancel_cs_notification" value="false" />
+    <boolean name="carrier_cross_sim_ims_available_bool" value="false" />
+    <string-array name="carrier_data_call_retry_config_strings" num="4">
+        <item value="default:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000" />
+        <item value="mms:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000" />
+        <item value="ims:max_retries=10,5000,5000,5000" />
+        <item value="others:max_retries=3,5000,5000,5000" />
+    </string-array>
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
+    <string-array name="carrier_metered_apn_types_strings" num="3">
+        <item value="default" />
+        <item value="dun" />
+        <item value="supl" />
+    </string-array>
+    <string-array name="carrier_metered_roaming_apn_types_strings" num="3">
+        <item value="default" />
+        <item value="dun" />
+        <item value="supl" />
+    </string-array>
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="1" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <string-array name="carrier_wlan_disallowed_apn_types_string_array" num="1">
+        <item value="default" />
+    </string-array>
+    <boolean name="csp_enabled_bool" value="true" />
+    <string-array name="emergency_number_prefix_string_array" num="3">
+        <item value="*67" />
+        <item value="*82" />
+        <item value="*272" />
+    </string-array>
+    <boolean name="enableSMSDeliveryReports" value="false" />
+    <int-array name="gsm_rssi_thresholds_int_array" num="4">
+        <item value="-108" />
+        <item value="-104" />
+        <item value="-98" />
+        <item value="-90" />
+    </int-array>
+    <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+    <boolean name="hide_preferred_network_type_bool" value="true" />
+    <boolean name="ignore_rtt_mode_setting_bool" value="true" />
+    <int name="ims_dtmf_tone_delay_int" value="120" />
+    <string-array name="ims_reasoninfo_mapping_string_array" num="4">
+        <item value="332|service not allowed in this location|1623" />
+        <item value="352|emergency calls over wifi not allowed in this location|1622" />
+        <item value="510|Call completed elsewhere|1014" />
+        <item value="*|Call is dropped due to Wi-Fi signal is degraded|1407" />
+    </string-array>
+    <boolean name="inflate_signal_strength_bool" value="true" />
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="1">
+        <item value="14" />
+    </int-array>
+    <int-array name="iwlan.epdg_address_priority_int_array" num="1">
+        <item value="0" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.att.net</string>
+    <string name="iwlan.key_error_policy_config_string">[{"ApnName": "*","ErrorTypes": [{"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["9000", "9001", "11011", "9003", "11001", "9006", "8192"],"RetryArray": [],"UnthrottlingEvents": []}, {"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["*"],"RetryArray": ["10", "60", "120", "240", "-1"],"UnthrottlingEvents": ["APM_ENABLE_EVENT", "WIFI_DISABLE_EVENT", "WIFI_CALLING_DISABLE_EVENT"]}]}]</string>
+    <int-array name="lte_rsrp_thresholds_int_array" num="4">
+        <item value="-120" />
+        <item value="-110" />
+        <item value="-100" />
+        <item value="-90" />
+    </int-array>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="0" />
+    <string-array name="mmi_two_digit_number_pattern_string_array" num="22">
+        <item value="0" />
+        <item value="00" />
+        <item value="*0" />
+        <item value="*1" />
+        <item value="*2" />
+        <item value="*3" />
+        <item value="*4" />
+        <item value="*5" />
+        <item value="*6" />
+        <item value="*7" />
+        <item value="*8" />
+        <item value="*9" />
+        <item value="#0" />
+        <item value="#1" />
+        <item value="#2" />
+        <item value="#3" />
+        <item value="#4" />
+        <item value="#5" />
+        <item value="#6" />
+        <item value="#7" />
+        <item value="#8" />
+        <item value="#9" />
+    </string-array>
+    <string-array name="non_roaming_operator_string_array" num="7">
+        <item value="310" />
+        <item value="311" />
+        <item value="312" />
+        <item value="313" />
+        <item value="314" />
+        <item value="315" />
+        <item value="316" />
+    </string-array>
+    <string name="operator_name_filter_pattern_string">(.*)\.{3}[12]$</string>
+    <boolean name="prefer_2g_bool" value="false" />
+    <boolean name="rcs_request_forbidden_by_sip_489_bool" value="true" />
+    <int name="recipientLimit" value="20" />
+    <string-array name="roaming_operator_string_array" num="5">
+        <item value="310110" />
+        <item value="310140" />
+        <item value="310400" />
+        <item value="310470" />
+        <item value="311170" />
+    </string-array>
+    <boolean name="rtt_downgrade_supported_bool" value="true" />
+    <boolean name="rtt_supported_bool" value="true" />
+    <boolean name="rtt_supported_while_roaming_bool" value="true" />
+    <boolean name="show_4g_for_3g_data_icon_bool" value="true" />
+    <string name="show_carrier_data_icon_pattern_string">.*\.{3}[12]$</string>
+    <boolean name="skip_cf_fail_to_disable_dialog_bool" value="true" />
+    <boolean name="support_pause_ims_video_calls_bool" value="false" />
+    <boolean name="use_lower_mtu_value_if_both_received" value="true" />
+    <int name="volte_replacement_rat_int" value="3" />
+    <string name="wcdma_default_signal_strength_measurement_string">rscp</string>
+    <int-array name="wcdma_rscp_thresholds_int_array" num="4">
+        <item value="-105" />
+        <item value="-99" />
+        <item value="-89" />
+        <item value="-79" />
+    </int-array>
+    <int name="wfc_spn_format_idx_int" value="1" />
+    <int name="wifi.carrier_profiles_version_int" value="1" />
+    <string-array name="wifi.passpoint_profiles_string_array" num="1">
+        <item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;PasspointProfile&gt;&lt;PPSMO&gt;&lt;![CDATA[&lt;MgmtTree xmlns=&quot;syncml:dmddf1.2&quot;&gt;&lt;VerDTD&gt;1.2&lt;/VerDTD&gt;&lt;Node&gt;&lt;NodeName&gt;PerProviderSubscription&lt;/NodeName&gt;&lt;RTProperties&gt;&lt;Type&gt;&lt;DDFName&gt;urn:wfa:mo:hotspot2dot0-perprovidersubscription:1.0&lt;/DDFName&gt;&lt;/Type&gt;&lt;/RTProperties&gt;&lt;Node&gt;&lt;NodeName&gt;i001&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;HomeSP&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;FriendlyName&lt;/NodeName&gt;&lt;Value&gt;AT&amp;amp;T Passpoint&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;FQDN&lt;/NodeName&gt;&lt;Value&gt;attwifi.com&lt;/Value&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;Credential&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;Realm&lt;/NodeName&gt;&lt;Value&gt;wlan.mnc410.mcc310.3gppnetwork.org&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;SIM&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;IMSI&lt;/NodeName&gt;&lt;Value&gt;310410*&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;EAPType&lt;/NodeName&gt;&lt;Value&gt;23&lt;/Value&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/MgmtTree&gt;]]&gt;&lt;/PPSMO&gt;&lt;/PasspointProfile&gt;" />
+    </string-array>
+</carrier_config>
+<carrier_config mcc="310" mnc="410" gid1="60FF">
+    <string name="carrier_config_version_string">310410GID1=60FF-0.48</string>
+    <string-array name="carrier_data_call_retry_config_strings" num="4">
+        <item value="default:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000" />
+        <item value="mms:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000" />
+        <item value="ims:max_retries=10,5000,5000,5000" />
+        <item value="others:max_retries=3,5000,5000,5000" />
+    </string-array>
+    <boolean name="csp_enabled_bool" value="true" />
+    <boolean name="enableSMSDeliveryReports" value="false" />
+    <boolean name="inflate_signal_strength_bool" value="true" />
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <string-array name="mmi_two_digit_number_pattern_string_array" num="22">
+        <item value="0" />
+        <item value="00" />
+        <item value="*0" />
+        <item value="*1" />
+        <item value="*2" />
+        <item value="*3" />
+        <item value="*4" />
+        <item value="*5" />
+        <item value="*6" />
+        <item value="*7" />
+        <item value="*8" />
+        <item value="*9" />
+        <item value="#0" />
+        <item value="#1" />
+        <item value="#2" />
+        <item value="#3" />
+        <item value="#4" />
+        <item value="#5" />
+        <item value="#6" />
+        <item value="#7" />
+        <item value="#8" />
+        <item value="#9" />
+    </string-array>
+    <string-array name="non_roaming_operator_string_array" num="7">
+        <item value="310" />
+        <item value="311" />
+        <item value="312" />
+        <item value="313" />
+        <item value="314" />
+        <item value="315" />
+        <item value="316" />
+    </string-array>
+    <string name="operator_name_filter_pattern_string">(.*)\.{3}[12]$</string>
+    <int name="recipientLimit" value="10" />
+    <string-array name="roaming_operator_string_array" num="5">
+        <item value="310110" />
+        <item value="310140" />
+        <item value="310400" />
+        <item value="310470" />
+        <item value="311170" />
+    </string-array>
+    <boolean name="rtt_supported_bool" value="true" />
+    <string name="show_carrier_data_icon_pattern_string">.*\.{3}[12]$</string>
+    <boolean name="support_pause_ims_video_calls_bool" value="false" />
+    <int name="volte_replacement_rat_int" value="3" />
+</carrier_config>
+<carrier_config mcc="310" mnc="410" gid1="62FF">
+    <string name="carrier_config_version_string">attmvnos_us-0.48</string>
+    <string name="5g_icon_configuration_string">connected_mmwave:5G_Plus,connected:5G,not_restricted_rrc_idle:5G,not_restricted_rrc_con:5G</string>
+    <string name="5g_icon_display_grace_period_string">connected_mmwave,any,30</string>
+    <int-array name="5g_nr_ssrsrp_thresholds_int_array" num="4">
+        <item value="-120" />
+        <item value="-110" />
+        <item value="-100" />
+        <item value="-90" />
+    </int-array>
+    <int-array name="additional_nr_advanced_bands_int_array" num="0" />
+    <boolean name="allow_hold_call_during_emergency_bool" value="false" />
+    <boolean name="allow_merging_rtt_calls_bool" value="true" />
+    <string name="apn.settings_default_protocol_string">IPV4V6</string>
+    <string name="apn.settings_default_roaming_protocol_string">IPV4V6</string>
+    <string-array name="apn_settings_default_apn_types_string_array" num="1">
+        <item value="default" />
+    </string-array>
+    <boolean name="carrier_auto_cancel_cs_notification" value="false" />
+    <string-array name="carrier_data_call_retry_config_strings" num="4">
+        <item value="default:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000" />
+        <item value="mms:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000" />
+        <item value="ims:max_retries=10,5000,5000,5000" />
+        <item value="others:max_retries=3,5000,5000,5000" />
+    </string-array>
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
+    <string-array name="carrier_metered_apn_types_strings" num="3">
+        <item value="default" />
+        <item value="dun" />
+        <item value="supl" />
+    </string-array>
+    <string-array name="carrier_metered_roaming_apn_types_strings" num="3">
+        <item value="default" />
+        <item value="dun" />
+        <item value="supl" />
+    </string-array>
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="1" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="false" />
+    <string-array name="carrier_wlan_disallowed_apn_types_string_array" num="1">
+        <item value="default" />
+    </string-array>
+    <boolean name="csp_enabled_bool" value="true" />
+    <string-array name="emergency_number_prefix_string_array" num="3">
+        <item value="*67" />
+        <item value="*82" />
+        <item value="*272" />
+    </string-array>
+    <boolean name="enableSMSDeliveryReports" value="false" />
+    <int-array name="gsm_rssi_thresholds_int_array" num="4">
+        <item value="-108" />
+        <item value="-104" />
+        <item value="-98" />
+        <item value="-90" />
+    </int-array>
+    <boolean name="hide_enhanced_4g_lte_bool" value="false" />
+    <boolean name="hide_preferred_network_type_bool" value="false" />
+    <boolean name="ignore_rtt_mode_setting_bool" value="true" />
+    <int name="ims_dtmf_tone_delay_int" value="120" />
+    <string-array name="ims_reasoninfo_mapping_string_array" num="4">
+        <item value="332|service not allowed in this location|1623" />
+        <item value="352|emergency calls over wifi not allowed in this location|1622" />
+        <item value="510|Call completed elsewhere|1014" />
+        <item value="*|Call is dropped due to Wi-Fi signal is degraded|1407" />
+    </string-array>
+    <boolean name="inflate_signal_strength_bool" value="true" />
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="1">
+        <item value="14" />
+    </int-array>
+    <int-array name="iwlan.epdg_address_priority_int_array" num="1">
+        <item value="0" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.att.net</string>
+    <string name="iwlan.key_error_policy_config_string">[{"ApnName": "*","ErrorTypes": [{"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["9000", "9001", "11011", "9003", "11001", "9006", "8192"],"RetryArray": [],"UnthrottlingEvents": []}, {"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["*"],"RetryArray": ["10", "60", "120", "240", "-1"],"UnthrottlingEvents": ["APM_ENABLE_EVENT", "WIFI_DISABLE_EVENT", "WIFI_CALLING_DISABLE_EVENT"]}]}]</string>
+    <int-array name="lte_rsrp_thresholds_int_array" num="4">
+        <item value="-120" />
+        <item value="-110" />
+        <item value="-100" />
+        <item value="-90" />
+    </int-array>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="0" />
+    <string-array name="mmi_two_digit_number_pattern_string_array" num="22">
+        <item value="0" />
+        <item value="00" />
+        <item value="*0" />
+        <item value="*1" />
+        <item value="*2" />
+        <item value="*3" />
+        <item value="*4" />
+        <item value="*5" />
+        <item value="*6" />
+        <item value="*7" />
+        <item value="*8" />
+        <item value="*9" />
+        <item value="#0" />
+        <item value="#1" />
+        <item value="#2" />
+        <item value="#3" />
+        <item value="#4" />
+        <item value="#5" />
+        <item value="#6" />
+        <item value="#7" />
+        <item value="#8" />
+        <item value="#9" />
+    </string-array>
+    <string-array name="non_roaming_operator_string_array" num="7">
+        <item value="310" />
+        <item value="311" />
+        <item value="312" />
+        <item value="313" />
+        <item value="314" />
+        <item value="315" />
+        <item value="316" />
+    </string-array>
+    <string name="operator_name_filter_pattern_string">(.*)\.{3}[12]$</string>
+    <boolean name="prefer_2g_bool" value="false" />
+    <boolean name="rcs_request_forbidden_by_sip_489_bool" value="true" />
+    <int name="recipientLimit" value="20" />
+    <string-array name="roaming_operator_string_array" num="5">
+        <item value="310110" />
+        <item value="310140" />
+        <item value="310400" />
+        <item value="310470" />
+        <item value="311170" />
+    </string-array>
+    <boolean name="rtt_downgrade_supported_bool" value="true" />
+    <boolean name="rtt_supported_bool" value="true" />
+    <boolean name="rtt_supported_while_roaming_bool" value="true" />
+    <boolean name="show_4g_for_3g_data_icon_bool" value="true" />
+    <string name="show_carrier_data_icon_pattern_string" />
+    <boolean name="skip_cf_fail_to_disable_dialog_bool" value="true" />
+    <boolean name="support_pause_ims_video_calls_bool" value="false" />
+    <boolean name="use_lower_mtu_value_if_both_received" value="true" />
+    <int name="volte_replacement_rat_int" value="3" />
+    <string name="wcdma_default_signal_strength_measurement_string">rscp</string>
+    <int-array name="wcdma_rscp_thresholds_int_array" num="4">
+        <item value="-105" />
+        <item value="-99" />
+        <item value="-89" />
+        <item value="-79" />
+    </int-array>
+    <int name="wfc_spn_format_idx_int" value="1" />
+    <int name="wifi.carrier_profiles_version_int" value="1" />
+    <string-array name="wifi.passpoint_profiles_string_array" num="1">
+        <item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;PasspointProfile&gt;&lt;PPSMO&gt;&lt;![CDATA[&lt;MgmtTree xmlns=&quot;syncml:dmddf1.2&quot;&gt;&lt;VerDTD&gt;1.2&lt;/VerDTD&gt;&lt;Node&gt;&lt;NodeName&gt;PerProviderSubscription&lt;/NodeName&gt;&lt;RTProperties&gt;&lt;Type&gt;&lt;DDFName&gt;urn:wfa:mo:hotspot2dot0-perprovidersubscription:1.0&lt;/DDFName&gt;&lt;/Type&gt;&lt;/RTProperties&gt;&lt;Node&gt;&lt;NodeName&gt;i001&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;HomeSP&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;FriendlyName&lt;/NodeName&gt;&lt;Value&gt;AT&amp;amp;T Passpoint&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;FQDN&lt;/NodeName&gt;&lt;Value&gt;attwifi.com&lt;/Value&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;Credential&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;Realm&lt;/NodeName&gt;&lt;Value&gt;wlan.mnc410.mcc310.3gppnetwork.org&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;SIM&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;IMSI&lt;/NodeName&gt;&lt;Value&gt;310410*&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;EAPType&lt;/NodeName&gt;&lt;Value&gt;23&lt;/Value&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/MgmtTree&gt;]]&gt;&lt;/PPSMO&gt;&lt;/PasspointProfile&gt;" />
+    </string-array>
+</carrier_config>
+<carrier_config mcc="310" mnc="410" gid1="69FF">
+    <string name="carrier_config_version_string">attmvnos_us-0.48</string>
+    <string name="5g_icon_configuration_string">connected_mmwave:5G_Plus,connected:5G,not_restricted_rrc_idle:5G,not_restricted_rrc_con:5G</string>
+    <string name="5g_icon_display_grace_period_string">connected_mmwave,any,30</string>
+    <int-array name="5g_nr_ssrsrp_thresholds_int_array" num="4">
+        <item value="-120" />
+        <item value="-110" />
+        <item value="-100" />
+        <item value="-90" />
+    </int-array>
+    <int-array name="additional_nr_advanced_bands_int_array" num="0" />
+    <boolean name="allow_hold_call_during_emergency_bool" value="false" />
+    <boolean name="allow_merging_rtt_calls_bool" value="true" />
+    <string name="apn.settings_default_protocol_string">IPV4V6</string>
+    <string name="apn.settings_default_roaming_protocol_string">IPV4V6</string>
+    <string-array name="apn_settings_default_apn_types_string_array" num="1">
+        <item value="default" />
+    </string-array>
+    <boolean name="carrier_auto_cancel_cs_notification" value="false" />
+    <string-array name="carrier_data_call_retry_config_strings" num="4">
+        <item value="default:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000" />
+        <item value="mms:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000" />
+        <item value="ims:max_retries=10,5000,5000,5000" />
+        <item value="others:max_retries=3,5000,5000,5000" />
+    </string-array>
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
+    <string-array name="carrier_metered_apn_types_strings" num="3">
+        <item value="default" />
+        <item value="dun" />
+        <item value="supl" />
+    </string-array>
+    <string-array name="carrier_metered_roaming_apn_types_strings" num="3">
+        <item value="default" />
+        <item value="dun" />
+        <item value="supl" />
+    </string-array>
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="1" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="false" />
+    <string-array name="carrier_wlan_disallowed_apn_types_string_array" num="1">
+        <item value="default" />
+    </string-array>
+    <boolean name="csp_enabled_bool" value="true" />
+    <string-array name="emergency_number_prefix_string_array" num="3">
+        <item value="*67" />
+        <item value="*82" />
+        <item value="*272" />
+    </string-array>
+    <boolean name="enableSMSDeliveryReports" value="false" />
+    <int-array name="gsm_rssi_thresholds_int_array" num="4">
+        <item value="-108" />
+        <item value="-104" />
+        <item value="-98" />
+        <item value="-90" />
+    </int-array>
+    <boolean name="hide_enhanced_4g_lte_bool" value="false" />
+    <boolean name="hide_preferred_network_type_bool" value="false" />
+    <boolean name="ignore_rtt_mode_setting_bool" value="true" />
+    <int name="ims_dtmf_tone_delay_int" value="120" />
+    <string-array name="ims_reasoninfo_mapping_string_array" num="4">
+        <item value="332|service not allowed in this location|1623" />
+        <item value="352|emergency calls over wifi not allowed in this location|1622" />
+        <item value="510|Call completed elsewhere|1014" />
+        <item value="*|Call is dropped due to Wi-Fi signal is degraded|1407" />
+    </string-array>
+    <boolean name="inflate_signal_strength_bool" value="true" />
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="1">
+        <item value="14" />
+    </int-array>
+    <int-array name="iwlan.epdg_address_priority_int_array" num="1">
+        <item value="0" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.att.net</string>
+    <string name="iwlan.key_error_policy_config_string">[{"ApnName": "*","ErrorTypes": [{"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["9000", "9001", "11011", "9003", "11001", "9006", "8192"],"RetryArray": [],"UnthrottlingEvents": []}, {"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["*"],"RetryArray": ["10", "60", "120", "240", "-1"],"UnthrottlingEvents": ["APM_ENABLE_EVENT", "WIFI_DISABLE_EVENT", "WIFI_CALLING_DISABLE_EVENT"]}]}]</string>
+    <int-array name="lte_rsrp_thresholds_int_array" num="4">
+        <item value="-120" />
+        <item value="-110" />
+        <item value="-100" />
+        <item value="-90" />
+    </int-array>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="0" />
+    <string-array name="mmi_two_digit_number_pattern_string_array" num="22">
+        <item value="0" />
+        <item value="00" />
+        <item value="*0" />
+        <item value="*1" />
+        <item value="*2" />
+        <item value="*3" />
+        <item value="*4" />
+        <item value="*5" />
+        <item value="*6" />
+        <item value="*7" />
+        <item value="*8" />
+        <item value="*9" />
+        <item value="#0" />
+        <item value="#1" />
+        <item value="#2" />
+        <item value="#3" />
+        <item value="#4" />
+        <item value="#5" />
+        <item value="#6" />
+        <item value="#7" />
+        <item value="#8" />
+        <item value="#9" />
+    </string-array>
+    <string-array name="non_roaming_operator_string_array" num="7">
+        <item value="310" />
+        <item value="311" />
+        <item value="312" />
+        <item value="313" />
+        <item value="314" />
+        <item value="315" />
+        <item value="316" />
+    </string-array>
+    <string name="operator_name_filter_pattern_string">(.*)\.{3}[12]$</string>
+    <boolean name="prefer_2g_bool" value="false" />
+    <boolean name="rcs_request_forbidden_by_sip_489_bool" value="true" />
+    <int name="recipientLimit" value="20" />
+    <string-array name="roaming_operator_string_array" num="5">
+        <item value="310110" />
+        <item value="310140" />
+        <item value="310400" />
+        <item value="310470" />
+        <item value="311170" />
+    </string-array>
+    <boolean name="rtt_downgrade_supported_bool" value="true" />
+    <boolean name="rtt_supported_bool" value="true" />
+    <boolean name="rtt_supported_while_roaming_bool" value="true" />
+    <boolean name="show_4g_for_3g_data_icon_bool" value="true" />
+    <string name="show_carrier_data_icon_pattern_string" />
+    <boolean name="skip_cf_fail_to_disable_dialog_bool" value="true" />
+    <boolean name="support_pause_ims_video_calls_bool" value="false" />
+    <boolean name="use_lower_mtu_value_if_both_received" value="true" />
+    <int name="volte_replacement_rat_int" value="3" />
+    <string name="wcdma_default_signal_strength_measurement_string">rscp</string>
+    <int-array name="wcdma_rscp_thresholds_int_array" num="4">
+        <item value="-105" />
+        <item value="-99" />
+        <item value="-89" />
+        <item value="-79" />
+    </int-array>
+    <int name="wfc_spn_format_idx_int" value="1" />
+    <int name="wifi.carrier_profiles_version_int" value="1" />
+    <string-array name="wifi.passpoint_profiles_string_array" num="1">
+        <item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;PasspointProfile&gt;&lt;PPSMO&gt;&lt;![CDATA[&lt;MgmtTree xmlns=&quot;syncml:dmddf1.2&quot;&gt;&lt;VerDTD&gt;1.2&lt;/VerDTD&gt;&lt;Node&gt;&lt;NodeName&gt;PerProviderSubscription&lt;/NodeName&gt;&lt;RTProperties&gt;&lt;Type&gt;&lt;DDFName&gt;urn:wfa:mo:hotspot2dot0-perprovidersubscription:1.0&lt;/DDFName&gt;&lt;/Type&gt;&lt;/RTProperties&gt;&lt;Node&gt;&lt;NodeName&gt;i001&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;HomeSP&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;FriendlyName&lt;/NodeName&gt;&lt;Value&gt;AT&amp;amp;T Passpoint&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;FQDN&lt;/NodeName&gt;&lt;Value&gt;attwifi.com&lt;/Value&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;Credential&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;Realm&lt;/NodeName&gt;&lt;Value&gt;wlan.mnc410.mcc310.3gppnetwork.org&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;SIM&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;IMSI&lt;/NodeName&gt;&lt;Value&gt;310410*&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;EAPType&lt;/NodeName&gt;&lt;Value&gt;23&lt;/Value&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/MgmtTree&gt;]]&gt;&lt;/PPSMO&gt;&lt;/PasspointProfile&gt;" />
+    </string-array>
+</carrier_config>
+<carrier_config mcc="310" mnc="410" gid1="DDFF">
+    <string name="carrier_config_version_string">tracfoneatt_us-0.48</string>
+    <string name="5g_icon_configuration_string">connected_mmwave:5G_Plus,connected:5G,not_restricted_rrc_idle:5G,not_restricted_rrc_con:5G</string>
+    <string name="5g_icon_display_grace_period_string">connected_mmwave,any,30</string>
+    <int-array name="5g_nr_ssrsrp_thresholds_int_array" num="4">
+        <item value="-120" />
+        <item value="-110" />
+        <item value="-100" />
+        <item value="-90" />
+    </int-array>
+    <int-array name="additional_nr_advanced_bands_int_array" num="0" />
+    <boolean name="allow_hold_call_during_emergency_bool" value="false" />
+    <boolean name="allow_merging_rtt_calls_bool" value="true" />
+    <string name="apn.settings_default_protocol_string">IPV4V6</string>
+    <string name="apn.settings_default_roaming_protocol_string">IPV4V6</string>
+    <string-array name="apn_settings_default_apn_types_string_array" num="1">
+        <item value="default" />
+    </string-array>
+    <boolean name="carrier_auto_cancel_cs_notification" value="false" />
+    <string-array name="carrier_certificate_string_array" num="3">
+        <item value="E751E163E91E041382839556D31302DB7058C44D9DF1B5B27FC43BD8F0EE2BBA" />
+        <item value="4AD124DE517BC6BA915B88C17F0AADF764469842156325C26B7CD8B888C41C71" />
+        <item value="55BB3B316919620008AA76A4891E90384BFF2A76AE95C395FE738C2AC609F13F" />
+    </string-array>
+    <string-array name="carrier_data_call_retry_config_strings" num="4">
+        <item value="default:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000" />
+        <item value="mms:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000" />
+        <item value="ims:max_retries=10,5000,5000,5000" />
+        <item value="others:max_retries=3,5000,5000,5000" />
+    </string-array>
+    <boolean name="carrier_default_data_roaming_enabled_bool" value="true" />
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
+    <string-array name="carrier_metered_apn_types_strings" num="3">
+        <item value="default" />
+        <item value="dun" />
+        <item value="supl" />
+    </string-array>
+    <string-array name="carrier_metered_roaming_apn_types_strings" num="3">
+        <item value="default" />
+        <item value="dun" />
+        <item value="supl" />
+    </string-array>
+    <boolean name="carrier_name_override_bool" value="true" />
+    <string name="carrier_name_string">Tracfone</string>
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="1" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="false" />
+    <string-array name="carrier_wlan_disallowed_apn_types_string_array" num="1">
+        <item value="default" />
+    </string-array>
+    <boolean name="csp_enabled_bool" value="true" />
+    <string-array name="emergency_number_prefix_string_array" num="3">
+        <item value="*67" />
+        <item value="*82" />
+        <item value="*272" />
+    </string-array>
+    <boolean name="enableSMSDeliveryReports" value="false" />
+    <int-array name="gsm_rssi_thresholds_int_array" num="4">
+        <item value="-108" />
+        <item value="-104" />
+        <item value="-98" />
+        <item value="-90" />
+    </int-array>
+    <boolean name="hide_enhanced_4g_lte_bool" value="false" />
+    <boolean name="hide_preferred_network_type_bool" value="false" />
+    <boolean name="ignore_rtt_mode_setting_bool" value="true" />
+    <int name="ims_dtmf_tone_delay_int" value="120" />
+    <string-array name="ims_reasoninfo_mapping_string_array" num="4">
+        <item value="332|service not allowed in this location|1623" />
+        <item value="352|emergency calls over wifi not allowed in this location|1622" />
+        <item value="510|Call completed elsewhere|1014" />
+        <item value="*|Call is dropped due to Wi-Fi signal is degraded|1407" />
+    </string-array>
+    <boolean name="inflate_signal_strength_bool" value="true" />
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="1">
+        <item value="14" />
+    </int-array>
+    <int-array name="iwlan.epdg_address_priority_int_array" num="1">
+        <item value="0" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.att.net</string>
+    <string name="iwlan.key_error_policy_config_string">[{"ApnName": "*","ErrorTypes": [{"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["9000", "9001", "11011", "9003", "11001", "9006", "8192"],"RetryArray": [],"UnthrottlingEvents": []}, {"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["*"],"RetryArray": ["10", "60", "120", "240", "-1"],"UnthrottlingEvents": ["APM_ENABLE_EVENT", "WIFI_DISABLE_EVENT", "WIFI_CALLING_DISABLE_EVENT"]}]}]</string>
+    <int-array name="lte_rsrp_thresholds_int_array" num="4">
+        <item value="-120" />
+        <item value="-110" />
+        <item value="-100" />
+        <item value="-90" />
+    </int-array>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="0" />
+    <string-array name="mmi_two_digit_number_pattern_string_array" num="22">
+        <item value="0" />
+        <item value="00" />
+        <item value="*0" />
+        <item value="*1" />
+        <item value="*2" />
+        <item value="*3" />
+        <item value="*4" />
+        <item value="*5" />
+        <item value="*6" />
+        <item value="*7" />
+        <item value="*8" />
+        <item value="*9" />
+        <item value="#0" />
+        <item value="#1" />
+        <item value="#2" />
+        <item value="#3" />
+        <item value="#4" />
+        <item value="#5" />
+        <item value="#6" />
+        <item value="#7" />
+        <item value="#8" />
+        <item value="#9" />
+    </string-array>
+    <string-array name="non_roaming_operator_string_array" num="7">
+        <item value="310" />
+        <item value="311" />
+        <item value="312" />
+        <item value="313" />
+        <item value="314" />
+        <item value="315" />
+        <item value="316" />
+    </string-array>
+    <string name="operator_name_filter_pattern_string">(.*)\.{3}[12]$</string>
+    <boolean name="prefer_2g_bool" value="false" />
+    <boolean name="rcs_request_forbidden_by_sip_489_bool" value="true" />
+    <int name="recipientLimit" value="10" />
+    <boolean name="require_entitlement_checks_bool" value="false" />
+    <string-array name="roaming_operator_string_array" num="5">
+        <item value="310110" />
+        <item value="310140" />
+        <item value="310400" />
+        <item value="310470" />
+        <item value="311170" />
+    </string-array>
+    <boolean name="rtt_downgrade_supported_bool" value="true" />
+    <boolean name="rtt_supported_bool" value="true" />
+    <boolean name="rtt_supported_while_roaming_bool" value="true" />
+    <boolean name="show_4g_for_3g_data_icon_bool" value="true" />
+    <string name="show_carrier_data_icon_pattern_string" />
+    <boolean name="skip_cf_fail_to_disable_dialog_bool" value="true" />
+    <boolean name="support_pause_ims_video_calls_bool" value="false" />
+    <boolean name="use_lower_mtu_value_if_both_received" value="true" />
+    <int name="volte_replacement_rat_int" value="3" />
+    <string name="wcdma_default_signal_strength_measurement_string">rscp</string>
+    <int-array name="wcdma_rscp_thresholds_int_array" num="4">
+        <item value="-105" />
+        <item value="-99" />
+        <item value="-89" />
+        <item value="-79" />
+    </int-array>
+    <int name="wfc_spn_format_idx_int" value="1" />
+    <int name="wifi.carrier_profiles_version_int" value="1" />
+    <string-array name="wifi.passpoint_profiles_string_array" num="1">
+        <item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;PasspointProfile&gt;&lt;PPSMO&gt;&lt;![CDATA[&lt;MgmtTree xmlns=&quot;syncml:dmddf1.2&quot;&gt;&lt;VerDTD&gt;1.2&lt;/VerDTD&gt;&lt;Node&gt;&lt;NodeName&gt;PerProviderSubscription&lt;/NodeName&gt;&lt;RTProperties&gt;&lt;Type&gt;&lt;DDFName&gt;urn:wfa:mo:hotspot2dot0-perprovidersubscription:1.0&lt;/DDFName&gt;&lt;/Type&gt;&lt;/RTProperties&gt;&lt;Node&gt;&lt;NodeName&gt;i001&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;HomeSP&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;FriendlyName&lt;/NodeName&gt;&lt;Value&gt;AT&amp;amp;T Passpoint&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;FQDN&lt;/NodeName&gt;&lt;Value&gt;attwifi.com&lt;/Value&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;Credential&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;Realm&lt;/NodeName&gt;&lt;Value&gt;wlan.mnc410.mcc310.3gppnetwork.org&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;SIM&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;IMSI&lt;/NodeName&gt;&lt;Value&gt;310410*&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;EAPType&lt;/NodeName&gt;&lt;Value&gt;23&lt;/Value&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/MgmtTree&gt;]]&gt;&lt;/PPSMO&gt;&lt;/PasspointProfile&gt;" />
+    </string-array>
+</carrier_config>
+<carrier_config mcc="310" mnc="410" gid1="DEFF">
+    <string name="carrier_config_version_string">tracfoneatt_us-0.48</string>
+    <string name="5g_icon_configuration_string">connected_mmwave:5G_Plus,connected:5G,not_restricted_rrc_idle:5G,not_restricted_rrc_con:5G</string>
+    <string name="5g_icon_display_grace_period_string">connected_mmwave,any,30</string>
+    <int-array name="5g_nr_ssrsrp_thresholds_int_array" num="4">
+        <item value="-120" />
+        <item value="-110" />
+        <item value="-100" />
+        <item value="-90" />
+    </int-array>
+    <int-array name="additional_nr_advanced_bands_int_array" num="0" />
+    <boolean name="allow_hold_call_during_emergency_bool" value="false" />
+    <boolean name="allow_merging_rtt_calls_bool" value="true" />
+    <string name="apn.settings_default_protocol_string">IPV4V6</string>
+    <string name="apn.settings_default_roaming_protocol_string">IPV4V6</string>
+    <string-array name="apn_settings_default_apn_types_string_array" num="1">
+        <item value="default" />
+    </string-array>
+    <boolean name="carrier_auto_cancel_cs_notification" value="false" />
+    <string-array name="carrier_certificate_string_array" num="3">
+        <item value="E751E163E91E041382839556D31302DB7058C44D9DF1B5B27FC43BD8F0EE2BBA" />
+        <item value="4AD124DE517BC6BA915B88C17F0AADF764469842156325C26B7CD8B888C41C71" />
+        <item value="55BB3B316919620008AA76A4891E90384BFF2A76AE95C395FE738C2AC609F13F" />
+    </string-array>
+    <string-array name="carrier_data_call_retry_config_strings" num="4">
+        <item value="default:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000" />
+        <item value="mms:default_randomization=2000,10000,18000:5000,720000:5000,2160000:5000" />
+        <item value="ims:max_retries=10,5000,5000,5000" />
+        <item value="others:max_retries=3,5000,5000,5000" />
+    </string-array>
+    <boolean name="carrier_default_data_roaming_enabled_bool" value="true" />
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
+    <string-array name="carrier_metered_apn_types_strings" num="3">
+        <item value="default" />
+        <item value="dun" />
+        <item value="supl" />
+    </string-array>
+    <string-array name="carrier_metered_roaming_apn_types_strings" num="3">
+        <item value="default" />
+        <item value="dun" />
+        <item value="supl" />
+    </string-array>
+    <boolean name="carrier_name_override_bool" value="true" />
+    <string name="carrier_name_string">Tracfone</string>
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="1" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="false" />
+    <string-array name="carrier_wlan_disallowed_apn_types_string_array" num="1">
+        <item value="default" />
+    </string-array>
+    <boolean name="csp_enabled_bool" value="true" />
+    <string-array name="emergency_number_prefix_string_array" num="3">
+        <item value="*67" />
+        <item value="*82" />
+        <item value="*272" />
+    </string-array>
+    <boolean name="enableSMSDeliveryReports" value="false" />
+    <int-array name="gsm_rssi_thresholds_int_array" num="4">
+        <item value="-108" />
+        <item value="-104" />
+        <item value="-98" />
+        <item value="-90" />
+    </int-array>
+    <boolean name="hide_enhanced_4g_lte_bool" value="false" />
+    <boolean name="hide_preferred_network_type_bool" value="false" />
+    <boolean name="ignore_rtt_mode_setting_bool" value="true" />
+    <int name="ims_dtmf_tone_delay_int" value="120" />
+    <string-array name="ims_reasoninfo_mapping_string_array" num="4">
+        <item value="332|service not allowed in this location|1623" />
+        <item value="352|emergency calls over wifi not allowed in this location|1622" />
+        <item value="510|Call completed elsewhere|1014" />
+        <item value="*|Call is dropped due to Wi-Fi signal is degraded|1407" />
+    </string-array>
+    <boolean name="inflate_signal_strength_bool" value="true" />
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="1">
+        <item value="14" />
+    </int-array>
+    <int-array name="iwlan.epdg_address_priority_int_array" num="1">
+        <item value="0" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.att.net</string>
+    <string name="iwlan.key_error_policy_config_string">[{"ApnName": "*","ErrorTypes": [{"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["9000", "9001", "11011", "9003", "11001", "9006", "8192"],"RetryArray": [],"UnthrottlingEvents": []}, {"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["*"],"RetryArray": ["10", "60", "120", "240", "-1"],"UnthrottlingEvents": ["APM_ENABLE_EVENT", "WIFI_DISABLE_EVENT", "WIFI_CALLING_DISABLE_EVENT"]}]}]</string>
+    <int-array name="lte_rsrp_thresholds_int_array" num="4">
+        <item value="-120" />
+        <item value="-110" />
+        <item value="-100" />
+        <item value="-90" />
+    </int-array>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="0" />
+    <string-array name="mmi_two_digit_number_pattern_string_array" num="22">
+        <item value="0" />
+        <item value="00" />
+        <item value="*0" />
+        <item value="*1" />
+        <item value="*2" />
+        <item value="*3" />
+        <item value="*4" />
+        <item value="*5" />
+        <item value="*6" />
+        <item value="*7" />
+        <item value="*8" />
+        <item value="*9" />
+        <item value="#0" />
+        <item value="#1" />
+        <item value="#2" />
+        <item value="#3" />
+        <item value="#4" />
+        <item value="#5" />
+        <item value="#6" />
+        <item value="#7" />
+        <item value="#8" />
+        <item value="#9" />
+    </string-array>
+    <string-array name="non_roaming_operator_string_array" num="7">
+        <item value="310" />
+        <item value="311" />
+        <item value="312" />
+        <item value="313" />
+        <item value="314" />
+        <item value="315" />
+        <item value="316" />
+    </string-array>
+    <string name="operator_name_filter_pattern_string">(.*)\.{3}[12]$</string>
+    <boolean name="prefer_2g_bool" value="false" />
+    <boolean name="rcs_request_forbidden_by_sip_489_bool" value="true" />
+    <int name="recipientLimit" value="10" />
+    <boolean name="require_entitlement_checks_bool" value="false" />
+    <string-array name="roaming_operator_string_array" num="5">
+        <item value="310110" />
+        <item value="310140" />
+        <item value="310400" />
+        <item value="310470" />
+        <item value="311170" />
+    </string-array>
+    <boolean name="rtt_downgrade_supported_bool" value="true" />
+    <boolean name="rtt_supported_bool" value="true" />
+    <boolean name="rtt_supported_while_roaming_bool" value="true" />
+    <boolean name="show_4g_for_3g_data_icon_bool" value="true" />
+    <string name="show_carrier_data_icon_pattern_string" />
+    <boolean name="skip_cf_fail_to_disable_dialog_bool" value="true" />
+    <boolean name="support_pause_ims_video_calls_bool" value="false" />
+    <boolean name="use_lower_mtu_value_if_both_received" value="true" />
+    <int name="volte_replacement_rat_int" value="3" />
+    <string name="wcdma_default_signal_strength_measurement_string">rscp</string>
+    <int-array name="wcdma_rscp_thresholds_int_array" num="4">
+        <item value="-105" />
+        <item value="-99" />
+        <item value="-89" />
+        <item value="-79" />
+    </int-array>
+    <int name="wfc_spn_format_idx_int" value="1" />
+    <int name="wifi.carrier_profiles_version_int" value="1" />
+    <string-array name="wifi.passpoint_profiles_string_array" num="1">
+        <item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;PasspointProfile&gt;&lt;PPSMO&gt;&lt;![CDATA[&lt;MgmtTree xmlns=&quot;syncml:dmddf1.2&quot;&gt;&lt;VerDTD&gt;1.2&lt;/VerDTD&gt;&lt;Node&gt;&lt;NodeName&gt;PerProviderSubscription&lt;/NodeName&gt;&lt;RTProperties&gt;&lt;Type&gt;&lt;DDFName&gt;urn:wfa:mo:hotspot2dot0-perprovidersubscription:1.0&lt;/DDFName&gt;&lt;/Type&gt;&lt;/RTProperties&gt;&lt;Node&gt;&lt;NodeName&gt;i001&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;HomeSP&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;FriendlyName&lt;/NodeName&gt;&lt;Value&gt;AT&amp;amp;T Passpoint&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;FQDN&lt;/NodeName&gt;&lt;Value&gt;attwifi.com&lt;/Value&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;Credential&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;Realm&lt;/NodeName&gt;&lt;Value&gt;wlan.mnc410.mcc310.3gppnetwork.org&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;SIM&lt;/NodeName&gt;&lt;Node&gt;&lt;NodeName&gt;IMSI&lt;/NodeName&gt;&lt;Value&gt;310410*&lt;/Value&gt;&lt;/Node&gt;&lt;Node&gt;&lt;NodeName&gt;EAPType&lt;/NodeName&gt;&lt;Value&gt;23&lt;/Value&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/Node&gt;&lt;/MgmtTree&gt;]]&gt;&lt;/PPSMO&gt;&lt;/PasspointProfile&gt;" />
+    </string-array>
+</carrier_config>
+</carrier_config_list>

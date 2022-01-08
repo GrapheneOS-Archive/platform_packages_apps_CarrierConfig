@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="240" mnc="42" gid1="C5">
+    <string name="carrier_config_version_string">goodspeed_zz-0.48</string>
+    <boolean name="force_home_network_bool" value="false" />
+</carrier_config>
+</carrier_config_list>

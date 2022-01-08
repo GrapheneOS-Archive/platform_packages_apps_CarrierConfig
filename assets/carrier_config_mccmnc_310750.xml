@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="310" mnc="750">
+    <string name="carrier_config_version_string">310750-0.48</string>
+    <string name="httpParams">X-MDN: ##LINE1##</string>
+    <int name="maxImageHeight" value="2432" />
+    <int name="maxImageWidth" value="4320" />
+    <int name="maxMessageSize" value="1228800" />
+    <int name="maxSubjectLength" value="80" />
+    <int name="recipientLimit" value="20" />
+    <int name="smsToMmsTextThreshold" value="1" />
+</carrier_config>
+<carrier_config mcc="310" mnc="750" spn="APPALACHIAN">
+    <string name="carrier_config_version_string">310750SPN=APPALACHIAN-0.48</string>
+    <string name="httpParams">X-MDN: ##LINE1##</string>
+    <int name="maxImageHeight" value="2432" />
+    <int name="maxImageWidth" value="4320" />
+    <int name="maxMessageSize" value="1228800" />
+    <int name="maxSubjectLength" value="80" />
+    <int name="recipientLimit" value="20" />
+    <int name="smsToMmsTextThreshold" value="1" />
+</carrier_config>
+</carrier_config_list>

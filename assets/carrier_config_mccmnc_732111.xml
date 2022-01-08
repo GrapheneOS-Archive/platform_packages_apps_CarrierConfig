@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="732" mnc="111">
+    <string name="carrier_config_version_string">movil_co-0.48</string>
+</carrier_config>
+<carrier_config mcc="732" mnc="111" spn="ETB MOVIL">
+    <string name="carrier_config_version_string">etb_co-0.48</string>
+</carrier_config>
+<carrier_config mcc="732" mnc="111" spn="MOVIL EXITO">
+    <string name="carrier_config_version_string">movilexito_co-0.48</string>
+</carrier_config>
+<carrier_config mcc="732" mnc="111" spn="UFF!">
+    <string name="carrier_config_version_string">uff_co-0.48</string>
+</carrier_config>
+<carrier_config mcc="732" mnc="111" spn="UNE">
+    <string name="carrier_config_version_string">une_co-0.48</string>
+</carrier_config>
+</carrier_config_list>

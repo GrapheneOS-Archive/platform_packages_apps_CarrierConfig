@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="262" mnc="03">
+    <string name="carrier_config_version_string">eplus_de-32000000469.48</string>
+    <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <string name="default_vm_number_string">+491793000333</string>
+    <boolean name="hide_lte_plus_data_icon_bool" value="false" />
+    <string-array name="ims_reasoninfo_mapping_string_array" num="2">
+        <item value="510|Call completed elsewhere|1014" />
+        <item value="*|Call is dropped due to Wi-Fi signal is degraded|1407" />
+    </string-array>
+    <boolean name="iwlan.add_ke_to_child_session_rekey_bool" value="true" />
+    <int name="iwlan.child_sa_rekey_hard_timer_sec_int" value="86500" />
+    <int name="iwlan.child_sa_rekey_soft_timer_sec_int" value="86400" />
+    <int name="iwlan.dpd_timer_sec_int" value="60" />
+    <int name="iwlan.ike_rekey_hard_timer_in_sec" value="86500" />
+    <int name="iwlan.ike_rekey_soft_timer_sec_int" value="86400" />
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="614400" />
+    <string-array name="non_roaming_operator_string_array" num="5">
+        <item value="26203" />
+        <item value="26205" />
+        <item value="26212" />
+        <item value="26217" />
+        <item value="26220" />
+    </string-array>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+    <boolean name="use_only_dialed_sim_ecc_list_bool" value="true" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+</carrier_config>
+<carrier_config mcc="262" mnc="03" imsi="26203483">
+    <string name="carrier_config_version_string">mvno_de-0.48</string>
+</carrier_config>
+</carrier_config_list>

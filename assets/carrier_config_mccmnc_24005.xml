@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="240" mnc="05" spn="HALEBOP">
+    <string name="carrier_config_version_string">24005SPN=HALEBOP-0.48</string>
+</carrier_config>
+<carrier_config mcc="240" mnc="05" spn="TELE2">
+    <string name="carrier_config_version_string">24005SPN=TELE2-0.48</string>
+</carrier_config>
+<carrier_config mcc="240" mnc="05" spn="TELIA">
+    <string name="carrier_config_version_string">24005SPN=TELIA-0.48</string>
+</carrier_config>
+</carrier_config_list>

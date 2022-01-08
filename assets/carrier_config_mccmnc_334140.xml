@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="334" mnc="140">
+    <string name="carrier_config_version_string">altan_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="Arlonet">
+    <string name="carrier_config_version_string">arlonet_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="BAIT">
+    <string name="carrier_config_version_string">walmart_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="BYPLUS">
+    <string name="carrier_config_version_string">addinteli_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="CFE TEIPT">
+    <string name="carrier_config_version_string">cfe_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="CHAMO-MOVIL">
+    <string name="carrier_config_version_string">addinteli_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="DIRI">
+    <string name="carrier_config_version_string">diri_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="FreedomPop">
+    <string name="carrier_config_version_string">freedompop_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="Gurucomm">
+    <string name="carrier_config_version_string">guruweb_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="IENTC">
+    <string name="carrier_config_version_string">altanientc_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="INTEN">
+    <string name="carrier_config_version_string">inten_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="IUSATEL">
+    <string name="carrier_config_version_string">iusacomm_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="MEXFON">
+    <string name="carrier_config_version_string">ads_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="MISTRAL">
+    <string name="carrier_config_version_string">adm_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="Mega4.5 G">
+    <string name="carrier_config_version_string">megacable_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="NEMI">
+    <string name="carrier_config_version_string">diveracy_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="NETWEY">
+    <string name="carrier_config_version_string">netwey_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="NeWWW">
+    <string name="carrier_config_version_string">altannewww_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="OUI">
+    <string name="carrier_config_version_string">oui_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="PagaPhone">
+    <string name="carrier_config_version_string">rocketel_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="RETEMEX">
+    <string name="carrier_config_version_string">retemex_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="Redpotencia">
+    <string name="carrier_config_version_string">redpotencia_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="TURBORED">
+    <string name="carrier_config_version_string">topos_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="Ubix">
+    <string name="carrier_config_version_string">ubix_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="VALOR">
+    <string name="carrier_config_version_string">tridex_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="WiMO">
+    <string name="carrier_config_version_string">wimo_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="YO">
+    <string name="carrier_config_version_string">yonder_mx-0.48</string>
+</carrier_config>
+<carrier_config mcc="334" mnc="140" spn="izzi">
+    <string name="carrier_config_version_string">izzi_mx-0.48</string>
+</carrier_config>
+</carrier_config_list>

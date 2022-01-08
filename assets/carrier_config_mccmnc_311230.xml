@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="311" mnc="230">
+    <string name="carrier_config_version_string">cspire_us-32000000432.48</string>
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="false" />
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+    <boolean name="config_telephony_use_own_number_for_voicemail_bool" value="true" />
+    <string name="emailGatewayNumber">6245</string>
+    <string-array name="emergency_number_prefix_string_array" num="1">
+        <item value="*272" />
+    </string-array>
+    <boolean name="enableMultipartSMS" value="false" />
+    <boolean name="enableSMSDeliveryReports" value="false" />
+    <string-array name="gsm_nonroaming_networks_string_array" num="1">
+        <item value="310260" />
+    </string-array>
+    <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+    <string name="httpParams">X-CS3G-MDN: 1##LINE1NOCOUNTRYCODE##</string>
+    <string name="imsserviceentitlement.entitlement_server_url_string">https://aes.mnc230.mcc311.pub.3gppnetwork.org/DEGDROIDInterfaceTS43</string>
+    <string name="imsserviceentitlement.fcm_sender_id_string">708605173519</string>
+    <boolean name="imsserviceentitlement.show_vowifi_webview_bool" value="true" />
+    <int-array name="iwlan.epdg_address_priority_int_array" num="1">
+        <item value="0" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.mnc230.mcc311.pub.3gppnetwork.org</string>
+    <int name="maxImageHeight" value="2432" />
+    <int name="maxImageWidth" value="4320" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="80" />
+    <string-array name="non_roaming_operator_string_array" num="7">
+        <item value="310" />
+        <item value="311" />
+        <item value="312" />
+        <item value="313" />
+        <item value="314" />
+        <item value="315" />
+        <item value="316" />
+    </string-array>
+    <int name="recipientLimit" value="20" />
+    <string name="sim_country_iso_override_string">us</string>
+    <boolean name="support_ss_over_cdma_bool" value="true" />
+    <boolean name="support_swap_after_merge_bool" value="true" />
+    <boolean name="tty_supported_bool" value="false" />
+    <boolean name="use_wfc_home_network_mode_in_roaming_network_bool" value="true" />
+    <int name="volte_replacement_rat_int" value="6" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+</carrier_config>
+</carrier_config_list>

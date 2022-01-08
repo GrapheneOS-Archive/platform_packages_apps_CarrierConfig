@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="262" mnc="01">
+    <string name="carrier_config_version_string">telekom_de-32000000056.48</string>
+    <string name="5g_icon_display_grace_period_string">connected_mmwave,legacy,10;connected,legacy,10;not_restricted_rrc_idle,legacy,10;not_restricted_rrc_con,legacy,10</string>
+    <boolean name="allow_metered_network_for_cert_download_bool" value="true" />
+    <boolean name="auto_retry_failed_wifi_emergency_call" value="true" />
+    <boolean name="carrier_allow_transfer_ims_call_bool" value="true" />
+    <string-array name="carrier_certificate_string_array" num="6">
+        <item value="191A9C9711282CCD1133C9F9EFA7D1077BCAAFB99E379A438207EE0D86218917:de.telekom.tsc" />
+        <item value="EE403A97B076CDEA7A8E8E9BC8011C0A45CEC08905F400EBECE62C946614977D:de.telekom.appstarter" />
+        <item value="D2CB8644879FEC7DD2556673ADAF8F68899A4F2A93EEE14AD9482247B16AD02F:de.telekom.smartcredentials.entitlements" />
+        <item value="A3EFD06CA935A1D530F58F4472BC0FBA0611C7CEE21111FDEDFEAFB477B36F83:de.congstar.meincongstar" />
+        <item value="326D12BC1FC90959DA07EFE47CC23949E4E565E78BF7BECFAA919F7F7D9276A3:de.congstar.fraenk" />
+        <item value="710512630D24A345CC8E0E687BDFFB19F07882A2C9E91685895C9DD65CE61BED:de.congstar.ja,de.congstar.penny" />
+    </string-array>
+    <string-array name="carrier_data_call_permanent_failure_strings" num="18">
+        <item value="OPERATOR_BARRED" />
+        <item value="MISSING_UNKNOWN_APN" />
+        <item value="UNKNOWN_PDP_ADDRESS_TYPE" />
+        <item value="USER_AUTHENTICATION" />
+        <item value="ACTIVATION_REJECT_GGSN" />
+        <item value="SERVICE_OPTION_NOT_SUPPORTED" />
+        <item value="NSAPI_IN_USE" />
+        <item value="ONLY_IPV4_ALLOWED" />
+        <item value="ONLY_IPV6_ALLOWED" />
+        <item value="PROTOCOL_ERRORS" />
+        <item value="RADIO_POWER_OFF" />
+        <item value="TETHERED_CALL_ACTIVE" />
+        <item value="RADIO_NOT_AVAILABLE" />
+        <item value="UNACCEPTABLE_NETWORK_PARAMETER" />
+        <item value="SIGNAL_LOST" />
+        <item value="DUPLICATE_CID" />
+        <item value="MATCH_ALL_RULE_NOT_ALLOWED" />
+        <item value="ALL_MATCHING_RULES_FAILED" />
+    </string-array>
+    <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
+    <int name="carrier_default_wfc_ims_roaming_mode_int" value="1" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="1" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <boolean name="check_pricing_with_carrier_data_roaming_bool" value="true" />
+    <string name="default_vm_number_string">3311</string>
+    <boolean name="display_hd_audio_property_bool" value="false" />
+    <boolean name="editable_wfc_mode_bool" value="false" />
+    <boolean name="hide_lte_plus_data_icon_bool" value="false" />
+    <string-array name="ims_reasoninfo_mapping_string_array" num="3">
+        <item value="361||338" />
+        <item value="361|declined|338" />
+        <item value="510|Call completed elsewhere|1014" />
+    </string-array>
+    <int name="imsi_key_availability_int" value="2" />
+    <string name="imsi_key_download_url_string">https://my-hotspot.telekom.de/aob/updateAndroidCert.json</string>
+    <int name="iwlan.child_sa_rekey_hard_timer_sec_int" value="64900" />
+    <int name="iwlan.child_sa_rekey_soft_timer_sec_int" value="64800" />
+    <int-array name="iwlan.epdg_address_priority_int_array" num="2">
+        <item value="0" />
+        <item value="1" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.mnc001.mcc262.pub.3gppnetwork.org</string>
+    <int name="iwlan.ike_rekey_hard_timer_in_sec" value="64900" />
+    <int name="iwlan.ike_rekey_soft_timer_sec_int" value="64800" />
+    <string name="iwlan.key_error_policy_config_string">[{"ApnName": "*","ErrorTypes": [{"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["24"],"RetryArray": ["300", "300"],"UnthrottlingEvents": ["APM_ENABLE_EVENT", "WIFI_DISABLE_EVENT", "WIFI_AP_CHANGED_EVENT", "WIFI_CALLING_DISABLE_EVENT"]}]}]</string>
+    <boolean name="show_ims_registration_status_bool" value="true" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+    <int name="wifi.carrier_profiles_version_int" value="2" />
+    <string-array name="wifi.network_profiles_string_array" num="1">
+        <item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;WifiNetwork&gt;&lt;SSID&gt;Telekom_SIM&lt;/SSID&gt;&lt;Credential&gt;&lt;SIM&gt;&lt;EAPType&gt;23&lt;/EAPType&gt;&lt;/SIM&gt;&lt;/Credential&gt;&lt;/WifiNetwork&gt;" />
+    </string-array>
+</carrier_config>
+<carrier_config mcc="262" mnc="01" gid1="44">
+    <string name="carrier_config_version_string">congstar_de-32000000534.48</string>
+    <string name="5g_icon_display_grace_period_string">connected_mmwave,legacy,10;connected,legacy,10;not_restricted_rrc_idle,legacy,10;not_restricted_rrc_con,legacy,10</string>
+    <boolean name="allow_metered_network_for_cert_download_bool" value="false" />
+    <boolean name="auto_retry_failed_wifi_emergency_call" value="true" />
+    <boolean name="carrier_allow_transfer_ims_call_bool" value="false" />
+    <string-array name="carrier_certificate_string_array" num="6">
+        <item value="191A9C9711282CCD1133C9F9EFA7D1077BCAAFB99E379A438207EE0D86218917:de.telekom.tsc" />
+        <item value="EE403A97B076CDEA7A8E8E9BC8011C0A45CEC08905F400EBECE62C946614977D:de.telekom.appstarter" />
+        <item value="D2CB8644879FEC7DD2556673ADAF8F68899A4F2A93EEE14AD9482247B16AD02F:de.telekom.smartcredentials.entitlements" />
+        <item value="A3EFD06CA935A1D530F58F4472BC0FBA0611C7CEE21111FDEDFEAFB477B36F83:de.congstar.meincongstar" />
+        <item value="326D12BC1FC90959DA07EFE47CC23949E4E565E78BF7BECFAA919F7F7D9276A3:de.congstar.fraenk" />
+        <item value="710512630D24A345CC8E0E687BDFFB19F07882A2C9E91685895C9DD65CE61BED:de.congstar.ja,de.congstar.penny" />
+    </string-array>
+    <boolean name="carrier_cross_sim_ims_available_bool" value="false" />
+    <string-array name="carrier_data_call_permanent_failure_strings" num="18">
+        <item value="OPERATOR_BARRED" />
+        <item value="MISSING_UNKNOWN_APN" />
+        <item value="UNKNOWN_PDP_ADDRESS_TYPE" />
+        <item value="USER_AUTHENTICATION" />
+        <item value="ACTIVATION_REJECT_GGSN" />
+        <item value="SERVICE_OPTION_NOT_SUPPORTED" />
+        <item value="NSAPI_IN_USE" />
+        <item value="ONLY_IPV4_ALLOWED" />
+        <item value="ONLY_IPV6_ALLOWED" />
+        <item value="PROTOCOL_ERRORS" />
+        <item value="RADIO_POWER_OFF" />
+        <item value="TETHERED_CALL_ACTIVE" />
+        <item value="RADIO_NOT_AVAILABLE" />
+        <item value="UNACCEPTABLE_NETWORK_PARAMETER" />
+        <item value="SIGNAL_LOST" />
+        <item value="DUPLICATE_CID" />
+        <item value="MATCH_ALL_RULE_NOT_ALLOWED" />
+        <item value="ALL_MATCHING_RULES_FAILED" />
+    </string-array>
+    <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
+    <int name="carrier_default_wfc_ims_roaming_mode_int" value="1" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="1" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <boolean name="check_pricing_with_carrier_data_roaming_bool" value="true" />
+    <string name="default_vm_number_string">3311</string>
+    <boolean name="display_hd_audio_property_bool" value="false" />
+    <boolean name="editable_wfc_mode_bool" value="false" />
+    <boolean name="hide_lte_plus_data_icon_bool" value="false" />
+    <string-array name="ims_reasoninfo_mapping_string_array" num="3">
+        <item value="361||338" />
+        <item value="361|declined|338" />
+        <item value="510|Call completed elsewhere|1014" />
+    </string-array>
+    <int name="imsi_key_availability_int" value="0" />
+    <string name="imsi_key_download_url_string" />
+    <int name="iwlan.child_sa_rekey_hard_timer_sec_int" value="64900" />
+    <int name="iwlan.child_sa_rekey_soft_timer_sec_int" value="64800" />
+    <int-array name="iwlan.epdg_address_priority_int_array" num="2">
+        <item value="0" />
+        <item value="1" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.mnc001.mcc262.pub.3gppnetwork.org</string>
+    <int name="iwlan.ike_rekey_hard_timer_in_sec" value="64900" />
+    <int name="iwlan.ike_rekey_soft_timer_sec_int" value="64800" />
+    <string name="iwlan.key_error_policy_config_string">[{"ApnName": "*","ErrorTypes": [{"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["24"],"RetryArray": ["300", "300"],"UnthrottlingEvents": ["APM_ENABLE_EVENT", "WIFI_DISABLE_EVENT", "WIFI_AP_CHANGED_EVENT", "WIFI_CALLING_DISABLE_EVENT"]}]}]</string>
+    <boolean name="show_ims_registration_status_bool" value="true" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+    <int name="wifi.carrier_profiles_version_int" value="-1" />
+    <string-array name="wifi.network_profiles_string_array" num="0" />
+</carrier_config>
+<carrier_config mcc="262" mnc="01" spn="DEBITEL">
+    <string name="carrier_config_version_string">26201SPN=DEBITEL-0.48</string>
+    <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <string name="default_vm_number_string">3311</string>
+    <boolean name="display_hd_audio_property_bool" value="false" />
+    <boolean name="editable_wfc_mode_bool" value="false" />
+    <boolean name="hide_lte_plus_data_icon_bool" value="false" />
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+</carrier_config>
+</carrier_config_list>

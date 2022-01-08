@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="311" mnc="530">
+    <string name="carrier_config_version_string">311530-0.48</string>
+</carrier_config>
+<carrier_config mcc="311" mnc="530" spn="BLAZE WIRELESS">
+    <string name="carrier_config_version_string">311530SPN=BLAZE WIRELESS-0.48</string>
+</carrier_config>
+</carrier_config_list>

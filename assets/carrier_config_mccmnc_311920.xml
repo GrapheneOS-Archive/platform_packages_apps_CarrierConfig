@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="311" mnc="920" spn="CHARITONVALLEY">
+    <string name="carrier_config_version_string">311920SPN=CHARITONVALLEY-0.48</string>
+</carrier_config>
+</carrier_config_list>

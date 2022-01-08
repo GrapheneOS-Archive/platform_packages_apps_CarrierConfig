@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="708" mnc="001">
+    <string name="carrier_config_version_string">708001-0.48</string>
+    <string-array name="mmi_two_digit_number_pattern_string_array" num="2">
+        <item value="*1" />
+        <item value="*5" />
+    </string-array>
+</carrier_config>
+</carrier_config_list>

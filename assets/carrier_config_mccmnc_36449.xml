@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="364" mnc="49">
+    <string name="carrier_config_version_string">aliv_bs-0.48</string>
+    <string name="sim_country_iso_override_string">bs</string>
+</carrier_config>
+</carrier_config_list>

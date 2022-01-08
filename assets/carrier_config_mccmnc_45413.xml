@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="454" mnc="13">
+    <string name="carrier_config_version_string">chinamobile_hk-0.48</string>
+    <string-array name="support_tdscdma_roaming_networks_string_array" num="0" />
+</carrier_config>
+</carrier_config_list>

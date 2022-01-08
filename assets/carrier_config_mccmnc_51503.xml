@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="515" mnc="03">
+    <string name="carrier_config_version_string">51503-0.48</string>
+</carrier_config>
+<carrier_config mcc="515" mnc="03" gid1="3597bfd533">
+    <string name="carrier_config_version_string">dent_zz-0.48</string>
+    <boolean name="carrier_default_data_roaming_enabled_bool" value="true" />
+</carrier_config>
+</carrier_config_list>

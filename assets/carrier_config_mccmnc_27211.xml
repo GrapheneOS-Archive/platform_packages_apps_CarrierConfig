@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="272" mnc="11" gid1="0A">
+    <string name="carrier_config_version_string">27211GID1=0A-0.48</string>
+</carrier_config>
+<carrier_config mcc="272" mnc="11" spn="48">
+    <string name="carrier_config_version_string">48_ie-0.48</string>
+</carrier_config>
+</carrier_config_list>

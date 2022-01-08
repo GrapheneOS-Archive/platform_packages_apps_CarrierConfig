@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="440" mnc="10">
+    <string name="carrier_config_version_string">docomomvno_jp-32000000345.48</string>
+    <string name="5g_icon_configuration_string">connected_mmwave:5G,connected:5G,not_restricted_rrc_idle:5G</string>
+    <string name="5g_icon_display_grace_period_string">connected_mmwave,legacy,31;connected,legacy,31;connected_mmwave,not_restricted_rrc_con,31;connected,not_restricted_rrc_con,31;not_restricted_rrc_idle,not_restricted_rrc_con,15</string>
+    <boolean name="allow_emergency_numbers_in_call_log_bool" value="true" />
+    <boolean name="always_show_emergency_alert_onoff_bool" value="true" />
+    <int name="call_waiting_service_class_int" value="0" />
+    <string-array name="carrier_additional_cbs_channels_strings" num="2">
+        <item value="0xA001-0xA002:type=other, emergency=true" />
+        <item value="0xA004-0xA3FF:type=other, emergency=true" />
+    </string-array>
+    <boolean name="carrier_force_disable_etws_cmas_test_bool" value="false" />
+    <int name="carrier_ussd_method_int" value="1" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <string name="default_vm_number_string">1417</string>
+    <boolean name="enabledMMS" value="false" />
+    <string name="gps.es_extension_sec">300</string>
+    <boolean name="hide_lte_plus_data_icon_bool" value="false" />
+    <boolean name="ignore_data_enabled_changed_for_video_calls" value="true" />
+    <string-array name="ims_reasoninfo_mapping_string_array" num="2">
+        <item value="332||510" />
+        <item value="510|Call completed elsewhere|1014" />
+    </string-array>
+    <boolean name="lte_endc_using_user_data_for_rrc_detection_bool" value="true" />
+    <boolean name="nr_timers_reset_if_non_endc_and_rrc_idle_bool" value="true" />
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+    <boolean name="show_blocking_pay_phone_option_bool" value="true" />
+    <boolean name="support_ims_conference_call_bool" value="false" />
+    <boolean name="support_ims_conference_event_package_bool" value="false" />
+    <boolean name="tty_supported_bool" value="false" />
+    <boolean name="use_call_forwarding_ussd_bool" value="true" />
+    <boolean name="use_call_waiting_ussd_bool" value="true" />
+    <boolean name="use_caller_id_ussd_bool" value="true" />
+    <boolean name="vilte_data_is_metered_bool" value="false" />
+    <int name="volte_replacement_rat_int" value="3" />
+</carrier_config>
+<carrier_config mcc="440" mnc="10" gid1="00FFFF">
+    <string name="carrier_config_version_string">docomo_jp-32000000349.48</string>
+    <string name="5g_icon_configuration_string">connected_mmwave:5G,connected:5G,not_restricted_rrc_idle:5G</string>
+    <string name="5g_icon_display_grace_period_string">connected_mmwave,legacy,31;connected,legacy,31;connected_mmwave,not_restricted_rrc_con,31;connected,not_restricted_rrc_con,31;not_restricted_rrc_idle,not_restricted_rrc_con,15</string>
+    <boolean name="allow_emergency_numbers_in_call_log_bool" value="true" />
+    <boolean name="always_show_emergency_alert_onoff_bool" value="true" />
+    <int name="call_waiting_service_class_int" value="0" />
+    <string-array name="carrier_additional_cbs_channels_strings" num="2">
+        <item value="0xA001-0xA002:type=other, emergency=true" />
+        <item value="0xA004-0xA3FF:type=other, emergency=true" />
+    </string-array>
+    <boolean name="carrier_cross_sim_ims_available_bool" value="false" />
+    <boolean name="carrier_force_disable_etws_cmas_test_bool" value="false" />
+    <int name="carrier_ussd_method_int" value="1" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <string name="default_vm_number_string">1417</string>
+    <boolean name="enabledMMS" value="false" />
+    <string name="gps.es_extension_sec">300</string>
+    <boolean name="hide_lte_plus_data_icon_bool" value="false" />
+    <boolean name="ignore_data_enabled_changed_for_video_calls" value="true" />
+    <string-array name="ims_reasoninfo_mapping_string_array" num="2">
+        <item value="332||510" />
+        <item value="510|Call completed elsewhere|1014" />
+    </string-array>
+    <boolean name="lte_endc_using_user_data_for_rrc_detection_bool" value="true" />
+    <boolean name="nr_timers_reset_if_non_endc_and_rrc_idle_bool" value="true" />
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+    <boolean name="show_blocking_pay_phone_option_bool" value="true" />
+    <boolean name="support_ims_conference_call_bool" value="false" />
+    <boolean name="support_ims_conference_event_package_bool" value="false" />
+    <boolean name="tty_supported_bool" value="false" />
+    <boolean name="use_call_forwarding_ussd_bool" value="true" />
+    <boolean name="use_call_waiting_ussd_bool" value="true" />
+    <boolean name="use_caller_id_ussd_bool" value="true" />
+    <boolean name="vilte_data_is_metered_bool" value="false" />
+    <int name="volte_replacement_rat_int" value="3" />
+</carrier_config>
+<carrier_config mcc="440" mnc="10" gid1="01FFFF">
+    <string name="carrier_config_version_string">ahamo_jp-32000000009.48</string>
+    <string name="5g_icon_configuration_string">connected_mmwave:5G,connected:5G,not_restricted_rrc_idle:5G</string>
+    <string name="5g_icon_display_grace_period_string">connected_mmwave,legacy,31;connected,legacy,31;connected_mmwave,not_restricted_rrc_con,31;connected,not_restricted_rrc_con,31;not_restricted_rrc_idle,not_restricted_rrc_con,15</string>
+    <boolean name="additional_settings_call_waiting_visibility_bool" value="false" />
+    <boolean name="allow_emergency_numbers_in_call_log_bool" value="true" />
+    <boolean name="always_show_emergency_alert_onoff_bool" value="true" />
+    <boolean name="call_forwarding_visibility_bool" value="false" />
+    <int name="call_waiting_service_class_int" value="0" />
+    <string-array name="carrier_additional_cbs_channels_strings" num="2">
+        <item value="0xA001-0xA002:type=other, emergency=true" />
+        <item value="0xA004-0xA3FF:type=other, emergency=true" />
+    </string-array>
+    <boolean name="carrier_force_disable_etws_cmas_test_bool" value="false" />
+    <string name="carrier_name_string">docomo</string>
+    <int name="carrier_ussd_method_int" value="1" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <string name="default_vm_number_string">1417</string>
+    <boolean name="enabledMMS" value="false" />
+    <string name="gps.es_extension_sec">300</string>
+    <boolean name="hide_lte_plus_data_icon_bool" value="false" />
+    <boolean name="ignore_data_enabled_changed_for_video_calls" value="true" />
+    <string-array name="ims_reasoninfo_mapping_string_array" num="2">
+        <item value="332||510" />
+        <item value="510|Call completed elsewhere|1014" />
+    </string-array>
+    <boolean name="lte_endc_using_user_data_for_rrc_detection_bool" value="true" />
+    <boolean name="nr_timers_reset_if_non_endc_and_rrc_idle_bool" value="true" />
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+    <boolean name="show_blocking_pay_phone_option_bool" value="true" />
+    <boolean name="support_ims_conference_call_bool" value="false" />
+    <boolean name="support_ims_conference_event_package_bool" value="false" />
+    <boolean name="tty_supported_bool" value="false" />
+    <boolean name="use_call_forwarding_ussd_bool" value="true" />
+    <boolean name="use_call_waiting_ussd_bool" value="true" />
+    <boolean name="use_caller_id_ussd_bool" value="true" />
+    <boolean name="vilte_data_is_metered_bool" value="false" />
+    <int name="volte_replacement_rat_int" value="3" />
+</carrier_config>
+</carrier_config_list>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="208" mnc="09">
+    <string name="carrier_config_version_string">sfr_fr-32000000332.48</string>
+    <boolean name="auto_retry_failed_wifi_emergency_call" value="true" />
+    <string-array name="carrier_certificate_string_array" num="1">
+        <item value="5f00d30d66af74dd43e98a00695362719d8e7c9e7de367b962769cdfe12bd9da:com.sfr.otp,com.sfr.mobileconnect,com.sfr.android.moncompte,com.sfr.android.redmoncompte" />
+    </string-array>
+    <boolean name="carrier_cross_sim_ims_available_bool" value="false" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <string name="default_vm_number_string">123</string>
+    <string-array name="ims_reasoninfo_mapping_string_array" num="2">
+        <item value="510|Call completed elsewhere|1014" />
+        <item value="*|Call is dropped due to Wi-Fi signal is degraded|1407" />
+    </string-array>
+    <boolean name="is_ims_conference_size_enforced_bool" value="true" />
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="2">
+        <item value="14" />
+        <item value="2" />
+    </int-array>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="614400" />
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+    <boolean name="support_ims_conference_event_package_bool" value="false" />
+    <int name="volte_replacement_rat_int" value="3" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+</carrier_config>
+<carrier_config mcc="208" mnc="09" gid1="547275554B3030656E">
+    <string name="carrier_config_version_string">truphone_zz-0.48</string>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="208" mnc="09" gid1="54727555533030656E">
+    <string name="carrier_config_version_string">truphone_zz-0.48</string>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="208" mnc="09" imsi="208090021">
+    <string name="carrier_config_version_string">aliv_bs-0.48</string>
+    <string name="sim_country_iso_override_string">bs</string>
+</carrier_config>
+</carrier_config_list>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="302" mnc="640">
+    <string name="carrier_config_version_string">bell_ca-32000000056.48</string>
+    <boolean name="carrier_cross_sim_ims_available_bool" value="false" />
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <string name="emailGatewayNumber">6245</string>
+    <string name="gps.es_extension_sec">300</string>
+    <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+    <boolean name="hide_lte_plus_data_icon_bool" value="false" />
+    <boolean name="is_ims_conference_size_enforced_bool" value="true" />
+    <int name="iwlan.child_sa_rekey_hard_timer_sec_int" value="86500" />
+    <int name="iwlan.child_sa_rekey_soft_timer_sec_int" value="86400" />
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="1">
+        <item value="14" />
+    </int-array>
+    <int name="iwlan.ike_rekey_hard_timer_in_sec" value="80100" />
+    <int name="iwlan.ike_rekey_soft_timer_sec_int" value="80000" />
+    <string name="iwlan.key_error_policy_config_string">[{"ApnName": "*","ErrorTypes": [{"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["1", "4", "5", "7", "9", "11", "14", "17", "35", "37", "38", "39"],"RetryArray": ["0"],"UnthrottlingEvents": ["APM_ENABLE_EVENT","WIFI_DISABLE_EVENT","WIFI_CALLING_DISABLE_EVENT"]},{"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["24"],"RetryArray": ["10", "20", "20", "20"],"UnthrottlingEvents": ["APM_ENABLE_EVENT","WIFI_DISABLE_EVENT","WIFI_CALLING_DISABLE_EVENT"]}]}]</string>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="614400" />
+    <int name="maxSubjectLength" value="80" />
+    <string-array name="non_roaming_operator_string_array" num="1">
+        <item value="302" />
+    </string-array>
+    <int name="recipientLimit" value="20" />
+    <int name="smsToMmsTextThreshold" value="8" />
+    <boolean name="voicemail_notification_persistent_bool" value="true" />
+    <int name="volte_replacement_rat_int" value="3" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+</carrier_config>
+</carrier_config_list>

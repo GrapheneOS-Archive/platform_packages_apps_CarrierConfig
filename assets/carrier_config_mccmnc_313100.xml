@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="313" mnc="100">
+    <string name="carrier_config_version_string">firstnet_us-32000000051.48</string>
+    <string name="5g_icon_configuration_string">connected_mmwave:5G_Plus,connected:5G,not_restricted_rrc_idle:5G,not_restricted_rrc_con:5G</string>
+    <string name="5g_icon_display_grace_period_string">connected_mmwave,any,30</string>
+    <int-array name="additional_nr_advanced_bands_int_array" num="1">
+        <item value="77" />
+    </int-array>
+    <boolean name="allow_hold_call_during_emergency_bool" value="false" />
+    <boolean name="allow_merging_rtt_calls_bool" value="true" />
+    <string-array name="apn_settings_default_apn_types_string_array" num="1">
+        <item value="default" />
+    </string-array>
+    <boolean name="carrier_cross_sim_ims_available_bool" value="false" />
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="1" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <boolean name="csp_enabled_bool" value="true" />
+    <boolean name="editable_wfc_mode_bool" value="false" />
+    <string-array name="emergency_number_prefix_string_array" num="1">
+        <item value="*272" />
+    </string-array>
+    <boolean name="enableSMSDeliveryReports" value="false" />
+    <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+    <boolean name="hide_preferred_network_type_bool" value="true" />
+    <boolean name="ignore_rtt_mode_setting_bool" value="true" />
+    <string-array name="ims_reasoninfo_mapping_string_array" num="2">
+        <item value="510|Call completed elsewhere|1014" />
+        <item value="*|Call is dropped due to Wi-Fi signal is degraded|1407" />
+    </string-array>
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="1">
+        <item value="14" />
+    </int-array>
+    <int-array name="iwlan.epdg_address_priority_int_array" num="1">
+        <item value="0" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.firstnet.com</string>
+    <string name="iwlan.key_error_policy_config_string">[{"ApnName": "*","ErrorTypes": [{"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["9000", "9001", "11011", "9003", "11001", "9006", "8192"],"RetryArray": [],"UnthrottlingEvents": []}, {"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["*"],"RetryArray": ["10", "60", "120", "240", "-1"],"UnthrottlingEvents": ["APM_ENABLE_EVENT", "WIFI_DISABLE_EVENT", "WIFI_CALLING_DISABLE_EVENT"]}]}]</string>
+    <boolean name="limited_sim_function_notification_for_dsds_bool" value="true" />
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <string-array name="mmi_two_digit_number_pattern_string_array" num="22">
+        <item value="0" />
+        <item value="00" />
+        <item value="*0" />
+        <item value="*1" />
+        <item value="*2" />
+        <item value="*3" />
+        <item value="*4" />
+        <item value="*5" />
+        <item value="*6" />
+        <item value="*7" />
+        <item value="*8" />
+        <item value="*9" />
+        <item value="#0" />
+        <item value="#1" />
+        <item value="#2" />
+        <item value="#3" />
+        <item value="#4" />
+        <item value="#5" />
+        <item value="#6" />
+        <item value="#7" />
+        <item value="#8" />
+        <item value="#9" />
+    </string-array>
+    <string-array name="non_roaming_operator_string_array" num="7">
+        <item value="310" />
+        <item value="311" />
+        <item value="312" />
+        <item value="313" />
+        <item value="314" />
+        <item value="315" />
+        <item value="316" />
+    </string-array>
+    <string name="operator_name_filter_pattern_string">(.*)\.{3}[12]$</string>
+    <string-array name="roaming_operator_string_array" num="5">
+        <item value="310110" />
+        <item value="310140" />
+        <item value="310400" />
+        <item value="310470" />
+        <item value="311170" />
+    </string-array>
+    <boolean name="rtt_downgrade_supported_bool" value="true" />
+    <boolean name="rtt_supported_bool" value="true" />
+    <boolean name="rtt_supported_while_roaming_bool" value="true" />
+    <boolean name="show_4g_for_3g_data_icon_bool" value="true" />
+    <string name="show_carrier_data_icon_pattern_string">.*\.{3}[12]$</string>
+    <boolean name="skip_cf_fail_to_disable_dialog_bool" value="true" />
+    <boolean name="use_lower_mtu_value_if_both_received" value="true" />
+    <int name="volte_replacement_rat_int" value="3" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+</carrier_config>
+</carrier_config_list>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="255" mnc="03">
+    <string name="carrier_config_version_string">25503-0.48</string>
+</carrier_config>
+<carrier_config mcc="255" mnc="03" spn="DJUICE">
+    <string name="carrier_config_version_string">25503SPN=DJUICE-0.48</string>
+</carrier_config>
+</carrier_config_list>

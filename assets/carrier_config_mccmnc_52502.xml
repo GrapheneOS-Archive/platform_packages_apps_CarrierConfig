@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="525" mnc="02">
+    <string name="carrier_config_version_string">singtel_sg-32000000410.48</string>
+    <int name="carrier_default_wfc_ims_mode_int" value="2" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+    <string-array name="ims_reasoninfo_mapping_string_array" num="4">
+        <item value="338|busy everywhere|1404" />
+        <item value="501|call completed elsewhere|1014" />
+        <item value="510|Call completed elsewhere|1014" />
+        <item value="*|Call is dropped due to Wi-Fi signal is degraded|1407" />
+    </string-array>
+    <boolean name="is_ims_conference_size_enforced_bool" value="true" />
+    <int-array name="iwlan.child_session_aes_ctr_key_size_int_array" num="1">
+        <item value="128" />
+    </int-array>
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="2">
+        <item value="14" />
+        <item value="2" />
+    </int-array>
+    <int name="iwlan.dpd_timer_sec_int" value="600" />
+    <int-array name="iwlan.epdg_address_priority_int_array" num="1">
+        <item value="0" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.mnc001.mcc525.pub.3gppnetwork.org</string>
+    <int-array name="iwlan.ike_session_encryption_aes_ctr_key_size_int_array" num="1">
+        <item value="128" />
+    </int-array>
+    <int-array name="iwlan.supported_child_session_encryption_algorithms_int_array" num="2">
+        <item value="12" />
+        <item value="13" />
+    </int-array>
+    <int-array name="iwlan.supported_ike_session_encryption_algorithms_int_array" num="2">
+        <item value="12" />
+        <item value="13" />
+    </int-array>
+</carrier_config>
+</carrier_config_list>

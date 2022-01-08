@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="248" mnc="01">
+    <string name="carrier_config_version_string">24801-0.48</string>
+</carrier_config>
+<carrier_config mcc="248" mnc="01" imsi="248010x2">
+    <string name="carrier_config_version_string">send_ee-0.48</string>
+</carrier_config>
+<carrier_config mcc="248" mnc="01" imsi="248010x3">
+    <string name="carrier_config_version_string">send_ee-0.48</string>
+</carrier_config>
+</carrier_config_list>

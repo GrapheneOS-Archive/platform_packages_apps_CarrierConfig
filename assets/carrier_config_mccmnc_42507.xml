@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="425" mnc="07">
+    <string name="carrier_config_version_string">hotmobile_il-0.48</string>
+    <string-array name="non_roaming_operator_string_array" num="1">
+        <item value="42503" />
+    </string-array>
+    <string name="sim_country_iso_override_string">il</string>
+</carrier_config>
+</carrier_config_list>

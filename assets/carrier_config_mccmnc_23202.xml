@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="232" mnc="02">
+    <string name="carrier_config_version_string">a1_at-32000000622.48</string>
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="1" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <string name="default_vm_number_string">66477</string>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+</carrier_config>
+</carrier_config_list>

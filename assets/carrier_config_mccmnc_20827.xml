@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="208" mnc="27">
+    <string name="carrier_config_version_string">coriolis_fr-32000000003.48</string>
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <int-array name="carrier_nr_availabilities_int_array" num="0" />
+    <boolean name="editable_wfc_mode_bool" value="false" />
+    <int name="iwlan.child_sa_rekey_hard_timer_sec_int" value="64900" />
+    <int name="iwlan.child_sa_rekey_soft_timer_sec_int" value="64800" />
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="1">
+        <item value="14" />
+    </int-array>
+    <int-array name="iwlan.epdg_address_priority_int_array" num="1">
+        <item value="0" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.mnc027.mcc208.pub.3gppnetwork.org</string>
+    <int name="iwlan.ike_rekey_hard_timer_in_sec" value="64900" />
+    <int name="iwlan.ike_rekey_soft_timer_sec_int" value="64800" />
+    <int name="iwlan.ike_remote_id_type_int" value="11" />
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="614400" />
+    <string-array name="non_roaming_operator_string_array" num="2">
+        <item value="20801" />
+        <item value="20810" />
+    </string-array>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+    <string name="sim_country_iso_override_string">fr</string>
+</carrier_config>
+</carrier_config_list>

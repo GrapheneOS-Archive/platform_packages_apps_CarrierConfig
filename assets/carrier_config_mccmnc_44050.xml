@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="440" mnc="50">
+    <string name="carrier_config_version_string">kddi_jp-32000000067.48</string>
+    <string name="5g_icon_configuration_string">connected_mmwave:5G,connected:5G,not_restricted_rrc_idle:5G</string>
+    <string name="5g_icon_display_grace_period_string">connected_mmwave,legacy,31;connected,legacy,31;connected_mmwave,not_restricted_rrc_con,31;connected,not_restricted_rrc_con,31;not_restricted_rrc_idle,not_restricted_rrc_con,15</string>
+    <boolean name="allow_emergency_numbers_in_call_log_bool" value="true" />
+    <boolean name="allow_hold_call_during_emergency_bool" value="false" />
+    <boolean name="allow_metered_network_for_cert_download_bool" value="true" />
+    <boolean name="call_forwarding_when_busy_supported_bool" value="false" />
+    <boolean name="call_forwarding_when_unanswered_supported_bool" value="false" />
+    <boolean name="call_forwarding_when_unreachable_supported_bool" value="false" />
+    <string-array name="carrier_additional_cbs_channels_strings" num="1">
+        <item value="0xA003:type=other, emergency=true" />
+    </string-array>
+    <boolean name="carrier_cross_sim_ims_available_bool" value="false" />
+    <boolean name="carrier_name_override_bool" value="true" />
+    <string name="carrier_name_string">au</string>
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <string name="default_vm_number_string">1417</string>
+    <boolean name="disable_dun_apn_while_roaming_with_preset_apn_bool" value="true" />
+    <string-array name="emergency_number_prefix_string_array" num="2">
+        <item value="184" />
+        <item value="186" />
+    </string-array>
+    <boolean name="enabledMMS" value="false" />
+    <boolean name="format_incoming_number_to_national_for_jp_bool" value="true" />
+    <string name="gps.es_extension_sec">300</string>
+    <string name="gps.lpp_profile">1</string>
+    <string name="gps.supl_ver">0x20002</string>
+    <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+    <int name="ims_conference_size_limit_int" value="2" />
+    <int name="imsi_key_availability_int" value="2" />
+    <string name="imsi_key_download_url_string">https://wificert.kddi.com/android</string>
+    <boolean name="is_ims_conference_size_enforced_bool" value="true" />
+    <boolean name="lte_endc_using_user_data_for_rrc_detection_bool" value="true" />
+    <boolean name="nr_timers_reset_if_non_endc_and_rrc_idle_bool" value="true" />
+    <boolean name="prefer_2g_bool" value="false" />
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+    <boolean name="show_blocking_pay_phone_option_bool" value="true" />
+    <boolean name="support_clir_network_default_bool" value="false" />
+    <boolean name="support_ims_conference_event_package_bool" value="false" />
+    <int name="wifi.carrier_profiles_version_int" value="1" />
+    <string-array name="wifi.network_profiles_string_array" num="1">
+        <item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;WifiNetwork&gt;&lt;SSID&gt;au_Wi-Fi2&lt;/SSID&gt;&lt;Credential&gt;&lt;SIM&gt;&lt;EAPType&gt;23&lt;/EAPType&gt;&lt;/SIM&gt;&lt;/Credential&gt;&lt;/WifiNetwork&gt;" />
+    </string-array>
+</carrier_config>
+<carrier_config mcc="440" mnc="50" gid1="20">
+    <string name="carrier_config_version_string">uqmobile_jp-32000000001.48</string>
+    <string name="5g_icon_configuration_string">connected_mmwave:5G,connected:5G,not_restricted_rrc_idle:5G</string>
+    <string name="5g_icon_display_grace_period_string">connected_mmwave,legacy,31;connected,legacy,31;connected_mmwave,not_restricted_rrc_con,31;connected,not_restricted_rrc_con,31;not_restricted_rrc_idle,not_restricted_rrc_con,15</string>
+    <boolean name="allow_emergency_numbers_in_call_log_bool" value="true" />
+    <boolean name="allow_hold_call_during_emergency_bool" value="false" />
+    <boolean name="allow_metered_network_for_cert_download_bool" value="true" />
+    <boolean name="call_forwarding_when_busy_supported_bool" value="false" />
+    <boolean name="call_forwarding_when_unanswered_supported_bool" value="false" />
+    <boolean name="call_forwarding_when_unreachable_supported_bool" value="false" />
+    <string-array name="carrier_additional_cbs_channels_strings" num="1">
+        <item value="0xA003:type=other, emergency=true" />
+    </string-array>
+    <boolean name="carrier_name_override_bool" value="true" />
+    <string name="carrier_name_string">UQ mobile</string>
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <string name="default_vm_number_string">1417</string>
+    <boolean name="disable_dun_apn_while_roaming_with_preset_apn_bool" value="true" />
+    <string-array name="emergency_number_prefix_string_array" num="2">
+        <item value="184" />
+        <item value="186" />
+    </string-array>
+    <boolean name="enabledMMS" value="true" />
+    <boolean name="format_incoming_number_to_national_for_jp_bool" value="true" />
+    <string name="gps.es_extension_sec">300</string>
+    <string name="gps.lpp_profile">1</string>
+    <string name="gps.supl_ver">0x20002</string>
+    <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+    <int name="ims_conference_size_limit_int" value="2" />
+    <int name="imsi_key_availability_int" value="0" />
+    <string name="imsi_key_download_url_string" />
+    <boolean name="is_ims_conference_size_enforced_bool" value="true" />
+    <boolean name="lte_endc_using_user_data_for_rrc_detection_bool" value="true" />
+    <boolean name="nr_timers_reset_if_non_endc_and_rrc_idle_bool" value="true" />
+    <boolean name="prefer_2g_bool" value="false" />
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+    <boolean name="show_blocking_pay_phone_option_bool" value="true" />
+    <boolean name="support_ims_conference_event_package_bool" value="false" />
+    <int name="wifi.carrier_profiles_version_int" value="-1" />
+    <string-array name="wifi.network_profiles_string_array" num="0" />
+</carrier_config>
+</carrier_config_list>

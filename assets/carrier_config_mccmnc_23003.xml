@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="230" mnc="03">
+    <string name="carrier_config_version_string">vodafone_cz-32000000574.48</string>
+    <boolean name="call_barring_visibility_bool" value="true" />
+    <int-array name="carrier_nr_availabilities_int_array" num="0" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="1" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <string name="default_vm_number_string">+420608989898</string>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+</carrier_config>
+</carrier_config_list>

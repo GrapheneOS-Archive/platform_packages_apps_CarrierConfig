@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="286" mnc="02">
+    <string name="carrier_config_version_string">vodafone_tr-32000000485.48</string>
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <int-array name="carrier_nr_availabilities_int_array" num="0" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="false" />
+    <string name="default_vm_number_string">+905427542000</string>
+    <int name="wfc_spn_format_idx_int" value="11" />
+</carrier_config>
+</carrier_config_list>

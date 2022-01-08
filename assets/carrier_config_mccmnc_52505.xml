@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="525" mnc="05">
+    <string name="carrier_config_version_string">starhub_sg-32000000415.48</string>
+    <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <string name="default_preferred_apn_name_string">shwap</string>
+    <boolean name="editable_wfc_mode_bool" value="false" />
+    <boolean name="gsm_cdma_calls_can_be_hd_audio" value="true" />
+    <boolean name="is_ims_conference_size_enforced_bool" value="true" />
+    <boolean name="iwlan.add_ke_to_child_session_rekey_bool" value="true" />
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="1">
+        <item value="14" />
+    </int-array>
+    <int name="wfc_spn_format_idx_int" value="1" />
+</carrier_config>
+<carrier_config mcc="525" mnc="05" imsi="525053095">
+    <string name="carrier_config_version_string">52505IMSI=525053095XXXXXX-0.48</string>
+</carrier_config>
+<carrier_config mcc="525" mnc="05" imsi="5250530996">
+    <string name="carrier_config_version_string">travelfy_zz-0.48</string>
+</carrier_config>
+<carrier_config mcc="525" mnc="05" spn="giga">
+    <string name="carrier_config_version_string">giga_sg-0.48</string>
+    <boolean name="gsm_cdma_calls_can_be_hd_audio" value="true" />
+</carrier_config>
+</carrier_config_list>

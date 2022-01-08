@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="505" mnc="01">
+    <string name="carrier_config_version_string">telstra_au-32000000551.48</string>
+    <boolean name="carrier_cross_sim_ims_available_bool" value="false" />
+    <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <int name="carrier_default_wfc_ims_roaming_mode_int" value="1" />
+    <string-array name="carrier_metered_apn_types_strings" num="3">
+        <item value="default" />
+        <item value="dun" />
+        <item value="supl" />
+    </string-array>
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_vt_available_bool" value="false" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <string name="default_vm_number_string">+61101</string>
+    <boolean name="editable_tether_apn_bool" value="true" />
+    <boolean name="editable_wfc_mode_bool" value="false" />
+    <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+    <string-array name="ims_reasoninfo_mapping_string_array" num="4">
+        <item value="338|busy everywhere|1404" />
+        <item value="501|Call Completed Elsewhere|1014" />
+        <item value="510|Call completed elsewhere|1014" />
+        <item value="*|Call is dropped due to Wi-Fi signal is degraded|1407" />
+    </string-array>
+    <boolean name="is_ims_conference_size_enforced_bool" value="true" />
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="3">
+        <item value="14" />
+        <item value="15" />
+        <item value="16" />
+    </int-array>
+    <int name="iwlan.dpd_timer_sec_int" value="1740" />
+    <int-array name="lte_rsrp_thresholds_int_array" num="4">
+        <item value="-120" />
+        <item value="-115" />
+        <item value="-100" />
+        <item value="-90" />
+    </int-array>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="2097152" />
+    <boolean name="prefer_2g_bool" value="false" />
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+    <int name="volte_replacement_rat_int" value="3" />
+</carrier_config>
+<carrier_config mcc="505" mnc="01" spn="ALDImobile">
+    <string name="carrier_config_version_string">aldimobile_au-0.48</string>
+    <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <int name="carrier_default_wfc_ims_roaming_mode_int" value="1" />
+    <boolean name="carrier_name_override_bool" value="true" />
+    <string name="carrier_name_string">ALDImobile</string>
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_vt_available_bool" value="false" />
+    <boolean name="carrier_wfc_ims_available_bool" value="false" />
+    <string name="default_vm_number_string">+61101</string>
+    <boolean name="editable_wfc_mode_bool" value="false" />
+    <int-array name="lte_rsrp_thresholds_int_array" num="4">
+        <item value="-120" />
+        <item value="-115" />
+        <item value="-100" />
+        <item value="-90" />
+    </int-array>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="2097152" />
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+</carrier_config>
+</carrier_config_list>

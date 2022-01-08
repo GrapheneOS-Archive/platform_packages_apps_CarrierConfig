@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="425" mnc="05">
+    <string name="carrier_config_version_string">42505-0.48</string>
+</carrier_config>
+</carrier_config_list>

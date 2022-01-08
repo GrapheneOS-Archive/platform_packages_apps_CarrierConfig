@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="228" mnc="02">
+    <string name="carrier_config_version_string">sunrise_ch-32000000572.48</string>
+    <boolean name="call_barring_visibility_bool" value="true" />
+    <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="1" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <boolean name="editable_wfc_mode_bool" value="true" />
+    <int name="iwlan.child_sa_rekey_hard_timer_sec_int" value="86500" />
+    <int name="iwlan.child_sa_rekey_soft_timer_sec_int" value="86400" />
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="1">
+        <item value="2" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.mnc002.mcc228.pub.3gppnetwork.org</string>
+    <int name="iwlan.ike_rekey_hard_timer_in_sec" value="86500" />
+    <int name="iwlan.ike_rekey_soft_timer_sec_int" value="86400" />
+    <int name="iwlan.ike_remote_id_type_int" value="11" />
+    <boolean name="use_wfc_home_network_mode_in_roaming_network_bool" value="true" />
+</carrier_config>
+</carrier_config_list>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="312" mnc="040" spn="CUSTER">
+    <string name="carrier_config_version_string">312040SPN=CUSTER-0.48</string>
+</carrier_config>
+</carrier_config_list>

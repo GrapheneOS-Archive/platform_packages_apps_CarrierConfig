@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="450" mnc="00">
+    <string name="carrier_config_version_string">45000-0.48</string>
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+</carrier_config>
+</carrier_config_list>

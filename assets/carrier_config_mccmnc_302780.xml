@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="302" mnc="780">
+    <string name="carrier_config_version_string">sasktel_ca-0.48</string>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="614400" />
+    <string-array name="non_roaming_operator_string_array" num="1">
+        <item value="302" />
+    </string-array>
+    <string name="sim_country_iso_override_string">ca</string>
+</carrier_config>
+</carrier_config_list>

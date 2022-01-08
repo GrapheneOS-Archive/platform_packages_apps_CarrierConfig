@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="208" mnc="88">
+    <string name="carrier_config_version_string">bouygues_fr-32000000319.48</string>
+    <string-array name="carrier_certificate_string_array" num="1">
+        <item value="A0058F6467628EA2031C4C9D8519ABECB2671F6A1752B15A89369CDCB8D2952B" />
+    </string-array>
+    <boolean name="carrier_cross_sim_ims_available_bool" value="false" />
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <boolean name="editable_wfc_mode_bool" value="false" />
+    <int name="ims_conference_size_limit_int" value="2" />
+    <boolean name="is_ims_conference_size_enforced_bool" value="true" />
+    <int name="iwlan.child_sa_rekey_hard_timer_sec_int" value="7400" />
+    <int name="iwlan.child_sa_rekey_soft_timer_sec_int" value="7300" />
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="1">
+        <item value="14" />
+    </int-array>
+    <int name="iwlan.ike_rekey_hard_timer_in_sec" value="14800" />
+    <int name="iwlan.ike_rekey_soft_timer_sec_int" value="14700" />
+    <string name="iwlan.key_error_policy_config_string">[{"ApnName": "*","ErrorTypes": [{"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["9000", "10000"],"RetryArray": ["0", "0"],"UnthrottlingEvents": ["APM_ENABLE_EVENT", "WIFI_DISABLE_EVENT", "WIFI_AP_CHANGED_EVENT", "WIFI_CALLING_DISABLE_EVENT"]}, {"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["10500"],"RetryArray": ["3600", "-1"],"UnthrottlingEvents": ["APM_ENABLE_EVENT", "WIFI_DISABLE_EVENT", "WIFI_AP_CHANGED_EVENT", "WIFI_CALLING_DISABLE_EVENT"]}, {"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["11002", "11003"],"RetryArray": [],"UnthrottlingEvents": ["APM_ENABLE_EVENT", "WIFI_DISABLE_EVENT", "WIFI_AP_CHANGED_EVENT", "WIFI_CALLING_DISABLE_EVENT"]}]}]</string>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="614400" />
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+    <boolean name="supportHttpCharsetHeader" value="false" />
+</carrier_config>
+</carrier_config_list>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="310" mnc="960" spn="NNTCWIRE">
+    <string name="carrier_config_version_string">310960SPN=NNTCWIRE-0.48</string>
+</carrier_config>
+<carrier_config mcc="310" mnc="960" spn="SILVERSTAR">
+    <string name="carrier_config_version_string">310960SPN=SILVERSTAR-0.48</string>
+</carrier_config>
+<carrier_config mcc="310" mnc="960" spn="SNAKERIVER">
+    <string name="carrier_config_version_string">310960SPN=SNAKERIVER-0.48</string>
+</carrier_config>
+<carrier_config mcc="310" mnc="960" spn="SOUTHCENTRAL">
+    <string name="carrier_config_version_string">310960SPN=SOUTHCENTRAL-0.48</string>
+</carrier_config>
+<carrier_config mcc="310" mnc="960" spn="STRATA">
+    <string name="carrier_config_version_string">310960SPN=STRATA-0.48</string>
+</carrier_config>
+<carrier_config mcc="310" mnc="960" spn="SYRINGA">
+    <string name="carrier_config_version_string">310960SPN=SYRINGA-0.48</string>
+</carrier_config>
+</carrier_config_list>

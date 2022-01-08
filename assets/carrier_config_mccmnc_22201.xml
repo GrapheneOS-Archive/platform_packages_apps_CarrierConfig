@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="222" mnc="01">
+    <string name="carrier_config_version_string">tim_it-32000000471.48</string>
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <string name="default_vm_number_string">41919</string>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="222" mnc="01" spn="GigSky">
+    <string name="carrier_config_version_string">gigsky_us-0.48</string>
+    <boolean name="force_home_network_bool" value="false" />
+    <boolean name="inflate_signal_strength_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="222" mnc="01" spn="IUSACELL">
+    <string name="carrier_config_version_string">22201SPN=IUSACELL-0.48</string>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="222" mnc="01" spn="UNEFON">
+    <string name="carrier_config_version_string">22201SPN=IUSACELL-0.48</string>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+</carrier_config>
+</carrier_config_list>

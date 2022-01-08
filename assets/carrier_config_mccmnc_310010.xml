@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="310" mnc="010">
+    <string name="carrier_config_version_string">310010-0.48</string>
+    <boolean name="enableMultipartSMS" value="false" />
+    <boolean name="enableSMSDeliveryReports" value="false" />
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <boolean name="mmsCloseConnection" value="true" />
+    <boolean name="sendMultipartSmsAsSeparateMessages" value="true" />
+    <boolean name="supportMmsContentDisposition" value="false" />
+</carrier_config>
+</carrier_config_list>

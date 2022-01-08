@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="302" mnc="720">
+    <string name="carrier_config_version_string">rogers_ca-32000000051.48</string>
+    <boolean name="call_forwarding_map_non_number_to_voicemail_bool" value="true" />
+    <boolean name="carrier_cross_sim_ims_available_bool" value="false" />
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <string name="gps.es_extension_sec">300</string>
+    <boolean name="hide_lte_plus_data_icon_bool" value="false" />
+    <int-array name="iwlan.epdg_address_priority_int_array" num="2">
+        <item value="0" />
+        <item value="1" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.mnc720.mcc302.pub.3gppnetwork.org</string>
+    <string name="iwlan.key_error_policy_config_string">[{"ApnName": "*","ErrorTypes": [{"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["24"],"RetryArray": ["10", "20", "20", "20"],"UnthrottlingEvents": ["APM_ENABLE_EVENT", "WIFI_DISABLE_EVENT", "WIFI_CALLING_DISABLE_EVENT"]}]}]</string>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="80" />
+    <string-array name="non_roaming_operator_string_array" num="5">
+        <item value="302220" />
+        <item value="302370" />
+        <item value="302610" />
+        <item value="302660" />
+        <item value="302780" />
+    </string-array>
+    <int name="recipientLimit" value="20" />
+    <int name="smsToMmsTextThreshold" value="6" />
+    <boolean name="use_wfc_home_network_mode_in_roaming_network_bool" value="true" />
+    <boolean name="voicemail_notification_persistent_bool" value="true" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+</carrier_config>
+<carrier_config mcc="302" mnc="720" gid1="A4">
+    <string name="carrier_config_version_string">rogers5g_ca-32000000045.48</string>
+    <boolean name="call_forwarding_map_non_number_to_voicemail_bool" value="true" />
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <boolean name="editable_wfc_mode_bool" value="false" />
+    <boolean name="hide_lte_plus_data_icon_bool" value="false" />
+    <int-array name="iwlan.epdg_address_priority_int_array" num="2">
+        <item value="0" />
+        <item value="1" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.mnc720.mcc302.pub.3gppnetwork.org</string>
+    <string name="iwlan.key_error_policy_config_string">[{"ApnName": "*","ErrorTypes": [{"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["24"],"RetryArray": ["10", "20", "20", "20"],"UnthrottlingEvents": ["APM_ENABLE_EVENT", "WIFI_DISABLE_EVENT", "WIFI_CALLING_DISABLE_EVENT"]}]}]</string>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="80" />
+    <string-array name="non_roaming_operator_string_array" num="5">
+        <item value="302220" />
+        <item value="302370" />
+        <item value="302610" />
+        <item value="302660" />
+        <item value="302780" />
+    </string-array>
+    <int name="recipientLimit" value="20" />
+    <int name="smsToMmsTextThreshold" value="6" />
+    <boolean name="use_wfc_home_network_mode_in_roaming_network_bool" value="true" />
+    <boolean name="voicemail_notification_persistent_bool" value="true" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+</carrier_config>
+<carrier_config mcc="302" mnc="720" gid1="BA">
+    <string name="carrier_config_version_string">tbaytel_ca-32000000505.48</string>
+    <boolean name="call_forwarding_map_non_number_to_voicemail_bool" value="true" />
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <boolean name="hide_lte_plus_data_icon_bool" value="false" />
+    <int-array name="iwlan.epdg_address_priority_int_array" num="2">
+        <item value="0" />
+        <item value="1" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.mnc720.mcc302.pub.3gppnetwork.org</string>
+    <string name="iwlan.key_error_policy_config_string">[{"ApnName": "*","ErrorTypes": [{"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["24"],"RetryArray": ["10", "20", "20", "20"],"UnthrottlingEvents": ["APM_ENABLE_EVENT", "WIFI_DISABLE_EVENT", "WIFI_CALLING_DISABLE_EVENT"]}]}]</string>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="80" />
+    <string-array name="non_roaming_operator_string_array" num="5">
+        <item value="302220" />
+        <item value="302370" />
+        <item value="302610" />
+        <item value="302660" />
+        <item value="302780" />
+    </string-array>
+    <int name="recipientLimit" value="20" />
+    <int name="smsToMmsTextThreshold" value="6" />
+    <boolean name="use_wfc_home_network_mode_in_roaming_network_bool" value="true" />
+    <boolean name="voicemail_notification_persistent_bool" value="true" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+</carrier_config>
+<carrier_config mcc="302" mnc="720" gid1="D2">
+    <string name="carrier_config_version_string">chatr_ca-0.48</string>
+    <boolean name="call_forwarding_map_non_number_to_voicemail_bool" value="true" />
+    <string-array name="dial_string_replace_string_array" num="2">
+        <item value="611:+18004859745" />
+        <item value="*611:+18004859745" />
+    </string-array>
+    <boolean name="hide_lte_plus_data_icon_bool" value="false" />
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="80" />
+    <string-array name="non_roaming_operator_string_array" num="5">
+        <item value="302220" />
+        <item value="302370" />
+        <item value="302610" />
+        <item value="302660" />
+        <item value="302780" />
+    </string-array>
+    <int name="recipientLimit" value="20" />
+    <int name="smsToMmsTextThreshold" value="6" />
+    <boolean name="voicemail_notification_persistent_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="302" mnc="720" gid1="D4">
+    <string name="carrier_config_version_string">ztar_ca-0.48</string>
+    <boolean name="hide_lte_plus_data_icon_bool" value="false" />
+</carrier_config>
+<carrier_config mcc="302" mnc="720" gid1="cc">
+    <string name="carrier_config_version_string">cityfone_ca-0.48</string>
+    <boolean name="call_forwarding_map_non_number_to_voicemail_bool" value="true" />
+    <boolean name="hide_lte_plus_data_icon_bool" value="false" />
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="80" />
+    <string-array name="non_roaming_operator_string_array" num="5">
+        <item value="302220" />
+        <item value="302370" />
+        <item value="302610" />
+        <item value="302660" />
+        <item value="302780" />
+    </string-array>
+    <int name="recipientLimit" value="20" />
+    <int name="smsToMmsTextThreshold" value="6" />
+    <boolean name="voicemail_notification_persistent_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="302" mnc="720" imsi="302720x84">
+    <string name="carrier_config_version_string">chatr_ca-0.48</string>
+    <boolean name="call_forwarding_map_non_number_to_voicemail_bool" value="true" />
+    <string-array name="dial_string_replace_string_array" num="2">
+        <item value="611:+18004859745" />
+        <item value="*611:+18004859745" />
+    </string-array>
+    <boolean name="hide_lte_plus_data_icon_bool" value="false" />
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="80" />
+    <string-array name="non_roaming_operator_string_array" num="5">
+        <item value="302220" />
+        <item value="302370" />
+        <item value="302610" />
+        <item value="302660" />
+        <item value="302780" />
+    </string-array>
+    <int name="recipientLimit" value="20" />
+    <int name="smsToMmsTextThreshold" value="6" />
+    <boolean name="voicemail_notification_persistent_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="302" mnc="720" imsi="302720x94">
+    <string name="carrier_config_version_string">chatr_ca-0.48</string>
+    <boolean name="call_forwarding_map_non_number_to_voicemail_bool" value="true" />
+    <string-array name="dial_string_replace_string_array" num="2">
+        <item value="611:+18004859745" />
+        <item value="*611:+18004859745" />
+    </string-array>
+    <boolean name="hide_lte_plus_data_icon_bool" value="false" />
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="80" />
+    <string-array name="non_roaming_operator_string_array" num="5">
+        <item value="302220" />
+        <item value="302370" />
+        <item value="302610" />
+        <item value="302660" />
+        <item value="302780" />
+    </string-array>
+    <int name="recipientLimit" value="20" />
+    <int name="smsToMmsTextThreshold" value="6" />
+    <boolean name="voicemail_notification_persistent_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="302" mnc="720" imsi="302720x98">
+    <string name="carrier_config_version_string">ztar_ca-0.48</string>
+    <boolean name="hide_lte_plus_data_icon_bool" value="false" />
+</carrier_config>
+</carrier_config_list>

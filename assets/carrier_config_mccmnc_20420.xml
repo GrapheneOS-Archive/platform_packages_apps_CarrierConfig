@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="204" mnc="20">
+    <string name="carrier_config_version_string">tmobile_nl-32000000483.48</string>
+    <string-array name="carrier_data_call_permanent_failure_strings" num="18">
+        <item value="OPERATOR_BARRED" />
+        <item value="MISSING_UNKNOWN_APN" />
+        <item value="UNKNOWN_PDP_ADDRESS_TYPE" />
+        <item value="USER_AUTHENTICATION" />
+        <item value="ACTIVATION_REJECT_GGSN" />
+        <item value="SERVICE_OPTION_NOT_SUPPORTED" />
+        <item value="NSAPI_IN_USE" />
+        <item value="ONLY_IPV4_ALLOWED" />
+        <item value="ONLY_IPV6_ALLOWED" />
+        <item value="PROTOCOL_ERRORS" />
+        <item value="RADIO_POWER_OFF" />
+        <item value="TETHERED_CALL_ACTIVE" />
+        <item value="RADIO_NOT_AVAILABLE" />
+        <item value="UNACCEPTABLE_NETWORK_PARAMETER" />
+        <item value="SIGNAL_LOST" />
+        <item value="DUPLICATE_CID" />
+        <item value="MATCH_ALL_RULE_NOT_ALLOWED" />
+        <item value="ALL_MATCHING_RULES_FAILED" />
+    </string-array>
+    <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <string name="default_vm_number_string">+31624001233</string>
+    <boolean name="display_hd_audio_property_bool" value="false" />
+    <int name="iwlan.child_sa_rekey_hard_timer_sec_int" value="64900" />
+    <int name="iwlan.child_sa_rekey_soft_timer_sec_int" value="64800" />
+    <int-array name="iwlan.epdg_address_priority_int_array" num="2">
+        <item value="0" />
+        <item value="1" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.mnc016.mcc204.pub.3gppnetwork.org</string>
+    <int name="iwlan.ike_rekey_hard_timer_in_sec" value="64900" />
+    <int name="iwlan.ike_rekey_soft_timer_sec_int" value="64800" />
+    <string name="iwlan.key_error_policy_config_string">[{"ApnName": "*","ErrorTypes": [{"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["24"],"RetryArray": ["300", "300"],"UnthrottlingEvents": ["APM_ENABLE_EVENT", "WIFI_DISABLE_EVENT", "WIFI_AP_CHANGED_EVENT", "WIFI_CALLING_DISABLE_EVENT"]}]}]</string>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+</carrier_config>
+</carrier_config_list>

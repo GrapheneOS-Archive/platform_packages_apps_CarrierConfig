@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="231" mnc="01">
+    <string name="carrier_config_version_string">23101-0.48</string>
+    <string-array name="carrier_certificate_string_array" num="2">
+        <item value="B67AFFCDA89E3193B1595036D7C6CDBE22BE5CA24C9F6CF93FC6B48F91D7310D:com.orange.phone,com.orange.update" />
+        <item value="6AE20C0E468B99D1F3D35A7CB959AB64CBCEE802461CE9D38F099C90D245BFBF:sk.orange.android.orangego" />
+    </string-array>
+    <string name="config_plans_package_override_string">sk.orange.android.orangego</string>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+</carrier_config>
+</carrier_config_list>

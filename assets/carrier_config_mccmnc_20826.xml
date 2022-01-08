@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="208" mnc="26">
+    <string name="carrier_config_version_string">20826-0.48</string>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="614400" />
+    <string-array name="non_roaming_operator_string_array" num="2">
+        <item value="20801" />
+        <item value="20810" />
+    </string-array>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="208" mnc="26" gid1="4E">
+    <string name="carrier_config_version_string">20826GID1=4E-0.48</string>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="614400" />
+    <string-array name="non_roaming_operator_string_array" num="2">
+        <item value="20801" />
+        <item value="20810" />
+    </string-array>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+</carrier_config>
+</carrier_config_list>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="000" mnc="000">
+    <string name="carrier_config_version_string">default-32000000048.48</string>
+    <boolean name="carrier_cross_sim_ims_available_bool" value="true" />
+    <int name="carrier_data_call_retry_network_requested_max_count_int" value="20" />
+    <string name="carrier_eri_file_name_string">eri.xml</string>
+    <boolean name="carrier_promote_wfc_on_call_fail_bool" value="true" />
+    <boolean name="carrier_volte_tty_supported_bool" value="false" />
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+    <int-array name="cdma_enhanced_roaming_indicator_for_home_network_int_array" num="1">
+        <item value="1" />
+    </int-array>
+    <boolean name="cdma_home_registered_plmn_name_override_bool" value="false" />
+    <string name="cdma_home_registered_plmn_name_string" />
+    <string name="config_ims_rcs_package_override_string">com.google.android.ims</string>
+    <boolean name="disable_cdma_activation_code_bool" value="false" />
+    <int name="emergency_sms_mode_timer_ms_int" value="300000" />
+    <boolean name="force_home_network_bool" value="false" />
+    <boolean name="force_imei_bool" value="false" />
+    <string name="gps.a_glonass_pos_protocol_select">6</string>
+    <string name="gps.longterm_psds_server_1">https://agnss.goog/lto2.dat</string>
+    <string name="gps.lpp_profile">2</string>
+    <string name="gps.normal_psds_server">https://agnss.goog/rto.dat</string>
+    <string name="gps.realtime_psds_server">https://agnss.goog/rtistatus.dat</string>
+    <string-array name="ims_reasoninfo_mapping_string_array" num="1">
+        <item value="510|Call completed elsewhere|1014" />
+    </string-array>
+    <boolean name="show_cdma_choices_bool" value="false" />
+    <boolean name="show_iccid_in_sim_status_bool" value="true" />
+    <boolean name="support_cdma_1x_voice_calls_bool" value="false" />
+    <boolean name="support_swap_after_merge_bool" value="true" />
+    <boolean name="support_tdscdma_bool" value="false" />
+    <string-array name="support_tdscdma_roaming_networks_string_array" num="0" />
+    <boolean name="use_usim_bool" value="false" />
+    <boolean name="world_mode_enabled_bool" value="false" />
+</carrier_config>
+</carrier_config_list>

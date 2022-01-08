@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="293" mnc="70">
+    <string name="carrier_config_version_string">29370-0.48</string>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="293" mnc="70" imsi="29370029">
+    <string name="carrier_config_version_string">29370IMSI=29370029XXXXXXX-0.48</string>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+</carrier_config>
+</carrier_config_list>

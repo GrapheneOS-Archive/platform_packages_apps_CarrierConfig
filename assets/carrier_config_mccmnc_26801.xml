@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="268" mnc="01">
+    <string name="carrier_config_version_string">26801-0.48</string>
+    <boolean name="carrier_volte_available_bool" value="false" />
+    <string name="default_vm_number_string">123</string>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+    <int name="volte_replacement_rat_int" value="3" />
+</carrier_config>
+</carrier_config_list>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="234" mnc="38">
+    <string name="carrier_config_version_string">virgin_gb-32000000578.48</string>
+    <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
+    <int name="carrier_default_wfc_ims_mode_int" value="2" />
+    <boolean name="carrier_name_override_bool" value="true" />
+    <string name="carrier_name_string">Virgin</string>
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <boolean name="editable_wfc_mode_bool" value="false" />
+    <int name="iwlan.child_sa_rekey_hard_timer_sec_int" value="86500" />
+    <int name="iwlan.child_sa_rekey_soft_timer_sec_int" value="86400" />
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="1">
+        <item value="14" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.mnc038.mcc234.pub.3gppnetwork.org</string>
+    <int name="iwlan.ike_rekey_hard_timer_in_sec" value="86500" />
+    <int name="iwlan.ike_rekey_soft_timer_sec_int" value="86400" />
+    <int name="iwlan.ike_remote_id_type_int" value="11" />
+    <string-array name="non_roaming_operator_string_array" num="6">
+        <item value="23430" />
+        <item value="23431" />
+        <item value="23432" />
+        <item value="23433" />
+        <item value="23434" />
+        <item value="23486" />
+    </string-array>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+    <string name="sim_country_iso_override_string">gb</string>
+</carrier_config>
+</carrier_config_list>

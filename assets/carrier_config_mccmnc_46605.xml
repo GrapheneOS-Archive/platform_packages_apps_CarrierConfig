@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="466" mnc="05">
+    <string name="carrier_config_version_string">apt_tw-32000000500.48</string>
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="hide_lte_plus_data_icon_bool" value="false" />
+    <boolean name="lte_endc_using_user_data_for_rrc_detection_bool" value="true" />
+</carrier_config>
+</carrier_config_list>

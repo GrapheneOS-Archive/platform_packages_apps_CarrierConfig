@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="310" mnc="000" spn="BLUEWIRE">
+    <string name="carrier_config_version_string">310000SPN=BLUEWIRE-0.48</string>
+</carrier_config>
+<carrier_config mcc="310" mnc="000" spn="COMMNET">
+    <string name="carrier_config_version_string">310000SPN=COMMNET-0.48</string>
+</carrier_config>
+<carrier_config mcc="310" mnc="000" spn="DISTRIBUTION">
+    <string name="carrier_config_version_string">310000SPN=DISTRIBUTION-0.48</string>
+</carrier_config>
+<carrier_config mcc="310" mnc="000" spn="FLATWIRE">
+    <string name="carrier_config_version_string">310000SPN=FLATWIRE-0.48</string>
+</carrier_config>
+<carrier_config mcc="310" mnc="000" spn="MOBILENATION">
+    <string name="carrier_config_version_string">310000SPN=MOBILENATION-0.48</string>
+</carrier_config>
+<carrier_config mcc="310" mnc="000" spn="MOBIPCS">
+    <string name="carrier_config_version_string">310000SPN=MOBIPCS-0.48</string>
+</carrier_config>
+<carrier_config mcc="310" mnc="000" spn="MOHAVE">
+    <string name="carrier_config_version_string">310000SPN=MOHAVE-0.48</string>
+</carrier_config>
+<carrier_config mcc="310" mnc="000" spn="PEOPLESWIRE">
+    <string name="carrier_config_version_string">310000SPN=PEOPLESWIRE-0.48</string>
+</carrier_config>
+<carrier_config mcc="310" mnc="000" spn="REVOL">
+    <string name="carrier_config_version_string">310000SPN=REVOL-0.48</string>
+</carrier_config>
+<carrier_config mcc="310" mnc="000" spn="TRACFONE">
+    <string name="carrier_config_version_string">310000SPN=TRACFONE-0.48</string>
+</carrier_config>
+</carrier_config_list>

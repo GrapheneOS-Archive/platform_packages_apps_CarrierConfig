@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="302" mnc="221">
+    <string name="carrier_config_version_string">302221-0.48</string>
+    <boolean name="always_play_remote_hold_tone_bool" value="true" />
+    <boolean name="hide_lte_plus_data_icon_bool" value="false" />
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="80" />
+    <int name="recipientLimit" value="10" />
+    <int name="smsToMmsTextThreshold" value="5" />
+    <boolean name="voicemail_notification_persistent_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="302" mnc="221" gid1="4B4F">
+    <string name="carrier_config_version_string">koodo_ca-32000000062.48</string>
+    <boolean name="always_play_remote_hold_tone_bool" value="true" />
+    <boolean name="carrier_cross_sim_ims_available_bool" value="false" />
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <int name="carrier_default_wfc_ims_roaming_mode_int" value="1" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <boolean name="display_hd_plus_icon_bool" value="true" />
+    <boolean name="editable_wfc_mode_bool" value="false" />
+    <string name="gps.es_extension_sec">300</string>
+    <boolean name="gsm_cdma_calls_can_be_hd_audio" value="true" />
+    <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+    <boolean name="hide_lte_plus_data_icon_bool" value="false" />
+    <int name="ims_conference_size_limit_int" value="2" />
+    <boolean name="is_ims_conference_size_enforced_bool" value="true" />
+    <boolean name="iwlan.add_ke_to_child_session_rekey_bool" value="true" />
+    <int name="iwlan.child_sa_rekey_hard_timer_sec_int" value="14500" />
+    <int name="iwlan.child_sa_rekey_soft_timer_sec_int" value="14400" />
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="1">
+        <item value="14" />
+    </int-array>
+    <int-array name="iwlan.epdg_address_priority_int_array" num="1">
+        <item value="0" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.mnc220.mcc302.pub.3gppnetwork.org</string>
+    <int name="iwlan.ike_rekey_hard_timer_in_sec" value="71100" />
+    <int name="iwlan.ike_rekey_soft_timer_sec_int" value="71000" />
+    <string name="iwlan.key_error_policy_config_string">[{"ApnName": "*","ErrorTypes": [{"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["24"],"RetryArray": [],"UnthrottlingEvents": ["WIFI_CALLING_DISABLE_EVENT"]}]}]</string>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="80" />
+    <int name="recipientLimit" value="10" />
+    <int name="smsToMmsTextThreshold" value="5" />
+    <boolean name="voicemail_notification_persistent_bool" value="true" />
+    <int name="volte_replacement_rat_int" value="3" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+</carrier_config>
+<carrier_config mcc="302" mnc="221" gid1="4D4F">
+    <string name="carrier_config_version_string">publicmobile_ca-0.48</string>
+    <boolean name="always_play_remote_hold_tone_bool" value="true" />
+    <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+    <boolean name="hide_lte_plus_data_icon_bool" value="false" />
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="80" />
+    <int name="recipientLimit" value="10" />
+    <int name="smsToMmsTextThreshold" value="5" />
+    <boolean name="voicemail_notification_persistent_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="302" mnc="221" gid1="5043">
+    <string name="carrier_config_version_string">pcmobile_ca-0.48</string>
+    <boolean name="always_play_remote_hold_tone_bool" value="true" />
+    <boolean name="hide_lte_plus_data_icon_bool" value="false" />
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="80" />
+    <int name="recipientLimit" value="10" />
+    <int name="smsToMmsTextThreshold" value="5" />
+    <boolean name="voicemail_notification_persistent_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="302" mnc="221" gid1="5455">
+    <string name="carrier_config_version_string">telus_ca-32000000069.48</string>
+    <boolean name="always_play_remote_hold_tone_bool" value="true" />
+    <boolean name="carrier_cross_sim_ims_available_bool" value="false" />
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <int name="carrier_default_wfc_ims_roaming_mode_int" value="1" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <boolean name="display_hd_plus_icon_bool" value="true" />
+    <boolean name="editable_wfc_mode_bool" value="false" />
+    <string name="gps.es_extension_sec">300</string>
+    <boolean name="gsm_cdma_calls_can_be_hd_audio" value="true" />
+    <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+    <boolean name="hide_lte_plus_data_icon_bool" value="false" />
+    <int name="ims_conference_size_limit_int" value="2" />
+    <boolean name="is_ims_conference_size_enforced_bool" value="true" />
+    <boolean name="iwlan.add_ke_to_child_session_rekey_bool" value="true" />
+    <int name="iwlan.child_sa_rekey_hard_timer_sec_int" value="14500" />
+    <int name="iwlan.child_sa_rekey_soft_timer_sec_int" value="14400" />
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="1">
+        <item value="14" />
+    </int-array>
+    <int-array name="iwlan.epdg_address_priority_int_array" num="1">
+        <item value="0" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.mnc220.mcc302.pub.3gppnetwork.org</string>
+    <int name="iwlan.ike_rekey_hard_timer_in_sec" value="71100" />
+    <int name="iwlan.ike_rekey_soft_timer_sec_int" value="71000" />
+    <string name="iwlan.key_error_policy_config_string">[{"ApnName": "*","ErrorTypes": [{"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["24"],"RetryArray": [],"UnthrottlingEvents": ["WIFI_CALLING_DISABLE_EVENT"]}]}]</string>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="2097152" />
+    <int name="maxSubjectLength" value="80" />
+    <int name="recipientLimit" value="10" />
+    <int name="smsToMmsTextThreshold" value="5" />
+    <boolean name="voicemail_notification_persistent_bool" value="true" />
+    <int name="volte_replacement_rat_int" value="3" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+</carrier_config>
+</carrier_config_list>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="204" mnc="12">
+    <string name="carrier_config_version_string">telfort_nl-0.48</string>
+    <string name="default_vm_number_string">1233</string>
+    <string-array name="non_roaming_operator_string_array" num="1">
+        <item value="20408" />
+    </string-array>
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+</carrier_config>
+</carrier_config_list>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="311" mnc="500" spn="24-7 WIRELESS">
+    <string name="carrier_config_version_string">311500SPN=24-7 WIRELESS-0.48</string>
+</carrier_config>
+<carrier_config mcc="311" mnc="500" spn="24-7 WIRELESS RPA">
+    <string name="carrier_config_version_string">311500SPN=24-7 WIRELESS RPA-0.48</string>
+</carrier_config>
+<carrier_config mcc="311" mnc="500" spn="24-7 WIRELESS RPO">
+    <string name="carrier_config_version_string">311500SPN=24-7 WIRELESS RPO-0.48</string>
+</carrier_config>
+<carrier_config mcc="311" mnc="500" spn="24-7 WIRELESS RPT">
+    <string name="carrier_config_version_string">311500SPN=24-7 WIRELESS RPT-0.48</string>
+</carrier_config>
+<carrier_config mcc="311" mnc="500" spn="MOSAIC MOBILE">
+    <string name="carrier_config_version_string">311500SPN=MOSAIC MOBILE-0.48</string>
+</carrier_config>
+<carrier_config mcc="311" mnc="500" spn="MOSAIC RPA">
+    <string name="carrier_config_version_string">311500SPN=MOSAIC RPA-0.48</string>
+</carrier_config>
+<carrier_config mcc="311" mnc="500" spn="MOSAIC RPO">
+    <string name="carrier_config_version_string">311500SPN=MOSAIC RPO-0.48</string>
+</carrier_config>
+<carrier_config mcc="311" mnc="500" spn="MOSAIC RPT">
+    <string name="carrier_config_version_string">311500SPN=MOSAIC RPT-0.48</string>
+</carrier_config>
+<carrier_config mcc="311" mnc="500" spn="NORVADO WIRELESS">
+    <string name="carrier_config_version_string">311500SPN=NORVADO WIRELESS-0.48</string>
+</carrier_config>
+<carrier_config mcc="311" mnc="500" spn="NORVADO WIRELESS RPA">
+    <string name="carrier_config_version_string">311500SPN=NORVADO WIRELESS RPA-0.48</string>
+</carrier_config>
+<carrier_config mcc="311" mnc="500" spn="NORVADO WIRELESS RPO">
+    <string name="carrier_config_version_string">311500SPN=NORVADO WIRELESS RPO-0.48</string>
+</carrier_config>
+<carrier_config mcc="311" mnc="500" spn="NORVADO WIRELESS RPT">
+    <string name="carrier_config_version_string">311500SPN=NORVADO WIRELESS RPT-0.48</string>
+</carrier_config>
+</carrier_config_list>

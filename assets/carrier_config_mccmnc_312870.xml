@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="312" mnc="870">
+    <string name="carrier_config_version_string">gigsky_us-0.48</string>
+    <boolean name="force_home_network_bool" value="false" />
+    <boolean name="inflate_signal_strength_bool" value="true" />
+</carrier_config>
+</carrier_config_list>

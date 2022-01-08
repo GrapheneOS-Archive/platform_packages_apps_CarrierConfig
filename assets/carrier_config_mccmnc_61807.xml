@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="618" mnc="07">
+    <string name="carrier_config_version_string">61807-0.48</string>
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+</carrier_config>
+</carrier_config_list>

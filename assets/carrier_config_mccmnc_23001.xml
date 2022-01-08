@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="230" mnc="01">
+    <string name="carrier_config_version_string">tmobile_cz-32000000576.48</string>
+    <string-array name="carrier_data_call_permanent_failure_strings" num="18">
+        <item value="OPERATOR_BARRED" />
+        <item value="MISSING_UNKNOWN_APN" />
+        <item value="UNKNOWN_PDP_ADDRESS_TYPE" />
+        <item value="USER_AUTHENTICATION" />
+        <item value="ACTIVATION_REJECT_GGSN" />
+        <item value="SERVICE_OPTION_NOT_SUPPORTED" />
+        <item value="NSAPI_IN_USE" />
+        <item value="ONLY_IPV4_ALLOWED" />
+        <item value="ONLY_IPV6_ALLOWED" />
+        <item value="PROTOCOL_ERRORS" />
+        <item value="RADIO_POWER_OFF" />
+        <item value="TETHERED_CALL_ACTIVE" />
+        <item value="RADIO_NOT_AVAILABLE" />
+        <item value="UNACCEPTABLE_NETWORK_PARAMETER" />
+        <item value="SIGNAL_LOST" />
+        <item value="DUPLICATE_CID" />
+        <item value="MATCH_ALL_RULE_NOT_ALLOWED" />
+        <item value="ALL_MATCHING_RULES_FAILED" />
+    </string-array>
+    <int-array name="carrier_nr_availabilities_int_array" num="0" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="1" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="display_hd_audio_property_bool" value="false" />
+    <int name="volte_replacement_rat_int" value="3" />
+</carrier_config>
+</carrier_config_list>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="311" mnc="600" spn="COX">
+    <string name="carrier_config_version_string">311600SPN=COX-0.48</string>
+</carrier_config>
+</carrier_config_list>

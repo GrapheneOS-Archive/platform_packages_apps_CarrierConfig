@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="208" mnc="01">
+    <string name="carrier_config_version_string">orange_fr-32000000333.48</string>
+    <boolean name="allow_ussd_requests_via_telephony_manager_bool" value="false" />
+    <string-array name="carrier_certificate_string_array" num="1">
+        <item value="B67AFFCDA89E3193B1595036D7C6CDBE22BE5CA24C9F6CF93FC6B48F91D7310D:com.orange.phone,com.orange.orangeetmoi,com.orange.mysosh,com.orange.obl,com.orange.orangepro,com.orange.update" />
+    </string-array>
+    <boolean name="carrier_cross_sim_ims_available_bool" value="false" />
+    <string-array name="carrier_metered_apn_types_strings" num="3">
+        <item value="default" />
+        <item value="dun" />
+        <item value="supl" />
+    </string-array>
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <string name="carrier_vvm_package_name_string">com.orange.vvm</string>
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <string name="config_plans_package_override_string">com.orange.orangeetmoi</string>
+    <string name="default_vm_number_string">888</string>
+    <boolean name="display_hd_plus_icon_bool" value="true" />
+    <boolean name="editable_wfc_mode_bool" value="false" />
+    <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+    <boolean name="hide_redundant_options_menu_on_stk_input_screen_bool" value="true" />
+    <string-array name="ims_reasoninfo_mapping_string_array" num="2">
+        <item value="510|Call completed elsewhere|1014" />
+        <item value="*|Call is dropped due to Wi-Fi signal is degraded|1407" />
+    </string-array>
+    <boolean name="iwlan.add_ke_to_child_session_rekey_bool" value="true" />
+    <int name="iwlan.child_sa_rekey_hard_timer_sec_int" value="64900" />
+    <int name="iwlan.child_sa_rekey_soft_timer_sec_int" value="64800" />
+    <int-array name="iwlan.diffie_hellman_groups_int_array" num="2">
+        <item value="14" />
+        <item value="5" />
+    </int-array>
+    <int name="iwlan.ike_rekey_hard_timer_in_sec" value="64900" />
+    <int name="iwlan.ike_rekey_soft_timer_sec_int" value="64800" />
+    <string name="iwlan.key_error_policy_config_string">[{"ApnName": "*","ErrorTypes": [{"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["*"],"RetryArray": ["4", "8", "16", "32", "64", "128", "256", "512", "1024", "-1"],"UnthrottlingEvents": ["APM_ENABLE_EVENT", "WIFI_DISABLE_EVENT", "WIFI_AP_CHANGED_EVENT", "WIFI_CALLING_DISABLE_EVENT"]}, {"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["9000", "11001", "11011"],"RetryArray": ["43200"],"UnthrottlingEvents": ["APM_ENABLE_EVENT", "WIFI_DISABLE_EVENT", "WIFI_AP_CHANGED_EVENT", "WIFI_CALLING_DISABLE_EVENT"]}, {"ErrorType": "IKE_PROTOCOL_ERROR_TYPE","ErrorDetails": ["9006"],"RetryArray": ["86400"],"UnthrottlingEvents": ["APM_ENABLE_EVENT", "WIFI_DISABLE_EVENT", "WIFI_AP_CHANGED_EVENT", "WIFI_CALLING_DISABLE_EVENT"]}]}]</string>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="614400" />
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+    <boolean name="show_wfc_location_privacy_policy_bool" value="true" />
+    <boolean name="support_no_reply_timer_for_cfnry_bool" value="false" />
+    <int name="volte_replacement_rat_int" value="3" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+</carrier_config>
+<carrier_config mcc="208" mnc="01" gid1="33">
+    <string name="carrier_config_version_string">20801GID1=33-0.48</string>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="614400" />
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="208" mnc="01" gid1="4E">
+    <string name="carrier_config_version_string">20801GID1=4E-0.48</string>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="614400" />
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="208" mnc="01" gid1="52">
+    <string name="carrier_config_version_string">20801GID1=52-0.48</string>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="614400" />
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="208" mnc="01" spn="Rakuten">
+    <string name="carrier_config_version_string">rakuten_jp-32000000035.48</string>
+    <string name="5g_icon_configuration_string">connected_mmwave:5G,connected:5G,not_restricted_rrc_idle:5G</string>
+    <string name="5g_icon_display_grace_period_string">connected_mmwave,legacy,31;connected,legacy,31;connected_mmwave,not_restricted_rrc_con,31;connected,not_restricted_rrc_con,31;not_restricted_rrc_idle,not_restricted_rrc_con,15</string>
+    <boolean name="additional_settings_call_waiting_visibility_bool" value="false" />
+    <boolean name="additional_settings_caller_id_visibility_bool" value="false" />
+    <boolean name="call_forwarding_visibility_bool" value="false" />
+    <string-array name="carrier_certificate_string_array" num="1">
+        <item value="99F04B13AA9672BD6292921D88365D9C1953BD6078E4BFAD344D02CDCFACF17E" />
+    </string-array>
+    <boolean name="carrier_cross_sim_ims_available_bool" value="false" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <string name="gps.es_extension_sec">300</string>
+    <string name="gps.lpp_profile">3</string>
+    <string name="gps.supl_ver">0x20002</string>
+    <string-array name="gsm_nonroaming_networks_string_array" num="1">
+        <item value="44053" />
+    </string-array>
+    <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+    <boolean name="lte_endc_using_user_data_for_rrc_detection_bool" value="true" />
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="2097152" />
+    <boolean name="nr_timers_reset_if_non_endc_and_rrc_idle_bool" value="true" />
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+    <boolean name="show_blocking_pay_phone_option_bool" value="true" />
+</carrier_config>
+</carrier_config_list>

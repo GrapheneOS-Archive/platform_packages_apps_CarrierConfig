@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="310" mnc="418">
+    <string name="carrier_config_version_string">310418-0.48</string>
+    <string name="default_vm_number_string">*86</string>
+</carrier_config>
+</carrier_config_list>

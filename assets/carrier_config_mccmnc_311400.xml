@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="311" mnc="400">
+    <string name="carrier_config_version_string">testing_us-0.48</string>
+    <string-array name="boosted_lte_earfcns_string_array" num="2">
+        <item value="600-1199" />
+        <item value="1950-2399" />
+    </string-array>
+    <int name="lte_earfcns_rsrp_boost_int" value="6" />
+    <int-array name="lte_rsrp_thresholds_int_array" num="4">
+        <item value="-115" />
+        <item value="-105" />
+        <item value="-95" />
+        <item value="-85" />
+    </int-array>
+    <long name="opportunistic_network_data_switch_exit_hysteresis_time_long" value="2000" />
+    <long name="opportunistic_network_data_switch_hysteresis_time_long" value="2000" />
+    <int name="opportunistic_network_entry_threshold_rsrp_int" value="-111" />
+    <int name="opportunistic_network_entry_threshold_rssnr_int" value="10" />
+    <int name="opportunistic_network_exit_threshold_rsrp_int" value="-120" />
+    <int name="opportunistic_network_exit_threshold_rssnr_int" value="9" />
+</carrier_config>
+</carrier_config_list>

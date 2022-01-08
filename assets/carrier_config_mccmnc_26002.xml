@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="260" mnc="02">
+    <string name="carrier_config_version_string">26002-0.48</string>
+    <boolean name="display_hd_audio_property_bool" value="false" />
+</carrier_config>
+</carrier_config_list>

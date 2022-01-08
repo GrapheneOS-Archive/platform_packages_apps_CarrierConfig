@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="240" mnc="07">
+    <string name="carrier_config_version_string">tele2_se-32000000486.48</string>
+    <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <int name="carrier_ussd_method_int" value="1" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <boolean name="is_ims_conference_size_enforced_bool" value="true" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+</carrier_config>
+<carrier_config mcc="240" mnc="07" gid1="0C">
+    <string name="carrier_config_version_string">sky_gb-0.48</string>
+    <string-array name="non_roaming_operator_string_array" num="8">
+        <item value="23410" />
+        <item value="23426" />
+        <item value="23430" />
+        <item value="23431" />
+        <item value="23432" />
+        <item value="23433" />
+        <item value="23434" />
+        <item value="23486" />
+    </string-array>
+    <boolean name="prefer_2g_bool" value="false" />
+    <string name="sim_country_iso_override_string">gb</string>
+</carrier_config>
+<carrier_config mcc="240" mnc="07" gid1="6E">
+    <string name="carrier_config_version_string">gigsky_us-0.48</string>
+    <boolean name="force_home_network_bool" value="false" />
+    <boolean name="inflate_signal_strength_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="240" mnc="07" gid1="6F">
+    <string name="carrier_config_version_string">gigsky_us-0.48</string>
+    <boolean name="force_home_network_bool" value="false" />
+    <boolean name="inflate_signal_strength_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="240" mnc="07" imsi="2400768">
+    <string name="carrier_config_version_string">24007IMSI=2400768XXXXXXXX-0.48</string>
+</carrier_config>
+<carrier_config mcc="240" mnc="07" spn="JUMP">
+    <string name="carrier_config_version_string">jump_gb-0.48</string>
+    <string name="sim_country_iso_override_string">gb</string>
+</carrier_config>
+</carrier_config_list>

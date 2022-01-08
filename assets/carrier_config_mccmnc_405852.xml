@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="405" mnc="852">
+    <string name="carrier_config_version_string">idea_in-32000000425.48</string>
+    <int-array name="carrier_nr_availabilities_int_array" num="0" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="is_ims_conference_size_enforced_bool" value="true" />
+    <string-array name="roaming_operator_string_array" num="2">
+        <item value="404" />
+        <item value="405" />
+    </string-array>
+</carrier_config>
+</carrier_config_list>

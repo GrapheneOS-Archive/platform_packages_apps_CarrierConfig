@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="502" mnc="19">
+    <string name="carrier_config_version_string">celcom_my-0.48</string>
+</carrier_config>
+</carrier_config_list>

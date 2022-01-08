@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="312" mnc="580">
+    <string name="carrier_config_version_string">google_us-0.48</string>
+    <int-array name="lte_rsrp_thresholds_int_array" num="4">
+        <item value="-115" />
+        <item value="-105" />
+        <item value="-95" />
+        <item value="-85" />
+    </int-array>
+    <long name="opportunistic_network_data_switch_exit_hysteresis_time_long" value="2000" />
+    <long name="opportunistic_network_data_switch_hysteresis_time_long" value="2000" />
+    <int name="opportunistic_network_entry_threshold_rsrp_int" value="-111" />
+    <int name="opportunistic_network_entry_threshold_rssnr_int" value="10" />
+    <int name="opportunistic_network_exit_threshold_rsrp_int" value="-120" />
+    <int name="opportunistic_network_exit_threshold_rssnr_int" value="9" />
+</carrier_config>
+<carrier_config mcc="312" mnc="580" gid1="0001">
+    <string name="carrier_config_version_string">fi_us-32000000340.48</string>
+    <boolean name="carrier_app_required_during_setup_bool" value="true" />
+    <boolean name="carrier_name_override_bool" value="true" />
+    <string name="carrier_name_string">Google Fi</string>
+    <boolean name="config_telephony_use_own_number_for_voicemail_bool" value="true" />
+</carrier_config>
+</carrier_config_list>

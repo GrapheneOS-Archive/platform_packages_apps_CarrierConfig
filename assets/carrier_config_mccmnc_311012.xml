@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="311" mnc="012">
+    <string name="carrier_config_version_string">311012-0.48</string>
+    <boolean name="aliasEnabled" value="true" />
+    <boolean name="allowAttachAudio" value="false" />
+    <string name="emailGatewayNumber">6245</string>
+    <boolean name="enabledNotifyWapMMSC" value="true" />
+    <boolean name="enabledTransID" value="true" />
+    <string name="httpParams">x-up-calling-line-id: 1##LINE1NOCOUNTRYCODE##|X-VzW-MDN: 1##LINE1NOCOUNTRYCODE##</string>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="1258291" />
+    <int name="maxSubjectLength" value="80" />
+    <int name="recipientLimit" value="20" />
+    <int name="smsToMmsTextThreshold" value="7" />
+    <string name="uaProfTagName">Profile</string>
+</carrier_config>
+</carrier_config_list>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="238" mnc="01" gid1="6E">
+    <string name="carrier_config_version_string">gigsky_us-0.48</string>
+    <boolean name="force_home_network_bool" value="false" />
+    <boolean name="inflate_signal_strength_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="238" mnc="01" gid1="6F">
+    <string name="carrier_config_version_string">gigsky_us-0.48</string>
+    <boolean name="force_home_network_bool" value="false" />
+    <boolean name="inflate_signal_strength_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="238" mnc="01" imsi="2380101">
+    <string name="carrier_config_version_string">tdc_dk-32000000490.48</string>
+    <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <int-array name="carrier_nr_availabilities_int_array" num="0" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <boolean name="is_ims_conference_size_enforced_bool" value="true" />
+    <int-array name="iwlan.epdg_address_priority_int_array" num="1">
+        <item value="0" />
+    </int-array>
+    <string name="iwlan.epdg_static_address_string">epdg.epc.mnc001.mcc238.pub.3gppnetwork.org</string>
+    <int name="wfc_spn_format_idx_int" value="1" />
+</carrier_config>
+<carrier_config mcc="238" mnc="01" spn="TELMORE">
+    <string name="carrier_config_version_string">23801SPN=TELMORE-0.48</string>
+</carrier_config>
+</carrier_config_list>

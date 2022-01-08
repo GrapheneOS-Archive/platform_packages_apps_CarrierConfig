@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="214" mnc="34">
+    <string name="carrier_config_version_string">inet_es-0.48</string>
+    <string-array name="unloggable_numbers_string_array" num="1">
+        <item value="900018018" />
+    </string-array>
+</carrier_config>
+</carrier_config_list>

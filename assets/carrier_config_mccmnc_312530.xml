@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="312" mnc="530">
+    <string name="carrier_config_version_string">sprintwholesale_us-32000000379.48</string>
+    <boolean name="allow_non_emergency_calls_in_ecm_bool" value="false" />
+    <boolean name="carrier_allow_turnoff_ims_bool" value="false" />
+    <string-array name="carrier_certificate_string_array" num="3">
+        <item value="27F96DBAB77B31F6953E4CD2C2DEFE15F5D7C78F073DD7162018EF476B097C34" />
+        <item value="3D1A4BEF6EE7AF7D34D120E7B1AAC0DD245585DE6237CF100F68333AFACFF562" />
+        <item value="92B5F8117FBD9BD5738FF168A4FA12CBE284BE834EDE1A7BB44DD8455BA15920" />
+    </string-array>
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <int name="carrier_default_wfc_ims_roaming_mode_int" value="1" />
+    <string name="carrier_eri_file_name_string">eri.xml</string>
+    <boolean name="carrier_settings_enable_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_volte_provisioning_required_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+    <boolean name="config_telephony_use_own_number_for_voicemail_bool" value="true" />
+    <boolean name="dtmf_type_enabled_bool" value="true" />
+    <string name="emailGatewayNumber">6245</string>
+    <string-array name="emergency_number_prefix_string_array" num="1">
+        <item value="*272" />
+    </string-array>
+    <boolean name="enableSMSDeliveryReports" value="false" />
+    <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+    <string name="httpParams">X-MDN: ##LINE1##|Proxy-Authorization: Basic ##NAI##</string>
+    <boolean name="ignore_rtt_mode_setting_bool" value="true" />
+    <string-array name="ims_reasoninfo_mapping_string_array" num="2">
+        <item value="510|Call completed elsewhere|1014" />
+        <item value="*|Call is dropped due to Wi-Fi signal is degraded|1407" />
+    </string-array>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="2097152" />
+    <int name="maxSubjectLength" value="80" />
+    <string-array name="mmi_two_digit_number_pattern_string_array" num="1">
+        <item value="*2" />
+    </string-array>
+    <string name="naiSuffix">:pcs</string>
+    <int name="recipientLimit" value="40" />
+    <boolean name="rtt_downgrade_supported_bool" value="true" />
+    <boolean name="rtt_supported_bool" value="true" />
+    <boolean name="show_cdma_choices_bool" value="false" />
+    <int name="smsToMmsTextThreshold" value="6" />
+    <boolean name="stk_disable_launch_browser_bool" value="true" />
+    <boolean name="supportMmsContentDisposition" value="false" />
+    <boolean name="support_swap_after_merge_bool" value="true" />
+    <boolean name="use_hfa_for_provisioning_bool" value="true" />
+    <boolean name="voicemail_notification_persistent_bool" value="true" />
+    <int name="volte_replacement_rat_int" value="6" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+</carrier_config>
+<carrier_config mcc="312" mnc="530" gid1="000001">
+    <string name="carrier_config_version_string">sprint_us-32000000067.48</string>
+    <boolean name="allow_non_emergency_calls_in_ecm_bool" value="false" />
+    <boolean name="carrier_allow_turnoff_ims_bool" value="false" />
+    <string-array name="carrier_certificate_string_array" num="3">
+        <item value="27F96DBAB77B31F6953E4CD2C2DEFE15F5D7C78F073DD7162018EF476B097C34" />
+        <item value="3D1A4BEF6EE7AF7D34D120E7B1AAC0DD245585DE6237CF100F68333AFACFF562" />
+        <item value="92B5F8117FBD9BD5738FF168A4FA12CBE284BE834EDE1A7BB44DD8455BA15920" />
+    </string-array>
+    <boolean name="carrier_default_data_roaming_enabled_bool" value="true" />
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
+    <int name="carrier_default_wfc_ims_roaming_mode_int" value="1" />
+    <string name="carrier_eri_file_name_string">eri.xml</string>
+    <boolean name="carrier_name_override_bool" value="true" />
+    <string name="carrier_name_string">Sprint</string>
+    <boolean name="carrier_settings_enable_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_volte_provisioning_required_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+    <boolean name="config_telephony_use_own_number_for_voicemail_bool" value="true" />
+    <boolean name="dtmf_type_enabled_bool" value="true" />
+    <string name="emailGatewayNumber">6245</string>
+    <string-array name="emergency_number_prefix_string_array" num="1">
+        <item value="*272" />
+    </string-array>
+    <boolean name="enableSMSDeliveryReports" value="false" />
+    <string-array name="gsm_nonroaming_networks_string_array" num="1">
+        <item value="311490" />
+    </string-array>
+    <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+    <string name="httpParams">X-MDN: ##LINE1##|Proxy-Authorization: Basic ##NAI##</string>
+    <boolean name="ignore_rtt_mode_setting_bool" value="true" />
+    <string-array name="ims_reasoninfo_mapping_string_array" num="2">
+        <item value="510|Call completed elsewhere|1014" />
+        <item value="*|Call is dropped due to Wi-Fi signal is degraded|1407" />
+    </string-array>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="2097152" />
+    <int name="maxSubjectLength" value="80" />
+    <string-array name="mmi_two_digit_number_pattern_string_array" num="1">
+        <item value="*2" />
+    </string-array>
+    <string name="naiSuffix">:pcs</string>
+    <int name="recipientLimit" value="40" />
+    <boolean name="rtt_downgrade_supported_bool" value="true" />
+    <boolean name="rtt_supported_bool" value="true" />
+    <boolean name="show_cdma_choices_bool" value="false" />
+    <int name="smsToMmsTextThreshold" value="6" />
+    <boolean name="stk_disable_launch_browser_bool" value="true" />
+    <boolean name="supportMmsContentDisposition" value="false" />
+    <boolean name="support_swap_after_merge_bool" value="true" />
+    <boolean name="use_hfa_for_provisioning_bool" value="true" />
+    <boolean name="use_wfc_home_network_mode_in_roaming_network_bool" value="true" />
+    <boolean name="voice_privacy_disable_ui_bool" value="true" />
+    <boolean name="voicemail_notification_persistent_bool" value="true" />
+    <boolean name="volte_5g_limited_alert_dialog_bool" value="true" />
+    <int name="volte_replacement_rat_int" value="6" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+</carrier_config>
+<carrier_config mcc="312" mnc="530" gid1="000002">
+    <string name="carrier_config_version_string">boost_us-32000000484.48</string>
+    <boolean name="allow_non_emergency_calls_in_ecm_bool" value="false" />
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <int name="carrier_default_wfc_ims_roaming_mode_int" value="1" />
+    <string name="carrier_eri_file_name_string">eri.xml</string>
+    <boolean name="carrier_settings_enable_bool" value="true" />
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+    <boolean name="config_telephony_use_own_number_for_voicemail_bool" value="true" />
+    <boolean name="dtmf_type_enabled_bool" value="true" />
+    <string name="emailGatewayNumber">6245</string>
+    <string-array name="emergency_number_prefix_string_array" num="1">
+        <item value="*272" />
+    </string-array>
+    <boolean name="enableSMSDeliveryReports" value="false" />
+    <string name="httpParams">X-MDN: ##LINE1##|Proxy-Authorization: Basic ##NAI##</string>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="2097152" />
+    <int name="maxSubjectLength" value="80" />
+    <string-array name="mmi_two_digit_number_pattern_string_array" num="1">
+        <item value="*2" />
+    </string-array>
+    <string name="naiSuffix">:pcs</string>
+    <int name="recipientLimit" value="40" />
+    <boolean name="show_cdma_choices_bool" value="false" />
+    <int name="smsToMmsTextThreshold" value="6" />
+    <boolean name="stk_disable_launch_browser_bool" value="true" />
+    <boolean name="supportMmsContentDisposition" value="false" />
+    <boolean name="support_swap_after_merge_bool" value="true" />
+    <boolean name="use_hfa_for_provisioning_bool" value="true" />
+    <boolean name="voicemail_notification_persistent_bool" value="true" />
+    <int name="volte_replacement_rat_int" value="6" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+</carrier_config>
+<carrier_config mcc="312" mnc="530" gid1="000003">
+    <string name="carrier_config_version_string">virgin_us-32000000484.48</string>
+    <boolean name="allow_non_emergency_calls_in_ecm_bool" value="false" />
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <int name="carrier_default_wfc_ims_roaming_mode_int" value="1" />
+    <string name="carrier_eri_file_name_string">eri.xml</string>
+    <boolean name="carrier_settings_enable_bool" value="true" />
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+    <boolean name="config_telephony_use_own_number_for_voicemail_bool" value="true" />
+    <boolean name="dtmf_type_enabled_bool" value="true" />
+    <string name="emailGatewayNumber">6245</string>
+    <string-array name="emergency_number_prefix_string_array" num="1">
+        <item value="*272" />
+    </string-array>
+    <boolean name="enableSMSDeliveryReports" value="false" />
+    <string name="httpParams">X-MDN: ##LINE1##|Proxy-Authorization: Basic ##NAI##</string>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="2097152" />
+    <int name="maxSubjectLength" value="80" />
+    <string-array name="mmi_two_digit_number_pattern_string_array" num="1">
+        <item value="*2" />
+    </string-array>
+    <string name="naiSuffix">:pcs</string>
+    <int name="recipientLimit" value="40" />
+    <boolean name="show_cdma_choices_bool" value="false" />
+    <int name="smsToMmsTextThreshold" value="6" />
+    <boolean name="stk_disable_launch_browser_bool" value="true" />
+    <boolean name="supportMmsContentDisposition" value="false" />
+    <boolean name="support_swap_after_merge_bool" value="true" />
+    <boolean name="use_hfa_for_provisioning_bool" value="true" />
+    <boolean name="voicemail_notification_persistent_bool" value="true" />
+    <int name="volte_replacement_rat_int" value="6" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+</carrier_config>
+<carrier_config mcc="312" mnc="530" gid1="000004">
+    <string name="carrier_config_version_string">sprintprepaid_us-32000000484.48</string>
+    <boolean name="allow_non_emergency_calls_in_ecm_bool" value="false" />
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <int name="carrier_default_wfc_ims_roaming_mode_int" value="1" />
+    <string name="carrier_eri_file_name_string">eri.xml</string>
+    <boolean name="carrier_settings_enable_bool" value="true" />
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+    <boolean name="config_telephony_use_own_number_for_voicemail_bool" value="true" />
+    <boolean name="dtmf_type_enabled_bool" value="true" />
+    <string name="emailGatewayNumber">6245</string>
+    <string-array name="emergency_number_prefix_string_array" num="1">
+        <item value="*272" />
+    </string-array>
+    <boolean name="enableSMSDeliveryReports" value="false" />
+    <string name="httpParams">X-MDN: ##LINE1##|Proxy-Authorization: Basic ##NAI##</string>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="2097152" />
+    <int name="maxSubjectLength" value="80" />
+    <string-array name="mmi_two_digit_number_pattern_string_array" num="1">
+        <item value="*2" />
+    </string-array>
+    <string name="naiSuffix">:pcs</string>
+    <int name="recipientLimit" value="40" />
+    <boolean name="show_cdma_choices_bool" value="false" />
+    <int name="smsToMmsTextThreshold" value="6" />
+    <boolean name="stk_disable_launch_browser_bool" value="true" />
+    <boolean name="supportMmsContentDisposition" value="false" />
+    <boolean name="support_swap_after_merge_bool" value="true" />
+    <boolean name="use_hfa_for_provisioning_bool" value="true" />
+    <boolean name="voicemail_notification_persistent_bool" value="true" />
+    <int name="volte_replacement_rat_int" value="6" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+</carrier_config>
+<carrier_config mcc="312" mnc="530" gid1="A00184">
+    <string name="carrier_config_version_string">fi_us-32000000340.48</string>
+    <boolean name="carrier_app_required_during_setup_bool" value="true" />
+    <boolean name="carrier_name_override_bool" value="true" />
+    <string name="carrier_name_string">Google Fi</string>
+    <boolean name="config_telephony_use_own_number_for_voicemail_bool" value="true" />
+</carrier_config>
+<carrier_config mcc="312" mnc="530" gid1="FFFFFF">
+    <string name="carrier_config_version_string">sprint_us-32000000067.48</string>
+    <boolean name="allow_non_emergency_calls_in_ecm_bool" value="false" />
+    <boolean name="carrier_allow_turnoff_ims_bool" value="false" />
+    <string-array name="carrier_certificate_string_array" num="3">
+        <item value="27F96DBAB77B31F6953E4CD2C2DEFE15F5D7C78F073DD7162018EF476B097C34" />
+        <item value="3D1A4BEF6EE7AF7D34D120E7B1AAC0DD245585DE6237CF100F68333AFACFF562" />
+        <item value="92B5F8117FBD9BD5738FF168A4FA12CBE284BE834EDE1A7BB44DD8455BA15920" />
+    </string-array>
+    <boolean name="carrier_default_data_roaming_enabled_bool" value="true" />
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true" />
+    <int name="carrier_default_wfc_ims_roaming_mode_int" value="1" />
+    <string name="carrier_eri_file_name_string">eri.xml</string>
+    <boolean name="carrier_name_override_bool" value="true" />
+    <string name="carrier_name_string">Sprint</string>
+    <boolean name="carrier_settings_enable_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_volte_provisioning_required_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <int name="cdma_3waycall_flash_delay_int" value="0" />
+    <boolean name="config_telephony_use_own_number_for_voicemail_bool" value="true" />
+    <boolean name="dtmf_type_enabled_bool" value="true" />
+    <string name="emailGatewayNumber">6245</string>
+    <string-array name="emergency_number_prefix_string_array" num="1">
+        <item value="*272" />
+    </string-array>
+    <boolean name="enableSMSDeliveryReports" value="false" />
+    <string-array name="gsm_nonroaming_networks_string_array" num="1">
+        <item value="311490" />
+    </string-array>
+    <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+    <string name="httpParams">X-MDN: ##LINE1##|Proxy-Authorization: Basic ##NAI##</string>
+    <boolean name="ignore_rtt_mode_setting_bool" value="true" />
+    <string-array name="ims_reasoninfo_mapping_string_array" num="2">
+        <item value="510|Call completed elsewhere|1014" />
+        <item value="*|Call is dropped due to Wi-Fi signal is degraded|1407" />
+    </string-array>
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="2097152" />
+    <int name="maxSubjectLength" value="80" />
+    <string-array name="mmi_two_digit_number_pattern_string_array" num="1">
+        <item value="*2" />
+    </string-array>
+    <string name="naiSuffix">:pcs</string>
+    <int name="recipientLimit" value="40" />
+    <boolean name="rtt_downgrade_supported_bool" value="true" />
+    <boolean name="rtt_supported_bool" value="true" />
+    <boolean name="show_cdma_choices_bool" value="false" />
+    <int name="smsToMmsTextThreshold" value="6" />
+    <boolean name="stk_disable_launch_browser_bool" value="true" />
+    <boolean name="supportMmsContentDisposition" value="false" />
+    <boolean name="support_swap_after_merge_bool" value="true" />
+    <boolean name="use_hfa_for_provisioning_bool" value="true" />
+    <boolean name="use_wfc_home_network_mode_in_roaming_network_bool" value="true" />
+    <boolean name="voice_privacy_disable_ui_bool" value="true" />
+    <boolean name="voicemail_notification_persistent_bool" value="true" />
+    <boolean name="volte_5g_limited_alert_dialog_bool" value="true" />
+    <int name="volte_replacement_rat_int" value="6" />
+    <int name="wfc_spn_format_idx_int" value="1" />
+</carrier_config>
+</carrier_config_list>

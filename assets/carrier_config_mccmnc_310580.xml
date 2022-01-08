@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="310" mnc="580">
+    <string name="carrier_config_version_string">inland_us-0.48</string>
+    <boolean name="carrier_ims_gba_required_bool" value="true" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <boolean name="carrier_wfc_ims_available_bool" value="true" />
+    <string name="httpParams">X-MDN: ##LINE1##</string>
+    <int name="maxImageHeight" value="2432" />
+    <int name="maxImageWidth" value="4320" />
+    <int name="maxMessageSize" value="1228800" />
+    <int name="maxSubjectLength" value="80" />
+    <int name="recipientLimit" value="20" />
+    <int name="smsToMmsTextThreshold" value="1" />
+    <boolean name="use_wfc_home_network_mode_in_roaming_network_bool" value="true" />
+</carrier_config>
+</carrier_config_list>

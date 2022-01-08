@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="420" mnc="01">
+    <string name="carrier_config_version_string">stc_sa-32000000623.48</string>
+    <int-array name="carrier_nr_availabilities_int_array" num="0" />
+</carrier_config>
+</carrier_config_list>

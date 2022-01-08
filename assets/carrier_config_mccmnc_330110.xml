@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="330" mnc="110">
+    <string name="carrier_config_version_string">330110-0.48</string>
+    <boolean name="enableGroupMms" value="false" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="80" />
+    <int name="recipientLimit" value="20" />
+    <int name="smsToMmsTextThreshold" value="6" />
+</carrier_config>
+<carrier_config mcc="330" mnc="110" gid1="DDFF">
+    <string name="carrier_config_version_string">tracfone_pr-0.48</string>
+    <boolean name="enableGroupMms" value="false" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="80" />
+    <int name="recipientLimit" value="20" />
+    <int name="smsToMmsTextThreshold" value="6" />
+</carrier_config>
+<carrier_config mcc="330" mnc="110" gid1="DEFF">
+    <string name="carrier_config_version_string">tracfone_pr-0.48</string>
+    <boolean name="enableGroupMms" value="false" />
+    <int name="maxMessageSize" value="1048576" />
+    <int name="maxSubjectLength" value="80" />
+    <int name="recipientLimit" value="20" />
+    <int name="smsToMmsTextThreshold" value="6" />
+</carrier_config>
+</carrier_config_list>

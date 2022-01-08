@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config_list>
+<carrier_config mcc="440" mnc="11">
+    <string name="carrier_config_version_string">rakuten_jp-32000000035.48</string>
+    <string name="5g_icon_configuration_string">connected_mmwave:5G,connected:5G,not_restricted_rrc_idle:5G</string>
+    <string name="5g_icon_display_grace_period_string">connected_mmwave,legacy,31;connected,legacy,31;connected_mmwave,not_restricted_rrc_con,31;connected,not_restricted_rrc_con,31;not_restricted_rrc_idle,not_restricted_rrc_con,15</string>
+    <boolean name="additional_settings_call_waiting_visibility_bool" value="false" />
+    <boolean name="additional_settings_caller_id_visibility_bool" value="false" />
+    <boolean name="call_forwarding_visibility_bool" value="false" />
+    <string-array name="carrier_certificate_string_array" num="1">
+        <item value="99F04B13AA9672BD6292921D88365D9C1953BD6078E4BFAD344D02CDCFACF17E" />
+    </string-array>
+    <boolean name="carrier_cross_sim_ims_available_bool" value="false" />
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true" />
+    <int name="carrier_ussd_method_int" value="2" />
+    <boolean name="carrier_volte_available_bool" value="true" />
+    <string name="gps.es_extension_sec">300</string>
+    <string name="gps.lpp_profile">3</string>
+    <string name="gps.supl_ver">0x20002</string>
+    <string-array name="gsm_nonroaming_networks_string_array" num="1">
+        <item value="44053" />
+    </string-array>
+    <boolean name="hide_enhanced_4g_lte_bool" value="true" />
+    <boolean name="lte_endc_using_user_data_for_rrc_detection_bool" value="true" />
+    <int name="maxImageHeight" value="1944" />
+    <int name="maxImageWidth" value="2592" />
+    <int name="maxMessageSize" value="2097152" />
+    <boolean name="nr_timers_reset_if_non_endc_and_rrc_idle_bool" value="true" />
+    <boolean name="show_4g_for_lte_data_icon_bool" value="true" />
+    <boolean name="show_blocking_pay_phone_option_bool" value="true" />
+</carrier_config>
+</carrier_config_list>
