@@ -24,6 +24,7 @@
     <int name="gba_ua_security_organization_int" value="1"/> <!-- ORG_3GPP -->
     <int name="gba_ua_security_protocol_int" value="65536"/> <!-- UA_SECURITY_PROTOCOL_3GPP_TLS_DEFAULT -->
     <int name="gba_ua_tls_cipher_suite_int" value="47"/> <!-- TLS_RSA_WITH_AES_128_CBC_SHA -->
+    <int name="default_mtu_int" value="1440"/>
     <string name="carrier_name_string">T-Mobile</string>
     <string name="carrier_vvm_package_name_string">com.tmobile.vvm.application</string>
     <string name="vvm_destination_number_string">122</string>
@@ -37,6 +38,21 @@
         <item value="3D1A4BEF6EE7AF7D34D120E7B1AAC0DD245585DE6237CF100F68333AFACFF562"/>
         <item value="6892793FC413019D2DF609DFED7AF622D0F2D8FCF96EFA7E3FB87EEA34E10B93"/>
         <item value="7B68FD9D4E7610C9CB35FC0C6CC06EA04C6906E3DFA9F48F9A05460AF36BFFFC"/>
+    </string-array>
+    <string-array name="tcp_buffers_string_array" num="13">
+        <item value="UMTS:21135,131070,1056768,6144,24576,165312"/>
+        <item value="HSPA:18300,131070,1056768,6144,24576,393216"/>
+        <item value="HSDPA:18300,131070,1056768,6144,24576,393216"/>
+        <item value="HSUPA:6141,131070,1056768,6144,24576,393216"/>
+        <item value="HSPA+:31455,131070,1830912,6144,24576,1830912"/>
+        <item value="EDGE:8192,26280,704512,4096,16384,110208"/>
+        <item value="GPRS:8192,8760,704512,4096,8760,110208"/>
+        <item value="LTE:2097152,4194304,8388608,32768,131072,1048576"/>
+        <item value="LTE_CA:2097152,4194304,8388608,32768,131072,1048576"/>
+        <item value="NR_NSA:2097152,6291456,16777216,32768,131072,8388608"/>
+        <item value="NR_NSA_MMWAVE:2097152,6291456,16777216,32768,131072,8388608"/>
+        <item value="NR_SA:2097152,6291456,16777216,32768,131072,8388608"/>
+        <item value="NR_SA_MMWAVE:2097152,6291456,16777216,32768,131072,8388608"/>
     </string-array>
     <string name="5g_icon_configuration_string">connected_mmwave:5G_Plus,connected:5G,not_restricted_rrc_idle:5G,not_restricted_rrc_con:5G</string>
     <string name="5g_icon_display_grace_period_string">connected_mmwave,legacy,30;connected,legacy,30;not_restricted_rrc_idle,legacy,30;not_restricted_rrc_con,legacy,30</string>
