@@ -8,5 +8,25 @@
     <boolean name="disable_dun_apn_while_roaming_with_preset_apn_bool" value="true"/>
     <boolean name="nr_timers_reset_if_non_endc_and_rrc_idle_bool" value="true"/>
     <boolean name="carrier_name_override_bool" value="true"/>
+    <int name="default_mtu_int" value="1420"/>
     <string name="carrier_name_string">au</string>
+    <string-array name="tcp_buffers_string_array" num="17">
+        <item value="UMTS:131072,262144,1452032,4096,16384,399360"/>
+        <item value="HSPA:131072,262144,2441216,4096,16384,399360"/>
+        <item value="HSUPA:131072,262144,2441216,4096,16384,399360"/>
+        <item value="HSDPA:131072,262144,2441216,4096,16384,399360"/>
+        <item value="HSPA+:131072,262144,2441216,4096,16384,399360"/>
+        <item value="EDGE:16384,32768,131072,4096,16384,65536"/>
+        <item value="GPRS:4096,8192,24576,4096,8192,24576"/>
+        <item value="1xRTT:16384,32768,131070,4096,16384,102400"/>
+        <item value="EvDo_0:131072,262144,1048576,4096,16384,524288"/>
+        <item value="EvDo_A:131072,262144,1048576,4096,16384,524288"/>
+        <item value="EvDo_B:131072,262144,1048576,4096,16384,524288"/>
+        <item value="LTE:524288,1048576,8849981,262200,524288,4194304"/>
+        <item value="LTE_CA:524288,1048576,8849981,262200,524288,4194304"/>
+        <item value="NR_NSA:2097152,6291456,19493888,512000,2097152,8388608"/>
+        <item value="NR_NSA_MMWAVE:2097152,6291456,19493888,512000,2097152,8388608"/>
+        <item value="NR_SA:2097152,6291456,19493888,512000,2097152,8388608"/>
+        <item value="NR_SA_MMWAVE:2097152,6291456,19493888,512000,2097152,8388608"/>
+    </string-array>
 </carrier_config>
