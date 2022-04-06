@@ -39,6 +39,7 @@
     <boolean name="rtt_upgrade_supported_for_downgraded_vt_call" value="false"/>
     <boolean name="vt_upgrade_supported_for_downgraded_rtt_call" value="false"/>
     <boolean name="show_apn_setting_cdma_bool" value="true"/>
+    <boolean name="ims.enable_presence_capability_exchange_bool" value="true"/>
     <boolean name="ims.enable_presence_publish_bool" value="true"/>
     <boolean name="ims.use_sip_uri_for_presence_subscribe_bool" value="true"/>
     <boolean name="sms_requires_destination_number_conversion_bool" value="true"/>
