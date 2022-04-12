@@ -26,11 +26,14 @@ import android.service.carrier.CarrierService;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
+import android.os.Environment;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -56,6 +59,8 @@ public class DefaultCarrierConfigService extends CarrierService {
     private static final String NO_SIM_CONFIG_FILE_NAME = "carrier_config_no_sim.xml";
 
     private static final String TAG = "DefaultCarrierConfigService";
+
+    private static final String CARRIER_CONFIG_XML_PATH = "etc/carrierconfig-vendor.xml";
 
     private XmlPullParserFactory mFactory;
 
@@ -181,6 +186,18 @@ public class DefaultCarrierConfigService extends CarrierService {
         XmlPullParser vendorInput = getApplicationContext().getResources().getXml(R.xml.vendor);
         try {
             PersistableBundle vendorConfig = readConfigFromXml(vendorInput, id, sku);
+            config.putAll(vendorConfig);
+        }
+        catch (IOException | XmlPullParserException e) {
+            Log.e(TAG, e.toString());
+        }
+
+        // Read CarrierConfig XML on product partition
+        File productCarrierConfigFile = new File(Environment.getProductDirectory(), CARRIER_CONFIG_XML_PATH);
+        try {
+            FileInputStream productCarrierConfigFileInput = new FileInputStream(productCarrierConfigFile);
+            parser.setInput(productCarrierConfigFileInput, null);
+            PersistableBundle vendorConfig = readConfigFromXml(parser, id, sku);
             config.putAll(vendorConfig);
         }
         catch (IOException | XmlPullParserException e) {
